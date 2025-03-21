@@ -8,8 +8,20 @@ const Hero = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden bg-[#f7f7f7]">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+    <section 
+      className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden"
+      style={{
+        backgroundImage: "url('/lovable-uploads/9dd69907-0360-4891-b4ce-43b47bee75b4.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative'
+      }}
+    >
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
+      
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
         {/* Hero Text and CTA */}
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
