@@ -13,25 +13,25 @@ const Audiology = () => {
       icon: <Ear className="w-10 h-10 text-primary" />,
       title: t('hearingTest'),
       description: t('hearingTestDesc'),
-      image: "https://www.looptica.com/wp-content/uploads/2023/08/audiometria-test-auditivos.jpg"
+      image: "/images/audiology/hearing-test.jpg"
     },
     {
       icon: <Headphones className="w-10 h-10 text-primary" />,
       title: t('hearingAids'),
       description: t('hearingAidsDesc'),
-      image: "https://www.looptica.com/wp-content/uploads/2022/10/audifonos-signia.webp"
+      image: "/images/audiology/hearing-aids.jpg"
     },
     {
       icon: <Volume2 className="w-10 h-10 text-primary" />,
       title: t('tinnitusTreatment'),
       description: t('tinnitusDesc'),
-      image: "https://www.looptica.com/wp-content/uploads/2019/12/destacada-acufeno.jpg"
+      image: "/images/audiology/tinnitus.jpg"
     },
     {
       icon: <Shield className="w-10 h-10 text-primary" />,
       title: t('customEarProtection'),
       description: t('earProtectionDesc'),
-      image: "https://www.looptica.com/wp-content/uploads/2022/11/tapones-a-medida.jpg"
+      image: "/images/audiology/ear-protection.jpg"
     }
   ];
 

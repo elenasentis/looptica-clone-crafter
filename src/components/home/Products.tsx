@@ -12,28 +12,28 @@ const Products = () => {
       name: 'Ray-Ban Aviator',
       category: t('sunglasses'),
       price: 179,
-      image: 'https://www.looptica.com/wp-content/uploads/2021/12/rayban_aviator_clasico_metal_RB3025-frontal.webp',
+      image: '/images/products/rayban-aviator.jpg',
     },
     {
       id: 2,
       name: 'Etnia Barcelona',
       category: t('eyeglasses'),
       price: 189,
-      image: 'https://www.looptica.com/wp-content/uploads/2021/10/etnia_barcelona_piras_frontal.webp',
+      image: '/images/products/etnia-barcelona.jpg',
     },
     {
       id: 3,
       name: 'Tom Ford',
       category: t('eyeglasses'),
       price: 249,
-      image: 'https://www.looptica.com/wp-content/uploads/2021/10/TomFord_FT5401_frontal.webp',
+      image: '/images/products/tom-ford.jpg',
     },
     {
       id: 4,
       name: 'Polaroid',
       category: t('sunglasses'),
       price: 75,
-      image: 'https://www.looptica.com/wp-content/uploads/2023/09/PLD-6152GS-frontal-1.webp',
+      image: '/images/products/polaroid.jpg',
     },
   ];
 

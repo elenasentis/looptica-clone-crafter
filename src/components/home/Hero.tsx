@@ -59,7 +59,7 @@ const Hero = () => {
             <div className="relative aspect-square max-w-md mx-auto overflow-hidden rounded-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 mix-blend-overlay"></div>
               <img 
-                src="https://www.looptica.com/wp-content/uploads/2022/09/gafas-sol-diferentes-colores-1.jpg" 
+                src="/images/hero-eyewear.jpg" 
                 alt="Premium eyewear"
                 className="w-full h-full object-cover scale-up-center"
               />
