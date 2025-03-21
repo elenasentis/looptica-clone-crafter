@@ -16,8 +16,8 @@ body, html {
   padding: 0;
 }
 
-/* Set the background image directly on body */
-body.store-bg {
+/* Direct background application without classes */
+body {
   background-image: url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png') !important;
   background-size: cover;
   background-position: center;
@@ -25,8 +25,8 @@ body.store-bg {
   position: relative;
 }
 
-/* Add overlay to body */
-body.store-bg::before {
+/* Overlay for the entire body */
+body:before {
   content: '';
   position: fixed;
   top: 0;
@@ -39,7 +39,7 @@ body.store-bg::before {
 }
 
 /* Ensure content is above the overlay */
-body.store-bg #root {
+#root {
   position: relative;
   z-index: 1;
 }
