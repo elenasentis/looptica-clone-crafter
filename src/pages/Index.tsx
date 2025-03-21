@@ -26,9 +26,9 @@ const Index = () => {
     console.log("Background size:", computedStyle.backgroundSize);
     console.log("Background position:", computedStyle.backgroundPosition);
     
-    // Force refresh background (sometimes helps with loading issues)
-    document.body.style.backgroundImage = "url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png')";
-    console.log("Forced background refresh applied");
+    // Force refresh background with the new image
+    document.body.style.backgroundImage = "url('/lovable-uploads/1dc38382-e9ef-4392-bc74-aeee7b9a5bc2.png')";
+    console.log("Forced background refresh applied with new image");
   }, []);
 
   return (
