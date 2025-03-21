@@ -32,7 +32,13 @@ const Index = () => {
         <Newsletter />
       </main>
       <Footer />
-      <FloatingWhatsApp />
+      <FloatingWhatsApp 
+        phoneNumber="34699594064"
+        accountName="Looptica"
+        statusMessage="Typically replies within 1 hour"
+        chatMessage="Hola! 👋🏼 How can we help you?"
+        placeholder="Type a message..."
+      />
     </div>
   );
 };
