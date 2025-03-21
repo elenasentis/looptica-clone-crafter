@@ -10,25 +10,25 @@ const Audiology = () => {
 
   const audiologyServices = [
     {
-      icon: <Ear className="w-10 h-10 text-[#009fe3]" />,
+      icon: <Ear className="w-10 h-10 text-[#2ecc71]" />,
       title: t('hearingTest'),
       description: t('hearingTestDesc'),
       image: "/images/audiology/hearing-test.jpg"
     },
     {
-      icon: <Headphones className="w-10 h-10 text-[#009fe3]" />,
+      icon: <Headphones className="w-10 h-10 text-[#2ecc71]" />,
       title: t('hearingAids'),
       description: t('hearingAidsDesc'),
       image: "/images/audiology/hearing-aids.jpg"
     },
     {
-      icon: <Volume2 className="w-10 h-10 text-[#009fe3]" />,
+      icon: <Volume2 className="w-10 h-10 text-[#2ecc71]" />,
       title: t('tinnitusTreatment'),
       description: t('tinnitusDesc'),
       image: "/images/audiology/tinnitus.jpg"
     },
     {
-      icon: <Shield className="w-10 h-10 text-[#009fe3]" />,
+      icon: <Shield className="w-10 h-10 text-[#2ecc71]" />,
       title: t('customEarProtection'),
       description: t('earProtectionDesc'),
       image: "/images/audiology/ear-protection.jpg"
@@ -40,11 +40,11 @@ const Audiology = () => {
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#2ecc71]/10 text-[#2ecc71] mb-4">
               {t('audiologyServices')}
             </span>
             <h2 className="text-3xl font-bold mb-3 text-gray-900">{t('hearingCare')}</h2>
-            <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
+            <div className="w-16 h-1 bg-[#2ecc71] mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-gray-600">
               {t('audiologyDescription')}
             </p>
@@ -79,7 +79,7 @@ const Audiology = () => {
           <div className="text-center">
             <GoogleCalendarButton 
               size="lg" 
-              className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
+              className="bg-[#2ecc71] hover:bg-[#ea384c] text-white"
               subject="Hearing Consultation at Looptica"
               description="Appointment for hearing services at Looptica"
               durationMinutes={45}

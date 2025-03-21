@@ -13,7 +13,7 @@ const Hero = () => {
         {/* Hero Text and CTA */}
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-6">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#2ecc71]/10 text-[#2ecc71] mb-6">
               {t('premiumEyewear')}
             </span>
           </ScrollReveal>
@@ -34,7 +34,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button 
                 size="lg" 
-                className="group bg-[#009fe3] hover:bg-[#0082b8] text-white"
+                className="group bg-[#2ecc71] hover:bg-[#ea384c] text-white"
               >
                 {t('shopNow')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -42,7 +42,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-[#009fe3] text-[#009fe3] hover:bg-[#009fe3]/10"
+                className="border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10"
               >
                 {t('viewCollection')}
               </Button>
@@ -58,7 +58,7 @@ const Hero = () => {
             className="relative z-10"
           >
             <div className="relative aspect-[4/3] max-w-xl mx-auto overflow-hidden rounded-lg shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#009fe3]/10 to-[#009fe3]/5 mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2ecc71]/10 to-[#2ecc71]/5 mix-blend-overlay"></div>
               <img 
                 src="/images/hero-eyewear.jpg" 
                 alt="Looptica - Serveis auditius i visuals"
@@ -68,8 +68,8 @@ const Hero = () => {
           </ScrollReveal>
           
           {/* Decorative elements */}
-          <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-[#e6f4fa] rounded-full blur-3xl"></div>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#e6f4fa] rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-[#e6faea] rounded-full blur-3xl"></div>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#e6faea] rounded-full blur-3xl"></div>
         </div>
       </div>
     </section>

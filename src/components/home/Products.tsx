@@ -44,13 +44,13 @@ const Products = () => {
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#2ecc71]/10 text-[#2ecc71] mb-4">
               {t('ourCollection')}
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
               {t('curatedDesigns')}
             </h2>
-            <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
+            <div className="w-16 h-1 bg-[#2ecc71] mx-auto mb-6"></div>
             <p className="text-gray-600">
               {t('productsDescription')}
             </p>
@@ -79,11 +79,11 @@ const Products = () => {
                   <h3 className="font-medium text-lg mt-1 mb-2 text-gray-900">
                     {product.name}
                   </h3>
-                  <p className="font-bold text-[#009fe3]">Des de {product.price}€</p>
+                  <p className="font-bold text-[#2ecc71]">Des de {product.price}€</p>
                   
                   <Button 
                     variant="outline"
-                    className="w-full mt-4 transition-all border-[#009fe3] text-[#009fe3] group-hover:bg-[#009fe3] group-hover:text-white"
+                    className="w-full mt-4 transition-all border-[#2ecc71] text-[#2ecc71] group-hover:bg-[#2ecc71] group-hover:text-white"
                   >
                     <ShoppingBag className="w-4 h-4 mr-2" />
                     {t('addToCart')}
@@ -97,7 +97,7 @@ const Products = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <ScrollReveal>
-            <Button variant="default" size="lg" className="bg-[#009fe3] hover:bg-[#0082b8]">
+            <Button variant="default" size="lg" className="bg-[#2ecc71] hover:bg-[#ea384c]">
               {t('viewAllProducts')}
             </Button>
           </ScrollReveal>
