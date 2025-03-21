@@ -11,7 +11,7 @@ const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,9 +19,20 @@ const Newsletter = () => {
     
     // Simulate API call
     setTimeout(() => {
+      let successMessage = "Subscripció completada!";
+      let descMessage = "Gràcies per subscriure't al nostre butlletí.";
+      
+      if (language === 'en') {
+        successMessage = "Subscription complete!";
+        descMessage = "Thank you for subscribing to our newsletter.";
+      } else if (language === 'es') {
+        successMessage = "¡Suscripción completada!";
+        descMessage = "Gracias por suscribirte a nuestro boletín.";
+      }
+      
       toast({
-        title: "Subscripció completada!",
-        description: "Gràcies per subscriure't al nostre butlletí.",
+        title: successMessage,
+        description: descMessage,
       });
       setEmail('');
       setIsSubmitting(false);
@@ -36,14 +47,14 @@ const Newsletter = () => {
           <div className="md:w-1/2">
             <ScrollReveal origin="left">
               <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
-                Mantén-te informat
+                {t('stayUpdated')}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Subscriu-te al nostre butlletí
+                {t('newsletter')}
               </h2>
               <div className="w-16 h-1 bg-[#009fe3] mb-6"></div>
               <p className="text-gray-600 mb-8">
-                Uneix-te a la nostra comunitat i sigues el primer en conèixer les nostres novetats, ofertes exclusives i consells per la cura de la teva salut visual i auditiva.
+                {t('newsletterDesc')}
               </p>
             </ScrollReveal>
           </div>
@@ -54,7 +65,7 @@ const Newsletter = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                    Adreça de correu
+                    {t('emailAddress')}
                   </label>
                   <div className="flex gap-2">
                     <Input
@@ -72,12 +83,12 @@ const Newsletter = () => {
                       className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
                     >
                       <Mail className="w-4 h-4 mr-2" />
-                      {isSubmitting ? "Subscrivint..." : "Subscriu-te"}
+                      {isSubmitting ? t('subscribing') : t('subscribe')}
                     </Button>
                   </div>
                 </div>
                 <p className="text-xs text-gray-500">
-                  En subscriure't, acceptes la nostra Política de Privacitat i consents rebre actualitzacions de la nostra empresa.
+                  {t('privacyConsent')}
                 </p>
               </form>
             </ScrollReveal>

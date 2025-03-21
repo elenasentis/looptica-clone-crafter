@@ -2,40 +2,47 @@
 import { Link } from 'react-router-dom';
 import { ScrollReveal } from '@/components/ui';
 import { Instagram, Twitter, Facebook, MapPin, Phone, Mail } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
-    {
-      title: 'Serveis Visuals',
-      links: [
-        { name: 'Ulleres graduades', path: '#' },
-        { name: 'Ulleres de sol', path: '#' },
-        { name: 'Lents de contacte', path: '#' },
-        { name: 'Salut visual', path: '#' },
-      ],
-    },
-    {
-      title: 'Serveis Auditius',
-      links: [
-        { name: 'Revisions auditives', path: '#' },
-        { name: 'Audiòfons', path: '#' },
-        { name: 'Tractament d\'acúfens', path: '#' },
-        { name: 'Protecció auditiva', path: '#' },
-      ],
-    },
-    {
-      title: 'Suport',
-      links: [
-        { name: 'Contacte', path: '#' },
-        { name: 'Demana cita', path: '#' },
-        { name: 'Preguntes freqüents', path: '#' },
-        { name: 'On som', path: '#' },
-      ],
-    },
-  ];
+  // Dynamic navigation sections with translations
+  const getFooterLinks = () => {
+    return [
+      {
+        title: language === 'en' ? 'Visual Services' : (language === 'es' ? 'Servicios Visuales' : 'Serveis Visuals'),
+        links: [
+          { name: t('eyeglasses'), path: '#' },
+          { name: t('sunglasses'), path: '#' },
+          { name: t('contactLenses'), path: '#' },
+          { name: t('visualHealth'), path: '#' },
+        ],
+      },
+      {
+        title: language === 'en' ? 'Auditory Services' : (language === 'es' ? 'Servicios Auditivos' : 'Serveis Auditius'),
+        links: [
+          { name: t('hearingTest'), path: '#' },
+          { name: t('hearingAids'), path: '#' },
+          { name: t('tinnitusTreatment'), path: '#' },
+          { name: t('customEarProtection'), path: '#' },
+        ],
+      },
+      {
+        title: language === 'en' ? 'Support' : (language === 'es' ? 'Soporte' : 'Suport'),
+        links: [
+          { name: t('contact'), path: '#' },
+          { name: t('shopNow'), path: '#' },
+          { name: language === 'en' ? 'FAQ' : (language === 'es' ? 'Preguntas frecuentes' : 'Preguntes freqüents'), path: '#' },
+          { name: language === 'en' ? 'Where we are' : (language === 'es' ? 'Dónde estamos' : 'On som'), path: '#' },
+        ],
+      },
+    ];
+  };
 
+  const footerLinks = getFooterLinks();
+  
   const socialLinks = [
     { name: 'Instagram', icon: <Instagram className="h-5 w-5" />, path: '#' },
     { name: 'Twitter', icon: <Twitter className="h-5 w-5" />, path: '#' },
@@ -53,7 +60,11 @@ const Footer = () => {
                 Looptica
               </Link>
               <p className="text-gray-300 mb-6 max-w-xs">
-                Solucions visuals i auditives d'alta qualitat per a aquells que valoren la professionalitat i el bon servei.
+                {language === 'en' 
+                  ? 'High-quality visual and auditory solutions for those who value professionalism and good service.' 
+                  : (language === 'es' 
+                    ? 'Soluciones visuales y auditivas de alta calidad para quienes valoran la profesionalidad y el buen servicio.'
+                    : 'Solucions visuals i auditives d\'alta qualitat per a aquells que valoren la professionalitat i el bon servei.')}
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
@@ -90,7 +101,9 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-medium text-lg mb-6 text-white">Contacta'ns</h4>
+              <h4 className="font-medium text-lg mb-6 text-white">
+                {language === 'en' ? 'Contact Us' : (language === 'es' ? 'Contáctanos' : 'Contacta\'ns')}
+              </h4>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 text-[#009fe3] mr-3 mt-1 flex-shrink-0" />
@@ -114,15 +127,15 @@ const Footer = () => {
           <div className="pt-8 border-t border-gray-700">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm text-gray-400">
-                © {currentYear} Looptica. Tots els drets reservats.
+                © {currentYear} Looptica. {language === 'en' ? 'All rights reserved.' : (language === 'es' ? 'Todos los derechos reservados.' : 'Tots els drets reservats.')}
               </p>
 
               <div className="flex space-x-6 text-sm text-gray-400">
                 <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
-                  Política de Privacitat
+                  {language === 'en' ? 'Privacy Policy' : (language === 'es' ? 'Política de Privacidad' : 'Política de Privacitat')}
                 </a>
                 <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
-                  Termes i Condicions
+                  {language === 'en' ? 'Terms & Conditions' : (language === 'es' ? 'Términos y Condiciones' : 'Termes i Condicions')}
                 </a>
                 <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
                   Cookies

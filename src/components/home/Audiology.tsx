@@ -11,26 +11,26 @@ const Audiology = () => {
   const audiologyServices = [
     {
       icon: <Ear className="w-10 h-10 text-[#009fe3]" />,
-      title: "Revisions auditives",
-      description: "Avaluació professional i completa de la teva capacitat auditiva amb equipament d'última generació.",
+      title: t('hearingTest'),
+      description: t('hearingTestDesc'),
       image: "/images/audiology/hearing-test.jpg"
     },
     {
       icon: <Headphones className="w-10 h-10 text-[#009fe3]" />,
-      title: "Audiòfons avançats",
-      description: "Audiòfons d'alta qualitat adaptats a les teves necessitats específiques i estil de vida.",
+      title: t('hearingAids'),
+      description: t('hearingAidsDesc'),
       image: "/images/audiology/hearing-aids.jpg"
     },
     {
       icon: <Volume2 className="w-10 h-10 text-[#009fe3]" />,
-      title: "Tractament d'acúfens",
-      description: "Solucions especialitzades per ajudar a controlar i reduir els símptomes dels acúfens.",
+      title: t('tinnitusTreatment'),
+      description: t('tinnitusDesc'),
       image: "/images/audiology/tinnitus.jpg"
     },
     {
       icon: <Shield className="w-10 h-10 text-[#009fe3]" />,
-      title: "Protecció auditiva",
-      description: "Taps per les orelles fets a mida dissenyats per a comoditat i protecció òptima contra el soroll.",
+      title: t('customEarProtection'),
+      description: t('earProtectionDesc'),
       image: "/images/audiology/ear-protection.jpg"
     }
   ];
@@ -41,12 +41,12 @@ const Audiology = () => {
         <ScrollReveal>
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
-              Serveis d'Audiologia
+              {t('audiologyServices')}
             </span>
-            <h2 className="text-3xl font-bold mb-3 text-gray-900">Cuidem la teva salut auditiva</h2>
+            <h2 className="text-3xl font-bold mb-3 text-gray-900">{t('hearingCare')}</h2>
             <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-gray-600">
-              Els nostres audiòlegs certificats ofereixen avaluacions auditives completes i solucions personalitzades per millorar la teva salut auditiva.
+              {t('audiologyDescription')}
             </p>
           </div>
         </ScrollReveal>
@@ -78,7 +78,7 @@ const Audiology = () => {
         <ScrollReveal delay={0.4}>
           <div className="text-center">
             <Button size="lg" className="bg-[#009fe3] hover:bg-[#0082b8] text-white">
-              Demana una consulta
+              {t('scheduleConsultation')}
             </Button>
           </div>
         </ScrollReveal>

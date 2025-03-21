@@ -76,9 +76,9 @@ export const translations: Translations = {
     ca: 'A Looptica trobràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d\'alta qualitat.',
   },
   addToCart: {
-    en: 'Add to Cart',
-    es: 'Añadir al Carrito',
-    ca: 'Afegir al Carret',
+    en: 'More Information',
+    es: 'Más Información',
+    ca: 'Més informació',
   },
   viewAllProducts: {
     en: 'View All Products',
@@ -200,7 +200,7 @@ export const translations: Translations = {
   hearingAidsDesc: {
     en: 'High-quality hearing aids tailored to your specific needs and lifestyle.',
     es: 'Audífonos de alta calidad adaptados a sus necesidades específicas y estilo de vida.',
-    ca: 'Audiòfons d\'alta qualitat adaptados a les seves necessitats específiques i estil de vida.',
+    ca: 'Audiòfons d\'alta qualitat adaptats a les seves necessitats específiques i estil de vida.',
   },
   tinnitusTreatment: {
     en: 'Tinnitus Treatment',
@@ -251,7 +251,7 @@ export const translations: Translations = {
   subscribe: {
     en: 'Subscribe',
     es: 'Suscribirse',
-    ca: 'Subscriure\'s',
+    ca: 'Subscriu-te',
   },
   subscribing: {
     en: 'Subscribing...',

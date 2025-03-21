@@ -11,38 +11,38 @@ const OpticalServices = () => {
   const opticalServices = [
     {
       icon: <Eye className="w-10 h-10 text-[#009fe3]" />,
-      title: "Salud Visual",
-      description: "Exámen visual optométrico, retinoscopia, vista cansada, ojo seco, etc.",
+      title: t('visualHealth'),
+      description: t('visualHealthDesc'),
       image: "/images/optical/eye-exam.jpg"
     },
     {
       icon: <Contact className="w-10 h-10 text-[#009fe3]" />,
-      title: "Lentes de Contacto",
-      description: "Adaptación de lentes de contacto para miopia, hipermetropia, astigmatismo, progresivas y orto-k.",
+      title: t('contactLenses'),
+      description: t('contactLensesDesc'),
       image: "/images/optical/contact-lenses.jpg"
     },
     {
       icon: <Moon className="w-10 h-10 text-[#009fe3]" />,
-      title: "Orto-K",
-      description: "Corrige tu vision con lentes de contacto nocturnas y olvidate de las gafas durante el día.",
+      title: t('orthoK'),
+      description: t('orthoKDesc'),
       image: "/images/optical/orthokeratology.jpg"
     },
     {
       icon: <User className="w-10 h-10 text-[#009fe3]" />,
-      title: "Asesoramiento de Imagen",
-      description: "Te ofrecemos una selección de monturas con estilo diseñadas en Barcelona.",
+      title: t('imageConsulting'),
+      description: t('imageConsultingDesc'),
       image: "/images/optical/style-consultation.jpg"
     },
     {
       icon: <Glasses className="w-10 h-10 text-[#009fe3]" />,
-      title: "Asesoramiento de Lentes",
-      description: "Buscamos la mejor opción para tu problema de visión con lentes de última generación de las mejores marcas.",
+      title: t('lensConsulting'),
+      description: t('lensConsultingDesc'),
       image: "/images/optical/lens-consultation.jpg"
     },
     {
       icon: <Sun className="w-10 h-10 text-[#009fe3]" />,
-      title: "Gafas de Sol",
-      description: "Gafas de sol exclusivas que transmiten personalidad de diseñadores locales.",
+      title: t('sunglassesService'),
+      description: t('sunglassesServiceDesc'),
       image: "/images/optical/sunglasses.jpg"
     }
   ];
@@ -53,12 +53,12 @@ const OpticalServices = () => {
         <ScrollReveal>
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
-              Servicios Ópticos
+              {t('opticalServices')}
             </span>
-            <h2 className="text-3xl font-bold mb-3 text-gray-900">Cuidamos tu salud visual</h2>
+            <h2 className="text-3xl font-bold mb-3 text-gray-900">{t('visualCare')}</h2>
             <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-gray-600">
-              Nuestros ópticos certificados ofrecen servicios completos y soluciones personalizadas para mejorar tu salud visual.
+              {t('opticalDescription')}
             </p>
           </div>
         </ScrollReveal>
@@ -90,7 +90,7 @@ const OpticalServices = () => {
         <ScrollReveal delay={0.4}>
           <div className="text-center">
             <Button size="lg" className="bg-[#009fe3] hover:bg-[#0082b8] text-white">
-              Solicita una consulta
+              {t('scheduleConsult')}
             </Button>
           </div>
         </ScrollReveal>

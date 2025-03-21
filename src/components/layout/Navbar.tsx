@@ -12,13 +12,14 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
 
+  // Using translation keys for navigation
   const navLinks = [
-    { name: 'Inici', path: '/' },
-    { name: 'Productes', path: '#products' },
-    { name: 'Serveis Òptics', path: '#optical' },
-    { name: 'Audiologia', path: '#audiology' },
-    { name: 'Qui som', path: '#about' },
-    { name: 'Contacte', path: '#contact' },
+    { name: t('home'), path: '/' },
+    { name: t('products'), path: '#products' },
+    { name: t('opticalServices'), path: '#optical' },
+    { name: t('audiologyServices'), path: '#audiology' },
+    { name: t('about'), path: '#about' },
+    { name: t('contact'), path: '#contact' },
   ];
 
   useEffect(() => {
@@ -92,7 +93,7 @@ const Navbar = () => {
             className="bg-[#009fe3] hover:bg-[#0082b8] text-white transition-all"
           >
             <ShoppingBag className="h-4 w-4 mr-2" />
-            Demana cita
+            {t('shopNow')}
           </Button>
         </div>
 
@@ -138,7 +139,7 @@ const Navbar = () => {
               onClick={closeMenu}
             >
               <ShoppingBag className="h-5 w-5 mr-2" />
-              Demana cita
+              {t('shopNow')}
             </Button>
           </div>
         </div>

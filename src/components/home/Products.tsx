@@ -10,28 +10,28 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: 'Ulleres Graduades',
-      category: 'Ulleres de vista',
+      name: t('eyeglasses'),
+      category: t('eyeglasses'),
       price: 95,
       image: '/images/products/rayban-aviator.jpg',
     },
     {
       id: 2,
-      name: 'Lents de Contacte',
+      name: t('contactLenses'),
       category: 'Contactologia',
       price: 30,
       image: '/images/products/etnia-barcelona.jpg',
     },
     {
       id: 3,
-      name: 'Ulleres de Sol',
-      category: 'Protecció solar',
+      name: t('sunglasses'),
+      category: t('sunglasses'),
       price: 75,
       image: '/images/products/tom-ford.jpg',
     },
     {
       id: 4,
-      name: 'Audiòfons',
+      name: t('hearingAids'),
       category: 'Salut auditiva',
       price: 495,
       image: '/images/products/polaroid.jpg',
@@ -45,14 +45,14 @@ const Products = () => {
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
-              Els Nostres Productes
+              {t('ourCollection')}
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
-              Solucions per a la teva salut visual i auditiva
+              {t('curatedDesigns')}
             </h2>
             <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
             <p className="text-gray-600">
-              A Looptica trobràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d'alta qualitat.
+              {t('productsDescription')}
             </p>
           </div>
         </ScrollReveal>
@@ -86,7 +86,7 @@ const Products = () => {
                     className="w-full mt-4 transition-all border-[#009fe3] text-[#009fe3] group-hover:bg-[#009fe3] group-hover:text-white"
                   >
                     <ShoppingBag className="w-4 h-4 mr-2" />
-                    Més informació
+                    {t('addToCart')}
                   </Button>
                 </div>
               </div>
@@ -98,7 +98,7 @@ const Products = () => {
         <div className="text-center mt-12">
           <ScrollReveal>
             <Button variant="default" size="lg" className="bg-[#009fe3] hover:bg-[#0082b8]">
-              Veure tots els productes
+              {t('viewAllProducts')}
             </Button>
           </ScrollReveal>
         </div>

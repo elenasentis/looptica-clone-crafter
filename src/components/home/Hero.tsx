@@ -14,19 +14,19 @@ const Hero = () => {
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-6">
-              Looptica
+              {t('premiumEyewear')}
             </span>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={300}>
             <h1 className="text-balance font-bold text-4xl sm:text-5xl lg:text-5xl leading-tight mb-6 text-gray-900">
-              La teva solució auditiva i visual
+              {t('heroTitle')}
             </h1>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={500}>
             <p className="text-gray-600 text-lg mb-8 max-w-xl text-balance">
-              Assessorament integral per a les teves necessitats visuals i auditives. Descobreix els nostres serveis i productes.
+              {t('heroDescription')}
             </p>
           </ScrollReveal>
           
@@ -36,7 +36,7 @@ const Hero = () => {
                 size="lg" 
                 className="group bg-[#009fe3] hover:bg-[#0082b8] text-white"
               >
-                Demana cita
+                {t('shopNow')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button 
@@ -44,7 +44,7 @@ const Hero = () => {
                 size="lg"
                 className="border-[#009fe3] text-[#009fe3] hover:bg-[#009fe3]/10"
               >
-                Els nostres serveis
+                {t('viewCollection')}
               </Button>
             </div>
           </ScrollReveal>
