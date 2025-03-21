@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -131,7 +132,7 @@
   }
 
   .store-bg {
-    background-image: url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png');
+    background-image: url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png') !important;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
