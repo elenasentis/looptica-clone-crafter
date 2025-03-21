@@ -130,6 +130,25 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .store-bg {
+    background-image: url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .store-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    pointer-events: none;
+  }
 }
 
 /* Smooth scrolling */
