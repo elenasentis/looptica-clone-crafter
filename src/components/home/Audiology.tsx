@@ -10,25 +10,25 @@ const Audiology = () => {
 
   const audiologyServices = [
     {
-      icon: <Ear className="w-10 h-10 text-primary" />,
+      icon: <Ear className="w-10 h-10 text-[#009fe3]" />,
       title: t('hearingTest'),
       description: t('hearingTestDesc'),
       image: "/images/audiology/hearing-test.jpg"
     },
     {
-      icon: <Headphones className="w-10 h-10 text-primary" />,
+      icon: <Headphones className="w-10 h-10 text-[#009fe3]" />,
       title: t('hearingAids'),
       description: t('hearingAidsDesc'),
       image: "/images/audiology/hearing-aids.jpg"
     },
     {
-      icon: <Volume2 className="w-10 h-10 text-primary" />,
+      icon: <Volume2 className="w-10 h-10 text-[#009fe3]" />,
       title: t('tinnitusTreatment'),
       description: t('tinnitusDesc'),
       image: "/images/audiology/tinnitus.jpg"
     },
     {
-      icon: <Shield className="w-10 h-10 text-primary" />,
+      icon: <Shield className="w-10 h-10 text-[#009fe3]" />,
       title: t('customEarProtection'),
       description: t('earProtectionDesc'),
       image: "/images/audiology/ear-protection.jpg"
@@ -36,13 +36,16 @@ const Audiology = () => {
   ];
 
   return (
-    <section className="py-16 bg-slate-50">
+    <section className="py-16 bg-[#f7f7f7]">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3">{t('audiologyServices')}</h2>
-            <h3 className="text-xl text-gray-600 mb-4">{t('hearingCare')}</h3>
-            <p className="max-w-2xl mx-auto text-gray-500">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
+              {t('audiologyServices')}
+            </span>
+            <h2 className="text-3xl font-bold mb-3 text-gray-900">{t('hearingCare')}</h2>
+            <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
+            <p className="max-w-2xl mx-auto text-gray-600">
               {t('audiologyDescription')}
             </p>
           </div>
@@ -64,8 +67,8 @@ const Audiology = () => {
                 </div>
                 <div className="p-6 flex flex-col items-center text-center flex-grow">
                   <div className="mb-4">{service.icon}</div>
-                  <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                  <p className="text-gray-500 text-sm">{service.description}</p>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
+                  <p className="text-gray-600 text-sm">{service.description}</p>
                 </div>
               </div>
             ))}
@@ -74,7 +77,7 @@ const Audiology = () => {
 
         <ScrollReveal delay={0.4}>
           <div className="text-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button size="lg" className="bg-[#009fe3] hover:bg-[#0082b8] text-white">
               {t('scheduleConsultation')}
             </Button>
           </div>

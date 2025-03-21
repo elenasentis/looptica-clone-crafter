@@ -8,24 +8,24 @@ const Hero = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-20 px-6 lg:px-12 overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden bg-[#f7f7f7]">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* Hero Text and CTA */}
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-6">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-6">
               {t('premiumEyewear')}
             </span>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={300}>
-            <h1 className="text-balance font-bold leading-tight mb-6">
+            <h1 className="text-balance font-bold text-4xl sm:text-5xl lg:text-5xl leading-tight mb-6 text-gray-900">
               {t('heroTitle')}
             </h1>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={500}>
-            <p className="text-muted-foreground text-lg mb-8 max-w-xl text-balance">
+            <p className="text-gray-600 text-lg mb-8 max-w-xl text-balance">
               {t('heroDescription')}
             </p>
           </ScrollReveal>
@@ -34,7 +34,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button 
                 size="lg" 
-                className="group"
+                className="group bg-[#009fe3] hover:bg-[#0082b8] text-white"
               >
                 {t('shopNow')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -42,6 +42,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg"
+                className="border-[#009fe3] text-[#009fe3] hover:bg-[#009fe3]/10"
               >
                 {t('viewCollection')}
               </Button>
@@ -56,8 +57,8 @@ const Hero = () => {
             delay={200}
             className="relative z-10"
           >
-            <div className="relative aspect-square max-w-md mx-auto overflow-hidden rounded-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 mix-blend-overlay"></div>
+            <div className="relative aspect-[4/3] max-w-xl mx-auto overflow-hidden rounded-lg shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#009fe3]/10 to-[#009fe3]/5 mix-blend-overlay"></div>
               <img 
                 src="/images/hero-eyewear.jpg" 
                 alt="Premium eyewear"
@@ -67,8 +68,8 @@ const Hero = () => {
           </ScrollReveal>
           
           {/* Decorative elements */}
-          <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-[#e6f4fa] rounded-full blur-3xl"></div>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#e6f4fa] rounded-full blur-3xl"></div>
         </div>
       </div>
     </section>

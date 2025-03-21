@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { ShoppingBag } from 'lucide-react';
 
 const Products = () => {
   const { t } = useLanguage();
@@ -38,18 +39,19 @@ const Products = () => {
   ];
 
   return (
-    <section className="py-20 px-6 lg:px-12 bg-secondary/50" id="products">
+    <section className="py-16 px-6 lg:px-12 bg-white" id="products">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
               {t('ourCollection')}
             </span>
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
               {t('curatedDesigns')}
             </h2>
-            <p className="text-muted-foreground">
+            <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
+            <p className="text-gray-600">
               {t('productsDescription')}
             </p>
           </div>
@@ -59,9 +61,9 @@ const Products = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
             <ScrollReveal key={product.id} delay={100 * (index + 1)}>
-              <div className="group relative bg-background rounded-xl overflow-hidden border border-border/50 hover-lift">
+              <div className="group relative bg-white rounded-lg overflow-hidden border border-gray-200 hover-lift">
                 {/* Product Image */}
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-[3/2] overflow-hidden">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -70,19 +72,20 @@ const Products = () => {
                 </div>
                 
                 {/* Product Info */}
-                <div className="p-6">
-                  <span className="text-xs text-muted-foreground uppercase tracking-wider">
+                <div className="p-4">
+                  <span className="text-xs text-gray-500 uppercase tracking-wider">
                     {product.category}
                   </span>
-                  <h3 className="font-medium text-xl mt-1 mb-2">
+                  <h3 className="font-medium text-lg mt-1 mb-2 text-gray-900">
                     {product.name}
                   </h3>
-                  <p className="font-medium">${product.price}</p>
+                  <p className="font-bold text-[#009fe3]">${product.price}</p>
                   
                   <Button 
                     variant="outline"
-                    className="w-full mt-4 transition-all group-hover:bg-primary group-hover:text-primary-foreground"
+                    className="w-full mt-4 transition-all border-[#009fe3] text-[#009fe3] group-hover:bg-[#009fe3] group-hover:text-white"
                   >
+                    <ShoppingBag className="w-4 h-4 mr-2" />
                     {t('addToCart')}
                   </Button>
                 </div>
@@ -94,7 +97,7 @@ const Products = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <ScrollReveal>
-            <Button variant="default" size="lg">
+            <Button variant="default" size="lg" className="bg-[#009fe3] hover:bg-[#0082b8]">
               {t('viewAllProducts')}
             </Button>
           </ScrollReveal>

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingBag, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -15,6 +15,7 @@ const Navbar = () => {
   const navLinks = [
     { name: t('home'), path: '/' },
     { name: t('products'), path: '#products' },
+    { name: t('audiology'), path: '#audiology' },
     { name: t('about'), path: '#about' },
     { name: t('contact'), path: '#contact' },
   ];
@@ -51,14 +52,14 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed w-full top-0 left-0 z-50 transition-all duration-300 px-6 lg:px-12",
-        scrolled ? "py-3 glass" : "py-6 bg-transparent"
+        scrolled ? "py-2 bg-white shadow-md" : "py-4 bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link 
           to="/" 
-          className="text-2xl font-bold relative z-50 transition-all"
+          className="text-2xl font-bold relative z-50 transition-all text-[#009fe3]"
           onClick={closeMenu}
         >
           Looptica
@@ -70,21 +71,26 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.path}
-              className="text-sm font-medium transition-all hover:opacity-70"
+              className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-700"
             >
               {link.name}
             </a>
           ))}
         </div>
 
-        {/* Call to Action Button and Language Switcher */}
+        {/* Call to Action Buttons and Language Switcher */}
         <div className="hidden md:flex items-center space-x-4">
+          <a href="tel:+1234567890" className="flex items-center text-gray-700 hover:text-[#009fe3]">
+            <Phone className="h-4 w-4 mr-2" />
+            <span className="text-sm font-medium">123-456-7890</span>
+          </a>
           <LanguageSwitcher />
           <Button 
             variant="default" 
             size="sm" 
-            className="hover:scale-105 transition-all"
+            className="bg-[#009fe3] hover:bg-[#0082b8] text-white transition-all"
           >
+            <ShoppingBag className="h-4 w-4 mr-2" />
             {t('shopNow')}
           </Button>
         </div>
@@ -105,7 +111,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div 
           className={cn(
-            "fixed inset-0 bg-background glass-dark backdrop-blur-md md:hidden transition-transform duration-500 ease-in-out",
+            "fixed inset-0 bg-white md:hidden transition-transform duration-500 ease-in-out",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
@@ -114,18 +120,23 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.path}
-                className="text-xl font-medium transition-all hover:opacity-70"
+                className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
                 onClick={closeMenu}
               >
                 {link.name}
               </a>
             ))}
+            <a href="tel:+1234567890" className="flex items-center text-gray-700 hover:text-[#009fe3]">
+              <Phone className="h-5 w-5 mr-2" />
+              <span className="text-lg font-medium">123-456-7890</span>
+            </a>
             <LanguageSwitcher />
             <Button 
               variant="default" 
-              className="mt-4 w-full max-w-[200px] hover:scale-105 transition-all"
+              className="mt-4 w-full max-w-[200px] bg-[#009fe3] hover:bg-[#0082b8] text-white"
               onClick={closeMenu}
             >
+              <ShoppingBag className="h-5 w-5 mr-2" />
               {t('shopNow')}
             </Button>
           </div>
