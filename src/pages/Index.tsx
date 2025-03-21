@@ -19,12 +19,20 @@ const Index = () => {
     
     // Log to check if component is mounting correctly
     console.log("Index component mounted");
+    
+    // Apply the background class to the body element to ensure it covers the entire page
+    document.body.classList.add('store-bg');
+    
+    // Clean up function to remove the class when component unmounts
+    return () => {
+      document.body.classList.remove('store-bg');
+    };
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col store-bg">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow relative z-10">
+      <main className="flex-grow">
         <Hero />
         <Products />
         <OpticalServices />

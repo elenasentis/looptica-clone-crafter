@@ -1,12 +1,19 @@
 
-/* Remove the default styling that might be interfering with our background */
+/* Reset styling for the app */
 #root {
   max-width: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
   width: 100%;
   overflow-x: hidden;
+}
+
+/* Ensure background can be applied properly */
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
