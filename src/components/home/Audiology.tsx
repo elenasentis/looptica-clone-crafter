@@ -12,22 +12,26 @@ const Audiology = () => {
     {
       icon: <Ear className="w-10 h-10 text-primary" />,
       title: t('hearingTest'),
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      description: t('hearingTestDesc'),
+      image: "https://www.looptica.com/wp-content/uploads/2023/08/audiometria-test-auditivos.jpg"
     },
     {
       icon: <Headphones className="w-10 h-10 text-primary" />,
       title: t('hearingAids'),
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      description: t('hearingAidsDesc'),
+      image: "https://www.looptica.com/wp-content/uploads/2022/10/audifonos-signia.webp"
     },
     {
       icon: <Volume2 className="w-10 h-10 text-primary" />,
       title: t('tinnitusTreatment'),
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      description: t('tinnitusDesc'),
+      image: "https://www.looptica.com/wp-content/uploads/2019/12/destacada-acufeno.jpg"
     },
     {
       icon: <Shield className="w-10 h-10 text-primary" />,
       title: t('customEarProtection'),
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      description: t('earProtectionDesc'),
+      image: "https://www.looptica.com/wp-content/uploads/2022/11/tapones-a-medida.jpg"
     }
   ];
 
@@ -49,11 +53,20 @@ const Audiology = () => {
             {audiologyServices.map((service, index) => (
               <div 
                 key={index} 
-                className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center"
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden"
               >
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-500 text-sm">{service.description}</p>
+                <div className="w-full h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
+                </div>
+                <div className="p-6 flex flex-col items-center text-center flex-grow">
+                  <div className="mb-4">{service.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                  <p className="text-gray-500 text-sm">{service.description}</p>
+                </div>
               </div>
             ))}
           </div>

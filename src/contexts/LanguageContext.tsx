@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
@@ -107,20 +106,40 @@ export const translations: Translations = {
     es: 'Pruebas Auditivas Profesionales',
     ca: 'Proves Auditives Professionals',
   },
+  hearingTestDesc: {
+    en: 'Comprehensive assessment of your hearing ability using state-of-the-art equipment.',
+    es: 'Evaluación completa de su capacidad auditiva utilizando equipos de última generación.',
+    ca: 'Avaluació completa de la seva capacitat auditiva utilitzant equips d\'última generació.',
+  },
   hearingAids: {
     en: 'Advanced Hearing Aids',
     es: 'Audífonos Avanzados',
     ca: 'Audiòfons Avançats',
+  },
+  hearingAidsDesc: {
+    en: 'High-quality hearing aids tailored to your specific needs and lifestyle.',
+    es: 'Audífonos de alta calidad adaptados a sus necesidades específicas y estilo de vida.',
+    ca: 'Audiòfons d\'alta qualitat adaptats a les seves necessitats específiques i estil de vida.',
   },
   tinnitusTreatment: {
     en: 'Tinnitus Treatment',
     es: 'Tratamiento de Acúfenos',
     ca: 'Tractament d\'Acúfens',
   },
+  tinnitusDesc: {
+    en: 'Specialized solutions to help manage and reduce tinnitus symptoms.',
+    es: 'Soluciones especializadas para ayudar a controlar y reducir los síntomas de acúfenos.',
+    ca: 'Solucions especialitzades per ajudar a controlar i reduir els símptomes d\'acúfens.',
+  },
   customEarProtection: {
     en: 'Custom Ear Protection',
     es: 'Protección Auditiva Personalizada',
     ca: 'Protecció Auditiva Personalitzada',
+  },
+  earProtectionDesc: {
+    en: 'Custom-made ear plugs designed for comfort and optimal noise protection.',
+    es: 'Tapones para los oídos hechos a medida diseñados para comodidad y protección óptima contra el ruido.',
+    ca: 'Taps per a les orelles fets a mida dissenyats per a comoditat i protecció òptima contra el soroll.',
   },
   scheduleConsultation: {
     en: 'Schedule a Consultation',
