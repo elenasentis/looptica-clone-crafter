@@ -86,6 +86,47 @@ export const translations: Translations = {
     es: 'Ver Todos los Productos',
     ca: 'Veure Tots els Productes',
   },
+  // Audiology Section
+  audiologyServices: {
+    en: 'Audiology Services',
+    es: 'Servicios de Audiología',
+    ca: 'Serveis d\'Audiologia',
+  },
+  hearingCare: {
+    en: 'Expert Hearing Care',
+    es: 'Cuidado Auditivo Experto',
+    ca: 'Cura Auditiva Experta',
+  },
+  audiologyDescription: {
+    en: 'Our certified audiologists provide comprehensive hearing assessments and personalized solutions to improve your hearing health.',
+    es: 'Nuestros audiólogos certificados ofrecen evaluaciones auditivas completas y soluciones personalizadas para mejorar su salud auditiva.',
+    ca: 'Els nostres audiòlegs certificats ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva.',
+  },
+  hearingTest: {
+    en: 'Professional Hearing Tests',
+    es: 'Pruebas Auditivas Profesionales',
+    ca: 'Proves Auditives Professionals',
+  },
+  hearingAids: {
+    en: 'Advanced Hearing Aids',
+    es: 'Audífonos Avanzados',
+    ca: 'Audiòfons Avançats',
+  },
+  tinnitusTreatment: {
+    en: 'Tinnitus Treatment',
+    es: 'Tratamiento de Acúfenos',
+    ca: 'Tractament d\'Acúfens',
+  },
+  customEarProtection: {
+    en: 'Custom Ear Protection',
+    es: 'Protección Auditiva Personalizada',
+    ca: 'Protecció Auditiva Personalitzada',
+  },
+  scheduleConsultation: {
+    en: 'Schedule a Consultation',
+    es: 'Programar una Consulta',
+    ca: 'Programar una Consulta',
+  },
   // Newsletter
   stayUpdated: {
     en: 'Stay Updated',
