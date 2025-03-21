@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -9,7 +8,6 @@ import Audiology from '@/components/home/Audiology';
 import Testimonials from '@/components/home/Testimonials';
 import Brands from '@/components/home/Brands';
 import StoreLocation from '@/components/home/StoreLocation';
-import Newsletter from '@/components/home/Newsletter';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 
 const Index = () => {
@@ -42,7 +40,6 @@ const Index = () => {
         <Testimonials />
         <Brands />
         <StoreLocation />
-        <Newsletter />
       </main>
       <Footer />
       <FloatingWhatsApp 
