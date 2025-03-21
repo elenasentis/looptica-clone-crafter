@@ -10,30 +10,30 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: 'Ray-Ban Aviator',
-      category: t('sunglasses'),
-      price: 179,
+      name: 'Ulleres Graduades',
+      category: 'Ulleres de vista',
+      price: 95,
       image: '/images/products/rayban-aviator.jpg',
     },
     {
       id: 2,
-      name: 'Etnia Barcelona',
-      category: t('eyeglasses'),
-      price: 189,
+      name: 'Lents de Contacte',
+      category: 'Contactologia',
+      price: 30,
       image: '/images/products/etnia-barcelona.jpg',
     },
     {
       id: 3,
-      name: 'Tom Ford',
-      category: t('eyeglasses'),
-      price: 249,
+      name: 'Ulleres de Sol',
+      category: 'Protecció solar',
+      price: 75,
       image: '/images/products/tom-ford.jpg',
     },
     {
       id: 4,
-      name: 'Polaroid',
-      category: t('sunglasses'),
-      price: 75,
+      name: 'Audiòfons',
+      category: 'Salut auditiva',
+      price: 495,
       image: '/images/products/polaroid.jpg',
     },
   ];
@@ -45,14 +45,14 @@ const Products = () => {
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
-              {t('ourCollection')}
+              Els Nostres Productes
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
-              {t('curatedDesigns')}
+              Solucions per a la teva salut visual i auditiva
             </h2>
             <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
             <p className="text-gray-600">
-              {t('productsDescription')}
+              A Looptica trobràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d'alta qualitat.
             </p>
           </div>
         </ScrollReveal>
@@ -79,14 +79,14 @@ const Products = () => {
                   <h3 className="font-medium text-lg mt-1 mb-2 text-gray-900">
                     {product.name}
                   </h3>
-                  <p className="font-bold text-[#009fe3]">${product.price}</p>
+                  <p className="font-bold text-[#009fe3]">Des de {product.price}€</p>
                   
                   <Button 
                     variant="outline"
                     className="w-full mt-4 transition-all border-[#009fe3] text-[#009fe3] group-hover:bg-[#009fe3] group-hover:text-white"
                   >
                     <ShoppingBag className="w-4 h-4 mr-2" />
-                    {t('addToCart')}
+                    Més informació
                   </Button>
                 </div>
               </div>
@@ -98,7 +98,7 @@ const Products = () => {
         <div className="text-center mt-12">
           <ScrollReveal>
             <Button variant="default" size="lg" className="bg-[#009fe3] hover:bg-[#0082b8]">
-              {t('viewAllProducts')}
+              Veure tots els productes
             </Button>
           </ScrollReveal>
         </div>

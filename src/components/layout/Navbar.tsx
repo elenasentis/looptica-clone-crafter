@@ -13,11 +13,11 @@ const Navbar = () => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { name: t('home'), path: '/' },
-    { name: t('products'), path: '#products' },
-    { name: t('audiology'), path: '#audiology' },
-    { name: t('about'), path: '#about' },
-    { name: t('contact'), path: '#contact' },
+    { name: 'Inici', path: '/' },
+    { name: 'Productes', path: '#products' },
+    { name: 'Audiologia', path: '#audiology' },
+    { name: 'Qui som', path: '#about' },
+    { name: 'Contacte', path: '#contact' },
   ];
 
   useEffect(() => {
@@ -80,9 +80,9 @@ const Navbar = () => {
 
         {/* Call to Action Buttons and Language Switcher */}
         <div className="hidden md:flex items-center space-x-4">
-          <a href="tel:+1234567890" className="flex items-center text-gray-700 hover:text-[#009fe3]">
+          <a href="tel:+34936750014" className="flex items-center text-gray-700 hover:text-[#009fe3]">
             <Phone className="h-4 w-4 mr-2" />
-            <span className="text-sm font-medium">123-456-7890</span>
+            <span className="text-sm font-medium">936 750 014</span>
           </a>
           <LanguageSwitcher />
           <Button 
@@ -91,7 +91,7 @@ const Navbar = () => {
             className="bg-[#009fe3] hover:bg-[#0082b8] text-white transition-all"
           >
             <ShoppingBag className="h-4 w-4 mr-2" />
-            {t('shopNow')}
+            Demana cita
           </Button>
         </div>
 
@@ -126,9 +126,9 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a href="tel:+1234567890" className="flex items-center text-gray-700 hover:text-[#009fe3]">
+            <a href="tel:+34936750014" className="flex items-center text-gray-700 hover:text-[#009fe3]">
               <Phone className="h-5 w-5 mr-2" />
-              <span className="text-lg font-medium">123-456-7890</span>
+              <span className="text-lg font-medium">936 750 014</span>
             </a>
             <LanguageSwitcher />
             <Button 
@@ -137,7 +137,7 @@ const Navbar = () => {
               onClick={closeMenu}
             >
               <ShoppingBag className="h-5 w-5 mr-2" />
-              {t('shopNow')}
+              Demana cita
             </Button>
           </div>
         </div>

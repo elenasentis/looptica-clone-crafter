@@ -26,7 +26,7 @@ export const translations: Translations = {
   about: {
     en: 'About',
     es: 'Sobre',
-    ca: 'Sobre',
+    ca: 'Qui som',
   },
   contact: {
     en: 'Contact',
@@ -34,46 +34,46 @@ export const translations: Translations = {
     ca: 'Contacte',
   },
   shopNow: {
-    en: 'Shop Now',
-    es: 'Comprar Ahora',
-    ca: 'Comprar Ara',
+    en: 'Book Appointment',
+    es: 'Pedir Cita',
+    ca: 'Demana Cita',
   },
   // Hero
   premiumEyewear: {
-    en: 'Premium Eyewear Collection',
-    es: 'Colección de Gafas Premium',
-    ca: 'Col·lecció d\'Ulleres Premium',
+    en: 'Looptica',
+    es: 'Looptica',
+    ca: 'Looptica',
   },
   heroTitle: {
-    en: 'See the world through clarity and style',
-    es: 'Ve el mundo con claridad y estilo',
-    ca: 'Mira el món amb claredat i estil',
+    en: 'Your visual and auditory solution',
+    es: 'Tu solución auditiva y visual',
+    ca: 'La teva solució auditiva i visual',
   },
   heroDescription: {
-    en: 'Discover our handcrafted eyewear, designed with precision and attention to detail. Each piece combines function with timeless elegance.',
-    es: 'Descubre nuestras gafas artesanales, diseñadas con precisión y atención al detalle. Cada pieza combina funcionalidad con elegancia atemporal.',
-    ca: 'Descobreix les nostres ulleres artesanals, dissenyades amb precisió i atenció al detall. Cada peça combina funcionalitat amb elegància atemporal.',
+    en: 'Comprehensive advice for your visual and auditory needs. Discover our services and products.',
+    es: 'Asesoramiento integral para tus necesidades visuales y auditivas. Descubre nuestros servicios y productos.',
+    ca: 'Assessorament integral per a les teves necessitats visuals i auditives. Descobreix els nostres serveis i productes.',
   },
   viewCollection: {
-    en: 'View Collection',
-    es: 'Ver Colección',
-    ca: 'Veure Col·lecció',
+    en: 'Our Services',
+    es: 'Nuestros Servicios',
+    ca: 'Els nostres serveis',
   },
   // Products
   ourCollection: {
-    en: 'Our Collection',
-    es: 'Nuestra Colección',
-    ca: 'La Nostra Col·lecció',
+    en: 'Our Products',
+    es: 'Nuestros Productos',
+    ca: 'Els Nostres Productes',
   },
   curatedDesigns: {
-    en: 'Curated designs for discerning eyes',
-    es: 'Diseños seleccionados para ojos exigentes',
-    ca: 'Dissenys seleccionats per a ulls exigents',
+    en: 'Solutions for your visual and auditory health',
+    es: 'Soluciones para tu salud visual y auditiva',
+    ca: 'Solucions per a la teva salut visual i auditiva',
   },
   productsDescription: {
-    en: 'Explore our collection of premium eyewear, crafted with the finest materials and meticulous attention to detail.',
-    es: 'Explora nuestra colección de gafas premium, elaboradas con los mejores materiales y una atención meticulosa a los detalles.',
-    ca: 'Explora la nostra col·lecció d\'ulleres premium, elaborades amb els millors materials i una atenció meticulosa als detalls.',
+    en: 'At Looptica you will find everything you need to take care of your vision and hearing with high quality products and advice.',
+    es: 'En Looptica encontrarás todo lo que necesitas para cuidar tu visión y audición con productos y asesoramiento de alta calidad.',
+    ca: 'A Looptica trobràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d\'alta qualitat.',
   },
   addToCart: {
     en: 'Add to Cart',
@@ -204,7 +204,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('ca');
 
   const t = (key: string): string => {
     if (translations[key]) {

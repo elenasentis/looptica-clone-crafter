@@ -11,42 +11,42 @@ const Audiology = () => {
   const audiologyServices = [
     {
       icon: <Ear className="w-10 h-10 text-[#009fe3]" />,
-      title: t('hearingTest'),
-      description: t('hearingTestDesc'),
+      title: "Revisions auditives",
+      description: "Avaluació professional i completa de la teva capacitat auditiva amb equipament d'última generació.",
       image: "/images/audiology/hearing-test.jpg"
     },
     {
       icon: <Headphones className="w-10 h-10 text-[#009fe3]" />,
-      title: t('hearingAids'),
-      description: t('hearingAidsDesc'),
+      title: "Audiòfons avançats",
+      description: "Audiòfons d'alta qualitat adaptats a les teves necessitats específiques i estil de vida.",
       image: "/images/audiology/hearing-aids.jpg"
     },
     {
       icon: <Volume2 className="w-10 h-10 text-[#009fe3]" />,
-      title: t('tinnitusTreatment'),
-      description: t('tinnitusDesc'),
+      title: "Tractament d'acúfens",
+      description: "Solucions especialitzades per ajudar a controlar i reduir els símptomes dels acúfens.",
       image: "/images/audiology/tinnitus.jpg"
     },
     {
       icon: <Shield className="w-10 h-10 text-[#009fe3]" />,
-      title: t('customEarProtection'),
-      description: t('earProtectionDesc'),
+      title: "Protecció auditiva",
+      description: "Taps per les orelles fets a mida dissenyats per a comoditat i protecció òptima contra el soroll.",
       image: "/images/audiology/ear-protection.jpg"
     }
   ];
 
   return (
-    <section className="py-16 bg-[#f7f7f7]">
+    <section className="py-16 bg-[#f7f7f7]" id="audiology">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
-              {t('audiologyServices')}
+              Serveis d'Audiologia
             </span>
-            <h2 className="text-3xl font-bold mb-3 text-gray-900">{t('hearingCare')}</h2>
+            <h2 className="text-3xl font-bold mb-3 text-gray-900">Cuidem la teva salut auditiva</h2>
             <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-gray-600">
-              {t('audiologyDescription')}
+              Els nostres audiòlegs certificats ofereixen avaluacions auditives completes i solucions personalitzades per millorar la teva salut auditiva.
             </p>
           </div>
         </ScrollReveal>
@@ -78,7 +78,7 @@ const Audiology = () => {
         <ScrollReveal delay={0.4}>
           <div className="text-center">
             <Button size="lg" className="bg-[#009fe3] hover:bg-[#0082b8] text-white">
-              {t('scheduleConsultation')}
+              Demana una consulta
             </Button>
           </div>
         </ScrollReveal>

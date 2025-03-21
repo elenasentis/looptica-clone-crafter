@@ -8,30 +8,30 @@ const Footer = () => {
 
   const footerLinks = [
     {
-      title: 'Eyewear',
+      title: 'Serveis Visuals',
       links: [
-        { name: 'Glasses', path: '#' },
-        { name: 'Sunglasses', path: '#' },
-        { name: 'Contact Lenses', path: '#' },
-        { name: 'Brands', path: '#' },
+        { name: 'Ulleres graduades', path: '#' },
+        { name: 'Ulleres de sol', path: '#' },
+        { name: 'Lents de contacte', path: '#' },
+        { name: 'Salut visual', path: '#' },
       ],
     },
     {
-      title: 'Audiology',
+      title: 'Serveis Auditius',
       links: [
-        { name: 'Hearing Tests', path: '#' },
-        { name: 'Hearing Aids', path: '#' },
-        { name: 'Tinnitus Treatment', path: '#' },
-        { name: 'Ear Protection', path: '#' },
+        { name: 'Revisions auditives', path: '#' },
+        { name: 'Audiòfons', path: '#' },
+        { name: 'Tractament d\'acúfens', path: '#' },
+        { name: 'Protecció auditiva', path: '#' },
       ],
     },
     {
-      title: 'Support',
+      title: 'Suport',
       links: [
-        { name: 'Contact Us', path: '#' },
-        { name: 'Book Appointment', path: '#' },
-        { name: 'FAQs', path: '#' },
-        { name: 'Find a Store', path: '#' },
+        { name: 'Contacte', path: '#' },
+        { name: 'Demana cita', path: '#' },
+        { name: 'Preguntes freqüents', path: '#' },
+        { name: 'On som', path: '#' },
       ],
     },
   ];
@@ -53,7 +53,7 @@ const Footer = () => {
                 Looptica
               </Link>
               <p className="text-gray-300 mb-6 max-w-xs">
-                Premium eyewear and professional audiology services for those who appreciate quality and care.
+                Solucions visuals i auditives d'alta qualitat per a aquells que valoren la professionalitat i el bon servei.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
@@ -90,15 +90,15 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-medium text-lg mb-6 text-white">Contact Us</h4>
+              <h4 className="font-medium text-lg mb-6 text-white">Contacta'ns</h4>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 text-[#009fe3] mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">123 Vision Street, Barcelona, Spain 08001</span>
+                  <span className="text-gray-300">Avinguda Francesc Macià, 40, 08226 Terrassa, Barcelona</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />
-                  <a href="tel:+123456789" className="text-gray-300 hover:text-[#009fe3]">+1 (234) 567-890</a>
+                  <a href="tel:+34936750014" className="text-gray-300 hover:text-[#009fe3]">936 750 014</a>
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />
@@ -114,15 +114,15 @@ const Footer = () => {
           <div className="pt-8 border-t border-gray-700">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm text-gray-400">
-                © {currentYear} Looptica. All rights reserved.
+                © {currentYear} Looptica. Tots els drets reservats.
               </p>
 
               <div className="flex space-x-6 text-sm text-gray-400">
                 <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
-                  Privacy Policy
+                  Política de Privacitat
                 </a>
                 <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
-                  Terms of Service
+                  Termes i Condicions
                 </a>
                 <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
                   Cookies

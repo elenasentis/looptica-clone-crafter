@@ -20,8 +20,8 @@ const Newsletter = () => {
     // Simulate API call
     setTimeout(() => {
       toast({
-        title: "Subscription successful!",
-        description: "Thanks for subscribing to our newsletter.",
+        title: "Subscripció completada!",
+        description: "Gràcies per subscriure't al nostre butlletí.",
       });
       setEmail('');
       setIsSubmitting(false);
@@ -36,14 +36,14 @@ const Newsletter = () => {
           <div className="md:w-1/2">
             <ScrollReveal origin="left">
               <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-4">
-                {t('stayUpdated')}
+                Mantén-te informat
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                {t('newsletter')}
+                Subscriu-te al nostre butlletí
               </h2>
               <div className="w-16 h-1 bg-[#009fe3] mb-6"></div>
               <p className="text-gray-600 mb-8">
-                {t('newsletterDesc')}
+                Uneix-te a la nostra comunitat i sigues el primer en conèixer les nostres novetats, ofertes exclusives i consells per la cura de la teva salut visual i auditiva.
               </p>
             </ScrollReveal>
           </div>
@@ -54,13 +54,13 @@ const Newsletter = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                    {t('emailAddress')}
+                    Adreça de correu
                   </label>
                   <div className="flex gap-2">
                     <Input
                       id="email"
                       type="email"
-                      placeholder="your@email.com"
+                      placeholder="el-teu@correu.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -72,12 +72,12 @@ const Newsletter = () => {
                       className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
                     >
                       <Mail className="w-4 h-4 mr-2" />
-                      {isSubmitting ? t('subscribing') : t('subscribe')}
+                      {isSubmitting ? "Subscrivint..." : "Subscriu-te"}
                     </Button>
                   </div>
                 </div>
                 <p className="text-xs text-gray-500">
-                  {t('privacyConsent')}
+                  En subscriure't, acceptes la nostra Política de Privacitat i consents rebre actualitzacions de la nostra empresa.
                 </p>
               </form>
             </ScrollReveal>

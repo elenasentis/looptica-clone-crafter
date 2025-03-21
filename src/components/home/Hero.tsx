@@ -14,19 +14,19 @@ const Hero = () => {
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-6">
-              {t('premiumEyewear')}
+              Looptica
             </span>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={300}>
             <h1 className="text-balance font-bold text-4xl sm:text-5xl lg:text-5xl leading-tight mb-6 text-gray-900">
-              {t('heroTitle')}
+              La teva solució auditiva i visual
             </h1>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={500}>
             <p className="text-gray-600 text-lg mb-8 max-w-xl text-balance">
-              {t('heroDescription')}
+              Assessorament integral per a les teves necessitats visuals i auditives. Descobreix els nostres serveis i productes.
             </p>
           </ScrollReveal>
           
@@ -36,7 +36,7 @@ const Hero = () => {
                 size="lg" 
                 className="group bg-[#009fe3] hover:bg-[#0082b8] text-white"
               >
-                {t('shopNow')}
+                Demana cita
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button 
@@ -44,7 +44,7 @@ const Hero = () => {
                 size="lg"
                 className="border-[#009fe3] text-[#009fe3] hover:bg-[#009fe3]/10"
               >
-                {t('viewCollection')}
+                Els nostres serveis
               </Button>
             </div>
           </ScrollReveal>
@@ -61,7 +61,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#009fe3]/10 to-[#009fe3]/5 mix-blend-overlay"></div>
               <img 
                 src="/images/hero-eyewear.jpg" 
-                alt="Premium eyewear"
+                alt="Looptica - Serveis auditius i visuals"
                 className="w-full h-full object-cover scale-up-center"
               />
             </div>
