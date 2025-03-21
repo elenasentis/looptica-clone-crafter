@@ -62,27 +62,7 @@ const Hero = () => {
           </ScrollReveal>
         </div>
         
-        {/* Hero Image */}
-        <div className="order-1 lg:order-2 relative">
-          <ScrollReveal 
-            origin="right"
-            delay={200}
-            className="relative z-10"
-          >
-            <div className="relative aspect-[4/3] max-w-xl mx-auto overflow-hidden rounded-lg shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2ecc71]/10 to-[#2ecc71]/5 mix-blend-overlay"></div>
-              <img 
-                src="/images/hero-eyewear.jpg" 
-                alt="Looptica - Serveis auditius i visuals"
-                className="w-full h-full object-cover scale-up-center"
-              />
-            </div>
-          </ScrollReveal>
-          
-          {/* Decorative elements */}
-          <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-[#e6faea] rounded-full blur-3xl"></div>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#e6faea] rounded-full blur-3xl"></div>
-        </div>
+
       </div>
     </section>
   );
