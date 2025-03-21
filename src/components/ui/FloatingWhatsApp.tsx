@@ -47,8 +47,8 @@ const FloatingWhatsApp = ({
       href={`https://wa.me/${phoneNumber}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#128C7E] hover:scale-110 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+      className={`fixed top-1/2 right-6 transform -translate-y-1/2 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#128C7E] hover:scale-110 ${
+        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'
       }`}
       aria-label={t('contactViaWhatsApp')}
       title={`${chatMessage} - ${accountName}`}
