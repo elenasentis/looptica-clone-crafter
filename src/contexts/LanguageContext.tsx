@@ -129,7 +129,7 @@ export const translations: Translations = {
   orthoKDesc: {
     en: 'Correct your vision with overnight contact lenses and forget about glasses during the day.',
     es: 'Corrige tu vision con lentes de contacto nocturnas y olvidate de las gafas durante el día.',
-    ca: 'Corregeix la teva visió amb lents de contacte nocturnes i oblida't de les ulleres durant el dia.',
+    ca: 'Corregeix la teva visió amb lents de contacte nocturnes i oblida\\\'t de les ulleres durant el dia.',
   },
   imageConsulting: {
     en: 'Image Consulting',
@@ -200,7 +200,7 @@ export const translations: Translations = {
   hearingAidsDesc: {
     en: 'High-quality hearing aids tailored to your specific needs and lifestyle.',
     es: 'Audífonos de alta calidad adaptados a sus necesidades específicas y estilo de vida.',
-    ca: 'Audiòfons d\'alta qualitat adaptats a les seves necessitats específiques i estil de vida.',
+    ca: 'Audiòfons d\'alta qualitat adaptados a les seves necessitats específiques i estil de vida.',
   },
   tinnitusTreatment: {
     en: 'Tinnitus Treatment',
@@ -309,4 +309,3 @@ export const useLanguage = (): LanguageContextType => {
   }
   return context;
 };
-
