@@ -19,7 +19,7 @@ const Hero = () => {
       }}
     >
       {/* Semi-transparent overlay */}
-      <div className="absolute inset-0 bg-white/90"></div>
+      <div className="absolute inset-0 bg-white/10"></div>
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
         {/* Hero Text and CTA */}
