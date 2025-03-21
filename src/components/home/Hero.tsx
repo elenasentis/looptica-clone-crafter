@@ -11,7 +11,7 @@ const Hero = () => {
     <section 
       className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden"
       style={{
-        backgroundImage: "url('/lovable-uploads/9dd69907-0360-4891-b4ce-43b47bee75b4.png')",
+        backgroundImage: "url('/images/DSC4608.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
