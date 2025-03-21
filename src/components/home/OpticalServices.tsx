@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Eye, Contact, Moon, User, Glasses, Sun } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const OpticalServices = () => {
   const { t } = useLanguage();
@@ -89,9 +89,13 @@ const OpticalServices = () => {
 
         <ScrollReveal delay={0.4}>
           <div className="text-center">
-            <Button size="lg" className="bg-[#009fe3] hover:bg-[#0082b8] text-white">
-              {t('scheduleConsult')}
-            </Button>
+            <GoogleCalendarButton 
+              size="lg" 
+              className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
+              subject="Vision Consultation at Looptica"
+              description="Appointment for optical services at Looptica"
+              durationMinutes={30}
+            />
           </div>
         </ScrollReveal>
       </div>

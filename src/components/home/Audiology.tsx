@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Headphones, Ear, Shield, Volume2 } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Audiology = () => {
   const { t } = useLanguage();
@@ -77,9 +77,13 @@ const Audiology = () => {
 
         <ScrollReveal delay={0.4}>
           <div className="text-center">
-            <Button size="lg" className="bg-[#009fe3] hover:bg-[#0082b8] text-white">
-              {t('scheduleConsultation')}
-            </Button>
+            <GoogleCalendarButton 
+              size="lg" 
+              className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
+              subject="Hearing Consultation at Looptica"
+              description="Appointment for hearing services at Looptica"
+              durationMinutes={45}
+            />
           </div>
         </ScrollReveal>
       </div>
