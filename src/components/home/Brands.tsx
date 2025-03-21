@@ -8,20 +8,30 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 
 const brands = [
-  { id: 1, name: "Ray-Ban", logo: "/images/brands/rayban.png" },
-  { id: 2, name: "Etnia Barcelona", logo: "/images/brands/etnia.png" },
-  { id: 3, name: "Tom Ford", logo: "/images/brands/tomford.png" },
-  { id: 4, name: "Oakley", logo: "/images/brands/oakley.png" },
-  { id: 5, name: "Persol", logo: "/images/brands/persol.png" },
-  { id: 6, name: "Prada", logo: "/images/brands/prada.png" },
-  { id: 7, name: "Moscot", logo: "/images/brands/moscot.png" },
-  { id: 8, name: "Garrett Leight", logo: "/images/brands/garrett.png" },
-  { id: 9, name: "Oliver Peoples", logo: "/images/brands/oliver.png" },
-  { id: 10, name: "Polaroid", logo: "/images/brands/polaroid.png" },
-  { id: 11, name: "Oticon", logo: "/images/brands/oticon.png" },
-  { id: 12, name: "Phonak", logo: "/images/brands/phonak.png" },
+  { 
+    id: 1, 
+    name: "Woodys", 
+    logo: "https://media.fashionnetwork.com/cdn-cgi/image/format=auto/m/2583/3ae4/1407/0f4e/27cf/6b25/58b4/62f7/f4b5/aaae/aaae.jpg" 
+  },
+  { 
+    id: 2, 
+    name: "Etnia Barcelona", 
+    logo: "https://blog.etniabarcelona.com/wp-content/uploads/2017/08/005.jpg" 
+  },
+  { 
+    id: 3, 
+    name: "Kaleos", 
+    logo: "https://kaleos.es/wp-content/uploads/2023/07/IMG_9782.jpg" 
+  },
+  { 
+    id: 4, 
+    name: "Xavier Garcia", 
+    logo: "https://xaviergarcia.com/wp-content/uploads/2023/10/KINDER_XAVIER_GARCIA_OCTUBRE_23_3391_WEB-1.jpg" 
+  },
 ];
 
 const Brands = () => {
@@ -50,16 +60,24 @@ const Brands = () => {
           >
             <CarouselContent>
               {brands.map((brand) => (
-                <CarouselItem key={brand.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="p-4 h-32 flex flex-col items-center justify-center">
-                    <div className="relative w-full h-20 filter grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
-                      <img
-                        src={brand.logo}
-                        alt={brand.name}
-                        className="max-h-full max-w-full object-contain"
-                      />
+                <CarouselItem key={brand.id} className="basis-full md:basis-1/2 lg:basis-1/3 p-4">
+                  <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                    <div className="group relative cursor-pointer">
+                      <AspectRatio ratio={4/3}>
+                        <img
+                          src={brand.logo}
+                          alt={brand.name}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </AspectRatio>
+                      
+                      {/* Overlay on hover */}
+                      <div className="absolute inset-0 bg-black/0 flex items-center justify-center transition-all duration-300 group-hover:bg-black/60">
+                        <h3 className="text-white font-semibold text-xl opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                          {brand.name}
+                        </h3>
+                      </div>
                     </div>
-                    <p className="mt-3 text-sm text-gray-500 text-center">{brand.name}</p>
                   </div>
                 </CarouselItem>
               ))}

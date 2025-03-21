@@ -18,8 +18,8 @@ const Hero = () => {
         position: 'relative'
       }}
     >
-      {/* Semi-transparent overlay */}
-      <div className="absolute inset-0 bg-white/60"></div>
+      {/* Semi-transparent overlay with reduced opacity */}
+      <div className="absolute inset-0 bg-white/40"></div>
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
         {/* Hero Text and CTA */}
@@ -61,8 +61,6 @@ const Hero = () => {
             </div>
           </ScrollReveal>
         </div>
-        
-
       </div>
     </section>
   );
