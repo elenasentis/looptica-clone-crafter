@@ -10,6 +10,7 @@ import Testimonials from '@/components/home/Testimonials';
 import Brands from '@/components/home/Brands';
 import StoreLocation from '@/components/home/StoreLocation';
 import Newsletter from '@/components/home/Newsletter';
+import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 
 const Index = () => {
   useEffect(() => {
@@ -31,6 +32,7 @@ const Index = () => {
         <Newsletter />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };
