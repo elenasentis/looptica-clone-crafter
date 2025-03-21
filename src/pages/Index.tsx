@@ -20,9 +20,15 @@ const Index = () => {
     // Log to check if component is mounting correctly
     console.log("Index component mounted");
     
-    // Debug log to check if the background image is being applied
+    // Comprehensive debug log for background image
     const computedStyle = window.getComputedStyle(document.body);
-    console.log("Background image:", computedStyle.backgroundImage);
+    console.log("Background image URL:", computedStyle.backgroundImage);
+    console.log("Background size:", computedStyle.backgroundSize);
+    console.log("Background position:", computedStyle.backgroundPosition);
+    
+    // Force refresh background (sometimes helps with loading issues)
+    document.body.style.backgroundImage = "url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png')";
+    console.log("Forced background refresh applied");
   }, []);
 
   return (

@@ -6,6 +6,8 @@
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 /* Ensure background can be applied properly */
@@ -16,9 +18,9 @@ body, html {
   padding: 0;
 }
 
-/* Direct background application without classes */
+/* Direct background application */
 body {
-  background-image: url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png') !important;
+  background-image: url('/lovable-uploads/e0c7ad7a-99cb-4d9a-adea-94a645ef2f5e.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -26,7 +28,7 @@ body {
 }
 
 /* Overlay for the entire body */
-body:before {
+body::before {
   content: '';
   position: fixed;
   top: 0;
@@ -38,12 +40,7 @@ body:before {
   pointer-events: none;
 }
 
-/* Ensure content is above the overlay */
-#root {
-  position: relative;
-  z-index: 1;
-}
-
+/* Keep existing code for logo and animations */
 .logo {
   height: 6em;
   padding: 1.5em;
