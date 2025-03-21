@@ -23,14 +23,14 @@ const StoreLocation = () => {
           <ScrollReveal origin="left" delay={200} className="lg:col-span-2 rounded-lg overflow-hidden shadow-lg">
             <div className="aspect-video w-full h-full">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!4v1723369518123!6m8!1m7!1sCAoSLEFGMVFpcFAtQ1REakl6M09Vd2ZtWThaak9ncEQ3Sk54UXdXVXU3dF9nNzRk!2m2!1d41.4040919!2d2.2016317!3f219.87!4f-8.3!5f0.7820865974627469" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.7043493814055!2d2.1989939000000004!3d41.40422449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a31c476ca379%3A0x1c0c45a4e82daa8!2sLooptica!5e0!3m2!1sen!2ses!4v1718567012345!5m2!1sen!2ses" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Looptica 3D Tour"
+                title="Looptica Store Location"
                 className="w-full h-full"
               ></iframe>
             </div>
