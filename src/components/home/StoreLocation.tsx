@@ -23,7 +23,7 @@ const StoreLocation = () => {
           <ScrollReveal origin="left" delay={200} className="lg:col-span-2 rounded-lg overflow-hidden shadow-lg">
             <div className="aspect-video w-full h-full">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!4v1721044880351!6m8!1m7!1sCAoSLEFGMVFpcFBRNEV0LWpCTWJGLXlfS0lmOU9IblRKdENfTlB5UVE1NnRiZkZC!2m2!1d41.4041055!2d2.2016358!3f5.56!4f0!5f0.7820865974627469" 
+                src="https://www.google.com/maps/embed?pb=!4v1723369518123!6m8!1m7!1sCAoSLEFGMVFpcFAtQ1REakl6M09Vd2ZtWThaak9ncEQ3Sk54UXdXVXU3dF9nNzRk!2m2!1d41.4040919!2d2.2016317!3f219.87!4f-8.3!5f0.7820865974627469" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
