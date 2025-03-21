@@ -85,6 +85,87 @@ export const translations: Translations = {
     es: 'Ver Todos los Productos',
     ca: 'Veure Tots els Productes',
   },
+  // Optical Services Section
+  opticalServices: {
+    en: 'Optical Services',
+    es: 'Servicios Ópticos',
+    ca: 'Serveis Òptics',
+  },
+  visualCare: {
+    en: 'Visual Health Care',
+    es: 'Cuidamos tu salud visual',
+    ca: 'Cuidem la teva salut visual',
+  },
+  opticalDescription: {
+    en: 'Our certified opticians provide comprehensive visual assessments and personalized solutions to improve your visual health.',
+    es: 'Nuestros ópticos certificados ofrecen servicios completos y soluciones personalizadas para mejorar tu salud visual.',
+    ca: 'Els nostres òptics certificats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
+  },
+  visualHealth: {
+    en: 'Visual Health',
+    es: 'Salud Visual',
+    ca: 'Salut Visual',
+  },
+  visualHealthDesc: {
+    en: 'Optometric visual examination, retinoscopy, tired eyesight, dry eye, etc.',
+    es: 'Exámen visual optométrico, retinoscopia, vista cansada, ojo seco, etc.',
+    ca: 'Examen visual optomètric, retinoscòpia, vista cansada, ull sec, etc.',
+  },
+  contactLenses: {
+    en: 'Contact Lenses',
+    es: 'Lentes de Contacto',
+    ca: 'Lents de Contacte',
+  },
+  contactLensesDesc: {
+    en: 'Adaptation of contact lenses for myopia, hyperopia, astigmatism, progressive and ortho-k.',
+    es: 'Adaptación de lentes de contacto para miopia, hipermetropia, astigmatismo, progresivas y orto-k.',
+    ca: 'Adaptació de lents de contacte per miopia, hipermetropia, astigmatisme, progressives i orto-k.',
+  },
+  orthoK: {
+    en: 'Ortho-K',
+    es: 'Orto-K',
+    ca: 'Orto-K',
+  },
+  orthoKDesc: {
+    en: 'Correct your vision with overnight contact lenses and forget about glasses during the day.',
+    es: 'Corrige tu vision con lentes de contacto nocturnas y olvidate de las gafas durante el día.',
+    ca: 'Corregeix la teva visió amb lents de contacte nocturnes i oblida't de les ulleres durant el dia.',
+  },
+  imageConsulting: {
+    en: 'Image Consulting',
+    es: 'Asesoramiento de Imagen',
+    ca: 'Assessorament d\'Imatge',
+  },
+  imageConsultingDesc: {
+    en: 'We offer a selection of stylish frames designed in Barcelona.',
+    es: 'Te ofrecemos una selección de monturas con estilo diseñadas en Barcelona.',
+    ca: 'T\'oferim una selecció de muntures amb estil dissenyades a Barcelona.',
+  },
+  lensConsulting: {
+    en: 'Lens Consulting',
+    es: 'Asesoramiento de Lentes',
+    ca: 'Assessorament de Lents',
+  },
+  lensConsultingDesc: {
+    en: 'We find the best option for your vision problem with the latest generation lenses from the best brands.',
+    es: 'Buscamos la mejor opción para tu problema de visión con lentes de última generación de las mejores marcas.',
+    ca: 'Busquem la millor opció pel teu problema de visió amb lents d\'última generació de les millors marques.',
+  },
+  sunglassesService: {
+    en: 'Sunglasses',
+    es: 'Gafas de Sol',
+    ca: 'Ulleres de Sol',
+  },
+  sunglassesServiceDesc: {
+    en: 'Exclusive sunglasses that convey personality from local designers.',
+    es: 'Gafas de sol exclusivas que transmiten personalidad de diseñadores locales.',
+    ca: 'Ulleres de sol exclusives que transmeten personalitat de dissenyadors locals.',
+  },
+  scheduleConsult: {
+    en: 'Schedule a Consultation',
+    es: 'Solicita una consulta',
+    ca: 'Sol·licita una consulta',
+  },
   // Audiology Section
   audiologyServices: {
     en: 'Audiology Services',
@@ -228,3 +309,4 @@ export const useLanguage = (): LanguageContextType => {
   }
   return context;
 };
+
