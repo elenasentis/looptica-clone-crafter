@@ -6,6 +6,9 @@ import Hero from '@/components/home/Hero';
 import Products from '@/components/home/Products';
 import OpticalServices from '@/components/home/OpticalServices';
 import Audiology from '@/components/home/Audiology';
+import Testimonials from '@/components/home/Testimonials';
+import Brands from '@/components/home/Brands';
+import StoreLocation from '@/components/home/StoreLocation';
 import Newsletter from '@/components/home/Newsletter';
 
 const Index = () => {
@@ -22,6 +25,9 @@ const Index = () => {
         <Products />
         <OpticalServices />
         <Audiology />
+        <Testimonials />
+        <Brands />
+        <StoreLocation />
         <Newsletter />
       </main>
       <Footer />

@@ -200,7 +200,7 @@ export const translations: Translations = {
   hearingAidsDesc: {
     en: 'High-quality hearing aids tailored to your specific needs and lifestyle.',
     es: 'Audífonos de alta calidad adaptados a sus necesidades específicas y estilo de vida.',
-    ca: 'Audiòfons d\'alta qualitat adaptats a les seves necessitats específiques i estil de vida.',
+    ca: 'Audiòfons d\'alta qualitat adaptados a les seves necessitats específiques i estil de vida.',
   },
   tinnitusTreatment: {
     en: 'Tinnitus Treatment',
@@ -226,6 +226,94 @@ export const translations: Translations = {
     en: 'Schedule a Consultation',
     es: 'Programar una Consulta',
     ca: 'Programar una Consulta',
+  },
+  // Testimonials Section
+  customerReviews: {
+    en: 'Customer Reviews',
+    es: 'Opiniones de Clientes',
+    ca: 'Opinions de Clients',
+  },
+  whatCustomersSay: {
+    en: 'What Our Customers Say',
+    es: 'Lo Que Dicen Nuestros Clientes',
+    ca: 'El Que Diuen Els Nostres Clients',
+  },
+  reviewsDescription: {
+    en: 'Read what our customers have to say about their experiences with our eyewear and services.',
+    es: 'Lea lo que nuestros clientes tienen que decir sobre sus experiencias con nuestras gafas y servicios.',
+    ca: 'Llegiu el que els nostres clients tenen a dir sobre les seves experiències amb les nostres ulleres i serveis.',
+  },
+  viewAllReviews: {
+    en: 'View All Reviews on Google',
+    es: 'Ver Todas las Opiniones en Google',
+    ca: 'Veure Totes les Opinions a Google',
+  },
+  // Brands Section
+  topBrands: {
+    en: 'Top Brands',
+    es: 'Mejores Marcas',
+    ca: 'Millors Marques',
+  },
+  ourBrands: {
+    en: 'Our Featured Brands',
+    es: 'Nuestras Marcas Destacadas',
+    ca: 'Les Nostres Marques Destacades',
+  },
+  brandsDescription: {
+    en: 'We partner with the world\'s leading eyewear and hearing aid brands to provide you with the best quality products.',
+    es: 'Nos asociamos con las principales marcas de gafas y audífonos del mundo para ofrecerle productos de la mejor calidad.',
+    ca: 'Ens associem amb les principals marques d\'ulleres i audiòfons del món per oferir-vos productes de la millor qualitat.',
+  },
+  // Store Location Section
+  findUs: {
+    en: 'Find Us',
+    es: 'Encuéntranos',
+    ca: 'Troba\'ns',
+  },
+  visitOurStore: {
+    en: 'Visit Our Store',
+    es: 'Visita Nuestra Tienda',
+    ca: 'Visita La Nostra Botiga',
+  },
+  storeLocationDesc: {
+    en: 'Come visit our store in Barcelona for a personalized consultation with our experts.',
+    es: 'Venga a visitar nuestra tienda en Barcelona para una consulta personalizada con nuestros expertos.',
+    ca: 'Vine a visitar la nostra botiga a Barcelona per a una consulta personalitzada amb els nostres experts.',
+  },
+  address: {
+    en: 'Address',
+    es: 'Dirección',
+    ca: 'Adreça',
+  },
+  openingHours: {
+    en: 'Opening Hours',
+    es: 'Horario de Apertura',
+    ca: 'Horari d\'Obertura',
+  },
+  mondayFriday: {
+    en: 'Monday-Friday',
+    es: 'Lunes-Viernes',
+    ca: 'Dilluns-Divendres',
+  },
+  saturday: {
+    en: 'Saturday',
+    es: 'Sábado',
+    ca: 'Dissabte',
+  },
+  sunday: {
+    en: 'Sunday',
+    es: 'Domingo',
+    ca: 'Diumenge',
+  },
+  closed: {
+    en: 'Closed',
+    es: 'Cerrado',
+    ca: 'Tancat',
+  },
+  getDirections: {
+    en: 'Get Directions',
+    es: 'Obtener Indicaciones',
+    ca: 'Obtenir Indicacions',
   },
   // Newsletter
   stayUpdated: {
