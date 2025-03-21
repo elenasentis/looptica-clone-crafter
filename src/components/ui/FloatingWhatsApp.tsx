@@ -3,7 +3,21 @@ import { useState, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const FloatingWhatsApp = () => {
+interface FloatingWhatsAppProps {
+  phoneNumber: string;
+  accountName: string;
+  statusMessage: string;
+  chatMessage: string;
+  placeholder: string;
+}
+
+const FloatingWhatsApp = ({
+  phoneNumber,
+  accountName,
+  statusMessage,
+  chatMessage,
+  placeholder
+}: FloatingWhatsAppProps) => {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -30,13 +44,14 @@ const FloatingWhatsApp = () => {
   
   return (
     <a
-      href="https://wa.me/34699594064"
+      href={`https://wa.me/${phoneNumber}`}
       target="_blank"
       rel="noopener noreferrer"
       className={`fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-[#128C7E] hover:scale-110 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
       aria-label={t('contactViaWhatsApp')}
+      title={`${chatMessage} - ${accountName}`}
     >
       <MessageCircle className="h-6 w-6" />
     </a>
