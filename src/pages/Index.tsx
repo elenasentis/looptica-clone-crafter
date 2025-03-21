@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -23,10 +24,6 @@ const Index = () => {
     console.log("Background image URL:", computedStyle.backgroundImage);
     console.log("Background size:", computedStyle.backgroundSize);
     console.log("Background position:", computedStyle.backgroundPosition);
-    
-    // Force refresh background with the new image
-    document.body.style.backgroundImage = "url('/lovable-uploads/1dc38382-e9ef-4392-bc74-aeee7b9a5bc2.png')";
-    console.log("Forced background refresh applied with new image");
   }, []);
 
   return (
