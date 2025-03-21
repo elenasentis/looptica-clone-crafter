@@ -67,7 +67,7 @@ const GoogleCalendarButton = ({
   return (
     <Button 
       onClick={createGoogleCalendarLink}
-      className={className}
+      className={`bg-[#009fe3] hover:bg-[#0082b8] text-white transition-colors ${className}`}
       {...props}
     >
       <CalendarIcon className="mr-2 h-4 w-4" />
