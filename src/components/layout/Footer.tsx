@@ -107,11 +107,15 @@ const Footer = () => {
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 text-[#009fe3] mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-300">Avinguda Francesc Macià, 40, 08226 Terrassa, Barcelona</span>
+                  <span className="text-gray-300">Rambla del Poblenou, 48, 08005 Barcelona</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />
-                  <a href="tel:+34936750014" className="text-gray-300 hover:text-[#009fe3]">936 750 014</a>
+                  <a href="tel:+34933009064" className="text-gray-300 hover:text-[#009fe3]">933 00 90 64</a>
+                </li>
+                <li className="flex items-center">
+                  <Phone className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />
+                  <a href="tel:+34699594064" className="text-gray-300 hover:text-[#009fe3]">699 59 40 64</a>
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />

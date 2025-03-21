@@ -68,7 +68,8 @@ const StoreLocation = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">{t('contact')}</h4>
                   <p className="text-gray-600">
-                    Tel: <a href="tel:+34699594064" className="hover:text-[#009fe3]">+34 699 59 40 64</a><br />
+                    Tel: <a href="tel:+34933009064" className="hover:text-[#009fe3]">+34 933 00 90 64</a><br />
+                    Móvil: <a href="tel:+34699594064" className="hover:text-[#009fe3]">+34 699 59 40 64</a><br />
                     Email: <a href="mailto:info@looptica.com" className="hover:text-[#009fe3]">info@looptica.com</a>
                   </p>
                 </div>
