@@ -16,6 +16,9 @@ const Index = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+    
+    // Log to check if component is mounting correctly
+    console.log("Index component mounted");
   }, []);
 
   return (
