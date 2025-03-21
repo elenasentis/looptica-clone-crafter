@@ -1,39 +1,42 @@
 
 import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-
-const products = [
-  {
-    id: 1,
-    name: 'Clarity Frame',
-    category: 'Eyeglasses',
-    price: 149,
-    image: 'https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    id: 2,
-    name: 'Solar Shield',
-    category: 'Sunglasses',
-    price: 179,
-    image: 'https://images.unsplash.com/photo-1508296695146-257a814070b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    id: 3,
-    name: 'Metro Vision',
-    category: 'Eyeglasses',
-    price: 129,
-    image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    id: 4,
-    name: 'Coastal Shade',
-    category: 'Sunglasses',
-    price: 199,
-    image: 'https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Products = () => {
+  const { t } = useLanguage();
+
+  const products = [
+    {
+      id: 1,
+      name: 'Clarity Frame',
+      category: t('eyeglasses'),
+      price: 149,
+      image: 'https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      id: 2,
+      name: 'Solar Shield',
+      category: t('sunglasses'),
+      price: 179,
+      image: 'https://images.unsplash.com/photo-1508296695146-257a814070b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      id: 3,
+      name: 'Metro Vision',
+      category: t('eyeglasses'),
+      price: 129,
+      image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      id: 4,
+      name: 'Coastal Shade',
+      category: t('sunglasses'),
+      price: 199,
+      image: 'https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+    },
+  ];
+
   return (
     <section className="py-20 px-6 lg:px-12 bg-secondary/50" id="products">
       <div className="max-w-7xl mx-auto">
@@ -41,13 +44,13 @@ const Products = () => {
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-6">
-              Our Collection
+              {t('ourCollection')}
             </span>
             <h2 className="text-4xl font-bold mb-6">
-              Curated designs for discerning eyes
+              {t('curatedDesigns')}
             </h2>
             <p className="text-muted-foreground">
-              Explore our collection of premium eyewear, crafted with the finest materials and meticulous attention to detail.
+              {t('productsDescription')}
             </p>
           </div>
         </ScrollReveal>
@@ -80,7 +83,7 @@ const Products = () => {
                     variant="outline"
                     className="w-full mt-4 transition-all group-hover:bg-primary group-hover:text-primary-foreground"
                   >
-                    Add to Cart
+                    {t('addToCart')}
                   </Button>
                 </div>
               </div>
@@ -92,7 +95,7 @@ const Products = () => {
         <div className="text-center mt-12">
           <ScrollReveal>
             <Button variant="default" size="lg">
-              View All Products
+              {t('viewAllProducts')}
             </Button>
           </ScrollReveal>
         </div>

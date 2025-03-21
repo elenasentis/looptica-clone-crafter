@@ -2,8 +2,11 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="min-h-screen flex items-center pt-24 pb-20 px-6 lg:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
@@ -11,20 +14,19 @@ const Hero = () => {
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-6">
-              Premium Eyewear Collection
+              {t('premiumEyewear')}
             </span>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={300}>
             <h1 className="text-balance font-bold leading-tight mb-6">
-              See the world through clarity and style
+              {t('heroTitle')}
             </h1>
           </ScrollReveal>
           
           <ScrollReveal origin="left" delay={500}>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl text-balance">
-              Discover our handcrafted eyewear, designed with precision and attention to detail.
-              Each piece combines function with timeless elegance.
+              {t('heroDescription')}
             </p>
           </ScrollReveal>
           
@@ -34,14 +36,14 @@ const Hero = () => {
                 size="lg" 
                 className="group"
               >
-                Shop Now
+                {t('shopNow')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
               >
-                View Collection
+                {t('viewCollection')}
               </Button>
             </div>
           </ScrollReveal>

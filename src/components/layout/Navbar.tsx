@@ -4,16 +4,19 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '#products' },
-    { name: 'About', path: '#about' },
-    { name: 'Contact', path: '#contact' },
+    { name: t('home'), path: '/' },
+    { name: t('products'), path: '#products' },
+    { name: t('about'), path: '#about' },
+    { name: t('contact'), path: '#contact' },
   ];
 
   useEffect(() => {
@@ -74,14 +77,17 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Call to Action Button */}
-        <Button 
-          variant="default" 
-          size="sm" 
-          className="hidden md:block hover:scale-105 transition-all"
-        >
-          Shop Now
-        </Button>
+        {/* Call to Action Button and Language Switcher */}
+        <div className="hidden md:flex items-center space-x-4">
+          <LanguageSwitcher />
+          <Button 
+            variant="default" 
+            size="sm" 
+            className="hover:scale-105 transition-all"
+          >
+            {t('shopNow')}
+          </Button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -114,12 +120,13 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            <LanguageSwitcher />
             <Button 
               variant="default" 
               className="mt-4 w-full max-w-[200px] hover:scale-105 transition-all"
               onClick={closeMenu}
             >
-              Shop Now
+              {t('shopNow')}
             </Button>
           </div>
         </div>

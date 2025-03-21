@@ -4,11 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,13 +35,13 @@ const Newsletter = () => {
           <div className="md:w-1/2">
             <ScrollReveal origin="left">
               <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary mb-6">
-                Stay Updated
+                {t('stayUpdated')}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Subscribe to our newsletter
+                {t('newsletter')}
               </h2>
               <p className="text-muted-foreground mb-8">
-                Join our community and be the first to know about new collections, exclusive offers, and eyewear trends.
+                {t('newsletterDesc')}
               </p>
             </ScrollReveal>
           </div>
@@ -50,7 +52,7 @@ const Newsletter = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
-                    Email Address
+                    {t('emailAddress')}
                   </label>
                   <div className="flex gap-2">
                     <Input
@@ -66,12 +68,12 @@ const Newsletter = () => {
                       type="submit"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Subscribing..." : "Subscribe"}
+                      {isSubmitting ? t('subscribing') : t('subscribe')}
                     </Button>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+                  {t('privacyConsent')}
                 </p>
               </form>
             </ScrollReveal>
