@@ -19,6 +19,10 @@ const Index = () => {
     
     // Log to check if component is mounting correctly
     console.log("Index component mounted");
+    
+    // Debug log to check if the background image is being applied
+    const computedStyle = window.getComputedStyle(document.body);
+    console.log("Background image:", computedStyle.backgroundImage);
   }, []);
 
   return (
