@@ -1,31 +1,39 @@
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import Index from './pages/Index';
+import NotFound from './pages/NotFound';
+import { Toaster } from './components/ui/sonner';
+import { LanguageProvider } from './contexts/LanguageContext';
+import { FloatingWhatsApp } from './components/ui';
+import CookieConsent from './components/CookieConsent';
+import './App.css';
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+function App() {
+  
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <LanguageProvider>
+  return (
+    <LanguageProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
         <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </LanguageProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        <FloatingWhatsApp 
+          phoneNumber="34699594064"
+          accountName="Looptica"
+          statusMessage="Typically replies within 1 hour"
+          chatMessage="Hola! 👋🏼 How can we help you?"
+          placeholder="Type a message..."
+        />
+        <CookieConsent />
+      </Router>
+    </LanguageProvider>
+  );
+}
 
 export default App;
