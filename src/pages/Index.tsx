@@ -15,7 +15,15 @@ const Index = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+    
+    // Log to check if component is mounting correctly
     console.log("Index component mounted");
+    
+    // Comprehensive debug log for background image
+    const computedStyle = window.getComputedStyle(document.body);
+    console.log("Background image URL:", computedStyle.backgroundImage);
+    console.log("Background size:", computedStyle.backgroundSize);
+    console.log("Background position:", computedStyle.backgroundPosition);
   }, []);
 
   return (
