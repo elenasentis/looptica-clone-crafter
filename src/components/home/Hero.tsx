@@ -25,7 +25,7 @@ const Hero = () => {
         {/* Hero Text and CTA */}
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
-            <div className="glass px-8 py-10 rounded-xl shadow-md max-w-xl -mr-8">
+            <div className="glass px-8 py-10 rounded-xl shadow-md max-w-xl -mr-12">
               <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#2ecc71]/10 text-[#2ecc71] mb-6">
                 {t('premiumEyewear')}
               </span>
