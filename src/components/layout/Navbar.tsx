@@ -54,7 +54,9 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed w-full top-0 left-0 z-50 transition-all duration-300 px-6 lg:px-12",
-        scrolled ? "py-2 bg-white shadow-md" : "py-4 bg-transparent"
+        scrolled 
+          ? "py-2 bg-white shadow-md" 
+          : "py-4 glass shadow-sm text-gray-900"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -73,7 +75,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.path}
-              className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-700"
+              className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
             >
               {link.name}
             </a>
@@ -82,7 +84,7 @@ const Navbar = () => {
 
         {/* Call to Action Buttons and Language Switcher */}
         <div className="hidden md:flex items-center space-x-4">
-          <a href="tel:+34933009064" className="flex items-center text-gray-700 hover:text-[#009fe3]">
+          <a href="tel:+34933009064" className="flex items-center text-gray-900 hover:text-[#009fe3] drop-shadow-sm">
             <Phone className="h-4 w-4 mr-2" />
             <span className="text-sm font-medium">933 00 90 64</span>
           </a>
@@ -99,7 +101,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden relative z-50 p-2"
+          className="md:hidden relative z-50 p-2 text-gray-900"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
