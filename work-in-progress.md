@@ -79,4 +79,6 @@
 - All buttons across the site now follow the same design pattern
 - All pages maintain consistent language based on the selected language
 - All navigation links properly direct to their respective pages
-
+- Fixed hearing aid image path in Audiology component and Products component
+- Made button text consistent by using the same translation keys
+- Added View Details buttons to Audiology cards

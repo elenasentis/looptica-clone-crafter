@@ -3,12 +3,15 @@ import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Ear, FileText, Activity, BarChart3 } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HearingTest = () => {
+  const { t } = useLanguage();
+  
   return (
     <ServiceLayout
-      title="Comprehensive Hearing Tests"
-      subtitle="Professional evaluation of your hearing health"
+      title={t('hearingTest')}
+      subtitle={t('hearingTestDesc')}
       image="/lovable-uploads/c909c154-63bb-4632-af13-9e1825237aaa.png"
       appointmentSubject="Hearing Test at Looptica"
     >

@@ -3,13 +3,16 @@ import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Headphones, Bluetooth, Battery, Wifi } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HearingAids = () => {
+  const { t } = useLanguage();
+  
   return (
     <ServiceLayout
-      title="Advanced Hearing Aid Solutions"
-      subtitle="Reconnect with the sounds that matter"
-      image="/lovable-uploads/3a52f73b-8344-4d16-b833-cee60b3449b6.png"
+      title={t('hearingAids')}
+      subtitle={t('hearingAidsDesc')}
+      image="/lovable-uploads/ebf49fd8-a596-41fb-a71e-097837111d0d.png"
       appointmentSubject="Hearing Aid Consultation at Looptica"
     >
       <ScrollReveal>

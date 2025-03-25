@@ -3,12 +3,15 @@ import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Shield, Music, Droplet, Headphones } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const EarProtection = () => {
+  const { t } = useLanguage();
+  
   return (
     <ServiceLayout
-      title="Custom Ear Protection Solutions"
-      subtitle="Preserve your hearing without sacrificing sound quality"
+      title={t('customEarProtection')}
+      subtitle={t('earProtectionDesc')}
       image="/lovable-uploads/58f8dffc-9095-4ff8-a7d3-4aa204a74b55.png"
       appointmentSubject="Custom Ear Protection Consultation at Looptica"
     >

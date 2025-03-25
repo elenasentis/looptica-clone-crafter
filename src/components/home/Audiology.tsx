@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const Audiology = () => {
   const { t } = useLanguage();
@@ -21,7 +22,7 @@ const Audiology = () => {
       icon: <Headphones className="w-10 h-10 text-[#2ecc71]" />,
       title: t('hearingAids'),
       description: t('hearingAidsDesc'),
-      image: "/lovable-uploads/3a52f73b-8344-4d16-b833-cee60b3449b6.png",
+      image: "/lovable-uploads/ebf49fd8-a596-41fb-a71e-097837111d0d.png",
       link: "/services/hearing-aids"
     },
     {
@@ -59,22 +60,25 @@ const Audiology = () => {
         <ScrollReveal delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {audiologyServices.map((service, index) => (
-              <Link to={service.link} key={index} className="block">
-                <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden h-full">
-                  <div className="w-full h-48 overflow-hidden">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col items-center text-center flex-grow">
-                    <div className="mb-4">{service.icon}</div>
-                    <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600 text-sm">{service.description}</p>
-                  </div>
+              <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden h-full">
+                <Link to={service.link} className="w-full h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
+                </Link>
+                <div className="p-6 flex flex-col items-center text-center flex-grow">
+                  <div className="mb-4">{service.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                  <Link to={service.link} className="mt-auto">
+                    <Button variant="outline" size="sm" className="border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10">
+                      {t('viewDetails')}
+                    </Button>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </ScrollReveal>

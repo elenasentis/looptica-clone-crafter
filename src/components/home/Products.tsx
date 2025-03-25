@@ -20,7 +20,7 @@ const Products = () => {
     {
       id: 2,
       name: t('contactLenses'),
-      category: 'Contactologia',
+      category: t('contactLenses'),
       price: 30,
       image: '/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png',
       link: '/services/contact-lenses'
@@ -36,7 +36,7 @@ const Products = () => {
     {
       id: 4,
       name: t('hearingAids'),
-      category: 'Salut auditiva',
+      category: t('audiologyServices'),
       price: 495,
       image: '/lovable-uploads/ebf49fd8-a596-41fb-a71e-097837111d0d.png',
       link: '/services/hearing-aids'
@@ -91,7 +91,7 @@ const Products = () => {
                     className="w-full mt-4 transition-all border-[#2ecc71] text-[#2ecc71] group-hover:bg-[#2ecc71] group-hover:text-white"
                   >
                     <ShoppingBag className="w-4 h-4 mr-2" />
-                    {t('addToCart')}
+                    {t('viewDetails')}
                   </Button>
                 </div>
               </Link>
