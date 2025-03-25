@@ -230,7 +230,7 @@ const HearingAids = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/lovable-uploads/ebf49fd8-a596-41fb-a71e-097837111d0d.png"
+      image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
       appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
