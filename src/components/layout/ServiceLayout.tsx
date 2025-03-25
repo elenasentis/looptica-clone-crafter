@@ -22,7 +22,26 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   image,
   appointmentSubject = 'Looptica Consultation',
 }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // Translations for WhatsApp component
+  const whatsappText = {
+    statusMessage: {
+      en: "Typically replies within 1 hour",
+      es: "Normalmente responde en 1 hora",
+      ca: "Normalment respon en 1 hora",
+    },
+    chatMessage: {
+      en: "Hola! 👋🏼 How can we help you?",
+      es: "Hola! 👋🏼 ¿Cómo podemos ayudarte?",
+      ca: "Hola! 👋🏼 Com podem ajudar-te?",
+    },
+    placeholder: {
+      en: "Type a message...",
+      es: "Escribe un mensaje...",
+      ca: "Escriu un missatge...",
+    },
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -72,9 +91,9 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
       <FloatingWhatsApp 
         phoneNumber="34699594064"
         accountName="Looptica"
-        statusMessage="Typically replies within 1 hour"
-        chatMessage="Hola! 👋🏼 How can we help you?"
-        placeholder="Type a message..."
+        statusMessage={whatsappText.statusMessage[language]}
+        chatMessage={whatsappText.chatMessage[language]}
+        placeholder={whatsappText.placeholder[language]}
       />
     </div>
   );
