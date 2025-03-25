@@ -62,6 +62,14 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
     },
   };
 
+  // Add error handling for the image
+  const handleImageError = (e: React.SyntheticEvent<HTMLElement, Event>) => {
+    const imgElement = e.target as HTMLImageElement;
+    imgElement.src = '/placeholder.svg';
+    imgElement.style.filter = 'blur(8px)';
+    imgElement.style.opacity = '0.8';
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -75,6 +83,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
+          onError={handleImageError}
         >
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 text-center px-4">

@@ -12,28 +12,28 @@ const Audiology = () => {
 
   const audiologyServices = [
     {
-      icon: <Ear className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Ear className="w-10 h-10 text-[#009fe3]" />,
       title: t('hearingTest'),
       description: t('hearingTestDesc'),
       image: "/lovable-uploads/c909c154-63bb-4632-af13-9e1825237aaa.png",
       link: "/services/hearing-test"
     },
     {
-      icon: <Headphones className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Headphones className="w-10 h-10 text-[#009fe3]" />,
       title: t('hearingAids'),
       description: t('hearingAidsDesc'),
       image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
       link: "/services/hearing-aids"
     },
     {
-      icon: <Volume2 className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Volume2 className="w-10 h-10 text-[#009fe3]" />,
       title: t('tinnitusTreatment'),
       description: t('tinnitusDesc'),
       image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
       link: "/services/tinnitus-treatment"
     },
     {
-      icon: <Shield className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Shield className="w-10 h-10 text-[#009fe3]" />,
       title: t('customEarProtection'),
       description: t('earProtectionDesc'),
       image: "/lovable-uploads/58f8dffc-9095-4ff8-a7d3-4aa204a74b55.png",
@@ -46,11 +46,11 @@ const Audiology = () => {
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#2ecc71]/10 text-[#2ecc71] mb-3">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-3">
               {t('audiologyServices')}
             </span>
             <h2 className="text-3xl font-bold mb-3 text-gray-900">{t('hearingCare')}</h2>
-            <div className="w-16 h-1 bg-[#2ecc71] mx-auto mb-6"></div>
+            <div className="w-16 h-1 bg-[#009fe3] mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {t('audiologyDescription')}
             </p>
@@ -77,7 +77,7 @@ const Audiology = () => {
                   <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{service.description}</p>
                   <Link to={service.link} className="mt-auto">
-                    <Button variant="outline" size="sm" className="border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10">
+                    <Button variant="outline" size="sm" className="border-[#009fe3] text-[#009fe3] hover:bg-[#009fe3]/10">
                       {t('viewDetails')}
                     </Button>
                   </Link>
@@ -91,7 +91,7 @@ const Audiology = () => {
           <div className="text-center">
             <GoogleCalendarButton 
               size="lg" 
-              className="bg-[#2ecc71] hover:bg-[#ea384c] text-white"
+              className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
               subject="Hearing Consultation at Looptica"
               description="Appointment for hearing services at Looptica"
               durationMinutes={45}

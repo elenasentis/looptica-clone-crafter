@@ -67,10 +67,18 @@ const Navbar = () => {
         {/* Logo */}
         <Link 
           to="/" 
-          className="text-2xl font-bold relative z-50 transition-all text-[#009fe3]"
+          className="relative z-50 transition-all"
           onClick={closeMenu}
         >
-          Looptica
+          <img 
+            src="/images/looptica_logo_text.png" 
+            alt="Looptica" 
+            className={cn(
+              "h-8 md:h-10 transition-all",
+              scrolled ? "opacity-100" : "opacity-100"
+            )}
+            style={{ objectFit: 'contain' }}
+          />
         </Link>
 
         {/* Desktop Menu */}

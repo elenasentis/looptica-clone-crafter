@@ -56,8 +56,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Brand Column */}
             <div>
-              <Link to="/" className="text-2xl font-bold mb-6 inline-block text-[#009fe3]">
-                Looptica
+              <Link to="/" className="mb-6 inline-block">
+                <img 
+                  src="/images/looptica_logo_text.png" 
+                  alt="Looptica" 
+                  className="h-10 mb-6 filter brightness-0 invert"
+                  style={{ objectFit: 'contain' }}
+                />
               </Link>
               <p className="text-gray-300 mb-6 max-w-xs">
                 {language === 'en' 
