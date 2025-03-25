@@ -90,11 +90,6 @@ export const translations: Translations = {
     es: 'Ver Detalles',
     ca: 'Veure Detalls',
   },
-  viewAllProducts: {
-    en: 'View All Products',
-    es: 'Ver Todos los Productos',
-    ca: 'Veure Tots els Productes',
-  },
   // Optical Services Section
   opticalServices: {
     en: 'Optical Services',
