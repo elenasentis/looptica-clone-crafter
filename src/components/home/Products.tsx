@@ -38,7 +38,7 @@ const Products = () => {
       name: t('hearingAids'),
       category: t('audiologyServices'),
       price: 495,
-      image: '/lovable-uploads/ebf49fd8-a596-41fb-a71e-097837111d0d.png',
+      image: '/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png',
       link: '/services/hearing-aids'
     },
   ];
