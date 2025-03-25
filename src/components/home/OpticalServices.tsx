@@ -83,6 +83,10 @@ const OpticalServices = () => {
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${service.image}`);
+                      e.currentTarget.src = '/placeholder.svg';
+                    }}
                   />
                 </Link>
                 <div className="p-6 flex flex-col items-center text-center flex-grow">
@@ -91,7 +95,7 @@ const OpticalServices = () => {
                   <p className="text-gray-600 text-sm mb-4">{service.description}</p>
                   <Link to={service.path} className="mt-auto">
                     <Button variant="outline" size="sm" className="border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10">
-                      {t('addToCart')}
+                      {t('viewDetails')}
                     </Button>
                   </Link>
                 </div>
