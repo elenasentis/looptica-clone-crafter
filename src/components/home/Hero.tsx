@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
+import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -26,8 +27,6 @@ const Hero = () => {
         <div className="order-2 lg:order-1">
           <ScrollReveal origin="left" delay={100}>
             <div className="glass px-8 py-10 rounded-xl shadow-md w-[80%]">
-
-              
               <h1 className="text-balance font-bold text-4xl sm:text-5xl lg:text-5xl leading-tight mb-6 text-gray-900 drop-shadow-sm">
                 {t('heroTitle')}
               </h1>
@@ -37,13 +36,12 @@ const Hero = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button 
+                <GoogleCalendarButton 
                   size="lg" 
                   className="group bg-[#2ecc71] hover:bg-[#ea384c] text-white"
                 >
-                  {t('shopNow')}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                  {t('demanaCita')}
+                </GoogleCalendarButton>
                 <Button 
                   variant="outline" 
                   size="lg"

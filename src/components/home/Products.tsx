@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ShoppingBag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   const { t } = useLanguage();
@@ -13,28 +14,32 @@ const Products = () => {
       name: t('eyeglasses'),
       category: t('eyeglasses'),
       price: 95,
-      image: '/images/products/rayban-aviator.jpg',
+      image: '/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.png',
+      link: '/services/eyeglasses'
     },
     {
       id: 2,
       name: t('contactLenses'),
       category: 'Contactologia',
       price: 30,
-      image: '/images/products/etnia-barcelona.jpg',
+      image: '/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png',
+      link: '/services/contact-lenses'
     },
     {
       id: 3,
       name: t('sunglasses'),
       category: t('sunglasses'),
       price: 75,
-      image: '/images/products/tom-ford.jpg',
+      image: '/lovable-uploads/e288806f-89cb-4ae0-9a88-6b52ee0ccc4b.png',
+      link: '/services/sunglasses'
     },
     {
       id: 4,
       name: t('hearingAids'),
       category: 'Salut auditiva',
       price: 495,
-      image: '/images/products/polaroid.jpg',
+      image: '/lovable-uploads/ebf49fd8-a596-41fb-a71e-097837111d0d.png',
+      link: '/services/hearing-aids'
     },
   ];
 
@@ -61,7 +66,7 @@ const Products = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
             <ScrollReveal key={product.id} delay={100 * (index + 1)}>
-              <div className="group relative bg-white rounded-lg overflow-hidden border border-gray-200 hover-lift">
+              <Link to={product.link} className="block group relative bg-white rounded-lg overflow-hidden border border-gray-200 hover-lift">
                 {/* Product Image */}
                 <div className="aspect-[3/2] overflow-hidden">
                   <img 
@@ -86,10 +91,10 @@ const Products = () => {
                     className="w-full mt-4 transition-all border-[#2ecc71] text-[#2ecc71] group-hover:bg-[#2ecc71] group-hover:text-white"
                   >
                     <ShoppingBag className="w-4 h-4 mr-2" />
-                    {t('addToCart')}
+                    {t('viewDetails')}
                   </Button>
                 </div>
-              </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

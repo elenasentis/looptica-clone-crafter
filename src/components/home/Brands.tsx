@@ -9,28 +9,43 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 
+// Updated brands array using uploaded images
 const brands = [
   { 
     id: 1, 
     name: "Woodys", 
-    logo: "https://media.fashionnetwork.com/cdn-cgi/image/format=auto/m/2583/3ae4/1407/0f4e/27cf/6b25/58b4/62f7/f4b5/aaae/aaae.jpg" 
+    logo: "/lovable-uploads/9fbf92da-415f-43d4-a177-3de7dcb1195a.png" 
   },
   { 
     id: 2, 
     name: "Etnia Barcelona", 
-    logo: "https://blog.etniabarcelona.com/wp-content/uploads/2017/08/005.jpg" 
+    logo: "/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.png" 
   },
   { 
     id: 3, 
-    name: "Kaleos", 
-    logo: "https://kaleos.es/wp-content/uploads/2023/07/IMG_9782.jpg" 
+    name: "Xavier Garcia", 
+    logo: "/lovable-uploads/fbb3f53d-cb3a-4b23-bf37-ee5a9fb68e8f.png" 
   },
   { 
     id: 4, 
-    name: "Xavier Garcia", 
-    logo: "https://xaviergarcia.com/wp-content/uploads/2023/10/KINDER_XAVIER_GARCIA_OCTUBRE_23_3391_WEB-1.jpg" 
+    name: "Kaleos", 
+    logo: "/lovable-uploads/061283d4-a89e-4a50-9883-393a64c34e4e.png" 
+  },
+  { 
+    id: 5, 
+    name: "Woodys", 
+    logo: "/lovable-uploads/0cb156b5-17ce-4173-aa0c-c9c92d478dd6.png" 
+  },
+  { 
+    id: 6, 
+    name: "Woodys", 
+    logo: "/lovable-uploads/b5e53adf-aa39-4826-ae3e-61dc5721b6ea.png" 
+  },
+  { 
+    id: 7, 
+    name: "Woodys", 
+    logo: "/lovable-uploads/3e7cc4b1-38d3-4374-ad90-9b7aff598cf4.png" 
   },
 ];
 
@@ -46,6 +61,7 @@ const Brands = () => {
               {t('topBrands')}
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('ourBrands')}</h2>
+            <div className="w-16 h-1 bg-[#2ecc71] mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">{t('brandsDescription')}</p>
           </div>
         </ScrollReveal>
