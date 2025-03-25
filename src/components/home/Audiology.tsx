@@ -66,6 +66,10 @@ const Audiology = () => {
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${service.image}`);
+                      e.currentTarget.src = '/placeholder.svg';
+                    }}
                   />
                 </Link>
                 <div className="p-6 flex flex-col items-center text-center flex-grow">

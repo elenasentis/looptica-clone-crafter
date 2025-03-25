@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
@@ -388,6 +387,12 @@ export const translations: Translations = {
     en: 'Contact us today to schedule your consultation with our expert team.',
     es: 'Contáctenos hoy para programar su consulta con nuestro equipo de expertos.',
     ca: 'Contacta\'ns avui per programar la teva consulta amb el nostre equip d\'experts.',
+  },
+  // Add the missing translation key
+  contactViaWhatsApp: {
+    en: 'Contact via WhatsApp',
+    es: 'Contactar por WhatsApp',
+    ca: 'Contactar per WhatsApp',
   },
 };
 

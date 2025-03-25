@@ -3,12 +3,15 @@ import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Volume2, Music, Zap, Brain } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const TinnitusTreatment = () => {
+  const { t } = useLanguage();
+  
   return (
     <ServiceLayout
-      title="Tinnitus Management Solutions"
-      subtitle="Find relief from persistent ringing or buzzing in your ears"
+      title={t('tinnitusTreatment')}
+      subtitle={t('tinnitusDesc')}
       image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
       appointmentSubject="Tinnitus Consultation at Looptica"
     >
