@@ -44,7 +44,7 @@ const brands = [
   },
   { 
     id: 7, 
-    name: "Woodys", 
+    name: "PaperEyes", 
     logo: "/lovable-uploads/3e7cc4b1-38d3-4374-ad90-9b7aff598cf4.png" 
   },
 ];
