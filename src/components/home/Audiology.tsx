@@ -22,7 +22,7 @@ const Audiology = () => {
       icon: <Headphones className="w-10 h-10 text-[#2ecc71]" />,
       title: t('hearingAids'),
       description: t('hearingAidsDesc'),
-      image: "/lovable-uploads/ebf49fd8-a596-41fb-a71e-097837111d0d.png",
+      image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
       link: "/services/hearing-aids"
     },
     {
