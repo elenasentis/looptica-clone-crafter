@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
@@ -34,6 +35,11 @@ export const translations: Translations = {
     ca: 'Contacte',
   },
   shopNow: {
+    en: 'Book Appointment',
+    es: 'Pedir Cita',
+    ca: 'Demana Cita',
+  },
+  demanaCita: {
     en: 'Book Appointment',
     es: 'Pedir Cita',
     ca: 'Demana Cita',
@@ -357,10 +363,26 @@ export const translations: Translations = {
     es: 'Gafas',
     ca: 'Ulleres',
   },
+  eyeglassesSubtitle: {
+    en: 'Find your perfect frames with our premium collection',
+    es: 'Encuentra tu montura perfecta con nuestra colección premium',
+    ca: 'Troba la teva muntura perfecta amb la nostra col·lecció premium',
+  },
   sunglasses: {
     en: 'Sunglasses',
     es: 'Gafas de Sol',
     ca: 'Ulleres de Sol',
+  },
+  // Service Pages
+  readyToSchedule: {
+    en: 'Ready to Schedule Your Appointment?',
+    es: '¿Listo para programar tu cita?',
+    ca: 'Preparat per programar la teva cita?',
+  },
+  scheduleDescription: {
+    en: 'Contact us today to schedule your consultation with our expert team.',
+    es: 'Contáctenos hoy para programar su consulta con nuestro equipo de expertos.',
+    ca: 'Contacta\'ns avui per programar la teva consulta amb el nostre equip d\'experts.',
   },
 };
 

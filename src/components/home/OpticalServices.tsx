@@ -4,6 +4,8 @@ import { Eye, Contact, Moon, User, Glasses, Sun } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const OpticalServices = () => {
   const { t } = useLanguage();
@@ -13,37 +15,43 @@ const OpticalServices = () => {
       icon: <Eye className="w-10 h-10 text-[#2ecc71]" />,
       title: t('visualHealth'),
       description: t('visualHealthDesc'),
-      image: "/images/optical/eye-exam.jpg"
+      image: "/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png",
+      path: "/services/salut-visual"
     },
     {
       icon: <Contact className="w-10 h-10 text-[#2ecc71]" />,
       title: t('contactLenses'),
       description: t('contactLensesDesc'),
-      image: "/images/optical/contact-lenses.jpg"
+      image: "/lovable-uploads/17bc2039-1cd8-4464-80fe-3107ec793ead.png",
+      path: "/services/lents-contacte"
     },
     {
       icon: <Moon className="w-10 h-10 text-[#2ecc71]" />,
       title: t('orthoK'),
       description: t('orthoKDesc'),
-      image: "/images/optical/orthokeratology.jpg"
+      image: "/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png",
+      path: "/services/orto-k"
     },
     {
       icon: <User className="w-10 h-10 text-[#2ecc71]" />,
       title: t('imageConsulting'),
       description: t('imageConsultingDesc'),
-      image: "/images/optical/style-consultation.jpg"
+      image: "/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.png",
+      path: "/services/eyeglasses"
     },
     {
       icon: <Glasses className="w-10 h-10 text-[#2ecc71]" />,
       title: t('lensConsulting'),
       description: t('lensConsultingDesc'),
-      image: "/images/optical/lens-consultation.jpg"
+      image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png",
+      path: "/services/contact-lenses"
     },
     {
       icon: <Sun className="w-10 h-10 text-[#2ecc71]" />,
       title: t('sunglassesService'),
       description: t('sunglassesServiceDesc'),
-      image: "/images/optical/sunglasses.jpg"
+      image: "/lovable-uploads/e288806f-89cb-4ae0-9a88-6b52ee0ccc4b.png",
+      path: "/services/sunglasses"
     }
   ];
 
@@ -70,17 +78,22 @@ const OpticalServices = () => {
                 key={index} 
                 className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden"
               >
-                <div className="w-full h-48 overflow-hidden">
+                <Link to={service.path} className="w-full h-48 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
-                </div>
+                </Link>
                 <div className="p-6 flex flex-col items-center text-center flex-grow">
                   <div className="mb-4">{service.icon}</div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
-                  <p className="text-gray-600 text-sm">{service.description}</p>
+                  <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                  <Link to={service.path}>
+                    <Button variant="outline" size="sm" className="mt-auto border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10">
+                      {t('addToCart')}
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -95,7 +108,9 @@ const OpticalServices = () => {
               subject="Vision Consultation at Looptica"
               description="Appointment for optical services at Looptica"
               durationMinutes={30}
-            />
+            >
+              {t('demanaCita')}
+            </GoogleCalendarButton>
           </div>
         </ScrollReveal>
       </div>

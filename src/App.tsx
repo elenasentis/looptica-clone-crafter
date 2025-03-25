@@ -17,6 +17,8 @@ import HearingTest from './pages/services/HearingTest';
 import HearingAids from './pages/services/HearingAids';
 import TinnitusTreatment from './pages/services/TinnitusTreatment';
 import EarProtection from './pages/services/EarProtection';
+import ImageConsulting from './pages/services/ImageConsulting';
+import LensConsulting from './pages/services/LensConsulting';
 import './App.css';
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           <Route path="/services/eyeglasses" element={<Eyeglasses />} />
           <Route path="/services/sunglasses" element={<Sunglasses />} />
           <Route path="/services/contact-lenses" element={<ContactLenses />} />
+          <Route path="/services/image-consulting" element={<ImageConsulting />} />
+          <Route path="/services/lens-consulting" element={<LensConsulting />} />
           {/* Audiology Services */}
           <Route path="/services/hearing-test" element={<HearingTest />} />
           <Route path="/services/hearing-aids" element={<HearingAids />} />
