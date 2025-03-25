@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Sun, Shield, Zap, Heart } from 'lucide-react';
@@ -78,15 +79,150 @@ const Sunglasses = () => {
       es: "Opciones de Lentes Especializadas",
       ca: "Opcions de Lents Especialitzades",
     },
+    polarizedLenses: {
+      en: "Polarized Lenses",
+      es: "Lentes Polarizadas",
+      ca: "Lents Polaritzades",
+    },
+    polarizedLensesDesc: {
+      en: "Eliminate glare from reflective surfaces, perfect for driving, water sports, and snow activities. Our polarized lenses provide enhanced visual clarity and reduced eye strain.",
+      es: "Eliminan el deslumbramiento de superficies reflectantes, perfectas para conducir, deportes acuáticos y actividades en la nieve. Nuestras lentes polarizadas proporcionan mayor claridad visual y reducen la fatiga ocular.",
+      ca: "Eliminen l'enlluernament de superfícies reflectants, perfectes per conduir, esports aquàtics i activitats a la neu. Les nostres lents polaritzades proporcionen major claredat visual i redueixen la fatiga ocular.",
+    },
+    gradientTint: {
+      en: "Gradient Tint Lenses",
+      es: "Lentes con Tinte Degradado",
+      ca: "Lents amb Tint Degradat",
+    },
+    gradientTintDesc: {
+      en: "Featuring a smooth transition from darker at the top to lighter at the bottom, ideal for driving where you need protection from overhead sun but clearer vision of the dashboard.",
+      es: "Presentan una transición suave de más oscuro en la parte superior a más claro en la parte inferior, ideal para conducir donde se necesita protección del sol superior pero una visión más clara del tablero.",
+      ca: "Presenten una transició suau de més fosc a la part superior a més clar a la part inferior, ideal per conduir on es necessita protecció del sol superior però una visió més clara del tauler.",
+    },
+    mirroredLenses: {
+      en: "Mirrored Lenses",
+      es: "Lentes Espejadas",
+      ca: "Lents Reflectants",
+    },
+    mirroredLensesDesc: {
+      en: "A reflective coating on the outside of the lens reduces glare and light transmission while adding a stylish look. Popular for bright, high-altitude environments.",
+      es: "Un recubrimiento reflectante en el exterior de la lente reduce el deslumbramiento y la transmisión de luz mientras añade un aspecto elegante. Popular para entornos brillantes y de gran altitud.",
+      ca: "Un recobriment reflectant a l'exterior de la lent redueix l'enlluernament i la transmissió de llum mentre afegeix un aspecte elegant. Popular per a entorns brillants i d'alta altitud.",
+    },
+    photochromic: {
+      en: "Photochromic Lenses",
+      es: "Lentes Fotocromáticas",
+      ca: "Lents Fotocromàtiques",
+    },
+    photochromicDesc: {
+      en: "These adaptive lenses darken in bright conditions and lighten in low light, providing versatile protection in changing environments with a single pair of glasses.",
+      es: "Estas lentes adaptativas se oscurecen en condiciones brillantes y se aclaran con poca luz, proporcionando una protección versátil en entornos cambiantes con un solo par de gafas.",
+      ca: "Aquestes lents adaptatives s'enfosqueixen en condicions brillants i s'aclareixen amb poca llum, proporcionant una protecció versàtil en entorns canviants amb un sol parell d'ulleres.",
+    },
+    sportLenses: {
+      en: "Sport-Specific Lenses",
+      es: "Lentes Específicas para Deportes",
+      ca: "Lents Específiques per a Esports",
+    },
+    sportLensesDesc: {
+      en: "Designed for particular activities like golf, cycling, or fishing, these specialized lenses enhance contrast and visibility for specific environments.",
+      es: "Diseñadas para actividades particulares como golf, ciclismo o pesca, estas lentes especializadas mejoran el contraste y la visibilidad para entornos específicos.",
+      ca: "Dissenyades per a activitats particulars com golf, ciclisme o pesca, aquestes lents especialitzades milloren el contrast i la visibilitat per a entorns específics.",
+    },
+    prescriptionSunglasses: {
+      en: "Prescription Sunglasses",
+      es: "Gafas de Sol con Prescripción",
+      ca: "Ulleres de Sol amb Prescripció",
+    },
+    prescriptionSunglassesDesc: {
+      en: "Combine vision correction with sun protection in one stylish package. Available with all lens types and in virtually any frame style in our collection.",
+      es: "Combinan la corrección de la visión con la protección solar en un paquete elegante. Disponibles con todos los tipos de lentes y prácticamente en cualquier estilo de montura de nuestra colección.",
+      ca: "Combinen la correcció de la visió amb la protecció solar en un paquet elegant. Disponibles amb tots els tipus de lents i pràcticament en qualsevol estil de muntura de la nostra col·lecció.",
+    },
     brandsTitle: {
       en: "Our Premium Sunglasses Brands",
       es: "Nuestras Marcas Premium de Gafas de Sol",
       ca: "Les Nostres Marques Premium d'Ulleres de Sol",
     },
+    brandsIntro: {
+      en: "Our collection features renowned brands known for their quality, style, and innovation:",
+      es: "Nuestra colección presenta marcas reconocidas por su calidad, estilo e innovación:",
+      ca: "La nostra col·lecció presenta marques reconegudes per la seva qualitat, estil i innovació:",
+    },
+    rayban: {
+      en: "Ray-Ban - Iconic designs with timeless appeal and reliable protection",
+      es: "Ray-Ban - Diseños icónicos con atractivo atemporal y protección confiable",
+      ca: "Ray-Ban - Dissenys icònics amb atractiu atemporal i protecció confiable",
+    },
+    etnia: {
+      en: "Etnia Barcelona - Bold, colorful frames with Mediterranean flair",
+      es: "Etnia Barcelona - Monturas audaces y coloridas con estilo mediterráneo",
+      ca: "Etnia Barcelona - Muntures audaces i colorides amb estil mediterrani",
+    },
+    oakley: {
+      en: "Oakley - Performance-oriented sunglasses with cutting-edge lens technology",
+      es: "Oakley - Gafas de sol orientadas al rendimiento con tecnología de lentes de vanguardia",
+      ca: "Oakley - Ulleres de sol orientades al rendiment amb tecnologia de lents d'avantguarda",
+    },
+    maui: {
+      en: "Maui Jim - Superior polarized lenses with exceptional color enhancement",
+      es: "Maui Jim - Lentes polarizadas superiores con mejora excepcional del color",
+      ca: "Maui Jim - Lents polaritzades superiors amb millora excepcional del color",
+    },
+    tomford: {
+      en: "Tom Ford - Luxury sunglasses with sophisticated design and premium materials",
+      es: "Tom Ford - Gafas de sol de lujo con diseño sofisticado y materiales premium",
+      ca: "Tom Ford - Ulleres de sol de luxe amb disseny sofisticat i materials premium",
+    },
+    persol: {
+      en: "Persol - Italian craftsmanship with classic styling and patented technologies",
+      es: "Persol - Artesanía italiana con estilo clásico y tecnologías patentadas",
+      ca: "Persol - Artesania italiana amb estil clàssic i tecnologies patentades",
+    },
+    woodys: {
+      en: "Woodys Barcelona - Eco-conscious designs with unique wooden elements",
+      es: "Woodys Barcelona - Diseños eco-conscientes con elementos únicos de madera",
+      ca: "Woodys Barcelona - Dissenys eco-conscients amb elements únics de fusta",
+    },
     fittingProcessTitle: {
       en: "Our Sunglasses Fitting Process",
       es: "Nuestro Proceso de Adaptación de Gafas de Sol",
       ca: "El Nostre Procés d'Adaptació d'Ulleres de Sol",
+    },
+    fittingIntro: {
+      en: "Finding the perfect pair of sunglasses involves more than just selecting a style you like. Our expert consultants will help you consider:",
+      es: "Encontrar el par perfecto de gafas de sol implica más que simplemente seleccionar un estilo que te guste. Nuestros consultores expertos te ayudarán a considerar:",
+      ca: "Trobar el parell perfecte d'ulleres de sol implica més que simplement seleccionar un estil que t'agradi. Els nostres consultors experts t'ajudaran a considerar:",
+    },
+    faceShape: {
+      en: "Face Shape Compatibility - We'll recommend styles that complement your unique facial features",
+      es: "Compatibilidad con la Forma de la Cara - Recomendaremos estilos que complementen tus características faciales únicas",
+      ca: "Compatibilitat amb la Forma de la Cara - Recomanarem estils que complementin les teves característiques facials úniques",
+    },
+    lifestyle: {
+      en: "Lifestyle Requirements - Different activities call for different lens types and frame constructions",
+      es: "Requisitos de Estilo de Vida - Diferentes actividades requieren diferentes tipos de lentes y construcciones de monturas",
+      ca: "Requisits d'Estil de Vida - Diferents activitats requereixen diferents tipus de lents i construccions de muntures",
+    },
+    fit: {
+      en: "Proper Fit and Coverage - We ensure your sunglasses provide adequate coverage for optimal protection",
+      es: "Ajuste y Cobertura Adecuados - Nos aseguramos de que tus gafas de sol proporcionen una cobertura adecuada para una protección óptima",
+      ca: "Ajust i Cobertura Adequats - Ens assegurem que les teves ulleres de sol proporcionin una cobertura adequada per a una protecció òptima",
+    },
+    style: {
+      en: "Personal Style Preferences - Your sunglasses should reflect your personal aesthetic and make you feel confident",
+      es: "Preferencias de Estilo Personal - Tus gafas de sol deben reflejar tu estética personal y hacerte sentir seguro",
+      ca: "Preferències d'Estil Personal - Les teves ulleres de sol han de reflectir la teva estètica personal i fer-te sentir segur",
+    },
+    warranty: {
+      en: "All our sunglasses come with a protective case, cleaning cloth, and our quality guarantee. We also offer adjustments to ensure your sunglasses fit perfectly and stay comfortable throughout their lifetime.",
+      es: "Todas nuestras gafas de sol vienen con un estuche protector, paño de limpieza y nuestra garantía de calidad. También ofrecemos ajustes para asegurar que tus gafas de sol se ajusten perfectamente y se mantengan cómodas durante toda su vida útil.",
+      ca: "Totes les nostres ulleres de sol venen amb un estoig protector, drap de neteja i la nostra garantia de qualitat. També oferim ajustos per assegurar que les teves ulleres de sol s'ajustin perfectament i es mantinguin còmodes durant tota la seva vida útil.",
+    },
+    appointmentSubject: {
+      en: "Sunglasses Consultation at Looptica",
+      es: "Consulta de Gafas de Sol en Looptica",
+      ca: "Consulta d'Ulleres de Sol a Looptica",
     },
   };
   
@@ -95,7 +231,7 @@ const Sunglasses = () => {
       title={t('sunglasses')}
       subtitle={content.subtitle[language]}
       image="/lovable-uploads/e288806f-89cb-4ae0-9a88-6b52ee0ccc4b.png"
-      appointmentSubject="Sunglasses Consultation at Looptica"
+      appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
         <div className="prose prose-lg max-w-none mb-12">
@@ -159,33 +295,33 @@ const Sunglasses = () => {
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Polarized Lenses</h4>
-              <p>Eliminate glare from reflective surfaces, perfect for driving, water sports, and snow activities. Our polarized lenses provide enhanced visual clarity and reduced eye strain.</p>
+              <h4 className="text-xl font-medium mb-2">{content.polarizedLenses[language]}</h4>
+              <p>{content.polarizedLensesDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Gradient Tint Lenses</h4>
-              <p>Featuring a smooth transition from darker at the top to lighter at the bottom, ideal for driving where you need protection from overhead sun but clearer vision of the dashboard.</p>
+              <h4 className="text-xl font-medium mb-2">{content.gradientTint[language]}</h4>
+              <p>{content.gradientTintDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Mirrored Lenses</h4>
-              <p>A reflective coating on the outside of the lens reduces glare and light transmission while adding a stylish look. Popular for bright, high-altitude environments.</p>
+              <h4 className="text-xl font-medium mb-2">{content.mirroredLenses[language]}</h4>
+              <p>{content.mirroredLensesDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Photochromic Lenses</h4>
-              <p>These adaptive lenses darken in bright conditions and lighten in low light, providing versatile protection in changing environments with a single pair of glasses.</p>
+              <h4 className="text-xl font-medium mb-2">{content.photochromic[language]}</h4>
+              <p>{content.photochromicDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Sport-Specific Lenses</h4>
-              <p>Designed for particular activities like golf, cycling, or fishing, these specialized lenses enhance contrast and visibility for specific environments.</p>
+              <h4 className="text-xl font-medium mb-2">{content.sportLenses[language]}</h4>
+              <p>{content.sportLensesDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Prescription Sunglasses</h4>
-              <p>Combine vision correction with sun protection in one stylish package. Available with all lens types and in virtually any frame style in our collection.</p>
+              <h4 className="text-xl font-medium mb-2">{content.prescriptionSunglasses[language]}</h4>
+              <p>{content.prescriptionSunglassesDesc[language]}</p>
             </div>
           </div>
         </div>
@@ -195,29 +331,29 @@ const Sunglasses = () => {
         <div className="prose prose-lg max-w-none mb-12">
           <h2>{content.brandsTitle[language]}</h2>
           <p>
-            Our collection features renowned brands known for their quality, style, and innovation:
+            {content.brandsIntro[language]}
           </p>
           <ul>
-            <li><strong>Ray-Ban</strong> - Iconic designs with timeless appeal and reliable protection</li>
-            <li><strong>Etnia Barcelona</strong> - Bold, colorful frames with Mediterranean flair</li>
-            <li><strong>Oakley</strong> - Performance-oriented sunglasses with cutting-edge lens technology</li>
-            <li><strong>Maui Jim</strong> - Superior polarized lenses with exceptional color enhancement</li>
-            <li><strong>Tom Ford</strong> - Luxury sunglasses with sophisticated design and premium materials</li>
-            <li><strong>Persol</strong> - Italian craftsmanship with classic styling and patented technologies</li>
-            <li><strong>Woodys Barcelona</strong> - Eco-conscious designs with unique wooden elements</li>
+            <li>{content.rayban[language]}</li>
+            <li>{content.etnia[language]}</li>
+            <li>{content.oakley[language]}</li>
+            <li>{content.maui[language]}</li>
+            <li>{content.tomford[language]}</li>
+            <li>{content.persol[language]}</li>
+            <li>{content.woodys[language]}</li>
           </ul>
           <h3>{content.fittingProcessTitle[language]}</h3>
           <p>
-            Finding the perfect pair of sunglasses involves more than just selecting a style you like. Our expert consultants will help you consider:
+            {content.fittingIntro[language]}
           </p>
           <ul>
-            <li><strong>Face Shape Compatibility</strong> - We'll recommend styles that complement your unique facial features</li>
-            <li><strong>Lifestyle Requirements</strong> - Different activities call for different lens types and frame constructions</li>
-            <li><strong>Proper Fit and Coverage</strong> - We ensure your sunglasses provide adequate coverage for optimal protection</li>
-            <li><strong>Personal Style Preferences</strong> - Your sunglasses should reflect your personal aesthetic and make you feel confident</li>
+            <li><strong>{content.faceShape[language]}</strong></li>
+            <li><strong>{content.lifestyle[language]}</strong></li>
+            <li><strong>{content.fit[language]}</strong></li>
+            <li><strong>{content.style[language]}</strong></li>
           </ul>
           <p>
-            All our sunglasses come with a protective case, cleaning cloth, and our quality guarantee. We also offer adjustments to ensure your sunglasses fit perfectly and stay comfortable throughout their lifetime.
+            {content.warranty[language]}
           </p>
         </div>
       </ScrollReveal>
