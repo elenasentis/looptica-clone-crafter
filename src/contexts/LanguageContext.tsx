@@ -86,6 +86,11 @@ export const translations: Translations = {
     es: 'Más Información',
     ca: 'Més informació',
   },
+  viewDetails: {
+    en: 'View Details',
+    es: 'Ver Detalles',
+    ca: 'Veure Detalls',
+  },
   viewAllProducts: {
     en: 'View All Products',
     es: 'Ver Todos los Productos',

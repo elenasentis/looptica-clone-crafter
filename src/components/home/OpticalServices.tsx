@@ -37,14 +37,14 @@ const OpticalServices = () => {
       title: t('imageConsulting'),
       description: t('imageConsultingDesc'),
       image: "/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.png",
-      path: "/services/eyeglasses"
+      path: "/services/image-consulting"
     },
     {
       icon: <Glasses className="w-10 h-10 text-[#2ecc71]" />,
       title: t('lensConsulting'),
       description: t('lensConsultingDesc'),
       image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png",
-      path: "/services/contact-lenses"
+      path: "/services/lens-consulting"
     },
     {
       icon: <Sun className="w-10 h-10 text-[#2ecc71]" />,
@@ -89,8 +89,8 @@ const OpticalServices = () => {
                   <div className="mb-4">{service.icon}</div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                  <Link to={service.path}>
-                    <Button variant="outline" size="sm" className="mt-auto border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10">
+                  <Link to={service.path} className="mt-auto">
+                    <Button variant="outline" size="sm" className="border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10">
                       {t('addToCart')}
                     </Button>
                   </Link>

@@ -91,7 +91,7 @@ const Products = () => {
                     className="w-full mt-4 transition-all border-[#2ecc71] text-[#2ecc71] group-hover:bg-[#2ecc71] group-hover:text-white"
                   >
                     <ShoppingBag className="w-4 h-4 mr-2" />
-                    {t('viewDetails')}
+                    {t('addToCart')}
                   </Button>
                 </div>
               </Link>
