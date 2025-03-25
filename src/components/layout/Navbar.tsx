@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -11,15 +11,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  const location = useLocation();
+
+  // Check if we're on the homepage to determine whether to use anchor links or router links
+  const isHomePage = location.pathname === '/';
 
   // Using translation keys for navigation
   const navLinks = [
-    { name: t('home'), path: '/' },
-    { name: t('products'), path: '#products' },
-    { name: t('opticalServices'), path: '#optical' },
-    { name: t('audiologyServices'), path: '#audiology' },
-    { name: t('about'), path: '#about' },
-    { name: t('contact'), path: '#contact' },
+    { name: t('home'), path: isHomePage ? '/' : '/' },
+    { name: t('products'), path: isHomePage ? '#products' : '/#products' },
+    { name: t('opticalServices'), path: isHomePage ? '#optical' : '/#optical' },
+    { name: t('audiologyServices'), path: isHomePage ? '#audiology' : '/#audiology' },
+    { name: t('about'), path: isHomePage ? '#about' : '/#about' },
+    { name: t('contact'), path: isHomePage ? '#contact' : '/#contact' },
   ];
 
   useEffect(() => {
@@ -72,13 +76,23 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.path}
-              className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
-            >
-              {link.name}
-            </a>
+            link.path.startsWith('#') && !isHomePage ? (
+              <a
+                key={link.name}
+                href={link.path}
+                className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </div>
 
@@ -121,14 +135,25 @@ const Navbar = () => {
         >
           <div className="h-full flex flex-col items-center justify-center space-y-8 p-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.path}
-                className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
-                onClick={closeMenu}
-              >
-                {link.name}
-              </a>
+              link.path.startsWith('#') && !isHomePage ? (
+                <a
+                  key={link.name}
+                  href={link.path}
+                  className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
+                  onClick={closeMenu}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
+                  onClick={closeMenu}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
             <a href="tel:+34933009064" className="flex items-center text-gray-700 hover:text-[#009fe3]">
               <Phone className="h-5 w-5 mr-2" />

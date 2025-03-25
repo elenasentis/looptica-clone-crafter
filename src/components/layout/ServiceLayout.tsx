@@ -43,6 +43,25 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
     },
   };
 
+  // Translations for CTA section
+  const ctaContent = {
+    readyToSchedule: {
+      en: "Ready to Schedule Your Appointment?",
+      es: "¿Listo para Programar su Cita?",
+      ca: "Preparat per Programar la Seva Cita?",
+    },
+    scheduleDescription: {
+      en: "Book your appointment today to experience our personalized service and expert care.",
+      es: "Reserve su cita hoy para experimentar nuestro servicio personalizado y atención experta.",
+      ca: "Reservi la seva cita avui per experimentar el nostre servei personalitzat i atenció experta.",
+    },
+    buttonText: {
+      en: "Schedule Appointment",
+      es: "Programar Cita",
+      ca: "Programar Cita",
+    },
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -72,14 +91,14 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
             {/* Appointment CTA */}
             <ScrollReveal>
               <div className="mt-16 bg-gray-50 rounded-xl p-8 text-center shadow-sm">
-                <h3 className="text-2xl font-semibold mb-4">{t('readyToSchedule')}</h3>
-                <p className="text-gray-600 mb-6">{t('scheduleDescription')}</p>
+                <h3 className="text-2xl font-semibold mb-4">{ctaContent.readyToSchedule[language]}</h3>
+                <p className="text-gray-600 mb-6">{ctaContent.scheduleDescription[language]}</p>
                 <GoogleCalendarButton
                   subject={appointmentSubject}
                   description={`Appointment for ${title} at Looptica`}
                   className="mx-auto"
                 >
-                  {t('demanaCita')}
+                  {ctaContent.buttonText[language]}
                 </GoogleCalendarButton>
               </div>
             </ScrollReveal>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Eye, Shield, Clock, ThumbsUp } from 'lucide-react';
@@ -8,7 +9,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactLenses = () => {
   const navigate = useNavigate();
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   
   const content = {
     title: {
@@ -20,6 +21,11 @@ const ContactLenses = () => {
       en: "Comfortable, clear vision without glasses",
       es: "Visión cómoda y clara sin gafas",
       ca: "Visió còmoda i clara sense ulleres",
+    },
+    appointmentSubject: {
+      en: "Contact Lens Consultation at Looptica",
+      es: "Consulta de Lentes de Contacto en Looptica",
+      ca: "Consulta de Lents de Contacte a Looptica",
     },
     advancedTitle: {
       en: "Advanced Contact Lens Solutions",
@@ -91,15 +97,140 @@ const ContactLenses = () => {
       es: "Tipos de Lentes de Contacto que Ofrecemos",
       ca: "Tipus de Lents de Contacte que Oferim",
     },
+    dailyDisposable: {
+      en: "Daily Disposable Lenses",
+      es: "Lentes Desechables Diarias",
+      ca: "Lents d'Un Sol Ús Diàries",
+    },
+    dailyDisposableDesc: {
+      en: "The healthiest option for most wearers, these fresh lenses are worn once and discarded, eliminating the need for cleaning solutions and reducing the risk of deposits and infections.",
+      es: "La opción más saludable para la mayoría de los usuarios, estas lentes frescas se usan una vez y se descartan, eliminando la necesidad de soluciones de limpieza y reduciendo el riesgo de depósitos e infecciones.",
+      ca: "L'opció més saludable per a la majoria dels usuaris, aquestes lents fresques es porten una vegada i es descarten, eliminant la necessitat de solucions de neteja i reduint el risc de dipòsits i infeccions.",
+    },
+    monthly: {
+      en: "Monthly Replacement Lenses",
+      es: "Lentes de Reemplazo Mensual",
+      ca: "Lents de Reemplaçament Mensual",
+    },
+    monthlyDesc: {
+      en: "Cost-effective options that provide excellent vision and comfort when properly maintained. Ideal for consistent wearers who don't mind a simple cleaning routine.",
+      es: "Opciones rentables que proporcionan excelente visión y comodidad cuando se mantienen adecuadamente. Ideal para usuarios constantes que no les importa una rutina de limpieza simple.",
+      ca: "Opcions rendibles que proporcionen excel·lent visió i comoditat quan es mantenen adequadament. Ideal per a usuaris constants que no els importa una rutina de neteja simple.",
+    },
+    toric: {
+      en: "Toric Lenses for Astigmatism",
+      es: "Lentes Tóricas para Astigmatismo",
+      ca: "Lents Tòriques per a Astigmatisme",
+    },
+    toricDesc: {
+      en: "Specially designed lenses that correct astigmatism, providing stable, clear vision throughout the day without the rotation issues of regular lenses.",
+      es: "Lentes especialmente diseñadas que corrigen el astigmatismo, proporcionando una visión estable y clara durante todo el día sin los problemas de rotación de las lentes regulares.",
+      ca: "Lents especialment dissenyades que corregeixen l'astigmatisme, proporcionant una visió estable i clara durant tot el dia sense els problemes de rotació de les lents regulars.",
+    },
+    multifocal: {
+      en: "Multifocal Contact Lenses",
+      es: "Lentes de Contacto Multifocales",
+      ca: "Lents de Contacte Multifocals",
+    },
+    multifocalDesc: {
+      en: "Advanced designs that correct both near and distance vision, eliminating the need for reading glasses or bifocals as you age.",
+      es: "Diseños avanzados que corrigen tanto la visión cercana como la lejana, eliminando la necesidad de gafas de lectura o bifocales a medida que envejece.",
+      ca: "Dissenys avançats que corregeixen tant la visió propera com la llunyana, eliminant la necessitat d'ulleres de lectura o bifocals a mesura que envelleix.",
+    },
+    rgp: {
+      en: "Rigid Gas Permeable (RGP) Lenses",
+      es: "Lentes Rígidas Permeables al Gas (RPG)",
+      ca: "Lents Rígides Permeables al Gas (RPG)",
+    },
+    rgpDesc: {
+      en: "Durable lenses that provide exceptionally crisp vision, especially for complex prescriptions or conditions like keratoconus.",
+      es: "Lentes duraderas que proporcionan una visión excepcionalmente nítida, especialmente para prescripciones complejas o condiciones como el queratocono.",
+      ca: "Lents duradores que proporcionen una visió excepcionalment nítida, especialment per a prescripcions complexes o condicions com el queratocon.",
+    },
+    specialty: {
+      en: "Specialty Lenses",
+      es: "Lentes Especializadas",
+      ca: "Lents Especialitzades",
+    },
+    specialtyDesc: {
+      en: "Including scleral lenses for irregular corneas, prosthetic lenses for cosmetic concerns, and orthokeratology lenses for vision correction while you sleep.",
+      es: "Incluyendo lentes esclerales para córneas irregulares, lentes protésicas para preocupaciones cosméticas y lentes de ortoqueratología para corrección de la visión mientras duerme.",
+      ca: "Incloent lents esclerals per a còrnies irregulars, lents protèsiques per a preocupacions cosmètiques i lents d'ortoqueratologia per a correcció de la visió mentre dorm.",
+    },
     careTitle: {
       en: "Contact Lens Care and Compliance",
       es: "Cuidado y Cumplimiento de Lentes de Contacto",
       ca: "Cura i Compliment de Lents de Contacte",
     },
+    careP1: {
+      en: "Proper care and compliance are essential for comfortable, safe contact lens wear. At Looptica, we provide:",
+      es: "El cuidado y cumplimiento adecuados son esenciales para un uso cómodo y seguro de lentes de contacto. En Looptica, proporcionamos:",
+      ca: "La cura i compliment adequats són essencials per a un ús còmode i segur de lents de contacte. A Looptica, proporcionem:",
+    },
+    careLi1: {
+      en: "Detailed instructions on cleaning and storage procedures specific to your lens type",
+      es: "Instrucciones detalladas sobre procedimientos de limpieza y almacenamiento específicos para su tipo de lente",
+      ca: "Instruccions detallades sobre procediments de neteja i emmagatzematge específics per al seu tipus de lent",
+    },
+    careLi2: {
+      en: "Recommendations for the most effective contact lens solutions",
+      es: "Recomendaciones para las soluciones de lentes de contacto más efectivas",
+      ca: "Recomanacions per a les solucions de lents de contacte més efectives",
+    },
+    careLi3: {
+      en: "Guidelines for healthy wearing schedules",
+      es: "Pautas para horarios de uso saludables",
+      ca: "Pautes per a horaris d'ús saludables",
+    },
+    careLi4: {
+      en: "Warning signs of potential complications to watch for",
+      es: "Señales de advertencia de posibles complicaciones a tener en cuenta",
+      ca: "Senyals d'advertència de possibles complicacions a tenir en compte",
+    },
+    careLi5: {
+      en: "Regular follow-up appointments to ensure your lenses continue to fit well and your eyes remain healthy",
+      es: "Citas de seguimiento regulares para asegurar que sus lentes continúen ajustándose bien y sus ojos permanezcan saludables",
+      ca: "Cites de seguiment regulars per assegurar que les seves lents continuïn ajustant-se bé i els seus ulls romanguin saludables",
+    },
     commitmentTitle: {
       en: "Our Commitment to Ongoing Care",
       es: "Nuestro Compromiso con el Cuidado Continuo",
       ca: "El Nostre Compromís amb la Cura Contínua",
+    },
+    commitmentP1: {
+      en: "Your journey with contact lenses doesn't end after your initial fitting. We provide:",
+      es: "Su viaje con lentes de contacto no termina después de su adaptación inicial. Proporcionamos:",
+      ca: "El seu viatge amb lents de contacte no acaba després de la seva adaptació inicial. Proporcionem:",
+    },
+    commitmentLi1: {
+      en: "Regular contact lens check-ups to assess fit and eye health",
+      es: "Chequeos regulares de lentes de contacto para evaluar el ajuste y la salud ocular",
+      ca: "Revisions regulars de lents de contacte per avaluar l'ajust i la salut ocular",
+    },
+    commitmentLi2: {
+      en: "Updates on the latest lens technologies that might benefit you",
+      es: "Actualizaciones sobre las últimas tecnologías de lentes que podrían beneficiarle",
+      ca: "Actualitzacions sobre les últimes tecnologies de lents que podrien beneficiar-li",
+    },
+    commitmentLi3: {
+      en: "Adjustment of your prescription as your vision needs change",
+      es: "Ajuste de su prescripción a medida que cambian sus necesidades visuales",
+      ca: "Ajustament de la seva prescripció a mesura que canvien les seves necessitats visuals",
+    },
+    commitmentLi4: {
+      en: "Convenient reordering options for replacement lenses",
+      es: "Opciones convenientes de pedido para lentes de reemplazo",
+      ca: "Opcions convenients de comanda per a lents de reemplaçament",
+    },
+    commitmentLi5: {
+      en: "Immediate attention if you experience any discomfort or vision changes",
+      es: "Atención inmediata si experimenta cualquier molestia o cambios en la visión",
+      ca: "Atenció immediata si experimenta qualsevol molèstia o canvis en la visió",
+    },
+    finalP: {
+      en: "Whether you're a first-time wearer or have been enjoying contact lenses for years, our expertise ensures you'll receive the most appropriate, comfortable, and healthy contact lens solution for your unique needs.",
+      es: "Ya sea que sea un usuario por primera vez o haya estado disfrutando de lentes de contacto durante años, nuestra experiencia garantiza que recibirá la solución de lentes de contacto más apropiada, cómoda y saludable para sus necesidades únicas.",
+      ca: "Ja sigui que sigui un usuari per primera vegada o hagi estat gaudint de lents de contacte durant anys, la nostra experiència garanteix que rebrà la solució de lents de contacte més apropiada, còmoda i saludable per a les seves necessitats úniques.",
     },
   };
   
@@ -108,7 +239,7 @@ const ContactLenses = () => {
       title={content.title[language]}
       subtitle={content.subtitle[language]}
       image="/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png"
-      appointmentSubject="Contact Lens Consultation at Looptica"
+      appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
         <div className="prose prose-lg max-w-none mb-12">
@@ -180,33 +311,33 @@ const ContactLenses = () => {
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Daily Disposable Lenses</h4>
-              <p>The healthiest option for most wearers, these fresh lenses are worn once and discarded, eliminating the need for cleaning solutions and reducing the risk of deposits and infections.</p>
+              <h4 className="text-xl font-medium mb-2">{content.dailyDisposable[language]}</h4>
+              <p>{content.dailyDisposableDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Monthly Replacement Lenses</h4>
-              <p>Cost-effective options that provide excellent vision and comfort when properly maintained. Ideal for consistent wearers who don't mind a simple cleaning routine.</p>
+              <h4 className="text-xl font-medium mb-2">{content.monthly[language]}</h4>
+              <p>{content.monthlyDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Toric Lenses for Astigmatism</h4>
-              <p>Specially designed lenses that correct astigmatism, providing stable, clear vision throughout the day without the rotation issues of regular lenses.</p>
+              <h4 className="text-xl font-medium mb-2">{content.toric[language]}</h4>
+              <p>{content.toricDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Multifocal Contact Lenses</h4>
-              <p>Advanced designs that correct both near and distance vision, eliminating the need for reading glasses or bifocals as you age.</p>
+              <h4 className="text-xl font-medium mb-2">{content.multifocal[language]}</h4>
+              <p>{content.multifocalDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Rigid Gas Permeable (RGP) Lenses</h4>
-              <p>Durable lenses that provide exceptionally crisp vision, especially for complex prescriptions or conditions like keratoconus.</p>
+              <h4 className="text-xl font-medium mb-2">{content.rgp[language]}</h4>
+              <p>{content.rgpDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">Specialty Lenses</h4>
-              <p>Including scleral lenses for irregular corneas, prosthetic lenses for cosmetic concerns, and orthokeratology lenses for vision correction while you sleep.</p>
+              <h4 className="text-xl font-medium mb-2">{content.specialty[language]}</h4>
+              <p>{content.specialtyDesc[language]}</p>
             </div>
           </div>
         </div>
@@ -216,30 +347,30 @@ const ContactLenses = () => {
         <div className="prose prose-lg max-w-none mb-12">
           <h2>{content.careTitle[language]}</h2>
           <p>
-            Proper care and compliance are essential for comfortable, safe contact lens wear. At Looptica, we provide:
+            {content.careP1[language]}
           </p>
           <ul>
-            <li>Detailed instructions on cleaning and storage procedures specific to your lens type</li>
-            <li>Recommendations for the most effective contact lens solutions</li>
-            <li>Guidelines for healthy wearing schedules</li>
-            <li>Warning signs of potential complications to watch for</li>
-            <li>Regular follow-up appointments to ensure your lenses continue to fit well and your eyes remain healthy</li>
+            <li>{content.careLi1[language]}</li>
+            <li>{content.careLi2[language]}</li>
+            <li>{content.careLi3[language]}</li>
+            <li>{content.careLi4[language]}</li>
+            <li>{content.careLi5[language]}</li>
           </ul>
           
           <h3>{content.commitmentTitle[language]}</h3>
           <p>
-            Your journey with contact lenses doesn't end after your initial fitting. We provide:
+            {content.commitmentP1[language]}
           </p>
           <ul>
-            <li>Regular contact lens check-ups to assess fit and eye health</li>
-            <li>Updates on the latest lens technologies that might benefit you</li>
-            <li>Adjustment of your prescription as your vision needs change</li>
-            <li>Convenient reordering options for replacement lenses</li>
-            <li>Immediate attention if you experience any discomfort or vision changes</li>
+            <li>{content.commitmentLi1[language]}</li>
+            <li>{content.commitmentLi2[language]}</li>
+            <li>{content.commitmentLi3[language]}</li>
+            <li>{content.commitmentLi4[language]}</li>
+            <li>{content.commitmentLi5[language]}</li>
           </ul>
           
           <p>
-            Whether you're a first-time wearer or have been enjoying contact lenses for years, our expertise ensures you'll receive the most appropriate, comfortable, and healthy contact lens solution for your unique needs.
+            {content.finalP[language]}
           </p>
         </div>
       </ScrollReveal>
@@ -248,4 +379,3 @@ const ContactLenses = () => {
 };
 
 export default ContactLenses;
-
