@@ -230,7 +230,7 @@ const HearingAids = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
+      image="/images/oticon_xceed_connectivity_iphone_x_nds_199359.jpg"
       appointmentSubject={language === 'es' ? "Consulta de Audífonos en Looptica Barcelona Poblenou" : 
                         language === 'ca' ? "Consulta d'Audiòfons a Looptica Barcelona Poblenou" : 
                         "Hearing Aids Consultation at Looptica Barcelona Poblenou"}
