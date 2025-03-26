@@ -60,7 +60,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         <ScrollReveal origin="bottom" delay={100}>
           <div className="text-center mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-3">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-3">
               {t('customerReviews')}
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('whatCustomersSay')}</h2>
