@@ -201,7 +201,7 @@ const TinnitusTreatment = () => {
           
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Volume2 className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -211,7 +211,7 @@ const TinnitusTreatment = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Music className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -221,7 +221,7 @@ const TinnitusTreatment = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Brain className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -231,7 +231,7 @@ const TinnitusTreatment = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div>
