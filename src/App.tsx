@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Index from './pages/Index';
@@ -24,33 +25,35 @@ import './App.css';
 
 function App() {
   return (
-    <LanguageProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* About Page */}
-          <Route path="/about" element={<About />} />
-          {/* Optical Services */}
-          <Route path="/services/salut-visual" element={<SalutVisual />} />
-          <Route path="/services/lents-contacte" element={<LentsContacte />} />
-          <Route path="/services/orto-k" element={<OrtoK />} />
-          <Route path="/services/eyeglasses" element={<Eyeglasses />} />
-          <Route path="/services/sunglasses" element={<Sunglasses />} />
-          <Route path="/services/contact-lenses" element={<ContactLenses />} />
-          <Route path="/services/image-consulting" element={<ImageConsulting />} />
-          <Route path="/services/lens-consulting" element={<LensConsulting />} />
-          {/* Audiology Services */}
-          <Route path="/services/hearing-test" element={<HearingTest />} />
-          <Route path="/services/hearing-aids" element={<HearingAids />} />
-          <Route path="/services/tinnitus-treatment" element={<TinnitusTreatment />} />
-          <Route path="/services/ear-protection" element={<EarProtection />} />
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Toaster />
-        <CookieConsent />
-      </Router>
-    </LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            {/* About Page */}
+            <Route path="/about" element={<About />} />
+            {/* Optical Services */}
+            <Route path="/services/salut-visual" element={<SalutVisual />} />
+            <Route path="/services/lents-contacte" element={<LentsContacte />} />
+            <Route path="/services/orto-k" element={<OrtoK />} />
+            <Route path="/services/eyeglasses" element={<Eyeglasses />} />
+            <Route path="/services/sunglasses" element={<Sunglasses />} />
+            <Route path="/services/contact-lenses" element={<ContactLenses />} />
+            <Route path="/services/image-consulting" element={<ImageConsulting />} />
+            <Route path="/services/lens-consulting" element={<LensConsulting />} />
+            {/* Audiology Services */}
+            <Route path="/services/hearing-test" element={<HearingTest />} />
+            <Route path="/services/hearing-aids" element={<HearingAids />} />
+            <Route path="/services/tinnitus-treatment" element={<TinnitusTreatment />} />
+            <Route path="/services/ear-protection" element={<EarProtection />} />
+            
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Toaster />
+          <CookieConsent />
+        </Router>
+      </LanguageProvider>
+    </HelmetProvider>
   );
 }
 
