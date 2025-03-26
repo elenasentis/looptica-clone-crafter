@@ -391,9 +391,9 @@ export const translations: Translations = {
   },
   // Additional Audiology Terms
   audiologyCenter: {
-    en: 'Audiology Center in Barcelona Poblenou',
-    es: 'Centro de Audiología en Barcelona Poblenou',
-    ca: 'Centre d\'Audiologia a Barcelona Poblenou',
+    en: 'Audiology Center',
+    es: 'Centro de Audiología',
+    ca: 'Centre d\'Audiologia',
   },
   hearingLoss: {
     en: 'Hearing Loss Treatment',
