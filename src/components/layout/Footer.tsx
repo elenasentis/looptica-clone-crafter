@@ -167,14 +167,14 @@ const Footer = () => {
               </p>
 
               <div className="flex space-x-6 text-sm text-gray-400">
-                <Link to="/about" className="hover:text-[#55afa9] transition-colors duration-200">
+                <Link to="/legal/privacy-policy" className="hover:text-[#55afa9] transition-colors duration-200">
                   {language === 'en' ? 'Privacy Policy' : (language === 'es' ? 'Política de Privacidad' : 'Política de Privacitat')}
                 </Link>
-                <Link to="/about" className="hover:text-[#55afa9] transition-colors duration-200">
+                <Link to="/legal/terms-conditions" className="hover:text-[#55afa9] transition-colors duration-200">
                   {language === 'en' ? 'Terms & Conditions' : (language === 'es' ? 'Términos y Condiciones' : 'Termes i Condicions')}
                 </Link>
-                <Link to="/about" className="hover:text-[#55afa9] transition-colors duration-200">
-                  Cookies
+                <Link to="/legal/cookies-policy" className="hover:text-[#55afa9] transition-colors duration-200">
+                  {language === 'en' ? 'Cookies' : (language === 'es' ? 'Cookies' : 'Cookies')}
                 </Link>
               </div>
             </div>

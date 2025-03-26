@@ -23,6 +23,10 @@
   - ✅ Hearing Aids
   - ✅ Tinnitus Treatment
   - ✅ Ear Protection
+- ✅ Legal pages:
+  - ✅ Privacy Policy
+  - ✅ Terms & Conditions
+  - ✅ Cookies Policy
 - ✅ 404 Not Found page
 - ✅ Layout components (Navbar, Footer)
 - ✅ Cookie Consent banner
@@ -54,12 +58,15 @@
 - ✅ Refactored files for better code organization (section-first content structure)
 - ✅ Updated favicon to use properly named site logo
 - ✅ Fixed appointment booking to use direct Google Calendar scheduling link
+- ✅ Added legal pages with proper translations (Privacy Policy, Terms & Conditions, Cookies)
+- ✅ Updated footer links to point to the new legal pages
 
 ### Code Quality
 - ✅ Implemented consistent content object structure for all multilingual pages
 - ✅ Improved readability by organizing content by section first, then by language
 - ✅ Standardized content object structure across all service pages
 - ✅ Improved maintainability with more organized content structures
+- ✅ Created proper routes for legal pages in App.tsx
 
 ## In Progress Tasks
 
@@ -111,3 +118,6 @@
 - All service pages now follow a consistent section-first content organization structure
 - Favicon has been updated to use properly named site logo (looptica-icon.png)
 - Updated all appointment buttons to use direct Google Calendar scheduling link
+- Added comprehensive legal pages (Privacy Policy, Terms & Conditions, Cookies) with full translations in all three languages
+- Updated the footer component to link to the new legal pages
+- All legal content is based on the original website content from looptica.com

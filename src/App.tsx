@@ -22,6 +22,9 @@ import ImageConsulting from './pages/services/ImageConsulting';
 import LensConsulting from './pages/services/LensConsulting';
 import About from './pages/About';
 import AudiologiaCentro from './pages/services/AudiologiaCentro';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import TermsConditions from './pages/legal/TermsConditions';
+import CookiesPolicy from './pages/legal/CookiesPolicy';
 import './App.css';
 
 function App() {
@@ -49,6 +52,10 @@ function App() {
             <Route path="/services/ear-protection" element={<EarProtection />} />
             {/* Audiology Landing Page */}
             <Route path="/services/audiologia-centro" element={<AudiologiaCentro />} />
+            {/* Legal Pages */}
+            <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/legal/terms-conditions" element={<TermsConditions />} />
+            <Route path="/legal/cookies-policy" element={<CookiesPolicy />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>
