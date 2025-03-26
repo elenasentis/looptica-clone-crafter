@@ -173,9 +173,9 @@ export const translations: Translations = {
   },
   // Audiology Section
   audiologyServices: {
-    en: 'Audiology Services in Barcelona Poblenou',
-    es: 'Servicios de Audiología en Barcelona Poblenou',
-    ca: 'Serveis d\'Audiologia a Barcelona Poblenou',
+    en: 'Audiology Services',
+    es: 'Servicios de Audiología',
+    ca: 'Serveis d\'Audiologia',
   },
   hearingCare: {
     en: 'Expert Hearing Care',
