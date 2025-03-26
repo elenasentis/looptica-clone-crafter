@@ -154,7 +154,7 @@ const LensConsulting = () => {
             <div className="space-y-6">
               {content.technologies.items.map((tech, index) => (
                 <div className="flex gap-4" key={index}>
-                  <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+                  <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                     {tech.icon}
                   </div>
                   <div>
