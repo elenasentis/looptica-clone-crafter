@@ -249,7 +249,7 @@ const ContactLenses = () => {
           <div className="mt-8 text-center">
             <Button 
               onClick={() => navigate('/services/lents-contacte')}
-              className="bg-[#2ecc71] hover:bg-[#ea384c] text-white"
+              className="bg-[#55afa9] hover:bg-[#ea384c] text-white"
             >
               {content.viewCatalan[language]}
             </Button>
@@ -263,7 +263,7 @@ const ContactLenses = () => {
           
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Eye className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -273,7 +273,7 @@ const ContactLenses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -283,7 +283,7 @@ const ContactLenses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <ThumbsUp className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -293,7 +293,7 @@ const ContactLenses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <div>
