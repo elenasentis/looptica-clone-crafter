@@ -21,6 +21,7 @@ import EarProtection from './pages/services/EarProtection';
 import ImageConsulting from './pages/services/ImageConsulting';
 import LensConsulting from './pages/services/LensConsulting';
 import About from './pages/About';
+import AudiologiaCentro from './pages/services/AudiologiaCentro';
 import './App.css';
 
 function App() {
@@ -46,6 +47,8 @@ function App() {
             <Route path="/services/hearing-aids" element={<HearingAids />} />
             <Route path="/services/tinnitus-treatment" element={<TinnitusTreatment />} />
             <Route path="/services/ear-protection" element={<EarProtection />} />
+            {/* Audiology Landing Page */}
+            <Route path="/services/audiologia-centro" element={<AudiologiaCentro />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>

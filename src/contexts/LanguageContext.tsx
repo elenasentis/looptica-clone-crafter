@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
@@ -55,9 +56,9 @@ export const translations: Translations = {
     ca: 'La teva solució auditiva i visual',
   },
   heroDescription: {
-    en: 'Comprehensive advice for your visual and auditory needs. Discover our services and products.',
-    es: 'Asesoramiento integral para tus necesidades visuales y auditivas. Descubre nuestros servicios y productos.',
-    ca: 'Assessorament integral per a les teves necessitats visuals i auditives. Descobreix els nostres serveis i productes.',
+    en: 'Comprehensive advice for your visual and auditory needs. Discover our optical and audiology services.',
+    es: 'Asesoramiento integral para tus necesidades visuales y auditivas. Descubre nuestros servicios de óptica y audiología.',
+    ca: 'Assessorament integral per a les teves necessitats visuals i auditives. Descobreix els nostres serveis d\'òptica i audiologia.',
   },
   viewCollection: {
     en: 'Our Services',
@@ -76,9 +77,9 @@ export const translations: Translations = {
     ca: 'Solucions per a la teva salut visual i auditiva',
   },
   productsDescription: {
-    en: 'At Looptica you will find everything you need to take care of your vision and hearing with high quality products and advice.',
-    es: 'En Looptica encontrarás todo lo que necesitas para cuidar tu visión y audición con productos y asesoramiento de alta calidad.',
-    ca: 'A Looptica trobràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d\'alta qualitat.',
+    en: 'At Looptica you will find everything you need to take care of your vision and hearing with high quality products and advice from our optical and audiology specialists.',
+    es: 'En Looptica encontrarás todo lo que necesitas para cuidar tu visión y audición con productos y asesoramiento de alta calidad de nuestros especialistas en óptica y audiología.',
+    ca: 'A Looptica trobràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d\'alta qualitat dels nostres especialistes en òptica i audiologia.',
   },
   addToCart: {
     en: 'More Information',
@@ -173,64 +174,64 @@ export const translations: Translations = {
   },
   // Audiology Section
   audiologyServices: {
-    en: 'Audiology Services',
-    es: 'Servicios de Audiología',
-    ca: 'Serveis d\'Audiologia',
+    en: 'Audiology Services in Barcelona',
+    es: 'Servicios de Audiología en Barcelona',
+    ca: 'Serveis d\'Audiologia a Barcelona',
   },
   hearingCare: {
-    en: 'Expert Hearing Care',
-    es: 'Cuidado Auditivo Experto',
-    ca: 'Cura Auditiva Experta',
+    en: 'Expert Hearing Care in Barcelona',
+    es: 'Cuidado Auditivo Experto en Barcelona',
+    ca: 'Cura Auditiva Experta a Barcelona',
   },
   audiologyDescription: {
-    en: 'Our certified audiologists provide comprehensive hearing assessments and personalized solutions to improve your hearing health.',
-    es: 'Nuestros audiólogos certificados ofrecen evaluaciones auditivas completas y soluciones personalizadas para mejorar su salud auditiva.',
-    ca: 'Els nostres audiòlegs certificats ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva.',
+    en: 'Our certified audiologists in Barcelona provide comprehensive hearing assessments and personalized solutions to improve your hearing health and treat hearing loss.',
+    es: 'Nuestros audiólogos certificados en Barcelona ofrecen evaluaciones auditivas completas y soluciones personalizadas para mejorar su salud auditiva y tratar la pérdida auditiva.',
+    ca: 'Els nostres audiòlegs certificats a Barcelona ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva i tractar la pèrdua auditiva.',
   },
   hearingTest: {
-    en: 'Professional Hearing Tests',
-    es: 'Pruebas Auditivas Profesionales',
-    ca: 'Proves Auditives Professionals',
+    en: 'Professional Hearing Tests in Barcelona',
+    es: 'Pruebas Auditivas Profesionales en Barcelona',
+    ca: 'Proves Auditives Professionals a Barcelona',
   },
   hearingTestDesc: {
-    en: 'Comprehensive assessment of your hearing ability using state-of-the-art equipment.',
-    es: 'Evaluación completa de su capacidad auditiva utilizando equipos de última generación.',
-    ca: 'Avaluació completa de la seva capacitat auditiva utilitzant equips d\'última generació.',
+    en: 'Comprehensive audiometric assessment of your hearing ability using state-of-the-art equipment at our Barcelona audiology center.',
+    es: 'Evaluación audiométrica completa de su capacidad auditiva utilizando equipos de última generación en nuestro centro de audiología en Barcelona.',
+    ca: 'Avaluació audiomètrica completa de la seva capacitat auditiva utilitzant equips d\'última generació al nostre centre d\'audiologia a Barcelona.',
   },
   hearingAids: {
-    en: 'Advanced Hearing Aids',
-    es: 'Audífonos Avanzados',
-    ca: 'Audiòfons Avançats',
+    en: 'Digital Hearing Aids in Barcelona',
+    es: 'Audífonos Digitales en Barcelona',
+    ca: 'Audiòfons Digitals a Barcelona',
   },
   hearingAidsDesc: {
-    en: 'High-quality hearing aids tailored to your specific needs and lifestyle.',
-    es: 'Audífonos de alta calidad adaptados a sus necesidades específicas y estilo de vida.',
-    ca: 'Audiòfons d\'alta qualitat adaptados a les seves necessitats específiques i estil de vida.',
+    en: 'High-quality digital hearing aids tailored to your specific hearing loss profile and lifestyle at our hearing center in Barcelona.',
+    es: 'Audífonos digitales de alta calidad adaptados a su perfil específico de pérdida auditiva y estilo de vida en nuestro centro auditivo en Barcelona.',
+    ca: 'Audiòfons digitals d\'alta qualitat adaptados a les seves necessitats específiques de pèrdua auditiva i estil de vida al nostre centre auditiu a Barcelona.',
   },
   tinnitusTreatment: {
-    en: 'Tinnitus Treatment',
-    es: 'Tratamiento de Acúfenos',
-    ca: 'Tractament d\'Acúfens',
+    en: 'Tinnitus Treatment in Barcelona',
+    es: 'Tratamiento de Acúfenos en Barcelona',
+    ca: 'Tractament d\'Acúfens a Barcelona',
   },
   tinnitusDesc: {
-    en: 'Specialized solutions to help manage and reduce tinnitus symptoms.',
-    es: 'Soluciones especializadas para ayudar a controlar y reducir los síntomas de acúfenos.',
-    ca: 'Solucions especialitzades per ajudar a controlar i reduir els símptomes d\'acúfens.',
+    en: 'Specialized solutions at our Barcelona audiology clinic to help manage and reduce tinnitus symptoms associated with hearing loss.',
+    es: 'Soluciones especializadas en nuestra clínica de audiología en Barcelona para ayudar a controlar y reducir los síntomas de acúfenos asociados con la pérdida auditiva.',
+    ca: 'Solucions especialitzades a la nostra clínica d\'audiologia a Barcelona per ajudar a controlar i reduir els símptomes d\'acúfens associats amb la pèrdua auditiva.',
   },
   customEarProtection: {
-    en: 'Custom Ear Protection',
-    es: 'Protección Auditiva Personalizada',
-    ca: 'Protecció Auditiva Personalitzada',
+    en: 'Custom Ear Protection in Barcelona',
+    es: 'Protección Auditiva Personalizada en Barcelona',
+    ca: 'Protecció Auditiva Personalitzada a Barcelona',
   },
   earProtectionDesc: {
-    en: 'Custom-made ear plugs designed for comfort and optimal noise protection.',
-    es: 'Tapones para los oídos hechos a medida diseñados para comodidad y protección óptima contra el ruido.',
-    ca: 'Taps per a les orelles fets a mida dissenyats per a comoditat i protecció òptima contra el soroll.',
+    en: 'Custom-made ear plugs at our Barcelona audiology center designed for comfort and optimal noise protection to prevent hearing loss.',
+    es: 'Tapones para los oídos hechos a medida en nuestro centro de audiología en Barcelona diseñados para comodidad y protección óptima contra el ruido para prevenir la pérdida auditiva.',
+    ca: 'Taps per a les orelles fets a mida al nostre centre d\'audiologia a Barcelona dissenyats per a comoditat i protecció òptima contra el soroll per prevenir la pèrdua auditiva.',
   },
   scheduleConsultation: {
-    en: 'Schedule a Consultation',
-    es: 'Programar una Consulta',
-    ca: 'Programar una Consulta',
+    en: 'Schedule a Hearing Consultation in Barcelona',
+    es: 'Programar una Consulta Auditiva en Barcelona',
+    ca: 'Programar una Consulta Auditiva a Barcelona',
   },
   // Testimonials Section
   customerReviews: {
@@ -244,9 +245,9 @@ export const translations: Translations = {
     ca: 'El Que Diuen Els Nostres Clients',
   },
   reviewsDescription: {
-    en: 'Read what our customers have to say about their experiences with our eyewear and services.',
-    es: 'Lea lo que nuestros clientes tienen que decir sobre sus experiencias con nuestras gafas y servicios.',
-    ca: 'Llegiu el que els nostres clients tenen a dir sobre les seves experiències amb les nostres ulleres i serveis.',
+    en: 'Read what our customers have to say about their experiences with our eyewear, hearing aids, and audiology services.',
+    es: 'Lea lo que nuestros clientes tienen que decir sobre sus experiencias con nuestras gafas, audífonos y servicios de audiología.',
+    ca: 'Llegiu el que els nostres clients tenen a dir sobre les seves experiències amb les nostres ulleres, audiòfons i serveis d\'audiologia.',
   },
   viewAllReviews: {
     en: 'View All Reviews on Google',
@@ -265,25 +266,25 @@ export const translations: Translations = {
     ca: 'Les Nostres Marques Destacades',
   },
   brandsDescription: {
-    en: 'We partner with the world\'s leading eyewear and hearing aid brands to provide you with the best quality products.',
-    es: 'Nos asociamos con las principales marcas de gafas y audífonos del mundo para ofrecerle productos de la mejor calidad.',
-    ca: 'Ens associem amb les principals marques d\'ulleres i audiòfons del món per oferir-vos productes de la millor qualitat.',
+    en: 'We partner with the world\'s leading eyewear and hearing aid brands to provide you with the best quality products for vision and hearing health.',
+    es: 'Nos asociamos con las principales marcas de gafas y audífonos del mundo para ofrecerle productos de la mejor calidad para la salud visual y auditiva.',
+    ca: 'Ens associem amb les principals marques d\'ulleres i audiòfons del món per oferir-vos productes de la millor qualitat per a la salut visual i auditiva.',
   },
   // Store Location Section
   findUs: {
-    en: 'Find Us',
-    es: 'Encuéntranos',
-    ca: 'Troba\'ns',
+    en: 'Find Our Barcelona Center',
+    es: 'Encuentra Nuestro Centro en Barcelona',
+    ca: 'Troba El Nostre Centre a Barcelona',
   },
   visitOurStore: {
-    en: 'Visit Our Store',
-    es: 'Visita Nuestra Tienda',
-    ca: 'Visita La Nostra Botiga',
+    en: 'Visit Our Barcelona Store',
+    es: 'Visita Nuestra Tienda en Barcelona',
+    ca: 'Visita La Nostra Botiga a Barcelona',
   },
   storeLocationDesc: {
-    en: 'Come visit our store in Barcelona for a personalized consultation with our experts.',
-    es: 'Venga a visitar nuestra tienda en Barcelona para una consulta personalizada con nuestros expertos.',
-    ca: 'Vine a visitar la nostra botiga a Barcelona per a una consulta personalitzada amb els nostres experts.',
+    en: 'Come visit our optical and audiology center in Barcelona for a personalized consultation with our vision and hearing experts.',
+    es: 'Venga a visitar nuestro centro de óptica y audiología en Barcelona para una consulta personalizada con nuestros expertos en visión y audición.',
+    ca: 'Vine a visitar el nostre centre d\'òptica i audiologia a Barcelona per a una consulta personalitzada amb els nostres experts en visió i audició.',
   },
   address: {
     en: 'Address',
@@ -332,9 +333,9 @@ export const translations: Translations = {
     ca: 'Subscriu-te al nostre butlletí',
   },
   newsletterDesc: {
-    en: 'Join our community and be the first to know about new collections, exclusive offers, and eyewear trends.',
-    es: 'Únete a nuestra comunidad y sé el primero en conocer las nuevas colecciones, ofertas exclusivas y tendencias en gafas.',
-    ca: 'Uneix-te a la nostra comunitat i sigues el primer en conèixer les noves col·leccions, ofertes exclusives i tendències en ulleres.',
+    en: 'Join our community and be the first to know about new collections, hearing health tips, exclusive offers, and eyewear trends.',
+    es: 'Únete a nuestra comunidad y sé el primero en conocer las nuevas colecciones, consejos sobre salud auditiva, ofertas exclusivas y tendencias en gafas.',
+    ca: 'Uneix-te a la nostra comunitat i sigues el primer en conèixer les noves col·leccions, consells sobre salut auditiva, ofertes exclusives i tendències en ulleres.',
   },
   emailAddress: {
     en: 'Email Address',
@@ -374,20 +375,46 @@ export const translations: Translations = {
   },
   // Service Pages
   readyToSchedule: {
-    en: 'Ready to Schedule Your Appointment?',
-    es: '¿Listo para programar tu cita?',
-    ca: 'Preparat per programar la teva cita?',
+    en: 'Ready to Schedule Your Appointment in Barcelona?',
+    es: '¿Listo para programar tu cita en Barcelona?',
+    ca: 'Preparat per programar la teva cita a Barcelona?',
   },
   scheduleDescription: {
-    en: 'Contact us today to schedule your consultation with our expert team.',
-    es: 'Contáctenos hoy para programar su consulta con nuestro equipo de expertos.',
-    ca: 'Contacta\'ns avui per programar la teva consulta amb el nostre equip d\'experts.',
+    en: 'Contact us today to schedule your consultation with our expert team at our Barcelona center.',
+    es: 'Contáctenos hoy para programar su consulta con nuestro equipo de expertos en nuestro centro de Barcelona.',
+    ca: 'Contacta\'ns avui per programar la teva consulta amb el nostre equip d\'experts al nostre centre de Barcelona.',
   },
   // Add the missing translation key
   contactViaWhatsApp: {
     en: 'Contact via WhatsApp',
     es: 'Contactar por WhatsApp',
     ca: 'Contactar per WhatsApp',
+  },
+  // Additional Audiology Terms
+  audiologyCenter: {
+    en: 'Audiology Center in Barcelona',
+    es: 'Centro de Audiología en Barcelona',
+    ca: 'Centre d\'Audiologia a Barcelona',
+  },
+  hearingLoss: {
+    en: 'Hearing Loss Treatment',
+    es: 'Tratamiento de Pérdida Auditiva',
+    ca: 'Tractament de Pèrdua Auditiva',
+  },
+  audiometry: {
+    en: 'Audiometry in Barcelona',
+    es: 'Audiometría en Barcelona',
+    ca: 'Audiometria a Barcelona',
+  },
+  pediatricAudiology: {
+    en: 'Pediatric Audiology',
+    es: 'Audiología Pediátrica',
+    ca: 'Audiologia Pediàtrica',
+  },
+  digitalHearingAids: {
+    en: 'Digital Hearing Aids',
+    es: 'Audífonos Digitales',
+    ca: 'Audiòfons Digitals',
   },
 };
 

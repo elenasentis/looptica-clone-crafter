@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Audiology = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const audiologyServices = [
     {
@@ -41,6 +41,50 @@ const Audiology = () => {
     }
   ];
 
+  // Add SEO text based on language
+  const getSeoText = () => {
+    if (language === 'es') {
+      return (
+        <div className="sr-only">
+          <h2>Centro de Audiología en Barcelona</h2>
+          <p>
+            En Looptica ofrecemos servicios completos de audiología en Barcelona, 
+            incluyendo pruebas auditivas profesionales, tratamiento de pérdida auditiva, 
+            adaptación de audífonos digitales, audiometría Barcelona y soluciones para acúfenos. 
+            Nuestro centro auditivo en Barcelona cuenta con audiología clínica de alta calidad y 
+            especialistas en audiología pediátrica.
+          </p>
+        </div>
+      );
+    } else if (language === 'ca') {
+      return (
+        <div className="sr-only">
+          <h2>Centre d'Audiologia a Barcelona</h2>
+          <p>
+            A Looptica oferim serveis complets d'audiologia a Barcelona, 
+            incloent proves auditives professionals, tractament de pèrdua auditiva, 
+            adaptació d'audiòfons digitals, audiometria Barcelona i solucions per a acúfens. 
+            El nostre centre auditiu a Barcelona compta amb audiologia clínica d'alta qualitat i 
+            especialistes en audiologia pediàtrica.
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="sr-only">
+          <h2>Audiology Center in Barcelona</h2>
+          <p>
+            At Looptica we offer comprehensive audiology services in Barcelona, 
+            including professional hearing tests, hearing loss treatment, 
+            digital hearing aids fitting, audiometry Barcelona and tinnitus solutions. 
+            Our hearing center in Barcelona features high-quality clinical audiology and 
+            specialists in pediatric audiology.
+          </p>
+        </div>
+      );
+    }
+  };
+
   return (
     <section className="py-16 bg-[#f7f7f7]" id="audiology">
       <div className="container mx-auto px-4">
@@ -56,6 +100,8 @@ const Audiology = () => {
             </p>
           </div>
         </ScrollReveal>
+
+        {getSeoText()}
 
         <ScrollReveal delay={0.2}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -92,8 +138,12 @@ const Audiology = () => {
             <GoogleCalendarButton 
               size="lg" 
               className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
-              subject="Hearing Consultation at Looptica"
-              description="Appointment for hearing services at Looptica"
+              subject={language === 'es' ? "Consulta de Audiología en Looptica Barcelona" : 
+                       language === 'ca' ? "Consulta d'Audiologia a Looptica Barcelona" : 
+                       "Audiology Consultation at Looptica Barcelona"}
+              description={language === 'es' ? "Cita para servicios de audiología en Looptica - Centro de audiología en Barcelona" : 
+                          language === 'ca' ? "Cita per a serveis d'audiologia a Looptica - Centre d'audiologia a Barcelona" : 
+                          "Appointment for audiology services at Looptica - Audiology center in Barcelona"}
               durationMinutes={45}
             >
               {t('demanaCita')}

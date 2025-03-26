@@ -10,49 +10,49 @@ const HearingTest = () => {
   
   const content = {
     title: {
-      en: 'Hearing Test',
-      es: 'Prueba Auditiva',
-      ca: 'Prova Auditiva',
+      en: 'Professional Hearing Tests in Barcelona',
+      es: 'Pruebas Auditivas Profesionales en Barcelona',
+      ca: 'Proves Auditives Professionals a Barcelona',
     },
     subtitle: {
-      en: 'Comprehensive hearing assessments by experienced professionals',
-      es: 'Evaluaciones auditivas completas por profesionales experimentados',
-      ca: 'Avaluacions auditives completes per professionals experimentats',
+      en: 'Comprehensive audiological assessments by experienced specialists at our Barcelona hearing center',
+      es: 'Evaluaciones audiológicas completas por especialistas experimentados en nuestro centro auditivo de Barcelona',
+      ca: 'Avaluacions audiològiques completes per especialistes experimentats al nostre centre auditiu de Barcelona',
     },
     appointmentSubject: {
-      en: 'Hearing Test at Looptica',
-      es: 'Prueba Auditiva en Looptica',
-      ca: 'Prova Auditiva a Looptica',
+      en: 'Hearing Test at Looptica Barcelona Audiology Center',
+      es: 'Prueba Auditiva en Looptica Centro de Audiología Barcelona',
+      ca: 'Prova Auditiva a Looptica Centre d\'Audiologia Barcelona',
     },
     understanding: {
-      en: 'Understanding Our Hearing Tests',
-      es: 'Comprendiendo Nuestras Pruebas Auditivas',
-      ca: 'Entenent Les Nostres Proves Auditives',
+      en: 'Understanding Our Clinical Audiology Tests',
+      es: 'Comprendiendo Nuestras Pruebas de Audiología Clínica',
+      ca: 'Entenent Les Nostres Proves d\'Audiologia Clínica',
     },
     understandingP1: {
-      en: 'At Looptica, we provide comprehensive hearing evaluations conducted by our experienced audiologists. Our tests go beyond basic screenings to thoroughly assess your hearing ability across different frequencies and sound levels, helping to identify any potential hearing issues and their causes.',
-      es: 'En Looptica, proporcionamos evaluaciones auditivas completas realizadas por nuestros audiólogos con experiencia. Nuestras pruebas van más allá de los exámenes básicos para evaluar minuciosamente su capacidad auditiva en diferentes frecuencias y niveles de sonido, ayudando a identificar posibles problemas auditivos y sus causas.',
-      ca: 'A Looptica, proporcionem avaluacions auditives completes realitzades pels nostres audiòlegs amb experiència. Les nostres proves van més enllà dels exàmens bàsics per avaluar minuciosament la seva capacitat auditiva en diferents freqüències i nivells de so, ajudant a identificar possibles problemes auditius i les seves causes.',
+      en: 'At Looptica Barcelona Audiology Center, we provide comprehensive hearing evaluations conducted by our experienced audiologists. Our tests go beyond basic screenings to thoroughly assess your hearing ability across different frequencies and sound levels, helping to identify any potential hearing loss and their causes.',
+      es: 'En Looptica Centro de Audiología Barcelona, proporcionamos evaluaciones auditivas completas realizadas por nuestros audiólogos con experiencia. Nuestras pruebas van más allá de los exámenes básicos para evaluar minuciosamente su capacidad auditiva en diferentes frecuencias y niveles de sonido, ayudando a identificar posibles problemas de pérdida auditiva y sus causas.',
+      ca: 'A Looptica Centre d\'Audiologia Barcelona, proporcionem avaluacions auditives completes realitzades pels nostres audiòlegs amb experiència. Les nostres proves van més enllà dels exàmens bàsics per avaluar minuciosament la seva capacitat auditiva en diferents freqüències i nivells de so, ajudant a identificar possibles problemes de pèrdua auditiva i les seves causes.',
     },
     understandingP2: {
-      en: 'Regular hearing tests are essential for monitoring your auditory health, especially if you\'re experiencing symptoms like difficulty understanding conversations, asking people to repeat themselves frequently, or hearing ringing in your ears. Early detection of hearing loss allows for more effective treatment options and better outcomes.',
-      es: 'Las pruebas auditivas regulares son esenciales para monitorizar su salud auditiva, especialmente si está experimentando síntomas como dificultad para entender conversaciones, pedir a las personas que se repitan con frecuencia o escuchar zumbidos en los oídos. La detección temprana de la pérdida auditiva permite opciones de tratamiento más efectivas y mejores resultados.',
-      ca: 'Les proves auditives regulars són essencials per monitoritzar la seva salut auditiva, especialment si està experimentant símptomes com dificultat per entendre converses, demanar a les persones que es repeteixin amb freqüència o escoltar brunzits a les orelles. La detecció primerenca de la pèrdua auditiva permet opcions de tractament més efectives i millors resultats.',
+      en: 'Regular hearing tests are essential for monitoring your auditory health, especially if you\'re experiencing symptoms like difficulty understanding conversations, asking people to repeat themselves frequently, or hearing ringing in your ears (tinnitus). Early detection of hearing loss allows for more effective treatment options and better outcomes with digital hearing aids or other solutions.',
+      es: 'Las pruebas auditivas regulares son esenciales para monitorizar su salud auditiva, especialmente si está experimentando síntomas como dificultad para entender conversaciones, pedir a las personas que se repitan con frecuencia o escuchar zumbidos en los oídos (acúfenos). La detección temprana de la pérdida auditiva permite opciones de tratamiento más efectivas y mejores resultados con audífonos digitales u otras soluciones.',
+      ca: 'Les proves auditives regulars són essencials per monitoritzar la seva salut auditiva, especialment si està experimentant símptomes com dificultat per entendre converses, demanar a les persones que es repeteixin amb freqüència o escoltar brunzits a les orelles (acúfens). La detecció primerenca de la pèrdua auditiva permet opcions de tractament més efectives i millors resultats amb audiòfons digitals o altres solucions.',
     },
     processTitle: {
-      en: 'Our Comprehensive Testing Process',
-      es: 'Nuestro Proceso de Evaluación Completo',
-      ca: 'El Nostre Procés d\'Avaluació Complet',
+      en: 'Our Comprehensive Audiometry Process in Barcelona',
+      es: 'Nuestro Proceso de Audiometría Completo en Barcelona',
+      ca: 'El Nostre Procés d\'Audiometria Complet a Barcelona',
     },
     initialConsultation: {
-      en: 'Initial Consultation',
-      es: 'Consulta Inicial',
-      ca: 'Consulta Inicial',
+      en: 'Initial Audiological Consultation',
+      es: 'Consulta Audiológica Inicial',
+      ca: 'Consulta Audiològica Inicial',
     },
     initialConsultationDesc: {
-      en: 'We begin with a detailed discussion about your hearing concerns, medical history, and lifestyle factors that may affect your hearing health.',
-      es: 'Comenzamos con una discusión detallada sobre sus preocupaciones auditivas, historial médico y factores de estilo de vida que pueden afectar su salud auditiva.',
-      ca: 'Comencem amb una discussió detallada sobre les seves preocupacions auditives, historial mèdic i factors d\'estil de vida que poden afectar la seva salut auditiva.',
+      en: 'We begin with a detailed discussion about your hearing concerns, medical history, and lifestyle factors that may affect your auditory health at our Barcelona hearing center.',
+      es: 'Comenzamos con una discusión detallada sobre sus preocupaciones auditivas, historial médico y factores de estilo de vida que pueden afectar su salud auditiva en nuestro centro auditivo de Barcelona.',
+      ca: 'Comencem amb una discussió detallada sobre les seves preocupacions auditives, historial mèdic i factors d\'estil de vida que poden afectar la seva salut auditiva al nostre centre auditiu de Barcelona.',
     },
     otoscopicExamination: {
       en: 'Otoscopic Examination',
@@ -60,9 +60,9 @@ const HearingTest = () => {
       ca: 'Examen Otoscòpic',
     },
     otoscopicExaminationDesc: {
-      en: 'A visual inspection of your ear canal and eardrum to check for physical abnormalities, earwax blockage, or signs of infection that could affect your hearing.',
-      es: 'Una inspección visual de su canal auditivo y tímpano para verificar anormalidades físicas, bloqueo de cerumen o signos de infección que podrían afectar su audición.',
-      ca: 'Una inspecció visual del seu canal auditiu i timpà per verificar anomalies físiques, bloqueig de cerumen o signes d\'infecció que podrien afectar la seva audició.',
+      en: 'A visual inspection of your ear canal and eardrum to check for physical abnormalities, earwax blockage, or signs of infection that could affect your hearing or cause hearing loss.',
+      es: 'Una inspección visual de su canal auditivo y tímpano para verificar anormalidades físicas, bloqueo de cerumen o signos de infección que podrían afectar su audición o causar pérdida auditiva.',
+      ca: 'Una inspecció visual del seu canal auditiu i timpà per verificar anomalies físiques, bloqueig de cerumen o signes d\'infecció que podrien afectar la seva audició o causar pèrdua auditiva.',
     },
     pureToneAudio: {
       en: 'Pure Tone Audiometry',
@@ -70,9 +70,9 @@ const HearingTest = () => {
       ca: 'Audiometria de To Pur',
     },
     pureToneAudioDesc: {
-      en: 'This test measures your ability to hear sounds of different volumes and frequencies, determining the quietest sounds you can hear across the speech spectrum.',
-      es: 'Esta prueba mide su capacidad para escuchar sonidos de diferentes volúmenes y frecuencias, determinando los sonidos más silenciosos que puede escuchar en todo el espectro del habla.',
-      ca: 'Aquesta prova mesura la seva capacitat per escoltar sons de diferents volums i freqüències, determinant els sons més silenciosos que pot escoltar en tot l\'espectre de la parla.',
+      en: 'This clinical audiology test measures your ability to hear sounds of different volumes and frequencies, determining the quietest sounds you can hear across the speech spectrum and diagnosing hearing loss levels.',
+      es: 'Esta prueba de audiología clínica mide su capacidad para escuchar sonidos de diferentes volúmenes y frecuencias, determinando los sonidos más silenciosos que puede escuchar en todo el espectro del habla y diagnosticando niveles de pérdida auditiva.',
+      ca: 'Aquesta prova d\'audiologia clínica mesura la seva capacitat per escoltar sons de diferents volums i freqüències, determinant els sons més silenciosos que pot escoltar en tot l\'espectre de la parla i diagnosticant nivells de pèrdua auditiva.',
     },
     speechRecognition: {
       en: 'Speech Recognition Testing',
@@ -80,14 +80,14 @@ const HearingTest = () => {
       ca: 'Prova de Reconeixement de la Parla',
     },
     speechRecognitionDesc: {
-      en: 'Evaluates your ability to distinguish speech from background noise and to understand spoken words at different volumes.',
-      es: 'Evalúa su capacidad para distinguir el habla del ruido de fondo y para entender palabras habladas a diferentes volúmenes.',
-      ca: 'Avalua la seva capacitat per distingir la parla del soroll de fons i per entendre paraules parlades a diferents volums.',
+      en: 'Evaluates your ability to distinguish speech from background noise and to understand spoken words at different volumes, critical for determining if hearing aids might be beneficial.',
+      es: 'Evalúa su capacidad para distinguir el habla del ruido de fondo y para entender palabras habladas a diferentes volúmenes, crítico para determinar si los audífonos podrían ser beneficiosos.',
+      ca: 'Avalua la seva capacitat per distingir la parla del soroll de fons i per entendre paraules parlades a diferents volums, crític per determinar si els audiòfons podrien ser beneficiosos.',
     },
     advancedTitle: {
-      en: 'Advanced Diagnostic Tests',
-      es: 'Pruebas Diagnósticas Avanzadas',
-      ca: 'Proves Diagnòstiques Avançades',
+      en: 'Advanced Audiological Diagnostic Tests',
+      es: 'Pruebas Diagnósticas Audiológicas Avanzadas',
+      ca: 'Proves Diagnòstiques Audiològiques Avançades',
     },
     tympanometry: {
       en: 'Tympanometry',
@@ -95,9 +95,9 @@ const HearingTest = () => {
       ca: 'Timpanometria',
     },
     tympanometryDesc: {
-      en: 'Measures the movement of your eardrum in response to air pressure changes, helping to identify middle ear problems such as fluid buildup or eardrum perforation.',
-      es: 'Mide el movimiento de su tímpano en respuesta a cambios de presión de aire, ayudando a identificar problemas del oído medio como acumulación de líquido o perforación del tímpano.',
-      ca: 'Mesura el moviment del seu timpà en resposta a canvis de pressió d\'aire, ajudant a identificar problemes de l\'oïda mitjana com acumulació de líquid o perforació del timpà.',
+      en: 'Measures the movement of your eardrum in response to air pressure changes, helping to identify middle ear problems such as fluid buildup or eardrum perforation that may contribute to hearing loss.',
+      es: 'Mide el movimiento de su tímpano en respuesta a cambios de presión de aire, ayudando a identificar problemas del oído medio como acumulación de líquido o perforación del tímpano que pueden contribuir a la pérdida auditiva.',
+      ca: 'Mesura el moviment del seu timpà en resposta a canvis de pressió d\'aire, ajudant a identificar problemes de l\'oïda mitjana com acumulació de líquid o perforació del timpà que poden contribuir a la pèrdua auditiva.',
     },
     acousticReflex: {
       en: 'Acoustic Reflex Testing',
@@ -105,9 +105,9 @@ const HearingTest = () => {
       ca: 'Prova de Reflex Acústic',
     },
     acousticReflexDesc: {
-      en: 'Evaluates how certain muscles in your middle ear respond to loud sounds, which can help identify the location of hearing problems within the auditory system.',
-      es: 'Evalúa cómo ciertos músculos en su oído medio responden a sonidos fuertes, lo que puede ayudar a identificar la ubicación de problemas auditivos dentro del sistema auditivo.',
-      ca: 'Avalua com certs músculs en la seva oïda mitjana responen a sons forts, el que pot ajudar a identificar la ubicació de problemes auditius dins del sistema auditiu.',
+      en: 'Evaluates how certain muscles in your middle ear respond to loud sounds, which can help identify the location of hearing problems within the auditory system and determine appropriate hearing aid selection.',
+      es: 'Evalúa cómo ciertos músculos en su oído medio responden a sonidos fuertes, lo que puede ayudar a identificar la ubicación de problemas auditivos dentro del sistema auditivo y determinar la selección apropiada de audífonos.',
+      ca: 'Avalua com certs músculs en la seva oïda mitjana responen a sons forts, el que pot ajudar a identificar la ubicació de problemes auditius dins del sistema auditiu i determinar la selecció apropiada d\'audiòfons.',
     },
     otoacoustic: {
       en: 'Otoacoustic Emissions (OAE)',
@@ -115,9 +115,9 @@ const HearingTest = () => {
       ca: 'Emissions Otoacústiques (EOA)',
     },
     otoacousticDesc: {
-      en: 'Measures sounds produced by the inner ear in response to stimuli, helping to assess cochlear function and identify hearing loss in its earliest stages.',
-      es: 'Mide los sonidos producidos por el oído interno en respuesta a estímulos, ayudando a evaluar la función coclear e identificar la pérdida auditiva en sus primeras etapas.',
-      ca: 'Mesura els sons produïts per l\'oïda interna en resposta a estímuls, ajudant a avaluar la funció coclear i identificar la pèrdua auditiva en les seves primeres etapes.',
+      en: 'Measures sounds produced by the inner ear in response to stimuli, helping to assess cochlear function and identify hearing loss in its earliest stages, allowing for timely intervention with digital hearing aids when necessary.',
+      es: 'Mide los sonidos producidos por el oído interno en respuesta a estímulos, ayudando a evaluar la función coclear e identificar la pérdida auditiva en sus primeras etapas, permitiendo una intervención oportuna con audífonos digitales cuando sea necesario.',
+      ca: 'Mesura els sons produïts per l\'oïda interna en resposta a estímuls, ajudant a avaluar la funció coclear i identificar la pèrdua auditiva en les seves primeres etapes, permetent una intervenció oportuna amb audiòfons digitals quan sigui necessari.',
     },
     realWorld: {
       en: 'Real-World Listening Assessment',
@@ -125,19 +125,19 @@ const HearingTest = () => {
       ca: 'Avaluació d\'Escolta en Entorn Real',
     },
     realWorldDesc: {
-      en: 'Evaluates how you hear in everyday environments with background noise, multiple speakers, or different acoustic settings to provide practical insights into your hearing challenges.',
-      es: 'Evalúa cómo escucha en entornos cotidianos con ruido de fondo, múltiples hablantes o diferentes configuraciones acústicas para proporcionar información práctica sobre sus desafíos auditivos.',
-      ca: 'Avalua com escolta en entorns quotidians amb soroll de fons, múltiples parlants o diferents configuracions acústiques per proporcionar informació pràctica sobre els seus desafiaments auditius.',
+      en: 'Evaluates how you hear in everyday environments with background noise, multiple speakers, or different acoustic settings to provide practical insights into your hearing challenges and determine the most appropriate audiological solutions.',
+      es: 'Evalúa cómo escucha en entornos cotidianos con ruido de fondo, múltiples hablantes o diferentes configuraciones acústicas para proporcionar información práctica sobre sus desafíos auditivos y determinar las soluciones audiológicas más apropiadas.',
+      ca: 'Avalua com escolta en entorns quotidians amb soroll de fons, múltiples parlants o diferents configuracions acústiques per proporcionar informació pràctica sobre els seus desafiaments auditius i determinar les solucions audiològiques més apropiades.',
     },
     expectTitle: {
-      en: 'What to Expect During Your Appointment',
-      es: 'Qué Esperar Durante Su Cita',
-      ca: 'Què Esperar Durant La Seva Cita',
+      en: 'What to Expect During Your Appointment at Our Barcelona Audiology Center',
+      es: 'Qué Esperar Durante Su Cita en Nuestro Centro de Audiología en Barcelona',
+      ca: 'Què Esperar Durant La Seva Cita al Nostre Centre d\'Audiologia a Barcelona',
     },
     expectP1: {
-      en: 'Your hearing evaluation at Looptica is a comfortable, non-invasive process that typically takes about 60 minutes. Here\'s what you can expect:',
-      es: 'Su evaluación auditiva en Looptica es un proceso cómodo, no invasivo que generalmente toma unos 60 minutos. Esto es lo que puede esperar:',
-      ca: 'La seva avaluació auditiva a Looptica és un procés còmode, no invasiu que generalment pren uns 60 minuts. Això és el que pot esperar:',
+      en: 'Your hearing evaluation at Looptica Barcelona Audiology Center is a comfortable, non-invasive process that typically takes about 60 minutes. Here\'s what you can expect:',
+      es: 'Su evaluación auditiva en Looptica Centro de Audiología Barcelona es un proceso cómodo, no invasivo que generalmente toma unos 60 minutos. Esto es lo que puede esperar:',
+      ca: 'La seva avaluació auditiva a Looptica Centre d\'Audiologia Barcelona és un procés còmode, no invasiu que generalment pren uns 60 minuts. Això és el que pot esperar:',
     },
     welcomingEnv: {
       en: 'Welcoming Environment',
@@ -145,9 +145,9 @@ const HearingTest = () => {
       ca: 'Ambient Acollidor',
     },
     welcomingEnvDesc: {
-      en: 'Our sound-treated testing rooms ensure accurate results without distracting background noise.',
-      es: 'Nuestras salas de pruebas tratadas acústicamente garantizan resultados precisos sin ruido de fondo que distraiga.',
-      ca: 'Les nostres sales de proves tractades acústicament garanteixen resultats precisos sense soroll de fons que distregui.',
+      en: 'Our sound-treated testing rooms ensure accurate audiometry results without distracting background noise, providing the optimal setting for precise hearing loss diagnosis.',
+      es: 'Nuestras salas de pruebas tratadas acústicamente garantizan resultados de audiometría precisos sin ruido de fondo que distraiga, proporcionando el entorno óptimo para un diagnóstico preciso de pérdida auditiva.',
+      ca: 'Les nostres sales de proves tractades acústicament garanteixen resultats d\'audiometria precisos sense soroll de fons que distregui, proporcionant l\'entorn òptim per a un diagnòstic precís de pèrdua auditiva.',
     },
     simpleInstructions: {
       en: 'Simple Instructions',
@@ -155,9 +155,9 @@ const HearingTest = () => {
       ca: 'Instruccions Simples',
     },
     simpleInstructionsDesc: {
-      en: 'You\'ll be asked to respond to sounds or repeat words as part of the various tests, with clear guidance from our audiologist.',
-      es: 'Se le pedirá que responda a sonidos o repita palabras como parte de las diversas pruebas, con orientación clara de nuestro audiólogo.',
-      ca: 'Se li demanarà que respongui a sons o repeteixi paraules com a part de les diverses proves, amb orientació clara del nostre audiòleg.',
+      en: 'You\'ll be asked to respond to sounds or repeat words as part of the various audiological tests, with clear guidance from our Barcelona-based audiologist.',
+      es: 'Se le pedirá que responda a sonidos o repita palabras como parte de las diversas pruebas audiológicas, con orientación clara de nuestro audiólogo en Barcelona.',
+      ca: 'Se li demanarà que respongui a sons o repeteixi paraules com a part de les diverses proves audiològiques, amb orientació clara del nostre audiòleg a Barcelona.',
     },
     comprehensiveResults: {
       en: 'Comprehensive Results',
@@ -165,9 +165,9 @@ const HearingTest = () => {
       ca: 'Resultats Complets',
     },
     comprehensiveResultsDesc: {
-      en: 'After completing the tests, your audiologist will explain your results using easy-to-understand audiograms and charts.',
-      es: 'Después de completar las pruebas, su audiólogo explicará sus resultados utilizando audiogramas y gráficos fáciles de entender.',
-      ca: 'Després de completar les proves, el seu audiòleg explicarà els seus resultats utilitzant audiogrames i gràfics fàcils d\'entendre.',
+      en: 'After completing the tests, your audiologist will explain your results using easy-to-understand audiograms and charts, discussing any hearing loss findings and potential solutions.',
+      es: 'Después de completar las pruebas, su audiólogo explicará sus resultados utilizando audiogramas y gráficos fáciles de entender, discutiendo cualquier hallazgo de pérdida auditiva y soluciones potenciales.',
+      ca: 'Després de completar les proves, el seu audiòleg explicarà els seus resultats utilitzant audiogrames i gràfics fàcils d\'entendre, discutint qualsevol troballa de pèrdua auditiva i solucions potencials.',
     },
     personalizedRecommendations: {
       en: 'Personalized Recommendations',
@@ -175,9 +175,9 @@ const HearingTest = () => {
       ca: 'Recomanacions Personalitzades',
     },
     personalizedRecommendationsDesc: {
-      en: 'Based on your results, we\'ll discuss appropriate next steps, whether that\'s monitoring your hearing, exploring hearing aids, or referring you to a medical specialist if necessary.',
-      es: 'Basado en sus resultados, discutiremos los próximos pasos apropiados, ya sea monitoreando su audición, explorando audífonos o refiriéndolo a un especialista médico si es necesario.',
-      ca: 'Basat en els seus resultats, discutirem els propers passos apropiats, ja sigui monitoritzant la seva audició, explorant audiòfons o referint-lo a un especialista mèdic si és necessari.',
+      en: 'Based on your results, we\'ll discuss appropriate next steps, whether that\'s monitoring your hearing, exploring digital hearing aids options, or referring you to a medical specialist if necessary.',
+      es: 'Basado en sus resultados, discutiremos los próximos pasos apropiados, ya sea monitoreando su audición, explorando opciones de audífonos digitales o refiriéndolo a un especialista médico si es necesario.',
+      ca: 'Basat en els seus resultats, discutirem els propers passos apropiats, ja sigui monitoritzant la seva audició, explorant opcions d\'audiòfons digitals o referint-lo a un especialista mèdic si és necessari.',
     },
     noPressure: {
       en: 'No Pressure Consultations',
@@ -185,24 +185,24 @@ const HearingTest = () => {
       ca: 'Consultes Sense Pressió',
     },
     noPressureDesc: {
-      en: 'Our focus is on providing information and support, not selling products. You\'ll have time to ask questions and consider your options without any pressure.',
-      es: 'Nuestro enfoque está en proporcionar información y apoyo, no en vender productos. Tendrá tiempo para hacer preguntas y considerar sus opciones sin ninguna presión.',
-      ca: 'El nostre enfocament està en proporcionar informació i suport, no en vendre productes. Tindrà temps per fer preguntes i considerar les seves opcions sense cap pressió.',
+      en: 'Our focus at our Barcelona audiology clinic is on providing information and support, not selling products. You\'ll have time to ask questions and consider your options without any pressure.',
+      es: 'Nuestro enfoque en nuestra clínica de audiología en Barcelona está en proporcionar información y apoyo, no en vender productos. Tendrá tiempo para hacer preguntas y considerar sus opciones sin ninguna presión.',
+      ca: 'El nostre enfocament a la nostra clínica d\'audiologia a Barcelona està en proporcionar informació i suport, no en vendre productes. Tindrà temps per fer preguntes i considerar les seves opcions sense cap pressió.',
     },
     whenToGetTitle: {
-      en: 'When Should You Get Your Hearing Tested?',
-      es: '¿Cuándo Debería Hacerse una Prueba Auditiva?',
-      ca: 'Quan Hauria de Fer-se una Prova Auditiva?',
+      en: 'When Should You Get Your Hearing Tested in Barcelona?',
+      es: '¿Cuándo Debería Hacerse una Prueba Auditiva en Barcelona?',
+      ca: 'Quan Hauria de Fer-se una Prova Auditiva a Barcelona?',
     },
     whenToGetP1: {
-      en: 'We recommend hearing tests for:',
-      es: 'Recomendamos pruebas auditivas para:',
-      ca: 'Recomanem proves auditives per a:',
+      en: 'We recommend audiological tests for:',
+      es: 'Recomendamos pruebas audiológicas para:',
+      ca: 'Recomanem proves audiològiques per a:',
     },
     hearingTestsP1: {
-      en: 'Remember that hearing loss often occurs gradually, making it difficult to notice until it significantly impacts your quality of life. Regular hearing tests allow for early intervention and better outcomes.',
-      es: 'Recuerde que la pérdida auditiva a menudo ocurre gradualmente, lo que dificulta notarla hasta que afecta significativamente su calidad de vida. Las pruebas auditivas regulares permiten una intervención temprana y mejores resultados.',
-      ca: 'Recordi que la pèrdua auditiva sovint ocorre gradualment, el que dificulta notar-la fins que afecta significativament la seva qualitat de vida. Les proves auditives regulars permeten una intervenció primerenca i millors resultats.',
+      en: 'Remember that hearing loss often occurs gradually, making it difficult to notice until it significantly impacts your quality of life. Regular hearing tests at our Barcelona audiology center allow for early intervention and better outcomes with appropriate solutions like digital hearing aids.',
+      es: 'Recuerde que la pérdida auditiva a menudo ocurre gradualmente, lo que dificulta notarla hasta que afecta significativamente su calidad de vida. Las pruebas auditivas regulares en nuestro centro de audiología en Barcelona permiten una intervención temprana y mejores resultados con soluciones apropiadas como audífonos digitales.',
+      ca: 'Recordi que la pèrdua auditiva sovint ocorre gradualment, el que dificulta notar-la fins que afecta significativament la seva qualitat de vida. Les proves auditives regulars al nostre centre d\'audiologia a Barcelona permeten una intervenció primerenca i millors resultats amb solucions apropiades com audiòfons digitals.',
     },
   };
   
