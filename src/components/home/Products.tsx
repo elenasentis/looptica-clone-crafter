@@ -22,7 +22,7 @@ const Products = () => {
       name: t('contactLenses'),
       category: t('contactLenses'),
       price: 30,
-      image: '/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png',
+      image: '/images/adobestock-226007711_orig.jpeg',
       link: '/services/contact-lenses'
     },
     {
