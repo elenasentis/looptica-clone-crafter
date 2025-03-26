@@ -52,7 +52,8 @@
 - ✅ Updated all SEO text, meta tags, and schema markup to include Poblenou references
 - ✅ Standardized location references across all pages and components
 - ✅ Refactored files for better code organization (section-first content structure)
-- ✅ Updated favicon to use site logo
+- ✅ Updated favicon to use properly named site logo
+- ✅ Fixed appointment booking to use direct Google Calendar scheduling link
 
 ### Code Quality
 - ✅ Implemented consistent content object structure for all multilingual pages
@@ -108,4 +109,5 @@
 - Added "Poblenou" tag to improve local SEO across all pages and components
 - Schema markup and meta tags updated to include Poblenou neighborhood references
 - All service pages now follow a consistent section-first content organization structure
-- Favicon has been updated to use the site logo
+- Favicon has been updated to use properly named site logo (looptica-icon.png)
+- Updated all appointment buttons to use direct Google Calendar scheduling link

@@ -24,30 +24,10 @@ const GoogleCalendarButton = ({
   const { t } = useLanguage();
   const { toast } = useToast();
 
-  const createGoogleCalendarLink = () => {
+  const handleAppointmentClick = () => {
     try {
-      // Start date is tomorrow at 10am
-      const startDate = new Date();
-      startDate.setDate(startDate.getDate() + 1);
-      startDate.setHours(10, 0, 0, 0);
-      
-      // End date is start date + duration
-      const endDate = new Date(startDate);
-      endDate.setMinutes(endDate.getMinutes() + durationMinutes);
-      
-      // Format dates for Google Calendar URL
-      const formatDate = (date: Date) => {
-        return date.toISOString().replace(/-|:|\.\d+/g, '');
-      };
-      
-      const formattedStart = formatDate(startDate);
-      const formattedEnd = formatDate(endDate);
-      
-      // Create Google Calendar URL
-      const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(subject)}&dates=${formattedStart}/${formattedEnd}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
-      
-      // Open URL in new tab
-      window.open(googleCalendarUrl, '_blank');
+      // Open the provided Google Calendar appointment link
+      window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1X2ujdqOmHen2LFMc3Ki4s-Vx6l7uZapLzO6jrbmdMMxLr2RxC_PZKluTKrCqgrHUEGnbF62NO', '_blank');
       
       // Show toast
       toast({
@@ -55,7 +35,7 @@ const GoogleCalendarButton = ({
         description: t('calendarOpened'),
       });
     } catch (error) {
-      console.error('Error creating Google Calendar link:', error);
+      console.error('Error opening Google Calendar link:', error);
       toast({
         title: t('errorScheduling'),
         description: t('tryAgainLater'),
@@ -66,7 +46,7 @@ const GoogleCalendarButton = ({
 
   return (
     <Button 
-      onClick={createGoogleCalendarLink}
+      onClick={handleAppointmentClick}
       className={`bg-[#2ecc71] hover:bg-[#ea384c] text-white transition-colors ${className}`}
       {...props}
     >
