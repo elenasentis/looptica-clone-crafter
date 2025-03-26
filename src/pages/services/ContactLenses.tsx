@@ -238,7 +238,7 @@ const ContactLenses = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png"
+      image="/images/adobestock-226007711_orig.jpeg"
       appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
