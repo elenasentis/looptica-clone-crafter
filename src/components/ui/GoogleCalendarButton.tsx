@@ -47,7 +47,7 @@ const GoogleCalendarButton = ({
   return (
     <Button 
       onClick={handleAppointmentClick}
-      className={`bg-[#2ecc71] hover:bg-[#ea384c] text-white transition-colors ${className}`}
+      className={`bg-[#55afa9] hover:bg-[#ca6664] text-white transition-colors ${className}`}
       {...props}
     >
       <CalendarIcon className="mr-2 h-4 w-4" />

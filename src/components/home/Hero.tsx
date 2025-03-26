@@ -38,14 +38,14 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <GoogleCalendarButton 
                   size="lg" 
-                  className="group bg-[#2ecc71] hover:bg-[#ea384c] text-white"
+                  className="group bg-[#55afa9] hover:bg-[#ca6664] text-white"
                 >
                   {t('demanaCita')}
                 </GoogleCalendarButton>
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10"
+                  className="border-[#55afa9] text-[#55afa9] hover:bg-[#55afa9]/10"
                 >
                   {t('viewCollection')}
                 </Button>

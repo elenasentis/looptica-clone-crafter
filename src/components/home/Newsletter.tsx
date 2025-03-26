@@ -46,13 +46,13 @@ const Newsletter = () => {
           {/* Left Side (Text) */}
           <div className="md:w-1/2">
             <ScrollReveal origin="left">
-              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#2ecc71]/10 text-[#2ecc71] mb-4">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-4">
                 {t('stayUpdated')}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                 {t('newsletter')}
               </h2>
-              <div className="w-16 h-1 bg-[#2ecc71] mb-6"></div>
+              <div className="w-16 h-1 bg-[#55afa9] mb-6"></div>
               <p className="text-gray-600 mb-8">
                 {t('newsletterDesc')}
               </p>
@@ -75,12 +75,12 @@ const Newsletter = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="flex-1 border-gray-300 focus:border-[#2ecc71] focus:ring-[#2ecc71]"
+                      className="flex-1 border-gray-300 focus:border-[#55afa9] focus:ring-[#55afa9]"
                     />
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-[#2ecc71] hover:bg-[#ea384c] text-white"
+                      className="bg-[#55afa9] hover:bg-[#ca6664] text-white"
                     >
                       <Mail className="w-4 h-4 mr-2" />
                       {isSubmitting ? t('subscribing') : t('subscribe')}
@@ -97,8 +97,8 @@ const Newsletter = () => {
       </div>
       
       {/* Background Gradients */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#2ecc71]/5 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#2ecc71]/5 rounded-full blur-3xl"></div>
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#55afa9]/5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#55afa9]/5 rounded-full blur-3xl"></div>
     </section>
   );
 };

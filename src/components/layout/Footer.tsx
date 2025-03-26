@@ -91,7 +91,7 @@ const Footer = () => {
                   <a
                     key={social.name}
                     href={social.path}
-                    className="hover:text-[#009fe3] text-gray-300 transition-colors duration-200"
+                    className="hover:text-[#55afa9] text-gray-300 transition-colors duration-200"
                     aria-label={social.name}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -112,7 +112,7 @@ const Footer = () => {
                       {link.path.includes('#') ? (
                         <a
                           href={link.path}
-                          className="text-gray-300 hover:text-[#009fe3] transition-colors duration-200"
+                          className="text-gray-300 hover:text-[#55afa9] transition-colors duration-200"
                           onClick={handleAnchorClick}
                         >
                           {link.name}
@@ -120,7 +120,7 @@ const Footer = () => {
                       ) : (
                         <Link
                           to={link.path}
-                          className="text-gray-300 hover:text-[#009fe3] transition-colors duration-200"
+                          className="text-gray-300 hover:text-[#55afa9] transition-colors duration-200"
                         >
                           {link.name}
                         </Link>
@@ -138,20 +138,20 @@ const Footer = () => {
               </h4>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <MapPin className="h-5 w-5 text-[#009fe3] mr-3 mt-1 flex-shrink-0" />
+                  <MapPin className="h-5 w-5 text-[#ca6664] mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-300">Rambla del Poblenou, 48, 08005 Barcelona</span>
                 </li>
                 <li className="flex items-center">
-                  <Phone className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />
-                  <a href="tel:+34933009064" className="text-gray-300 hover:text-[#009fe3]">933 00 90 64</a>
+                  <Phone className="h-5 w-5 text-[#ca6664] mr-3 flex-shrink-0" />
+                  <a href="tel:+34933009064" className="text-gray-300 hover:text-[#55afa9]">933 00 90 64</a>
                 </li>
                 <li className="flex items-center">
-                  <Phone className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />
-                  <a href="tel:+34699594064" className="text-gray-300 hover:text-[#009fe3]">699 59 40 64</a>
+                  <Phone className="h-5 w-5 text-[#ca6664] mr-3 flex-shrink-0" />
+                  <a href="tel:+34699594064" className="text-gray-300 hover:text-[#55afa9]">699 59 40 64</a>
                 </li>
                 <li className="flex items-center">
-                  <Mail className="h-5 w-5 text-[#009fe3] mr-3 flex-shrink-0" />
-                  <a href="mailto:info@looptica.com" className="text-gray-300 hover:text-[#009fe3]">info@looptica.com</a>
+                  <Mail className="h-5 w-5 text-[#ca6664] mr-3 flex-shrink-0" />
+                  <a href="mailto:info@looptica.com" className="text-gray-300 hover:text-[#55afa9]">info@looptica.com</a>
                 </li>
               </ul>
             </div>
@@ -167,13 +167,13 @@ const Footer = () => {
               </p>
 
               <div className="flex space-x-6 text-sm text-gray-400">
-                <Link to="/about" className="hover:text-[#009fe3] transition-colors duration-200">
+                <Link to="/about" className="hover:text-[#55afa9] transition-colors duration-200">
                   {language === 'en' ? 'Privacy Policy' : (language === 'es' ? 'Política de Privacidad' : 'Política de Privacitat')}
                 </Link>
-                <Link to="/about" className="hover:text-[#009fe3] transition-colors duration-200">
+                <Link to="/about" className="hover:text-[#55afa9] transition-colors duration-200">
                   {language === 'en' ? 'Terms & Conditions' : (language === 'es' ? 'Términos y Condiciones' : 'Termes i Condicions')}
                 </Link>
-                <Link to="/about" className="hover:text-[#009fe3] transition-colors duration-200">
+                <Link to="/about" className="hover:text-[#55afa9] transition-colors duration-200">
                   Cookies
                 </Link>
               </div>

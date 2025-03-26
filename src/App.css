@@ -1,3 +1,4 @@
+
 /* Reset styling for the app */
 #root {
   max-width: 100%;
@@ -25,10 +26,10 @@ body, html {
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #55afa9aa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #ca6664aa);
 }
 
 @keyframes logo-spin {

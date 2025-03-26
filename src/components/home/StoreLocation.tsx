@@ -11,7 +11,7 @@ const StoreLocation = () => {
       <div className="max-w-7xl mx-auto">
         <ScrollReveal origin="bottom" delay={100}>
           <div className="text-center mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#009fe3]/10 text-[#009fe3] mb-3">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-3">
               {t('findUs')}
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('visitOurStore')}</h2>
@@ -41,7 +41,7 @@ const StoreLocation = () => {
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-[#009fe3] mt-1 mr-3" />
+                <MapPin className="h-5 w-5 text-[#55afa9] mt-1 mr-3" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">{t('address')}</h4>
                   <p className="text-gray-600">
@@ -52,7 +52,7 @@ const StoreLocation = () => {
               </div>
               
               <div className="flex items-start">
-                <Clock className="h-5 w-5 text-[#009fe3] mt-1 mr-3" />
+                <Clock className="h-5 w-5 text-[#55afa9] mt-1 mr-3" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">{t('openingHours')}</h4>
                   <p className="text-gray-600">
@@ -64,19 +64,19 @@ const StoreLocation = () => {
               </div>
               
               <div className="flex items-start">
-                <Phone className="h-5 w-5 text-[#009fe3] mt-1 mr-3" />
+                <Phone className="h-5 w-5 text-[#55afa9] mt-1 mr-3" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">{t('contact')}</h4>
                   <p className="text-gray-600">
-                    Tel: <a href="tel:+34933009064" className="hover:text-[#009fe3]">+34 933 00 90 64</a><br />
-                    Móvil: <a href="tel:+34699594064" className="hover:text-[#009fe3]">+34 699 59 40 64</a><br />
-                    Email: <a href="mailto:info@looptica.com" className="hover:text-[#009fe3]">info@looptica.com</a>
+                    Tel: <a href="tel:+34933009064" className="hover:text-[#55afa9]">+34 933 00 90 64</a><br />
+                    Móvil: <a href="tel:+34699594064" className="hover:text-[#55afa9]">+34 699 59 40 64</a><br />
+                    Email: <a href="mailto:info@looptica.com" className="hover:text-[#55afa9]">info@looptica.com</a>
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <MessageCircle className="h-5 w-5 text-[#009fe3] mt-1 mr-3" />
+                <MessageCircle className="h-5 w-5 text-[#55afa9] mt-1 mr-3" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">WhatsApp</h4>
                   <p className="text-gray-600">
@@ -84,7 +84,7 @@ const StoreLocation = () => {
                       href="https://wa.me/34699594064" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover:text-[#009fe3]"
+                      className="hover:text-[#55afa9]"
                     >
                       +34 699 59 40 64
                     </a>
@@ -98,7 +98,7 @@ const StoreLocation = () => {
                 href="https://www.google.com/maps/place/Rambla+del+Poblenou,+48,+Sant+Mart%C3%AD,+08005+Barcelona/@41.4040799,2.1994679,17z/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#009fe3] hover:bg-[#0082b8] text-white py-3 px-4 rounded-md inline-flex items-center justify-center font-medium transition-colors"
+                className="flex-1 bg-[#55afa9] hover:bg-[#55afa9]/80 text-white py-3 px-4 rounded-md inline-flex items-center justify-center font-medium transition-colors"
               >
                 {t('getDirections')}
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +110,7 @@ const StoreLocation = () => {
                 href="https://wa.me/34699594064" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#25D366] hover:bg-[#128C7E] text-white py-3 px-4 rounded-md inline-flex items-center justify-center font-medium transition-colors"
+                className="flex-1 bg-[#ca6664] hover:bg-[#ca6664]/80 text-white py-3 px-4 rounded-md inline-flex items-center justify-center font-medium transition-colors"
               >
                 WhatsApp
                 <MessageCircle className="ml-2 w-4 h-4" />

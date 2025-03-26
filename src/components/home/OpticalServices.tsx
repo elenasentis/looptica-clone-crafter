@@ -12,42 +12,42 @@ const OpticalServices = () => {
 
   const opticalServices = [
     {
-      icon: <Eye className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Eye className="w-10 h-10 text-[#55afa9]" />,
       title: t('visualHealth'),
       description: t('visualHealthDesc'),
       image: "/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png",
       path: "/services/salut-visual"
     },
     {
-      icon: <Contact className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Contact className="w-10 h-10 text-[#55afa9]" />,
       title: t('contactLenses'),
       description: t('contactLensesDesc'),
       image: "/lovable-uploads/17bc2039-1cd8-4464-80fe-3107ec793ead.png",
       path: "/services/lents-contacte"
     },
     {
-      icon: <Moon className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Moon className="w-10 h-10 text-[#55afa9]" />,
       title: t('orthoK'),
       description: t('orthoKDesc'),
       image: "/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png",
       path: "/services/orto-k"
     },
     {
-      icon: <User className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <User className="w-10 h-10 text-[#55afa9]" />,
       title: t('imageConsulting'),
       description: t('imageConsultingDesc'),
       image: "/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.png",
       path: "/services/image-consulting"
     },
     {
-      icon: <Glasses className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Glasses className="w-10 h-10 text-[#55afa9]" />,
       title: t('lensConsulting'),
       description: t('lensConsultingDesc'),
       image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png",
       path: "/services/lens-consulting"
     },
     {
-      icon: <Sun className="w-10 h-10 text-[#2ecc71]" />,
+      icon: <Sun className="w-10 h-10 text-[#55afa9]" />,
       title: t('sunglassesService'),
       description: t('sunglassesServiceDesc'),
       image: "/lovable-uploads/e288806f-89cb-4ae0-9a88-6b52ee0ccc4b.png",
@@ -60,11 +60,11 @@ const OpticalServices = () => {
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#2ecc71]/10 text-[#2ecc71] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-4">
               {t('opticalServices')}
             </span>
             <h2 className="text-3xl font-bold mb-3 text-gray-900">{t('visualCare')}</h2>
-            <div className="w-16 h-1 bg-[#2ecc71] mx-auto mb-6"></div>
+            <div className="w-16 h-1 bg-[#55afa9] mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-gray-600">
               {t('opticalDescription')}
             </p>
@@ -94,7 +94,7 @@ const OpticalServices = () => {
                   <h3 className="text-lg font-semibold mb-2 text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{service.description}</p>
                   <Link to={service.path} className="mt-auto">
-                    <Button variant="outline" size="sm" className="border-[#2ecc71] text-[#2ecc71] hover:bg-[#2ecc71]/10">
+                    <Button variant="outline" size="sm" className="border-[#55afa9] text-[#55afa9] hover:bg-[#55afa9]/10">
                       {t('viewDetails')}
                     </Button>
                   </Link>
@@ -108,7 +108,7 @@ const OpticalServices = () => {
           <div className="text-center">
             <GoogleCalendarButton 
               size="lg" 
-              className="bg-[#2ecc71] hover:bg-[#ea384c] text-white"
+              className="bg-[#55afa9] hover:bg-[#ca6664] text-white"
               subject="Vision Consultation at Looptica"
               description="Appointment for optical services at Looptica"
               durationMinutes={30}
