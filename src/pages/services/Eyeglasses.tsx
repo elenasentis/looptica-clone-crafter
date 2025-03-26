@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Glasses, PenTool, Shapes, BarChart3 } from 'lucide-react';
@@ -48,7 +47,7 @@ const Eyeglasses = () => {
     hdLensesDesc: {
       en: 'Our digitally-surfaced lenses provide superior clarity and visual comfort compared to traditional lenses, reducing eye strain and fatigue even after long hours of wear.',
       es: 'Nuestras lentes con superficie digital proporcionan una claridad superior y comodidad visual en comparación con las lentes tradicionales, reduciendo la fatiga ocular incluso después de largas horas de uso.',
-      ca: 'Les nostres lents amb superfície digital proporcionen una claredat superior i comoditat visual en comparació amb les lents tradicionals, reduint la fatiga ocular fins i tot després de llargues hores d\'ús.',
+      ca: 'Les nostres lents amb superfície digital proporcionan una claredat superior i comoditat visual en comparació amb les lents tradicionals, reduint la fatiga ocular fins i tot després de llargues hores d\'ús.',
     },
     progressive: {
       en: 'Progressive Lenses',
@@ -108,7 +107,7 @@ const Eyeglasses = () => {
     brandRayBan: {
       en: 'Iconic frames known worldwide for their classic designs and exceptional quality that never goes out of style.',
       es: 'Monturas icónicas conocidas en todo el mundo por sus diseños clásicos y calidad excepcional que nunca pasa de moda.',
-      ca: 'Muntures icòniques conegudes arreu del món pels seus dissenys clàssics i qualitat excepcional que mai passa de moda.',
+      ca: 'Muntures icóniques conegudes arreu del món pels seus dissenys clàssics i qualitat excepcional que mai passa de moda.',
     },
     brandTomFord: {
       en: 'Luxury frames featuring sophisticated designs, premium materials, and attention to detail for the discerning customer.',
@@ -228,7 +227,7 @@ const Eyeglasses = () => {
           
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Glasses className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -238,7 +237,7 @@ const Eyeglasses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <PenTool className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -248,7 +247,7 @@ const Eyeglasses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Shapes className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -258,7 +257,7 @@ const Eyeglasses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <BarChart3 className="w-6 h-6 text-white" />
               </div>
               <div>

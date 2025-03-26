@@ -126,7 +126,7 @@ const Index = () => {
           <div id="audiology">
             <Audiology />
             <div className="container mx-auto px-4 mt-4 text-center">
-              <Link to="/services/audiologia-centro" className="text-[#009fe3] hover:underline">
+              <Link to="/services/audiologia-centro" className="text-[#55afa9] hover:underline">
                 {content.audiologyLink[language]}
               </Link>
             </div>

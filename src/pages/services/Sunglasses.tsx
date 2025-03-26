@@ -247,7 +247,7 @@ const Sunglasses = () => {
           
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Sun className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -257,7 +257,7 @@ const Sunglasses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -267,7 +267,7 @@ const Sunglasses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -277,7 +277,7 @@ const Sunglasses = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <div>
