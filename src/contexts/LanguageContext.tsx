@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
@@ -174,64 +173,64 @@ export const translations: Translations = {
   },
   // Audiology Section
   audiologyServices: {
-    en: 'Audiology Services in Barcelona',
-    es: 'Servicios de Audiología en Barcelona',
-    ca: 'Serveis d\'Audiologia a Barcelona',
+    en: 'Audiology Services in Barcelona Poblenou',
+    es: 'Servicios de Audiología en Barcelona Poblenou',
+    ca: 'Serveis d\'Audiologia a Barcelona Poblenou',
   },
   hearingCare: {
-    en: 'Expert Hearing Care in Barcelona',
-    es: 'Cuidado Auditivo Experto en Barcelona',
-    ca: 'Cura Auditiva Experta a Barcelona',
+    en: 'Expert Hearing Care',
+    es: 'Cuidado Auditivo Experto',
+    ca: 'Cura Auditiva Experta',
   },
   audiologyDescription: {
-    en: 'Our certified audiologists in Barcelona provide comprehensive hearing assessments and personalized solutions to improve your hearing health and treat hearing loss.',
-    es: 'Nuestros audiólogos certificados en Barcelona ofrecen evaluaciones auditivas completas y soluciones personalizadas para mejorar su salud auditiva y tratar la pérdida auditiva.',
-    ca: 'Els nostres audiòlegs certificats a Barcelona ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva i tractar la pèrdua auditiva.',
+    en: 'Our certified audiologists in Barcelona Poblenou provide comprehensive hearing assessments and personalized solutions to improve your hearing health and treat hearing loss.',
+    es: 'Nuestros audiólogos certificados en Barcelona Poblenou ofrecen evaluaciones auditivas completas y soluciones personalizadas para mejorar su salud auditiva y tratar la pérdida auditiva.',
+    ca: 'Els nostres audiòlegs certificats a Barcelona Poblenou ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva i tractar la pèrdua auditiva.',
   },
   hearingTest: {
-    en: 'Professional Hearing Tests in Barcelona',
-    es: 'Pruebas Auditivas Profesionales en Barcelona',
-    ca: 'Proves Auditives Professionals a Barcelona',
+    en: 'Professional Hearing Tests',
+    es: 'Pruebas Auditivas Profesionales',
+    ca: 'Proves Auditives Professionals',
   },
   hearingTestDesc: {
-    en: 'Comprehensive audiometric assessment of your hearing ability using state-of-the-art equipment at our Barcelona audiology center.',
-    es: 'Evaluación audiométrica completa de su capacidad auditiva utilizando equipos de última generación en nuestro centro de audiología en Barcelona.',
-    ca: 'Avaluació audiomètrica completa de la seva capacitat auditiva utilitzant equips d\'última generació al nostre centre d\'audiologia a Barcelona.',
+    en: 'Comprehensive audiometric assessment of your hearing ability using state-of-the-art equipment at our Barcelona Poblenou audiology center.',
+    es: 'Evaluación audiométrica completa de su capacidad auditiva utilizando equipos de última generación en nuestro centro de audiología en Barcelona Poblenou.',
+    ca: 'Avaluació audiomètrica completa de la seva capacitat auditiva utilitzant equips d\'última generació al nostre centre d\'audiologia a Barcelona Poblenou.',
   },
   hearingAids: {
-    en: 'Digital Hearing Aids in Barcelona',
-    es: 'Audífonos Digitales en Barcelona',
-    ca: 'Audiòfons Digitals a Barcelona',
+    en: 'Digital Hearing Aids',
+    es: 'Audífonos Digitales',
+    ca: 'Audiòfons Digitals',
   },
   hearingAidsDesc: {
-    en: 'High-quality digital hearing aids tailored to your specific hearing loss profile and lifestyle at our hearing center in Barcelona.',
-    es: 'Audífonos digitales de alta calidad adaptados a su perfil específico de pérdida auditiva y estilo de vida en nuestro centro auditivo en Barcelona.',
-    ca: 'Audiòfons digitals d\'alta qualitat adaptados a les seves necessitats específiques de pèrdua auditiva i estil de vida al nostre centre auditiu a Barcelona.',
+    en: 'High-quality digital hearing aids tailored to your specific hearing loss profile and lifestyle at our hearing center in Barcelona Poblenou.',
+    es: 'Audífonos digitales de alta calidad adaptados a su perfil específico de pérdida auditiva y estilo de vida en nuestro centro auditivo en Barcelona Poblenou.',
+    ca: 'Audiòfons digitals d\'alta qualitat adaptados a les seves necessitats específiques de pèrdua auditiva i estil de vida al nostre centre auditiu a Barcelona Poblenou.',
   },
   tinnitusTreatment: {
-    en: 'Tinnitus Treatment in Barcelona',
-    es: 'Tratamiento de Acúfenos en Barcelona',
-    ca: 'Tractament d\'Acúfens a Barcelona',
+    en: 'Tinnitus Treatment',
+    es: 'Tratamiento de Acúfenos',
+    ca: 'Tractament d\'Acúfens',
   },
   tinnitusDesc: {
-    en: 'Specialized solutions at our Barcelona audiology clinic to help manage and reduce tinnitus symptoms associated with hearing loss.',
-    es: 'Soluciones especializadas en nuestra clínica de audiología en Barcelona para ayudar a controlar y reducir los síntomas de acúfenos asociados con la pérdida auditiva.',
-    ca: 'Solucions especialitzades a la nostra clínica d\'audiologia a Barcelona per ajudar a controlar i reduir els símptomes d\'acúfens associats amb la pèrdua auditiva.',
+    en: 'Specialized solutions at our Barcelona Poblenou audiology clinic to help manage and reduce tinnitus symptoms associated with hearing loss.',
+    es: 'Soluciones especializadas en nuestra clínica de audiología en Barcelona Poblenou para ayudar a controlar y reducir los síntomas de acúfenos asociados con la pérdida auditiva.',
+    ca: 'Solucions especialitzades a la nostra clínica d\'audiologia a Barcelona Poblenou per ajudar a controlar i reduir els símptomes d\'acúfens associats amb la pèrdua auditiva.',
   },
   customEarProtection: {
-    en: 'Custom Ear Protection in Barcelona',
-    es: 'Protección Auditiva Personalizada en Barcelona',
-    ca: 'Protecció Auditiva Personalitzada a Barcelona',
+    en: 'Custom Ear Protection',
+    es: 'Protección Auditiva Personalizada',
+    ca: 'Protecció Auditiva Personalitzada',
   },
   earProtectionDesc: {
-    en: 'Custom-made ear plugs at our Barcelona audiology center designed for comfort and optimal noise protection to prevent hearing loss.',
-    es: 'Tapones para los oídos hechos a medida en nuestro centro de audiología en Barcelona diseñados para comodidad y protección óptima contra el ruido para prevenir la pérdida auditiva.',
-    ca: 'Taps per a les orelles fets a mida al nostre centre d\'audiologia a Barcelona dissenyats per a comoditat i protecció òptima contra el soroll per prevenir la pèrdua auditiva.',
+    en: 'Custom-made ear plugs at our Barcelona Poblenou audiology center designed for comfort and optimal noise protection to prevent hearing loss.',
+    es: 'Tapones para los oídos hechos a medida en nuestro centro de audiología en Barcelona Poblenou diseñados para comodidad y protección óptima contra el ruido para prevenir la pérdida auditiva.',
+    ca: 'Taps per a les orelles fets a mida al nostre centre d\'audiologia a Barcelona Poblenou dissenyats per a comoditat i protecció òptima contra el soroll per prevenir la pèrdua auditiva.',
   },
   scheduleConsultation: {
-    en: 'Schedule a Hearing Consultation in Barcelona',
-    es: 'Programar una Consulta Auditiva en Barcelona',
-    ca: 'Programar una Consulta Auditiva a Barcelona',
+    en: 'Schedule a Hearing Consultation',
+    es: 'Programar una Consulta Auditiva',
+    ca: 'Programar una Consulta Auditiva',
   },
   // Testimonials Section
   customerReviews: {
@@ -392,9 +391,9 @@ export const translations: Translations = {
   },
   // Additional Audiology Terms
   audiologyCenter: {
-    en: 'Audiology Center in Barcelona',
-    es: 'Centro de Audiología en Barcelona',
-    ca: 'Centre d\'Audiologia a Barcelona',
+    en: 'Audiology Center in Barcelona Poblenou',
+    es: 'Centro de Audiología en Barcelona Poblenou',
+    ca: 'Centre d\'Audiologia a Barcelona Poblenou',
   },
   hearingLoss: {
     en: 'Hearing Loss Treatment',
@@ -402,9 +401,9 @@ export const translations: Translations = {
     ca: 'Tractament de Pèrdua Auditiva',
   },
   audiometry: {
-    en: 'Audiometry in Barcelona',
-    es: 'Audiometría en Barcelona',
-    ca: 'Audiometria a Barcelona',
+    en: 'Audiometry in Barcelona Poblenou',
+    es: 'Audiometría en Barcelona Poblenou',
+    ca: 'Audiometria a Barcelona Poblenou',
   },
   pediatricAudiology: {
     en: 'Pediatric Audiology',

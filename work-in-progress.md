@@ -47,6 +47,10 @@
 - ✅ Updated all service pages with fully translated content
 - ✅ Fixed top bar navigation issue on service pages
 - ✅ Standardized appointment CTA sections with proper translations
+- ✅ Removed "in Barcelona"/"en Barcelona"/"a Barcelona" from audiology titles
+- ✅ Added "Poblenou" neighborhood tag alongside "Barcelona" for better local SEO
+- ✅ Updated all SEO text, meta tags, and schema markup to include Poblenou references
+- ✅ Standardized location references across all pages and components
 
 ## In Progress Tasks
 
@@ -92,3 +96,6 @@
 - HearingTest and TinnitusTreatment pages have been completely updated to use the content object approach
 - All pages maintain consistent language based on the selected language
 - All components now respect the user's language preference
+- All audiology titles have been updated to remove "in Barcelona" endings
+- Added "Poblenou" tag to improve local SEO across all pages and components
+- Schema markup and meta tags updated to include Poblenou neighborhood references

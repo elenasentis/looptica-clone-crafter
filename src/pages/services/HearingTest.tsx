@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Ear, FileText, Activity, BarChart3 } from 'lucide-react';
@@ -10,19 +9,19 @@ const HearingTest = () => {
   
   const content = {
     title: {
-      en: 'Professional Hearing Tests in Barcelona',
-      es: 'Pruebas Auditivas Profesionales en Barcelona',
-      ca: 'Proves Auditives Professionals a Barcelona',
+      en: 'Professional Hearing Tests',
+      es: 'Pruebas Auditivas Profesionales',
+      ca: 'Proves Auditives Professionals',
     },
     subtitle: {
-      en: 'Comprehensive audiological assessments by experienced specialists at our Barcelona hearing center',
-      es: 'Evaluaciones audiológicas completas por especialistas experimentados en nuestro centro auditivo de Barcelona',
-      ca: 'Avaluacions audiològiques completes per especialistes experimentats al nostre centre auditiu de Barcelona',
+      en: 'Comprehensive audiological assessments by experienced specialists at our Barcelona Poblenou hearing center',
+      es: 'Evaluaciones audiológicas completas por especialistas experimentados en nuestro centro auditivo de Barcelona Poblenou',
+      ca: 'Avaluacions audiològiques completes per especialistes experimentats al nostre centre auditiu de Barcelona Poblenou',
     },
     appointmentSubject: {
-      en: 'Hearing Test at Looptica Barcelona Audiology Center',
-      es: 'Prueba Auditiva en Looptica Centro de Audiología Barcelona',
-      ca: 'Prova Auditiva a Looptica Centre d\'Audiologia Barcelona',
+      en: 'Hearing Test at Looptica Barcelona Poblenou Audiology Center',
+      es: 'Prueba Auditiva en Looptica Centro de Audiología Barcelona Poblenou',
+      ca: 'Prova Auditiva a Looptica Centre d\'Audiologia Barcelona Poblenou',
     },
     understanding: {
       en: 'Understanding Our Clinical Audiology Tests',
@@ -30,19 +29,19 @@ const HearingTest = () => {
       ca: 'Entenent Les Nostres Proves d\'Audiologia Clínica',
     },
     understandingP1: {
-      en: 'At Looptica Barcelona Audiology Center, we provide comprehensive hearing evaluations conducted by our experienced audiologists. Our tests go beyond basic screenings to thoroughly assess your hearing ability across different frequencies and sound levels, helping to identify any potential hearing loss and their causes.',
-      es: 'En Looptica Centro de Audiología Barcelona, proporcionamos evaluaciones auditivas completas realizadas por nuestros audiólogos con experiencia. Nuestras pruebas van más allá de los exámenes básicos para evaluar minuciosamente su capacidad auditiva en diferentes frecuencias y niveles de sonido, ayudando a identificar posibles problemas de pérdida auditiva y sus causas.',
-      ca: 'A Looptica Centre d\'Audiologia Barcelona, proporcionem avaluacions auditives completes realitzades pels nostres audiòlegs amb experiència. Les nostres proves van més enllà dels exàmens bàsics per avaluar minuciosament la seva capacitat auditiva en diferents freqüències i nivells de so, ajudant a identificar possibles problemes de pèrdua auditiva i les seves causes.',
+      en: 'At Looptica Barcelona Poblenou Audiology Center, we provide comprehensive hearing evaluations conducted by our experienced audiologists. Our tests go beyond basic screenings to thoroughly assess your hearing ability across different frequencies and sound levels, helping to identify any potential hearing loss and their causes.',
+      es: 'En Looptica Centro de Audiología Barcelona Poblenou, proporcionamos evaluaciones auditivas completas realizadas por nuestros audiólogos con experiencia. Nuestras pruebas van más allá de los exámenes básicos para evaluar minuciosamente su capacidad auditiva en diferentes frecuencias y niveles de sonido, ayudando a identificar posibles problemas de pérdida auditiva y sus causas.',
+      ca: 'A Looptica Centre d\'Audiologia Barcelona Poblenou, proporcionem avaluacions auditives completes realitzades pels nostres audiòlegs amb experiència. Les nostres proves van més enllà dels exàmens bàsics per avaluar minuciosament la seva capacitat auditiva en diferents freqüències i nivells de so, ajudant a identificar possibles problemes de pèrdua auditiva i les seves causes.',
     },
     understandingP2: {
       en: 'Regular hearing tests are essential for monitoring your auditory health, especially if you\'re experiencing symptoms like difficulty understanding conversations, asking people to repeat themselves frequently, or hearing ringing in your ears (tinnitus). Early detection of hearing loss allows for more effective treatment options and better outcomes with digital hearing aids or other solutions.',
       es: 'Las pruebas auditivas regulares son esenciales para monitorizar su salud auditiva, especialmente si está experimentando síntomas como dificultad para entender conversaciones, pedir a las personas que se repitan con frecuencia o escuchar zumbidos en los oídos (acúfenos). La detección temprana de la pérdida auditiva permite opciones de tratamiento más efectivas y mejores resultados con audífonos digitales u otras soluciones.',
-      ca: 'Les proves auditives regulars són essencials per monitoritzar la seva salut auditiva, especialment si està experimentant símptomes com dificultat per entendre converses, demanar a les persones que es repeteixin amb freqüència o escoltar brunzits a les orelles (acúfens). La detecció primerenca de la pèrdua auditiva permet opcions de tractament més efectives i millors resultats amb audiòfons digitals o altres solucions.',
+      ca: 'Les proves auditivas regulars són essenciales per monitoritzar la seva salut auditiva, especialment si està experimentant símptomes com dificultat per entendre converses, demanar a les persones que es repeteixin amb freqüència o escoltar brunzits a les orelles (acúfens). La detecció primerenca de la pèrdua auditiva permet opcions de tractament més efectives i millors resultats amb audiòfons digitals o altres solucions.',
     },
     processTitle: {
-      en: 'Our Comprehensive Audiometry Process in Barcelona',
-      es: 'Nuestro Proceso de Audiometría Completo en Barcelona',
-      ca: 'El Nostre Procés d\'Audiometria Complet a Barcelona',
+      en: 'Our Comprehensive Audiometry Process',
+      es: 'Nuestro Proceso de Audiometría Completo',
+      ca: 'El Nostre Procés d\'Audiometria Complet',
     },
     initialConsultation: {
       en: 'Initial Audiological Consultation',
@@ -50,9 +49,9 @@ const HearingTest = () => {
       ca: 'Consulta Audiològica Inicial',
     },
     initialConsultationDesc: {
-      en: 'We begin with a detailed discussion about your hearing concerns, medical history, and lifestyle factors that may affect your auditory health at our Barcelona hearing center.',
-      es: 'Comenzamos con una discusión detallada sobre sus preocupaciones auditivas, historial médico y factores de estilo de vida que pueden afectar su salud auditiva en nuestro centro auditivo de Barcelona.',
-      ca: 'Comencem amb una discussió detallada sobre les seves preocupacions auditives, historial mèdic i factors d\'estil de vida que poden afectar la seva salut auditiva al nostre centre auditiu de Barcelona.',
+      en: 'We begin with a detailed discussion about your hearing concerns, medical history, and lifestyle factors that may affect your auditory health at our Barcelona Poblenou hearing center.',
+      es: 'Comenzamos con una discusión detallada sobre sus preocupaciones auditivas, historial médico y factores de estilo de vida que pueden afectar su salud auditiva en nuestro centro auditivo de Barcelona Poblenou.',
+      ca: 'Comencem amb una discussió detallada sobre les seves preocupacions auditives, historial mèdic i factors d\'estil de vida que poden afectar la seva salut auditiva al nostre centre auditiu de Barcelona Poblenou.',
     },
     otoscopicExamination: {
       en: 'Otoscopic Examination',
@@ -130,14 +129,14 @@ const HearingTest = () => {
       ca: 'Avalua com escolta en entorns quotidians amb soroll de fons, múltiples parlants o diferents configuracions acústiques per proporcionar informació pràctica sobre els seus desafiaments auditius i determinar les solucions audiològiques més apropiades.',
     },
     expectTitle: {
-      en: 'What to Expect During Your Appointment at Our Barcelona Audiology Center',
-      es: 'Qué Esperar Durante Su Cita en Nuestro Centro de Audiología en Barcelona',
-      ca: 'Què Esperar Durant La Seva Cita al Nostre Centre d\'Audiologia a Barcelona',
+      en: 'What to Expect During Your Appointment at Our Barcelona Poblenou Audiology Center',
+      es: 'Qué Esperar Durante Su Cita en Nuestro Centro de Audiología en Barcelona Poblenou',
+      ca: 'Què Esperar Durant La Seva Cita al Nostre Centre d\'Audiologia a Barcelona Poblenou',
     },
     expectP1: {
-      en: 'Your hearing evaluation at Looptica Barcelona Audiology Center is a comfortable, non-invasive process that typically takes about 60 minutes. Here\'s what you can expect:',
-      es: 'Su evaluación auditiva en Looptica Centro de Audiología Barcelona es un proceso cómodo, no invasivo que generalmente toma unos 60 minutos. Esto es lo que puede esperar:',
-      ca: 'La seva avaluació auditiva a Looptica Centre d\'Audiologia Barcelona és un procés còmode, no invasiu que generalment pren uns 60 minuts. Això és el que pot esperar:',
+      en: 'Your hearing evaluation at Looptica Barcelona Poblenou Audiology Center is a comfortable, non-invasive process that typically takes about 60 minutes. Here\'s what you can expect:',
+      es: 'Su evaluación auditiva en Looptica Centro de Audiología Barcelona Poblenou es un proceso cómodo, no invasivo que generalmente toma unos 60 minutos. Esto es lo que puede esperar:',
+      ca: 'La seva avaluació auditiva a Looptica Centre d\'Audiologia Barcelona Poblenou és un procés còmode, no invasiu que generalment pren uns 60 minuts. Això és el que pot esperar:',
     },
     welcomingEnv: {
       en: 'Welcoming Environment',
@@ -167,7 +166,7 @@ const HearingTest = () => {
     comprehensiveResultsDesc: {
       en: 'After completing the tests, your audiologist will explain your results using easy-to-understand audiograms and charts, discussing any hearing loss findings and potential solutions.',
       es: 'Después de completar las pruebas, su audiólogo explicará sus resultados utilizando audiogramas y gráficos fáciles de entender, discutiendo cualquier hallazgo de pérdida auditiva y soluciones potenciales.',
-      ca: 'Després de completar les proves, el seu audiòleg explicarà els seus resultats utilitzant audiogrames i gràfics fàcils d\'entendre, discutint qualsevol troballa de pèrdua auditiva i solucions potencials.',
+      ca: 'Después de completar les proves, el seu audiòleg explicarà els seus resultats utilitzant audiogrames i gràfics fàcils d\'entendre, discutint qualsevol troballa de pèrdua auditiva i solucions potencials.',
     },
     personalizedRecommendations: {
       en: 'Personalized Recommendations',
@@ -185,14 +184,14 @@ const HearingTest = () => {
       ca: 'Consultes Sense Pressió',
     },
     noPressureDesc: {
-      en: 'Our focus at our Barcelona audiology clinic is on providing information and support, not selling products. You\'ll have time to ask questions and consider your options without any pressure.',
-      es: 'Nuestro enfoque en nuestra clínica de audiología en Barcelona está en proporcionar información y apoyo, no en vender productos. Tendrá tiempo para hacer preguntas y considerar sus opciones sin ninguna presión.',
-      ca: 'El nostre enfocament a la nostra clínica d\'audiologia a Barcelona està en proporcionar informació i suport, no en vendre productes. Tindrà temps per fer preguntes i considerar les seves opcions sense cap pressió.',
+      en: 'Our focus at our Barcelona Poblenou audiology clinic is on providing information and support, not selling products. You\'ll have time to ask questions and consider your options without any pressure.',
+      es: 'Nuestro enfoque en nuestra clínica de audiología en Barcelona Poblenou está en proporcionar información y apoyo, no en vender productos. Tendrá tiempo para hacer preguntas y considerar sus opciones sin ninguna presión.',
+      ca: 'El nostre enfocament a la nostra clínica d\'audiologia a Barcelona Poblenou està en proporcionar informació i suport, no en vendre productes. Tindrà temps per fer preguntes i considerar les seves opcions sense cap pressió.',
     },
     whenToGetTitle: {
-      en: 'When Should You Get Your Hearing Tested in Barcelona?',
-      es: '¿Cuándo Debería Hacerse una Prueba Auditiva en Barcelona?',
-      ca: 'Quan Hauria de Fer-se una Prova Auditiva a Barcelona?',
+      en: 'When Should You Get Your Hearing Tested?',
+      es: '¿Cuándo Debería Hacerse una Prueba Auditiva?',
+      ca: 'Quan Hauria de Fer-se una Prova Auditiva?',
     },
     whenToGetP1: {
       en: 'We recommend audiological tests for:',
@@ -200,9 +199,9 @@ const HearingTest = () => {
       ca: 'Recomanem proves audiològiques per a:',
     },
     hearingTestsP1: {
-      en: 'Remember that hearing loss often occurs gradually, making it difficult to notice until it significantly impacts your quality of life. Regular hearing tests at our Barcelona audiology center allow for early intervention and better outcomes with appropriate solutions like digital hearing aids.',
-      es: 'Recuerde que la pérdida auditiva a menudo ocurre gradualmente, lo que dificulta notarla hasta que afecta significativamente su calidad de vida. Las pruebas auditivas regulares en nuestro centro de audiología en Barcelona permiten una intervención temprana y mejores resultados con soluciones apropiadas como audífonos digitales.',
-      ca: 'Recordi que la pèrdua auditiva sovint ocorre gradualment, el que dificulta notar-la fins que afecta significativament la seva qualitat de vida. Les proves auditives regulars al nostre centre d\'audiologia a Barcelona permeten una intervenció primerenca i millors resultats amb solucions apropiades com audiòfons digitals.',
+      en: 'Remember that hearing loss often occurs gradually, making it difficult to notice until it significantly impacts your quality of life. Regular hearing tests at our Barcelona Poblenou audiology center allow for early intervention and better outcomes with appropriate solutions like digital hearing aids.',
+      es: 'Recuerde que la pérdida auditiva a menudo ocurre gradualmente, lo que dificulta notarla hasta que afecta significativamente su calidad de vida. Las pruebas auditivas regulares en nuestro centro de audiología en Barcelona Poblenou permiten una intervención temprana y mejores resultados con soluciones apropiadas como audífonos digitales.',
+      ca: 'Recordi que la pèrdua auditiva sovint ocorre gradualment, el que dificulta notar-la fins que afecta significativament la seva qualitat de vida. Les proves auditives regulars al nostre centre d\'audiologia a Barcelona Poblenou permeten una intervenció primerenca i millors resultats amb solucions apropiades com audiòfons digitals.',
     },
   };
   

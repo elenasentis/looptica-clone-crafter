@@ -43,17 +43,17 @@ const Index = () => {
 
   // Determine the appropriate title and description based on language
   const getPageTitle = () => {
-    if (language === 'es') return 'Looptica - Óptica y Audiología en Barcelona | Gafas, Lentes y Audífonos';
-    if (language === 'ca') return 'Looptica - Òptica i Audiologia a Barcelona | Ulleres, Lents i Audiòfons';
-    return 'Looptica - Optical and Audiology Services in Barcelona | Glasses, Lenses, and Hearing Aids';
+    if (language === 'es') return 'Looptica - Óptica y Audiología en Barcelona Poblenou | Gafas, Lentes y Audífonos';
+    if (language === 'ca') return 'Looptica - Òptica i Audiologia a Barcelona Poblenou | Ulleres, Lents i Audiòfons';
+    return 'Looptica - Optical and Audiology Services in Barcelona Poblenou | Glasses, Lenses, and Hearing Aids';
   };
   
   const getPageDescription = () => {
     if (language === 'es') 
-      return 'Centro especializado en servicios ópticos y audiológicos en Barcelona. Ofrecemos exámenes visuales, gafas graduadas, lentes de contacto, pruebas auditivas, tratamiento de pérdida auditiva y audífonos digitales de alta calidad.';
+      return 'Centro especializado en servicios ópticos y audiológicos en Barcelona Poblenou. Ofrecemos exámenes visuales, gafas graduadas, lentes de contacto, pruebas auditivas, tratamiento de pérdida auditiva y audífonos digitales de alta calidad.';
     if (language === 'ca') 
-      return 'Centre especialitzat en serveis òptics i audiològics a Barcelona. Oferim exàmens visuals, ulleres graduades, lents de contacte, proves auditives, tractament de pèrdua auditiva i audiòfons d\'alta qualitat.';
-    return 'Specialized center for optical and audiological services in Barcelona. We offer eye exams, prescription glasses, contact lenses, hearing tests, hearing loss treatment, and high-quality digital hearing aids.';
+      return 'Centre especialitzat en serveis òptics i audiològics a Barcelona Poblenou. Oferim exàmens visuals, ulleres graduades, lents de contacte, proves auditives, tractament de pèrdua auditiva i audiòfons d\'alta qualitat.';
+    return 'Specialized center for optical and audiological services in Barcelona Poblenou. We offer eye exams, prescription glasses, contact lenses, hearing tests, hearing loss treatment, and high-quality digital hearing aids.';
   };
 
   // Add SEO text specific to audiology based on language
@@ -61,12 +61,12 @@ const Index = () => {
     if (language === 'es') {
       return (
         <div className="sr-only">
-          <h2>Centro de Audiología Barcelona - Pruebas Auditivas y Audífonos Digitales</h2>
+          <h2>Centro de Audiología Barcelona Poblenou - Pruebas Auditivas y Audífonos Digitales</h2>
           <p>
-            En Looptica ofrecemos servicios completos de audiología en Barcelona, 
+            En Looptica ofrecemos servicios completos de audiología en Barcelona Poblenou, 
             incluyendo pruebas auditivas profesionales, tratamiento de pérdida auditiva, 
-            adaptación de audífonos digitales, audiometría Barcelona y soluciones para acúfenos. 
-            Nuestro <Link to="/services/audiologia-centro">centro auditivo en Barcelona</Link> cuenta con audiología clínica de alta calidad y 
+            adaptación de audífonos digitales, audiometría Barcelona Poblenou y soluciones para acúfenos. 
+            Nuestro <Link to="/services/audiologia-centro">centro auditivo en Barcelona Poblenou</Link> cuenta con audiología clínica de alta calidad y 
             especialistas en audiología pediátrica.
           </p>
         </div>
@@ -74,12 +74,12 @@ const Index = () => {
     } else if (language === 'ca') {
       return (
         <div className="sr-only">
-          <h2>Centre d'Audiologia Barcelona - Proves Auditives i Audiòfons Digitals</h2>
+          <h2>Centre d'Audiologia Barcelona Poblenou - Proves Auditives i Audiòfons Digitals</h2>
           <p>
-            A Looptica oferim serveis complets d'audiologia a Barcelona, 
+            A Looptica oferim serveis complets d'audiologia a Barcelona Poblenou, 
             incloent proves auditives professionals, tractament de pèrdua auditiva, 
-            adaptació d'audiòfons digitals, audiometria Barcelona i solucions per a acúfens. 
-            El nostre <Link to="/services/audiologia-centro">centre auditiu a Barcelona</Link> compta amb audiologia clínica d'alta qualitat i 
+            adaptació d'audiòfons digitals, audiometria Barcelona Poblenou i solucions per a acúfens. 
+            El nostre <Link to="/services/audiologia-centro">centre auditiu a Barcelona Poblenou</Link> compta amb audiologia clínica d'alta qualitat i 
             especialistes en audiologia pediàtrica.
           </p>
         </div>
@@ -87,12 +87,12 @@ const Index = () => {
     } else {
       return (
         <div className="sr-only">
-          <h2>Barcelona Audiology Center - Hearing Tests and Digital Hearing Aids</h2>
+          <h2>Barcelona Poblenou Audiology Center - Hearing Tests and Digital Hearing Aids</h2>
           <p>
-            At Looptica we offer comprehensive audiology services in Barcelona, 
+            At Looptica we offer comprehensive audiology services in Barcelona Poblenou, 
             including professional hearing tests, hearing loss treatment, 
-            digital hearing aids fitting, audiometry Barcelona and tinnitus solutions. 
-            Our <Link to="/services/audiologia-centro">hearing center in Barcelona</Link> features high-quality clinical audiology and 
+            digital hearing aids fitting, audiometry Barcelona Poblenou and tinnitus solutions. 
+            Our <Link to="/services/audiologia-centro">hearing center in Barcelona Poblenou</Link> features high-quality clinical audiology and 
             specialists in pediatric audiology.
           </p>
         </div>
@@ -105,7 +105,7 @@ const Index = () => {
       <Helmet>
         <title>{getPageTitle()}</title>
         <meta name="description" content={getPageDescription()} />
-        <meta name="keywords" content={`${t('optical')}, ${t('audiology')}, ${t('eyeglasses')}, ${t('contactLenses')}, ${t('hearingAids')}, barcelona, audiología barcelona, audífonos barcelona, pérdida auditiva, prueba auditiva barcelona, audiología clínica barcelona, centro auditivo barcelona`} />
+        <meta name="keywords" content={`${t('optical')}, ${t('audiology')}, ${t('eyeglasses')}, ${t('contactLenses')}, ${t('hearingAids')}, barcelona, poblenou, audiología barcelona poblenou, audífonos barcelona poblenou, pérdida auditiva, prueba auditiva barcelona poblenou, audiología clínica barcelona poblenou, centro auditivo barcelona poblenou`} />
         <link rel="canonical" href="https://www.looptica.com/" />
         <meta property="og:title" content={getPageTitle()} />
         <meta property="og:description" content={getPageDescription()} />

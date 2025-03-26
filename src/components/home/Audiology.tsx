@@ -41,17 +41,17 @@ const Audiology = () => {
     }
   ];
 
-  // Add SEO text based on language
+  // Add SEO text based on language with Poblenou references
   const getSeoText = () => {
     if (language === 'es') {
       return (
         <div className="sr-only">
-          <h2>Centro de Audiología en Barcelona</h2>
+          <h2>Centro de Audiología en Barcelona Poblenou</h2>
           <p>
-            En Looptica ofrecemos servicios completos de audiología en Barcelona, 
+            En Looptica ofrecemos servicios completos de audiología en Barcelona Poblenou, 
             incluyendo pruebas auditivas profesionales, tratamiento de pérdida auditiva, 
-            adaptación de audífonos digitales, audiometría Barcelona y soluciones para acúfenos. 
-            Nuestro centro auditivo en Barcelona cuenta con audiología clínica de alta calidad y 
+            adaptación de audífonos digitales, audiometría Barcelona Poblenou y soluciones para acúfenos. 
+            Nuestro centro auditivo en Barcelona Poblenou cuenta con audiología clínica de alta calidad y 
             especialistas en audiología pediátrica.
           </p>
         </div>
@@ -59,12 +59,12 @@ const Audiology = () => {
     } else if (language === 'ca') {
       return (
         <div className="sr-only">
-          <h2>Centre d'Audiologia a Barcelona</h2>
+          <h2>Centre d'Audiologia a Barcelona Poblenou</h2>
           <p>
-            A Looptica oferim serveis complets d'audiologia a Barcelona, 
+            A Looptica oferim serveis complets d'audiologia a Barcelona Poblenou, 
             incloent proves auditives professionals, tractament de pèrdua auditiva, 
-            adaptació d'audiòfons digitals, audiometria Barcelona i solucions per a acúfens. 
-            El nostre centre auditiu a Barcelona compta amb audiologia clínica d'alta qualitat i 
+            adaptació d'audiòfons digitals, audiometria Barcelona Poblenou i solucions per a acúfens. 
+            El nostre centre auditiu a Barcelona Poblenou compta amb audiologia clínica d'alta qualitat i 
             especialistes en audiologia pediàtrica.
           </p>
         </div>
@@ -72,12 +72,12 @@ const Audiology = () => {
     } else {
       return (
         <div className="sr-only">
-          <h2>Audiology Center in Barcelona</h2>
+          <h2>Audiology Center in Barcelona Poblenou</h2>
           <p>
-            At Looptica we offer comprehensive audiology services in Barcelona, 
+            At Looptica we offer comprehensive audiology services in Barcelona Poblenou, 
             including professional hearing tests, hearing loss treatment, 
-            digital hearing aids fitting, audiometry Barcelona and tinnitus solutions. 
-            Our hearing center in Barcelona features high-quality clinical audiology and 
+            digital hearing aids fitting, audiometry Barcelona Poblenou and tinnitus solutions. 
+            Our hearing center in Barcelona Poblenou features high-quality clinical audiology and 
             specialists in pediatric audiology.
           </p>
         </div>
@@ -138,12 +138,12 @@ const Audiology = () => {
             <GoogleCalendarButton 
               size="lg" 
               className="bg-[#009fe3] hover:bg-[#0082b8] text-white"
-              subject={language === 'es' ? "Consulta de Audiología en Looptica Barcelona" : 
-                       language === 'ca' ? "Consulta d'Audiologia a Looptica Barcelona" : 
-                       "Audiology Consultation at Looptica Barcelona"}
-              description={language === 'es' ? "Cita para servicios de audiología en Looptica - Centro de audiología en Barcelona" : 
-                          language === 'ca' ? "Cita per a serveis d'audiologia a Looptica - Centre d'audiologia a Barcelona" : 
-                          "Appointment for audiology services at Looptica - Audiology center in Barcelona"}
+              subject={language === 'es' ? "Consulta de Audiología en Looptica Barcelona Poblenou" : 
+                       language === 'ca' ? "Consulta d'Audiologia a Looptica Barcelona Poblenou" : 
+                       "Audiology Consultation at Looptica Barcelona Poblenou"}
+              description={language === 'es' ? "Cita para servicios de audiología en Looptica - Centro de audiología en Barcelona Poblenou" : 
+                          language === 'ca' ? "Cita per a serveis d'audiologia a Looptica - Centre d'audiologia a Barcelona Poblenou" : 
+                          "Appointment for audiology services at Looptica - Audiology center in Barcelona Poblenou"}
               durationMinutes={45}
             >
               {t('demanaCita')}
