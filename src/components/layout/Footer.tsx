@@ -14,28 +14,28 @@ const Footer = () => {
       {
         title: language === 'en' ? 'Visual Services' : (language === 'es' ? 'Servicios Visuales' : 'Serveis Visuals'),
         links: [
-          { name: t('eyeglasses'), path: '#' },
-          { name: t('sunglasses'), path: '#' },
-          { name: t('contactLenses'), path: '#' },
-          { name: t('visualHealth'), path: '#' },
+          { name: t('eyeglasses'), path: '/services/eyeglasses' },
+          { name: t('sunglasses'), path: '/services/sunglasses' },
+          { name: t('contactLenses'), path: '/services/contact-lenses' },
+          { name: t('visualHealth'), path: '/services/salut-visual' },
         ],
       },
       {
         title: language === 'en' ? 'Auditory Services' : (language === 'es' ? 'Servicios Auditivos' : 'Serveis Auditius'),
         links: [
-          { name: t('hearingTest'), path: '#' },
-          { name: t('hearingAids'), path: '#' },
-          { name: t('tinnitusTreatment'), path: '#' },
-          { name: t('customEarProtection'), path: '#' },
+          { name: t('hearingTest'), path: '/services/hearing-test' },
+          { name: t('hearingAids'), path: '/services/hearing-aids' },
+          { name: t('tinnitusTreatment'), path: '/services/tinnitus-treatment' },
+          { name: t('customEarProtection'), path: '/services/ear-protection' },
         ],
       },
       {
         title: language === 'en' ? 'Support' : (language === 'es' ? 'Soporte' : 'Suport'),
         links: [
-          { name: t('contact'), path: '#' },
-          { name: t('shopNow'), path: '#' },
-          { name: language === 'en' ? 'FAQ' : (language === 'es' ? 'Preguntas frecuentes' : 'Preguntes freqüents'), path: '#' },
-          { name: language === 'en' ? 'Where we are' : (language === 'es' ? 'Dónde estamos' : 'On som'), path: '#' },
+          { name: t('contact'), path: '/#contact' },
+          { name: t('shopNow'), path: '/#products' },
+          { name: language === 'en' ? 'FAQ' : (language === 'es' ? 'Preguntas frecuentes' : 'Preguntes freqüents'), path: '/#contact' },
+          { name: language === 'en' ? 'Where we are' : (language === 'es' ? 'Dónde estamos' : 'On som'), path: '/#contact' },
         ],
       },
     ];
@@ -44,11 +44,26 @@ const Footer = () => {
   const footerLinks = getFooterLinks();
   
   const socialLinks = [
-    { name: 'Instagram', icon: <Instagram className="h-5 w-5" />, path: '#' },
-    { name: 'Twitter', icon: <Twitter className="h-5 w-5" />, path: '#' },
-    { name: 'Facebook', icon: <Facebook className="h-5 w-5" />, path: '#' },
+    { name: 'Instagram', icon: <Instagram className="h-5 w-5" />, path: 'https://www.instagram.com/' },
+    { name: 'Twitter', icon: <Twitter className="h-5 w-5" />, path: 'https://twitter.com/' },
+    { name: 'Facebook', icon: <Facebook className="h-5 w-5" />, path: 'https://www.facebook.com/' },
   ];
 
+  // Function to handle anchor link clicks
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    
+    if (href && href.includes('#') && window.location.pathname === '/') {
+      e.preventDefault();
+      const targetId = href.substring(href.indexOf('#') + 1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+  
   return (
     <footer className="bg-[#1a2b3c] text-white pt-20 pb-10 px-6 lg:px-12" id="contact">
       <div className="max-w-7xl mx-auto">
@@ -78,6 +93,8 @@ const Footer = () => {
                     href={social.path}
                     className="hover:text-[#009fe3] text-gray-300 transition-colors duration-200"
                     aria-label={social.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {social.icon}
                   </a>
@@ -92,12 +109,22 @@ const Footer = () => {
                 <ul className="space-y-3">
                   {footerSection.links.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.path}
-                        className="text-gray-300 hover:text-[#009fe3] transition-colors duration-200"
-                      >
-                        {link.name}
-                      </a>
+                      {link.path.includes('#') ? (
+                        <a
+                          href={link.path}
+                          className="text-gray-300 hover:text-[#009fe3] transition-colors duration-200"
+                          onClick={handleAnchorClick}
+                        >
+                          {link.name}
+                        </a>
+                      ) : (
+                        <Link
+                          to={link.path}
+                          className="text-gray-300 hover:text-[#009fe3] transition-colors duration-200"
+                        >
+                          {link.name}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -140,15 +167,15 @@ const Footer = () => {
               </p>
 
               <div className="flex space-x-6 text-sm text-gray-400">
-                <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
+                <Link to="/about" className="hover:text-[#009fe3] transition-colors duration-200">
                   {language === 'en' ? 'Privacy Policy' : (language === 'es' ? 'Política de Privacidad' : 'Política de Privacitat')}
-                </a>
-                <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
+                </Link>
+                <Link to="/about" className="hover:text-[#009fe3] transition-colors duration-200">
                   {language === 'en' ? 'Terms & Conditions' : (language === 'es' ? 'Términos y Condiciones' : 'Termes i Condicions')}
-                </a>
-                <a href="#" className="hover:text-[#009fe3] transition-colors duration-200">
+                </Link>
+                <Link to="/about" className="hover:text-[#009fe3] transition-colors duration-200">
                   Cookies
-                </a>
+                </Link>
               </div>
             </div>
           </div>

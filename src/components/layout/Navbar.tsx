@@ -18,11 +18,11 @@ const Navbar = () => {
 
   // Using translation keys for navigation
   const navLinks = [
-    { name: t('home'), path: isHomePage ? '/' : '/' },
+    { name: t('home'), path: '/' },
     { name: t('products'), path: isHomePage ? '#products' : '/#products' },
     { name: t('opticalServices'), path: isHomePage ? '#optical' : '/#optical' },
     { name: t('audiologyServices'), path: isHomePage ? '#audiology' : '/#audiology' },
-    { name: t('about'), path: isHomePage ? '#about' : '/#about' },
+    { name: t('about'), path: '/about' },
     { name: t('contact'), path: isHomePage ? '#contact' : '/#contact' },
   ];
 
@@ -52,6 +52,29 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
     document.body.style.overflow = 'auto';
+  };
+
+  // Function to handle anchor link clicks for smooth scrolling
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        if (isOpen) closeMenu();
+      }
+    } else if (href && href.includes('#') && !isHomePage) {
+      // For links like "/#section" when not on homepage, we'll let the router handle it
+      // The useEffect in Index.tsx will handle the scrolling after navigation
+      closeMenu();
+    } else {
+      // For regular page links
+      closeMenu();
+    }
   };
 
   return (
@@ -84,11 +107,12 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            link.path.startsWith('#') && !isHomePage ? (
+            link.path.startsWith('#') ? (
               <a
                 key={link.name}
                 href={link.path}
                 className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
+                onClick={handleAnchorClick}
               >
                 {link.name}
               </a>
@@ -97,6 +121,7 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
+                onClick={closeMenu}
               >
                 {link.name}
               </Link>
@@ -143,12 +168,12 @@ const Navbar = () => {
         >
           <div className="h-full flex flex-col items-center justify-center space-y-8 p-8">
             {navLinks.map((link) => (
-              link.path.startsWith('#') && !isHomePage ? (
+              link.path.startsWith('#') ? (
                 <a
                   key={link.name}
                   href={link.path}
                   className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
-                  onClick={closeMenu}
+                  onClick={handleAnchorClick}
                 >
                   {link.name}
                 </a>

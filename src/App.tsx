@@ -19,6 +19,7 @@ import TinnitusTreatment from './pages/services/TinnitusTreatment';
 import EarProtection from './pages/services/EarProtection';
 import ImageConsulting from './pages/services/ImageConsulting';
 import LensConsulting from './pages/services/LensConsulting';
+import About from './pages/About';
 import './App.css';
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* About Page */}
+          <Route path="/about" element={<About />} />
           {/* Optical Services */}
           <Route path="/services/salut-visual" element={<SalutVisual />} />
           <Route path="/services/lents-contacte" element={<LentsContacte />} />
