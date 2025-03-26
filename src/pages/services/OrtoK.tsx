@@ -352,7 +352,7 @@ const OrtoK = () => {
             <div className="space-y-6">
               {content.process.steps.map((step, index) => (
                 <div className="flex gap-4" key={index}>
-                  <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+                  <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                     {step.icon}
                   </div>
                   <div>

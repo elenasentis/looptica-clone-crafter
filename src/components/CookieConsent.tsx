@@ -159,7 +159,7 @@ const CookieConsent = () => {
             <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
               <Button
                 variant="outline"
-                className="border-[#009fe3] text-[#009fe3] hover:bg-[#009fe3] hover:text-white"
+                className="border-[#55afa9] text-[#55afa9] hover:bg-[#55afa9] hover:text-white"
                 onClick={() => setShowSettings(true)}
               >
                 <Settings className="mr-2 h-4 w-4" />
@@ -167,7 +167,7 @@ const CookieConsent = () => {
               </Button>
               <Button
                 variant="default"
-                className="bg-[#009fe3] hover:bg-[#0082b8]"
+                className="bg-[#55afa9] hover:bg-[#ca6664]"
                 onClick={handleAcceptAll}
               >
                 <Check className="mr-2 h-4 w-4" />
@@ -199,7 +199,7 @@ const CookieConsent = () => {
                 <h4 className="font-medium">{t.necessary}</h4>
                 <p className="text-sm text-muted-foreground">{t.necessaryDescription}</p>
               </div>
-              <span className="text-xs text-[#009fe3] font-medium">{t.always}</span>
+              <span className="text-xs text-[#55afa9] font-medium">{t.always}</span>
             </div>
           </div>
 
@@ -211,7 +211,7 @@ const CookieConsent = () => {
                 <p className="text-sm text-muted-foreground">{t.analyticsDescription}</p>
               </div>
               <div className="h-6 w-11 cursor-pointer" onClick={() => togglePreference('analytics')}>
-                <div className={`h-6 w-11 rounded-full p-1 transition-colors duration-200 ease-in-out ${cookiePreferences.analytics ? 'bg-[#009fe3]' : 'bg-gray-200'}`}>
+                <div className={`h-6 w-11 rounded-full p-1 transition-colors duration-200 ease-in-out ${cookiePreferences.analytics ? 'bg-[#55afa9]' : 'bg-gray-200'}`}>
                   <div className={`h-4 w-4 rounded-full bg-white transition-transform duration-200 ease-in-out ${cookiePreferences.analytics ? 'translate-x-5' : 'translate-x-0'}`} />
                 </div>
               </div>
@@ -226,7 +226,7 @@ const CookieConsent = () => {
                 <p className="text-sm text-muted-foreground">{t.marketingDescription}</p>
               </div>
               <div className="h-6 w-11 cursor-pointer" onClick={() => togglePreference('marketing')}>
-                <div className={`h-6 w-11 rounded-full p-1 transition-colors duration-200 ease-in-out ${cookiePreferences.marketing ? 'bg-[#009fe3]' : 'bg-gray-200'}`}>
+                <div className={`h-6 w-11 rounded-full p-1 transition-colors duration-200 ease-in-out ${cookiePreferences.marketing ? 'bg-[#55afa9]' : 'bg-gray-200'}`}>
                   <div className={`h-4 w-4 rounded-full bg-white transition-transform duration-200 ease-in-out ${cookiePreferences.marketing ? 'translate-x-5' : 'translate-x-0'}`} />
                 </div>
               </div>
@@ -237,7 +237,7 @@ const CookieConsent = () => {
         <DialogFooter>
           <Button 
             variant="default" 
-            className="w-full bg-[#009fe3] hover:bg-[#0082b8]"
+            className="w-full bg-[#55afa9] hover:bg-[#ca6664]"
             onClick={handleSavePreferences}
           >
             {t.savePreferences}

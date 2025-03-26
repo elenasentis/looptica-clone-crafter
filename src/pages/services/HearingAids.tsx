@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Headphones, Bluetooth, Battery, Wifi } from 'lucide-react';
@@ -230,13 +231,19 @@ const HearingAids = () => {
       title={content.title[language]}
       subtitle={content.subtitle[language]}
       image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
-      appointmentSubject={content.appointmentSubject[language]}
+      appointmentSubject={language === 'es' ? "Consulta de Audífonos en Looptica Barcelona Poblenou" : 
+                        language === 'ca' ? "Consulta d'Audiòfons a Looptica Barcelona Poblenou" : 
+                        "Hearing Aids Consultation at Looptica Barcelona Poblenou"}
     >
       <ScrollReveal>
         <div className="prose prose-lg max-w-none mb-12">
           <h2>{content.solutionsTitle[language]}</h2>
-          <p>{content.intro1[language]}</p>
-          <p>{content.intro2[language]}</p>
+          <p>
+            {content.intro1[language]}
+          </p>
+          <p>
+            {content.intro2[language]}
+          </p>
         </div>
       </ScrollReveal>
 
@@ -244,9 +251,9 @@ const HearingAids = () => {
         <div className="bg-gray-50 p-8 rounded-lg mb-12">
           <h3 className="text-2xl font-semibold mb-6">{content.featuresTitle[language]}</h3>
           
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Bluetooth className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -256,7 +263,7 @@ const HearingAids = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Headphones className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -266,7 +273,7 @@ const HearingAids = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Battery className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -276,7 +283,7 @@ const HearingAids = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Wifi className="w-6 h-6 text-white" />
               </div>
               <div>

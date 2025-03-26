@@ -111,7 +111,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.path}
-                className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
+                className="text-sm font-medium transition-all hover:text-[#55afa9] text-gray-900 drop-shadow-sm"
                 onClick={handleAnchorClick}
               >
                 {link.name}
@@ -120,7 +120,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
+                className="text-sm font-medium transition-all hover:text-[#55afa9] text-gray-900 drop-shadow-sm"
                 onClick={closeMenu}
               >
                 {link.name}
@@ -131,7 +131,7 @@ const Navbar = () => {
 
         {/* Call to Action Buttons and Language Switcher */}
         <div className="hidden md:flex items-center space-x-4">
-          <a href="tel:+34933009064" className="flex items-center text-gray-900 hover:text-[#009fe3] drop-shadow-sm">
+          <a href="tel:+34933009064" className="flex items-center text-gray-900 hover:text-[#55afa9] drop-shadow-sm">
             <Phone className="h-4 w-4 mr-2" />
             <span className="text-sm font-medium">933 00 90 64</span>
           </a>
@@ -139,7 +139,7 @@ const Navbar = () => {
           <Button 
             variant="default" 
             size="sm" 
-            className="bg-[#009fe3] hover:bg-[#0082b8] text-white transition-all"
+            className="bg-[#55afa9] hover:bg-[#ca6664] text-white transition-all"
           >
             <ShoppingBag className="h-4 w-4 mr-2" />
             {t('shopNow')}
@@ -172,7 +172,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.path}
-                  className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
+                  className="text-xl font-medium transition-all hover:text-[#55afa9] text-gray-800"
                   onClick={handleAnchorClick}
                 >
                   {link.name}
@@ -181,21 +181,21 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
+                  className="text-xl font-medium transition-all hover:text-[#55afa9] text-gray-800"
                   onClick={closeMenu}
                 >
                   {link.name}
                 </Link>
               )
             ))}
-            <a href="tel:+34933009064" className="flex items-center text-gray-700 hover:text-[#009fe3]">
+            <a href="tel:+34933009064" className="flex items-center text-gray-700 hover:text-[#55afa9]">
               <Phone className="h-5 w-5 mr-2" />
               <span className="text-lg font-medium">933 00 90 64</span>
             </a>
             <LanguageSwitcher />
             <Button 
               variant="default" 
-              className="mt-4 w-full max-w-[200px] bg-[#009fe3] hover:bg-[#0082b8] text-white"
+              className="mt-4 w-full max-w-[200px] bg-[#55afa9] hover:bg-[#ca6664] text-white"
               onClick={closeMenu}
             >
               <ShoppingBag className="h-5 w-5 mr-2" />

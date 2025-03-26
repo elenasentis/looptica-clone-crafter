@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Ear, FileText, Activity, BarChart3 } from 'lucide-react';
@@ -230,7 +231,7 @@ const HearingTest = () => {
           
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <FileText className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -240,7 +241,7 @@ const HearingTest = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Ear className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -250,7 +251,7 @@ const HearingTest = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Activity className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -260,7 +261,7 @@ const HearingTest = () => {
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-[#2ecc71] rounded-full p-3 h-fit">
+              <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <BarChart3 className="w-6 h-6 text-white" />
               </div>
               <div>
