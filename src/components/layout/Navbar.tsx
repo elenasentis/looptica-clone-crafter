@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: t('products'), path: isHomePage ? '#products' : '/#products' },
     { name: t('opticalServices'), path: isHomePage ? '#optical' : '/#optical' },
     { name: t('audiologyServices'), path: isHomePage ? '#audiology' : '/#audiology' },
-    { name: t('about'), path: isHomePage ? '/about' : '/about' },
+    { name: t('about'), path: isHomePage ? '#about' : '/#about' },
     { name: t('contact'), path: isHomePage ? '#contact' : '/#contact' },
   ];
 
@@ -39,11 +39,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Close mobile menu on route change
-    closeMenu();
-  }, [location.pathname]);
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
@@ -57,24 +52,6 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
     document.body.style.overflow = 'auto';
-  };
-
-  // Handle navigation for both anchor links and regular routes
-  const handleNavigation = (path, e) => {
-    if (path.startsWith('#')) {
-      e.preventDefault();
-      const targetId = path.substring(1);
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        closeMenu();
-      }
-    } else if (path.includes('#') && !isHomePage) {
-      // For links like '/#section' from non-home pages
-      closeMenu();
-    } else {
-      closeMenu();
-    }
   };
 
   return (
@@ -107,12 +84,11 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            link.path.startsWith('#') ? (
+            link.path.startsWith('#') && !isHomePage ? (
               <a
                 key={link.name}
                 href={link.path}
                 className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
-                onClick={(e) => handleNavigation(link.path, e)}
               >
                 {link.name}
               </a>
@@ -121,7 +97,6 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className="text-sm font-medium transition-all hover:text-[#009fe3] text-gray-900 drop-shadow-sm"
-                onClick={() => closeMenu()}
               >
                 {link.name}
               </Link>
@@ -136,20 +111,14 @@ const Navbar = () => {
             <span className="text-sm font-medium">933 00 90 64</span>
           </a>
           <LanguageSwitcher />
-          <a 
-            href="https://api.whatsapp.com/send?phone=34699594064" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Button 
+            variant="default" 
+            size="sm" 
+            className="bg-[#009fe3] hover:bg-[#0082b8] text-white transition-all"
           >
-            <Button 
-              variant="default" 
-              size="sm" 
-              className="bg-[#009fe3] hover:bg-[#0082b8] text-white transition-all"
-            >
-              <ShoppingBag className="h-4 w-4 mr-2" />
-              {t('shopNow')}
-            </Button>
-          </a>
+            <ShoppingBag className="h-4 w-4 mr-2" />
+            {t('shopNow')}
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -174,12 +143,12 @@ const Navbar = () => {
         >
           <div className="h-full flex flex-col items-center justify-center space-y-8 p-8">
             {navLinks.map((link) => (
-              link.path.startsWith('#') ? (
+              link.path.startsWith('#') && !isHomePage ? (
                 <a
                   key={link.name}
                   href={link.path}
                   className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
-                  onClick={(e) => handleNavigation(link.path, e)}
+                  onClick={closeMenu}
                 >
                   {link.name}
                 </a>
@@ -188,7 +157,7 @@ const Navbar = () => {
                   key={link.name}
                   to={link.path}
                   className="text-xl font-medium transition-all hover:text-[#009fe3] text-gray-800"
-                  onClick={() => closeMenu()}
+                  onClick={closeMenu}
                 >
                   {link.name}
                 </Link>
@@ -199,21 +168,14 @@ const Navbar = () => {
               <span className="text-lg font-medium">933 00 90 64</span>
             </a>
             <LanguageSwitcher />
-            <a 
-              href="https://api.whatsapp.com/send?phone=34699594064" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full max-w-[200px]"
+            <Button 
+              variant="default" 
+              className="mt-4 w-full max-w-[200px] bg-[#009fe3] hover:bg-[#0082b8] text-white"
               onClick={closeMenu}
             >
-              <Button 
-                variant="default" 
-                className="w-full bg-[#009fe3] hover:bg-[#0082b8] text-white"
-              >
-                <ShoppingBag className="h-5 w-5 mr-2" />
-                {t('shopNow')}
-              </Button>
-            </a>
+              <ShoppingBag className="h-5 w-5 mr-2" />
+              {t('shopNow')}
+            </Button>
           </div>
         </div>
       </div>

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Index from './pages/Index';
-import About from './pages/About';
 import NotFound from './pages/NotFound';
 import { Toaster } from './components/ui/sonner';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -28,7 +27,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
           {/* Optical Services */}
           <Route path="/services/salut-visual" element={<SalutVisual />} />
           <Route path="/services/lents-contacte" element={<LentsContacte />} />
