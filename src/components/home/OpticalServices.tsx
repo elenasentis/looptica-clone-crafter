@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Eye, Contact, Moon, User, Glasses, Sun } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -15,21 +14,21 @@ const OpticalServices = () => {
       icon: <Eye className="w-10 h-10 text-[#55afa9]" />,
       title: t('visualHealth'),
       description: t('visualHealthDesc'),
-      image: "/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png",
+      image: "/images/_DSC4696.jpg",
       path: "/services/salut-visual"
     },
     {
       icon: <Contact className="w-10 h-10 text-[#55afa9]" />,
       title: t('contactLenses'),
       description: t('contactLensesDesc'),
-      image: "/lovable-uploads/17bc2039-1cd8-4464-80fe-3107ec793ead.png",
+      image: "/images/adobestock-226007711_orig.jpeg",
       path: "/services/lents-contacte"
     },
     {
       icon: <Moon className="w-10 h-10 text-[#55afa9]" />,
       title: t('orthoK'),
       description: t('orthoKDesc'),
-      image: "/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png",
+      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
       path: "/services/orto-k"
     },
     {

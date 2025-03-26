@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Eye, RotateCcw, ThumbsUp, AlertCircle } from 'lucide-react';
@@ -82,7 +81,7 @@ const LentsContacte = () => {
     multifocalLensesDesc: {
       en: "Perfect for people with presbyopia, they allow you to see clearly at multiple distances without the need for reading glasses.",
       es: "Perfectas para personas con presbicia, permiten ver claramente a múltiples distancias sin necesidad de gafas de lectura.",
-      ca: "Perfectes per a persones amb presbícia, permeten veure clarament a múltiples distàncies sense necessitat d'ulleres de lectura.",
+      ca: "Perfectes per a persones amb presbícia, permiten veure clarament a múltiples distàncies sense necessitat d'ulleres de lectura.",
     },
     cosmeticLenses: {
       en: "Cosmetic contact lenses",
@@ -165,7 +164,7 @@ const LentsContacte = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/lovable-uploads/17bc2039-1cd8-4464-80fe-3107ec793ead.png"
+      image="/images/adobestock-226007711_orig.jpeg"
       appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>

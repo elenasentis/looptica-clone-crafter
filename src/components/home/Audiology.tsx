@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Headphones, Ear, Shield, Volume2 } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -15,21 +14,21 @@ const Audiology = () => {
       icon: <Ear className="w-10 h-10 text-[#55afa9]" />,
       title: t('hearingTest'),
       description: t('hearingTestDesc'),
-      image: "/lovable-uploads/c909c154-63bb-4632-af13-9e1825237aaa.png",
+      image: "/images/oticon_act_key_visual_woman_in-anechoic_chamber_as_453913390_as_190510297.jpg",
       link: "/services/hearing-test"
     },
     {
       icon: <Headphones className="w-10 h-10 text-[#55afa9]" />,
       title: t('hearingAids'),
       description: t('hearingAidsDesc'),
-      image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
+      image: "/images/oticon_xceed_connectivity_iphone_x_nds_199359.jpg",
       link: "/services/hearing-aids"
     },
     {
       icon: <Volume2 className="w-10 h-10 text-[#55afa9]" />,
       title: t('tinnitusTreatment'),
       description: t('tinnitusDesc'),
-      image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
+      image: "/images/oticonopnscoupleincitymg9377300dpicoticon2.jpg",
       link: "/services/tinnitus-treatment"
     },
     {
@@ -41,7 +40,6 @@ const Audiology = () => {
     }
   ];
 
-  // Add SEO text based on language with Poblenou references
   const getSeoText = () => {
     if (language === 'es') {
       return (
