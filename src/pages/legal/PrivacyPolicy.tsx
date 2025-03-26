@@ -18,75 +18,56 @@ const PrivacyPolicy = () => {
       lastUpdated: "Last updated: April 2023",
       content: `
         <h2>PRIVACY POLICY</h2>
+        <p>In accordance with the provisions established in the current regulations regarding the Protection of Personal Data and the Law on Information Society Services and Electronic Commerce, we inform you that the personal data provided through this website will be processed by LOOPTICA POBLENOU S.L., with CIF B02745636, whose data is available on the Legal Notice.</p>
         
-        <p>In compliance with the provisions of current regulations on the Protection of Personal Data and the Law on Information Society Services and Electronic Commerce, we inform you that the personal data you provide through the website looptica.com will be processed by the holder of the same, whose data are included in the Legal Notice.</p>
-        
-        <h3>1. INFORMATION WE COLLECT</h3>
-        
-        <p>When using our services, we may ask you to provide us with certain personal information that can be used to contact, identify you, or process your requests. The personal data we collect may include:</p>
-        
+        <h3>RESPONSIBLE FOR THE TREATMENT</h3>
         <ul>
-          <li>Contact information (such as name, email address, telephone number)</li>
-          <li>Demographic information (such as postal code, preferences)</li>
-          <li>Health information necessary for the provision of our optical and audiology services</li>
-          <li>Information provided in forms, surveys, or through correspondence</li>
+          <li>Identity: LOOPTICA POBLENOU S.L.</li>
+          <li>CIF: B02745636</li>
+          <li>Address: RAMBLA DEL POBLENOU, 48 LOCAL, 08005, BARCELONA, BARCELONA</li>
+          <li>Email: info@looptica.com</li>
         </ul>
         
-        <h3>2. PURPOSES OF PROCESSING</h3>
-        
-        <p>We will process your personal data for the following purposes:</p>
-        
+        <h3>PURPOSE OF THE TREATMENT</h3>
+        <p>In LOOPTICA POBLENOU S.L. we treat the information provided by interested persons for the following purposes:</p>
         <ul>
-          <li>To provide and maintain our services</li>
-          <li>To notify you about changes to our services</li>
-          <li>To allow you to participate in interactive features of our services when you choose to do so</li>
-          <li>To provide customer support</li>
-          <li>To process transactions</li>
-          <li>To provide relevant product and service information</li>
-          <li>To comply with legal obligations</li>
+          <li>Manage the provision of the contracted services.</li>
+          <li>Respond to inquiries, requests or consultations.</li>
+          <li>Send commercial communications regarding products or services that may be of interest to the user.</li>
         </ul>
         
-        <h3>3. LEGAL BASIS FOR PROCESSING</h3>
+        <h3>DATA CONSERVATION CRITERIA</h3>
+        <p>The data will be kept for the time necessary to fulfill the purposes for which they were collected, as long as the deletion is not requested, and will be deleted with the appropriate security measures to guarantee the pseudonymization of the data or the complete destruction of the same.</p>
         
-        <p>The processing of your data is based on the following legal bases:</p>
+        <h3>LEGITIMATION</h3>
+        <p>The legal basis for the processing of your data is the execution of the provision of the service and/or product request, the legitimate interest of the company and, in some cases, your consent. In cases where there is a contractual relationship, the provision of services and the development of the contractual relationship is also a legal basis.</p>
         
+        <h3>DATA TRANSFER</h3>
+        <p>Your data will not be transferred to third parties without your prior consent, except in cases where there is a legal obligation. In some cases, it may be necessary to communicate your data to suppliers as data processors with whom we have signed the corresponding contract.</p>
+        
+        <h3>RIGHTS</h3>
+        <p>Any person has the right to obtain confirmation about whether in LOOPTICA POBLENOU S.L. we are processing personal data that concerns them or not.</p>
+        <p>Interested persons have the right to:</p>
         <ul>
-          <li>Your consent</li>
-          <li>The execution of a contract in which you are a party</li>
-          <li>Compliance with a legal obligation applicable to the controller</li>
-          <li>The protection of legitimate interests pursued by the controller</li>
+          <li>Request access to personal data relating to the data subject.</li>
+          <li>Request its rectification or deletion.</li>
+          <li>Request the limitation of its treatment.</li>
+          <li>Oppose the treatment.</li>
+          <li>Request the portability of the data.</li>
         </ul>
+        <p>Interested parties may access their personal data, as well as request the rectification of inaccurate data or, where appropriate, request their deletion when, among other reasons, the data is no longer necessary for the purposes that were collected. In certain circumstances, the interested parties may request the limitation of the processing of their data, in which case we will only keep them for the exercise or defense of claims.</p>
+        <p>In certain circumstances and for reasons related to their particular situation, the interested parties may object to the processing of their data. LOOPTICA POBLENOU S.L. will stop processing the data, except for compelling legitimate reasons, or the exercise or defense of possible claims. You may materially exercise your rights by sending an email to info@looptica.com identifying yourself with your ID or equivalent document.</p>
+        <p>If you have given your consent for a specific purpose, you have the right to withdraw the consent granted at any time, without affecting the legality of the treatment based on the consent prior to its withdrawal.</p>
+        <p>In the event that you feel your rights regarding data protection have been violated, especially when you have not obtained satisfaction in the exercise of your rights, you can file a complaint with the competent Data Protection Control Authority.</p>
         
-        <h3>4. DATA RETENTION</h3>
+        <h3>ACCURACY AND VERACITY OF THE DATA</h3>
+        <p>The user guarantees that the personal data provided is truthful and is responsible for communicating any modifications to them. The user responds to the veracity of the personal data provided and undertakes to keep them properly updated. The user guarantees that all the information provided is correct, true and complete, and undertakes to keep them duly updated. The user will be solely responsible for any false or inaccurate statements made and the damages caused to LOOPTICA POBLENOU S.L. or to third parties by the information provided.</p>
         
-        <p>We will retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal agreements and policies.</p>
+        <h3>SECURITY MEASURES</h3>
+        <p>LOOPTICA POBLENOU S.L. has adopted all the measures of a technical and organizational nature necessary to guarantee the security and integrity of the personal data that it treats, as well as to avoid its loss, alteration and/or access by unauthorized third parties. However, remember that no method of data transmission over the Internet, or method of electronic storage is 100% secure.</p>
         
-        <h3>5. DATA TRANSFER</h3>
-        
-        <p>Your information, including personal data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
-        
-        <h3>6. YOUR RIGHTS</h3>
-        
-        <p>Under data protection law, you have rights including:</p>
-        
-        <ul>
-          <li>Right to access - You have the right to ask us for copies of your personal information.</li>
-          <li>Right to rectification - You have the right to ask us to rectify information you think is inaccurate. You also have the right to ask us to complete information you think is incomplete.</li>
-          <li>Right to erasure - You have the right to ask us to erase your personal information in certain circumstances.</li>
-          <li>Right to restriction of processing - You have the right to ask us to restrict the processing of your information in certain circumstances.</li>
-          <li>Right to object to processing - You have the right to object to the processing of your personal data in certain circumstances.</li>
-          <li>Right to data portability - You have the right to ask that we transfer the information you gave us to another organization, or to you, in certain circumstances.</li>
-        </ul>
-        
-        <h3>7. CONTACT US</h3>
-        
-        <p>If you have any questions about this Privacy Policy, please contact us:</p>
-        
-        <ul>
-          <li>By email: info@looptica.com</li>
-          <li>By phone: 933 00 90 64</li>
-          <li>By mail: Rambla del Poblenou, 48, 08005 Barcelona</li>
-        </ul>
+        <h3>ACCEPTANCE OF THIS PRIVACY POLICY</h3>
+        <p>The user acknowledges having read this document and agrees to all its terms, accepting it freely, expressly and unequivocally.</p>
       `
     },
     es: {
@@ -96,75 +77,56 @@ const PrivacyPolicy = () => {
       lastUpdated: "Última actualización: Abril 2023",
       content: `
         <h2>POLÍTICA DE PRIVACIDAD</h2>
+        <p>De conformidad con lo establecido en la normativa vigente en Protección de Datos de Carácter Personal y la Ley de Servicios de la Sociedad de la Información y de Comercio Electrónico, le informamos que los datos personales facilitados a través de esta web serán tratados por el titular de la misma, LOOPTICA POBLENOU S.L., con CIF B02745636, cuyos datos obran en el Aviso Legal.</p>
         
-        <p>En cumplimiento de lo dispuesto en la normativa vigente sobre Protección de Datos de Carácter Personal y en la Ley de Servicios de la Sociedad de la Información y Comercio Electrónico, le informamos que los datos personales que nos facilite a través del sitio web looptica.com serán tratados por el titular del mismo, cuyos datos figuran en el Aviso Legal.</p>
-        
-        <h3>1. INFORMACIÓN QUE RECOPILAMOS</h3>
-        
-        <p>Al utilizar nuestros servicios, es posible que le pidamos que nos proporcione cierta información personal que puede utilizarse para contactar con usted, identificarle o tramitar sus solicitudes. Los datos personales que recopilamos pueden incluir:</p>
-        
+        <h3>RESPONSABLE DEL TRATAMIENTO</h3>
         <ul>
-          <li>Información de contacto (como nombre, dirección de correo electrónico, número de teléfono)</li>
-          <li>Información demográfica (como código postal, preferencias)</li>
-          <li>Información de salud necesaria para la prestación de nuestros servicios de óptica y audiología</li>
-          <li>Información proporcionada en formularios, encuestas o a través de correspondencia</li>
+          <li>Identidad: LOOPTICA POBLENOU S.L.</li>
+          <li>CIF: B02745636</li>
+          <li>Dirección: RAMBLA DEL POBLENOU, 48 LOCAL, 08005, BARCELONA, BARCELONA</li>
+          <li>Correo electrónico: info@looptica.com</li>
         </ul>
         
-        <h3>2. FINALIDADES DEL TRATAMIENTO</h3>
-        
-        <p>Trataremos sus datos personales para las siguientes finalidades:</p>
-        
+        <h3>FINALIDAD DEL TRATAMIENTO</h3>
+        <p>En LOOPTICA POBLENOU S.L. tratamos la información que nos facilitan las personas interesadas con los siguientes fines:</p>
         <ul>
-          <li>Proporcionar y mantener nuestros servicios</li>
-          <li>Notificarle sobre cambios en nuestros servicios</li>
-          <li>Permitirle participar en funciones interactivas de nuestros servicios cuando decida hacerlo</li>
-          <li>Prestar atención al cliente</li>
-          <li>Procesar transacciones</li>
-          <li>Proporcionar información relevante sobre productos y servicios</li>
-          <li>Cumplir con obligaciones legales</li>
+          <li>Gestionar la prestación de los servicios contratados.</li>
+          <li>Responder a las solicitudes, peticiones o consultas.</li>
+          <li>Enviar comunicaciones comerciales sobre productos o servicios que puedan ser de interés del usuario.</li>
         </ul>
         
-        <h3>3. BASE LEGAL PARA EL TRATAMIENTO</h3>
+        <h3>CRITERIOS DE CONSERVACIÓN DE LOS DATOS</h3>
+        <p>Los datos se conservarán mientras se mantenga la relación comercial o durante los años necesarios para cumplir con las obligaciones legales. Los datos no se cederán a terceros salvo en los casos en que exista una obligación legal. Usted tiene derecho a obtener confirmación sobre si en LOOPTICA POBLENOU S.L. estamos tratando sus datos personales, por tanto tiene derecho a acceder a sus datos personales, rectificar los datos inexactos o solicitar su supresión cuando los datos ya no sean necesarios.</p>
         
-        <p>El tratamiento de sus datos se basa en las siguientes bases legales:</p>
+        <h3>LEGITIMACIÓN</h3>
+        <p>La base legal para el tratamiento de sus datos es la ejecución de la prestación del servicio y/o producto solicitado, el interés legítimo de la empresa y, en determinados casos, su consentimiento. En aquellos casos en los que exista una relación contractual, la prestación de servicios y el desarrollo de la relación contractual también constituye base jurídica.</p>
         
+        <h3>CESIONES DE DATOS</h3>
+        <p>Sus datos no serán cedidos a terceros sin su previo consentimiento, salvo en los casos en que exista una obligación legal. En algunos casos, puede ser necesario comunicar sus datos a proveedores como encargados de tratamiento con los que tenemos firmado el correspondiente contrato.</p>
+        
+        <h3>DERECHOS</h3>
+        <p>Cualquier persona tiene derecho a obtener confirmación sobre si en LOOPTICA POBLENOU S.L. estamos tratando datos personales que les conciernan o no.</p>
+        <p>Las personas interesadas tienen derecho a:</p>
         <ul>
-          <li>Su consentimiento</li>
-          <li>La ejecución de un contrato en el que usted es parte</li>
-          <li>El cumplimiento de una obligación legal aplicable al responsable</li>
-          <li>La protección de intereses legítimos perseguidos por el responsable</li>
+          <li>Solicitar el acceso a los datos personales relativos al interesado.</li>
+          <li>Solicitar su rectificación o supresión.</li>
+          <li>Solicitar la limitación de su tratamiento.</li>
+          <li>Oponerse al tratamiento.</li>
+          <li>Solicitar la portabilidad de los datos.</li>
         </ul>
+        <p>Los interesados podrán acceder a sus datos personales, así como a solicitar la rectificación de los datos inexactos o, en su caso, solicitar su supresión cuando, entre otros motivos, los datos ya no sean necesarios para los fines que fueron recogidos. En determinadas circunstancias, los interesados podrán solicitar la limitación del tratamiento de sus datos, en cuyo caso únicamente los conservaremos para el ejercicio o la defensa de reclamaciones.</p>
+        <p>En determinadas circunstancias y por motivos relacionados con su situación particular, los interesados podrán oponerse al tratamiento de sus datos. LOOPTICA POBLENOU S.L. dejará de tratar los datos, salvo por motivos legítimos imperiosos, o el ejercicio o la defensa de posibles reclamaciones. Podrá ejercitar materialmente sus derechos enviando un correo electrónico a info@looptica.com identificándose con su DNI o documento equivalente.</p>
+        <p>Si ha otorgado su consentimiento para alguna finalidad concreta, tiene derecho a retirar el consentimiento otorgado en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada.</p>
+        <p>En caso de que sienta vulnerados sus derechos en lo concerniente a la protección de sus datos personales, especialmente cuando no haya obtenido satisfacción en el ejercicio de sus derechos, puede presentar una reclamación ante la Autoridad de Control en materia de Protección de Datos competente.</p>
         
-        <h3>4. CONSERVACIÓN DE DATOS</h3>
+        <h3>EXACTITUD Y VERACIDAD DE LOS DATOS</h3>
+        <p>El usuario garantiza que los datos personales facilitados son veraces y se hace responsable de comunicar cualquier modificación en los mismos. El usuario responde de la veracidad de los datos personales facilitados y se compromete a mantenerlos debidamente actualizados. El usuario garantiza que toda la información facilitada es correcta, verdadera y completa, y se compromete a mantenerla debidamente actualizada. El usuario será el único responsable de cualquier daño o perjuicio, directo o indirecto, que pudiera ocasionar a LOOPTICA POBLENOU S.L. o a terceros, a causa de la cumplimentación de formularios con datos falsos, inexactos, incompletos o no actualizados.</p>
         
-        <p>Conservaremos sus datos personales únicamente durante el tiempo necesario para los fines establecidos en esta Política de Privacidad. Conservaremos y utilizaremos sus datos en la medida necesaria para cumplir con nuestras obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos y políticas legales.</p>
+        <h3>MEDIDAS DE SEGURIDAD</h3>
+        <p>LOOPTICA POBLENOU S.L. ha adoptado todas las medidas de índole técnica y organizativa necesarias para garantizar la seguridad e integridad de los datos de carácter personal que trate, así como para evitar su pérdida, alteración y/o acceso por parte de terceros no autorizados. No obstante, recuerde que ningún método de transmisión de datos por Internet, o método de almacenamiento electrónico es 100% seguro.</p>
         
-        <h3>5. TRANSFERENCIA DE DATOS</h3>
-        
-        <p>Su información, incluidos los datos personales, puede transferirse a — y mantenerse en — ordenadores ubicados fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de su jurisdicción.</p>
-        
-        <h3>6. SUS DERECHOS</h3>
-        
-        <p>Según la ley de protección de datos, usted tiene derechos que incluyen:</p>
-        
-        <ul>
-          <li>Derecho de acceso - Tiene derecho a solicitarnos copias de su información personal.</li>
-          <li>Derecho de rectificación - Tiene derecho a pedirnos que rectifiquemos información que considere inexacta. También tiene derecho a pedirnos que completemos información que considere incompleta.</li>
-          <li>Derecho de supresión - Tiene derecho a pedirnos que borremos su información personal en determinadas circunstancias.</li>
-          <li>Derecho a la limitación del tratamiento - Tiene derecho a pedirnos que restrinjamos el tratamiento de su información en determinadas circunstancias.</li>
-          <li>Derecho de oposición al tratamiento - Tiene derecho a oponerse al tratamiento de sus datos personales en determinadas circunstancias.</li>
-          <li>Derecho a la portabilidad de datos - Tiene derecho a pedirnos que transfiramos la información que nos dio a otra organización, o a usted, en determinadas circunstancias.</li>
-        </ul>
-        
-        <h3>7. CONTÁCTENOS</h3>
-        
-        <p>Si tiene alguna pregunta sobre esta Política de Privacidad, póngase en contacto con nosotros:</p>
-        
-        <ul>
-          <li>Por correo electrónico: info@looptica.com</li>
-          <li>Por teléfono: 933 00 90 64</li>
-          <li>Por correo postal: Rambla del Poblenou, 48, 08005 Barcelona</li>
-        </ul>
+        <h3>ACEPTACIÓN DE ESTA POLÍTICA DE PRIVACIDAD</h3>
+        <p>El usuario reconoce haber leído este documento y manifiesta estar conforme con la totalidad de sus términos, aceptándolo libre, expresa e inequívocamente.</p>
       `
     },
     ca: {
@@ -174,75 +136,56 @@ const PrivacyPolicy = () => {
       lastUpdated: "Darrera actualització: Abril 2023",
       content: `
         <h2>POLÍTICA DE PRIVACITAT</h2>
+        <p>De conformitat amb l'establert a la normativa vigent en Protecció de Dades de Caràcter Personal i la Llei de Serveis de la Societat de la Informació i de Comerç Electrònic, l'informem que les dades personals facilitades a través d'aquesta web seran tractades pel titular de la mateixa, LOOPTICA POBLENOU S.L., amb CIF B02745636, les dades del qual consten a l'Avís Legal.</p>
         
-        <p>En compliment del que disposa la normativa vigent sobre Protecció de Dades de Caràcter Personal i la Llei de Serveis de la Societat de la Informació i Comerç Electrònic, l'informem que les dades personals que ens faciliti a través del lloc web looptica.com seran tractades pel titular del mateix, les dades del qual figuren a l'Avís Legal.</p>
-        
-        <h3>1. INFORMACIÓ QUE RECOPILEM</h3>
-        
-        <p>En utilitzar els nostres serveis, és possible que li demanem que ens proporcioni certa informació personal que pot utilitzar-se per contactar amb vostè, identificar-lo o tramitar les seves sol·licituds. Les dades personals que recopilem poden incloure:</p>
-        
+        <h3>RESPONSABLE DEL TRACTAMENT</h3>
         <ul>
-          <li>Informació de contacte (com nom, adreça de correu electrònic, número de telèfon)</li>
-          <li>Informació demogràfica (com codi postal, preferències)</li>
-          <li>Informació de salut necessària per a la prestació dels nostres serveis d'òptica i audiologia</li>
-          <li>Informació proporcionada en formularis, enquestes o a través de correspondència</li>
+          <li>Identitat: LOOPTICA POBLENOU S.L.</li>
+          <li>CIF: B02745636</li>
+          <li>Adreça: RAMBLA DEL POBLENOU, 48 LOCAL, 08005, BARCELONA, BARCELONA</li>
+          <li>Correu electrònic: info@looptica.com</li>
         </ul>
         
-        <h3>2. FINALITATS DEL TRACTAMENT</h3>
-        
-        <p>Tractarem les seves dades personals per a les següents finalitats:</p>
-        
+        <h3>FINALITAT DEL TRACTAMENT</h3>
+        <p>A LOOPTICA POBLENOU S.L. tractem la informació que ens faciliten les persones interessades amb les següents finalitats:</p>
         <ul>
-          <li>Proporcionar i mantenir els nostres serveis</li>
-          <li>Notificar-li sobre canvis en els nostres serveis</li>
-          <li>Permetre-li participar en funcions interactives dels nostres serveis quan decideixi fer-ho</li>
-          <li>Prestar atenció al client</li>
-          <li>Processar transaccions</li>
-          <li>Proporcionar informació rellevant sobre productes i serveis</li>
-          <li>Complir amb obligacions legals</li>
+          <li>Gestionar la prestació dels serveis contractats.</li>
+          <li>Respondre a les sol·licituds, peticions o consultes.</li>
+          <li>Enviar comunicacions comercials sobre productes o serveis que puguin ser d'interès de l'usuari.</li>
         </ul>
         
-        <h3>3. BASE LEGAL PER AL TRACTAMENT</h3>
+        <h3>CRITERIS DE CONSERVACIÓ DE LES DADES</h3>
+        <p>Les dades es conservaran mentre es mantingui la relació comercial o durant els anys necessaris per complir amb les obligacions legals. Les dades no es cediran a tercers excepte en els casos en què hi hagi una obligació legal. Vostè té dret a obtenir confirmació sobre si a LOOPTICA POBLENOU S.L. estem tractant les seves dades personals, per tant té dret a accedir a les seves dades personals, rectificar les dades inexactes o sol·licitar la seva supressió quan les dades ja no siguin necessàries.</p>
         
-        <p>El tractament de les seves dades es basa en les següents bases legals:</p>
+        <h3>LEGITIMACIÓ</h3>
+        <p>La base legal per al tractament de les seves dades és l'execució de la prestació del servei i/o producte sol·licitat, l'interès legítim de l'empresa i, en determinats casos, el seu consentiment. En aquells casos en què hi hagi una relació contractual, la prestació de serveis i el desenvolupament de la relació contractual també constitueix base jurídica.</p>
         
+        <h3>CESSIONS DE DADES</h3>
+        <p>Les seves dades no seran cedides a tercers sense el seu previ consentiment, excepte en els casos en què hi hagi una obligació legal. En alguns casos, pot ser necessari comunicar les seves dades a proveïdors com a encarregats de tractament amb els que tenim signat el corresponent contracte.</p>
+        
+        <h3>DRETS</h3>
+        <p>Qualsevol persona té dret a obtenir confirmació sobre si a LOOPTICA POBLENOU S.L. estem tractant dades personals que els concerneixin o no.</p>
+        <p>Les persones interessades tenen dret a:</p>
         <ul>
-          <li>El seu consentiment</li>
-          <li>L'execució d'un contracte en el qual vostè és part</li>
-          <li>El compliment d'una obligació legal aplicable al responsable</li>
-          <li>La protecció d'interessos legítims perseguits pel responsable</li>
+          <li>Sol·licitar l'accés a les dades personals relatives a l'interessat.</li>
+          <li>Sol·licitar la seva rectificació o supressió.</li>
+          <li>Sol·licitar la limitació del seu tractament.</li>
+          <li>Oposar-se al tractament.</li>
+          <li>Sol·licitar la portabilitat de les dades.</li>
         </ul>
+        <p>Els interessats podran accedir a les seves dades personals, així com sol·licitar la rectificació de les dades inexactes o, si escau, sol·licitar la seva supressió quan, entre altres motius, les dades ja no siguin necessàries per a les finalitats que van ser recollides. En determinades circumstàncies, els interessats podran sol·licitar la limitació del tractament de les seves dades, en aquest cas únicament les conservarem per a l'exercici o la defensa de reclamacions.</p>
+        <p>En determinades circumstàncies i per motius relacionats amb la seva situació particular, els interessats podran oposar-se al tractament de les seves dades. LOOPTICA POBLENOU S.L. deixarà de tractar les dades, excepte per motius legítims imperiosos, o l'exercici o la defensa de possibles reclamacions. Podrà exercitar materialment els seus drets enviant un correu electrònic a info@looptica.com identificant-se amb el seu DNI o document equivalent.</p>
+        <p>Si ha atorgat el seu consentiment per a alguna finalitat concreta, té dret a retirar el consentiment atorgat en qualsevol moment, sense que això afecti a la licitud del tractament basat en el consentiment previ a la seva retirada.</p>
+        <p>En cas que senti vulnerats els seus drets pel que fa a la protecció de les seves dades personals, especialment quan no hagi obtingut satisfacció en l'exercici dels seus drets, pot presentar una reclamació davant l'Autoritat de Control en matèria de Protecció de Dades competent.</p>
         
-        <h3>4. CONSERVACIÓ DE DADES</h3>
+        <h3>EXACTITUD I VERACITAT DE LES DADES</h3>
+        <p>L'usuari garanteix que les dades personals facilitades són veraces i es fa responsable de comunicar qualsevol modificació en les mateixes. L'usuari respon de la veracitat de les dades personals facilitades i es compromet a mantenir-les degudament actualitzades. L'usuari garanteix que tota la informació facilitada és correcta, verdadera i completa, i es compromet a mantenir-la degudament actualitzada. L'usuari serà l'únic responsable de qualsevol dany o perjudici, directe o indirecte, que pogués ocasionar a LOOPTICA POBLENOU S.L. o a tercers, a causa de l'emplenament de formularis amb dades falses, inexactes, incompletes o no actualitzades.</p>
         
-        <p>Conservarem les seves dades personals únicament durant el temps necessari per a les finalitats establertes en aquesta Política de Privacitat. Conservarem i utilitzarem les seves dades en la mesura necessària per complir amb les nostres obligacions legals, resoldre disputes i fer complir els nostres acords i polítiques legals.</p>
+        <h3>MESURES DE SEGURETAT</h3>
+        <p>LOOPTICA POBLENOU S.L. ha adoptat totes les mesures d'índole tècnica i organitzativa necessàries per garantir la seguretat i integritat de les dades de caràcter personal que tracti, així com per evitar la seva pèrdua, alteració i/o accés per part de tercers no autoritzats. No obstant això, recordi que cap mètode de transmissió de dades per Internet, o mètode d'emmagatzematge electrònic és 100% segur.</p>
         
-        <h3>5. TRANSFERÈNCIA DE DADES</h3>
-        
-        <p>La seva informació, incloses les dades personals, pot transferir-se a — i mantenir-se en — ordinadors ubicats fora del seu estat, província, país o altra jurisdicció governamental on les lleis de protecció de dades poden diferir de les de la seva jurisdicció.</p>
-        
-        <h3>6. ELS SEUS DRETS</h3>
-        
-        <p>Segons la llei de protecció de dades, vostè té drets que inclouen:</p>
-        
-        <ul>
-          <li>Dret d'accés - Té dret a sol·licitar-nos còpies de la seva informació personal.</li>
-          <li>Dret de rectificació - Té dret a demanar-nos que rectifiquem informació que consideri inexacta. També té dret a demanar-nos que completem informació que consideri incompleta.</li>
-          <li>Dret de supressió - Té dret a demanar-nos que esborrem la seva informació personal en determinades circumstàncies.</li>
-          <li>Dret a la limitació del tractament - Té dret a demanar-nos que restringim el tractament de la seva informació en determinades circumstàncies.</li>
-          <li>Dret d'oposició al tractament - Té dret a oposar-se al tractament de les seves dades personals en determinades circumstàncies.</li>
-          <li>Dret a la portabilitat de dades - Té dret a demanar-nos que transferim la informació que ens va donar a una altra organització, o a vostè, en determinades circumstàncies.</li>
-        </ul>
-        
-        <h3>7. CONTACTI'NS</h3>
-        
-        <p>Si té alguna pregunta sobre aquesta Política de Privacitat, posi's en contacte amb nosaltres:</p>
-        
-        <ul>
-          <li>Per correu electrònic: info@looptica.com</li>
-          <li>Per telèfon: 933 00 90 64</li>
-          <li>Per correu postal: Rambla del Poblenou, 48, 08005 Barcelona</li>
-        </ul>
+        <h3>ACCEPTACIÓ D'AQUESTA POLÍTICA DE PRIVACITAT</h3>
+        <p>L'usuari reconeix haver llegit aquest document i manifesta estar conforme amb la totalitat dels seus termes, acceptant-lo lliure, expressa i inequívocament.</p>
       `
     }
   };
