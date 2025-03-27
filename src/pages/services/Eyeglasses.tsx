@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Glasses, PenTool, Shapes, BarChart3 } from 'lucide-react';
@@ -12,7 +13,7 @@ const Eyeglasses = () => {
     title: {
       en: 'Premium Eyeglasses Collection',
       es: 'Colección Premium de Gafas',
-      ca: 'Col·lecció Premium d'Ulleres',
+      ca: 'Col·lecció Premium d\'Ulleres',
     },
     subtitle: {
       en: 'Find the perfect frames to match your style and vision needs',
@@ -22,7 +23,7 @@ const Eyeglasses = () => {
     appointmentSubject: {
       en: 'Eyeglasses Consultation at Looptica',
       es: 'Consulta de Gafas en Looptica',
-      ca: 'Consulta d'Ulleres a Looptica',
+      ca: 'Consulta d\'Ulleres a Looptica',
     },
     intro1: {
       en: 'At Looptica, we believe that eyeglasses are more than just a visual aid—they\'re an extension of your personality and style. Our carefully curated collection features frames from the world\'s most prestigious designers and brands, ensuring that you\'ll find the perfect pair that complements your face shape, lifestyle, and personal aesthetic.',
@@ -42,12 +43,12 @@ const Eyeglasses = () => {
     hdLenses: {
       en: 'High-Definition Digital Lenses',
       es: 'Lentes Digitales de Alta Definición',
-      ca: 'Lents Digitals d'Alta Definició',
+      ca: 'Lents Digitals d\'Alta Definició',
     },
     hdLensesDesc: {
       en: 'Our digitally-surfaced lenses provide superior clarity and visual comfort compared to traditional lenses, reducing eye strain and fatigue even after long hours of wear.',
       es: 'Nuestras lentes con superficie digital proporcionan una claridad superior y comodidad visual en comparación con las lentes tradicionales, reduciendo la fatiga ocular incluso después de largas horas de uso.',
-      ca: 'Les nostres lents amb superfície digital proporcionen una claredat superior i comoditat visual en comparació amb les lents tradicionals, reduint la fatiga ocular fins i tot després de llargues hores d'ús.',
+      ca: 'Les nostres lents amb superfície digital proporcionen una claredat superior i comoditat visual en comparació amb les lents tradicionals, reduint la fatiga ocular fins i tot després de llargues hores d\'ús.',
     },
     progressive: {
       en: 'Progressive Lenses',
@@ -67,7 +68,7 @@ const Eyeglasses = () => {
     antiReflectiveDesc: {
       en: 'Eliminate distracting reflections, reduce glare, and improve night vision while enhancing the appearance of your glasses by making the lenses nearly invisible.',
       es: 'Elimina los reflejos molestos, reduce el deslumbramiento y mejora la visión nocturna, a la vez que mejora la apariencia de tus gafas al hacer que las lentes sean casi invisibles.',
-      ca: 'Elimina els reflexos molestos, redueix l'enlluernament i millora la visió nocturna, alhora que millora l'aparença de les teves ulleres en fer que les lents siguin gairebé invisibles.',
+      ca: 'Elimina els reflexos molestos, redueix l\'enlluernament i millora la visió nocturna, alhora que millora l\'aparença de les teves ulleres en fer que les lents siguin gairebé invisibles.',
     },
     blueLight: {
       en: 'Blue Light Protection',
@@ -77,7 +78,7 @@ const Eyeglasses = () => {
     blueLightDesc: {
       en: 'Our specialized lenses filter out harmful blue light from digital screens, reducing eye strain and potentially improving sleep patterns for heavy computer users.',
       es: 'Nuestras lentes especializadas filtran la luz azul dañina de las pantallas digitales, reduciendo la fatiga ocular y potencialmente mejorando los patrones de sueño para los usuarios frecuentes de computadoras.',
-      ca: 'Les nostres lents especialitzades filtren la llum blava nociva de les pantalles digitals, reduint la fatiga ocular i potencialment millorant els patrons de son per als usuaris freqüents d'ordinadors.',
+      ca: 'Les nostres lents especialitzades filtren la llum blava nociva de les pantalles digitals, reduint la fatiga ocular i potencialment millorant els patrons de son per als usuaris freqüents d\'ordinadors.',
     },
     brandsTitle: {
       en: 'Featured Designer Brands',
@@ -117,12 +118,12 @@ const Eyeglasses = () => {
     fittingTitle: {
       en: 'Our Personalized Fitting Process',
       es: 'Nuestro Proceso de Adaptación Personalizado',
-      ca: 'El Nostre Procés d'Adaptació Personalitzat',
+      ca: 'El Nostre Procés d\'Adaptació Personalitzat',
     },
     fittingDesc: {
       en: 'At Looptica, we understand that properly fitted eyeglasses are essential not only for optimal vision but also for comfort and appearance. Our comprehensive fitting process ensures that your new eyeglasses will work perfectly for your specific needs:',
       es: 'En Looptica, entendemos que unas gafas correctamente ajustadas son esenciales no solo para una visión óptima, sino también para la comodidad y la apariencia. Nuestro proceso de adaptación integral asegura que sus nuevas gafas funcionarán perfectamente para sus necesidades específicas:',
-      ca: 'A Looptica, entenem que unes ulleres correctament ajustades són essencials no només per a una visió òptima, sinó també per a la comoditat i l'aparença. El nostre procés d'adaptació integral assegura que les seves noves ulleres funcionaran perfectament per a les seves necessitats específiques:',
+      ca: 'A Looptica, entenem que unes ulleres correctament ajustades són essencials no només per a una visió òptima, sinó també per a la comoditat i l\'aparença. El nostre procés d\'adaptació integral assegura que les seves noves ulleres funcionaran perfectament per a les seves necessitats específiques:',
     },
     faceShape: {
       en: 'Face Shape Analysis',
@@ -137,12 +138,12 @@ const Eyeglasses = () => {
     lifestyle: {
       en: 'Lifestyle Assessment',
       es: 'Evaluación del Estilo de Vida',
-      ca: 'Avaluació de l'Estil de Vida',
+      ca: 'Avaluació de l\'Estil de Vida',
     },
     lifestyleDesc: {
       en: 'We\'ll discuss your daily activities, work environment, and hobbies to suggest frames and lens options that suit your lifestyle.',
       es: 'Discutiremos sus actividades diarias, entorno de trabajo y pasatiempos para sugerir monturas y opciones de lentes que se adapten a su estilo de vida.',
-      ca: 'Discutirem les seves activitats diàries, entorn de treball i aficions per suggerir muntures i opcions de lents que s'adaptin al seu estil de vida.',
+      ca: 'Discutirem les seves activitats diàries, entorn de treball i aficions per suggerir muntures i opcions de lents que s\'adaptin al seu estil de vida.',
     },
     measurements: {
       en: 'Precise Measurements',
@@ -162,7 +163,7 @@ const Eyeglasses = () => {
     comfortDesc: {
       en: 'Once your glasses are ready, we\'ll make final adjustments to ensure they fit comfortably without pinching or sliding.',
       es: 'Una vez que sus gafas estén listas, haremos ajustes finales para asegurar que se ajusten cómodamente sin pellizcar o deslizarse.',
-      ca: 'Un cop les seves ulleres estiguin llestes, farem ajustos finals per assegurar que s'ajustin còmodament sense pessigollejar o lliscar.',
+      ca: 'Un cop les seves ulleres estiguin llestes, farem ajustos finals per assegurar que s\'ajustin còmodament sense pessigollejar o lliscar.',
     },
     support: {
       en: 'Ongoing Support',
@@ -182,12 +183,12 @@ const Eyeglasses = () => {
     guaranteeDesc: {
       en: 'Every pair of eyeglasses from Looptica comes with our comprehensive quality guarantee:',
       es: 'Cada par de gafas de Looptica incluye nuestra garantía de calidad integral:',
-      ca: 'Cada parell d'ulleres de Looptica inclou la nostra garantia de qualitat integral:',
+      ca: 'Cada parell d\'ulleres de Looptica inclou la nostra garantia de qualitat integral:',
     },
     guarantee1: {
       en: '30-day adaptation guarantee for progressive lenses',
       es: 'Garantía de adaptación de 30 días para lentes progresivas',
-      ca: 'Garantia d'adaptació de 30 dies per a lents progressives',
+      ca: 'Garantia d\'adaptació de 30 dies per a lents progressives',
     },
     guarantee2: {
       en: 'One-year warranty against manufacturing defects',
@@ -197,7 +198,7 @@ const Eyeglasses = () => {
     guarantee3: {
       en: 'Six months of free adjustments and maintenance',
       es: 'Seis meses de ajustes y mantenimiento gratuitos',
-      ca: 'Sis mesos d'ajustos i manteniment gratuïts',
+      ca: 'Sis mesos d\'ajustos i manteniment gratuïts',
     },
     guarantee4: {
       en: 'Prescription accuracy guarantee',
