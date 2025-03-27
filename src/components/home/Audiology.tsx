@@ -59,10 +59,10 @@ const Audiology = () => {
         <div className="sr-only">
           <h2>Centre d'Audiologia a Barcelona Poblenou</h2>
           <p>
-            A Looptica oferim serveis complets d'audiologia a Barcelona Poblenou, 
+            A Looptica oferim serveis complets d'audiologia a Poblenou, Barcelona, 
             incloent proves auditives professionals, tractament de pèrdua auditiva, 
-            adaptació d'audiòfons digitals, audiometria Barcelona Poblenou i solucions per a acúfens. 
-            El nostre centre auditiu a Barcelona Poblenou compta amb audiologia clínica d'alta qualitat i 
+            adaptació d'audiòfons digitals, audiometria gratuïta i solucions per a acúfens. 
+            El nostre centre auditiu a Poblenou Barcelona compta amb audiologia clínica d'alta qualitat i 
             especialistes en audiologia pediàtrica.
           </p>
         </div>
