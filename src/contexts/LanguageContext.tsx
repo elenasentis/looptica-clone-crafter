@@ -185,7 +185,7 @@ export const translations: Translations = {
   audiologyDescription: {
     en: 'Our certified audiologists in Barcelona Poblenou provide comprehensive hearing assessments and personalized solutions to improve your hearing health and treat hearing loss.',
     es: 'Nuestros audiólogos certificados en Barcelona Poblenou ofrecen evaluaciones auditivas completas y soluciones personalizadas para mejorar su salud auditiva y tratar la pérdida auditiva.',
-    ca: 'Els nostres audiòlegs certificats a Barcelona Poblenou ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva i tractar la pèrdua auditiva.',
+    ca: 'Els nostres audioprotessistes titulats ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva i tractar la pèrdua auditiva.',
   },
   hearingTest: {
     en: 'Professional Hearing Tests',
