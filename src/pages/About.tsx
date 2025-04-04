@@ -71,8 +71,7 @@ const About = () => {
             "With advanced training in the latest hearing aid technologies, Irene ensures that our clients receive the most appropriate solutions for their hearing needs."
           ],
           es: [
-            "Irene es nuestra audióloga principal con un interés especial en la rehabilitación auditiva. Su enfoque amable y paciente ayuda a los clientes a sentirse cómodos al abordar sus problemas de audición.",
-            "Con formación avanzada en las últimas tecnologías de audífonos, Irene se asegura de que nuestros clientes reciban las soluciones más apropiadas para sus necesidades auditivas."
+            "Irene es nuestra óptica optometrista especializada en contactología avanzada. Su amplia trayectoria se ha centrado en la contactología pediátrica y adaptaciones especiales como orto-k, queratocono, control de miopía, lentes de contacto esclerales, y otras soluciones individualizadas. Con gran conocimiento del mercado actual, ofrece un excelente asesoramiento segun las necesidades visuales del paciente."
           ],
           ca: [
             "Irene és la nostra audiòloga principal amb un interès especial en la rehabilitació auditiva. El seu enfocament amable i pacient ajuda els clients a sentir-se còmodes en abordar els seus problemes d'audició.",
