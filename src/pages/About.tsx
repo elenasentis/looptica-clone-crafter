@@ -86,7 +86,7 @@ const About = () => {
           es: "Estilista Óptica",
           ca: "Estilista Òptica"
         },
-        image: "/images/lorena2.jpg",
+        image: "/images/lorena2.png",
         bio: {
           en: [
             "Lorena leads our optical styling team, combining technical expertise with a keen eye for fashion. She excels at helping clients find eyewear that perfectly complements their features and lifestyle.",
@@ -170,7 +170,7 @@ const About = () => {
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-48 h-48 object-cover rounded-full mx-auto mb-6"
+                      className="w-48 h-48 object-contain rounded-full mx-auto mb-6"
                     />
                     <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">{member.name}</h2>
                     {member.bio[language].map((paragraph, idx) => (
