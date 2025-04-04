@@ -48,8 +48,8 @@ const About = () => {
             "Elena specializes in vision therapy and is passionate about providing personalized eye care solutions for each client."
           ],
           es: [
-            "Como propietaria de Looptica, Elena aporta más de 20 años de experiencia en optometría. Con su amplio conocimiento y dedicación a la atención al cliente, ha convertido a Looptica en un nombre de confianza para servicios ópticos y audiológicos en Barcelona.",
-            "Elena se especializa en terapia visual y le apasiona brindar soluciones personalizadas de cuidado ocular para cada cliente."
+            "Como propietaria de Looptica, Elena aporta más de 15 años de experiencia en optometría. Con su amplio conocimiento y dedicación, ha convertido a Looptica en un centro optométrico y audiológico de referencia en el barrio del Poblenou en Barcelona.",
+            "Le apasiona brindar soluciones personalizadas de cuidado ocular para cada cliente."
           ],
           ca: [
             "Com a propietària de Looptica, Elena aporta més de 20 anys d'experiència en optometria. Amb el seu ampli coneixement i dedicació a l'atenció al client, ha convertit Looptica en un nom de confiança per a serveis òptics i audiològics a Barcelona.",
@@ -71,8 +71,7 @@ const About = () => {
             "With advanced training in the latest hearing aid technologies, Irene ensures that our clients receive the most appropriate solutions for their hearing needs."
           ],
           es: [
-            "Irene es nuestra audióloga principal con un interés especial en la rehabilitación auditiva. Su enfoque amable y paciente ayuda a los clientes a sentirse cómodos al abordar sus problemas de audición.",
-            "Con formación avanzada en las últimas tecnologías de audífonos, Irene se asegura de que nuestros clientes reciban las soluciones más apropiadas para sus necesidades auditivas."
+            "Irene es nuestra óptica optometrista especializada en contactología avanzada. Su amplia trayectoria se ha centrado en la contactología pediátrica y adaptaciones especiales como orto-k, queratocono, control de miopía, lentes de contacto esclerales, y otras soluciones individualizadas. Con gran conocimiento del mercado actual, ofrece un excelente asesoramiento segun las necesidades visuales del paciente."
           ],
           ca: [
             "Irene és la nostra audiòloga principal amb un interès especial en la rehabilitació auditiva. El seu enfocament amable i pacient ajuda els clients a sentir-se còmodes en abordar els seus problemes d'audició.",
@@ -94,8 +93,9 @@ const About = () => {
             "With a background in optical dispensing and lens technology, Lorena ensures that style never compromises on vision quality or comfort."
           ],
           es: [
-            "Lorena lidera nuestro equipo de estilismo óptico, combinando experiencia técnica con un ojo agudo para la moda. Sobresale ayudando a los clientes a encontrar gafas que complementen perfectamente sus rasgos y estilo de vida.",
-            "Con experiencia en dispensación óptica y tecnología de lentes, Lorena se asegura de que el estilo nunca comprometa la calidad visual o la comodidad."
+            "Lorena es nuestra optica optometrista y audióloga con un interés especial en la rehabilitación auditiva. Su enfoque amable y paciente ayuda a los clientes a sentirse cómodos al abordar sus necesidades específicas.
+
+Con formación avanzada en las últimas tecnologías y su interés por las tendencias, le permiten brindar un enfoque integral a la salud visual y auditiva de sus pacientes."
           ],
           ca: [
             "Lorena lidera el nostre equip d'estilisme òptic, combinant experiència tècnica amb un ull agut per a la moda. Excel·leix ajudant els clients a trobar ulleres que complementin perfectament els seus trets i estil de vida.",

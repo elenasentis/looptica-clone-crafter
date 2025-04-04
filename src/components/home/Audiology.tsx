@@ -48,7 +48,7 @@ const Audiology = () => {
           <p>
             En Looptica ofrecemos servicios completos de audiología en Barcelona Poblenou, 
             incluyendo pruebas auditivas profesionales, tratamiento de pérdida auditiva, 
-            adaptación de audífonos digitales, audiometría Barcelona Poblenou y soluciones para acúfenos. 
+            adaptación de audífonos digitales y audiometría Barcelona Poblenou. 
             Nuestro centro auditivo en Barcelona Poblenou cuenta con audiología clínica de alta calidad y 
             especialistas en audiología pediátrica.
           </p>
@@ -61,7 +61,7 @@ const Audiology = () => {
           <p>
             A Looptica oferim serveis complets d'audiologia a Poblenou, Barcelona, 
             incloent proves auditives professionals, tractament de pèrdua auditiva, 
-            adaptació d'audiòfons digitals, audiometria gratuïta i solucions per a acúfens. 
+            adaptació d'audiòfons digitals i audiometria gratuïta. 
             El nostre centre auditiu a Poblenou Barcelona compta amb audiologia clínica d'alta qualitat i 
             especialistes en audiologia pediàtrica.
           </p>
@@ -74,7 +74,7 @@ const Audiology = () => {
           <p>
             At Looptica we offer comprehensive audiology services in Barcelona Poblenou, 
             including professional hearing tests, hearing loss treatment, 
-            digital hearing aids fitting, audiometry Barcelona Poblenou and tinnitus solutions. 
+            digital hearing aids fitting and free audiometry test in Barcelona Poblenou. 
             Our hearing center in Barcelona Poblenou features high-quality clinical audiology and 
             specialists in pediatric audiology.
           </p>
