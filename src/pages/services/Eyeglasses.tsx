@@ -107,7 +107,7 @@ const Eyeglasses = () => {
     brandRayBan: {
       en: 'Iconic frames known worldwide for their classic designs and exceptional quality that never goes out of style.',
       es: 'Monturas icónicas conocidas en todo el mundo por sus diseños clásicos y calidad excepcional que nunca pasa de moda.',
-      ca: 'Muntures icóniques conegudes arreu del món pels seus dissenys clàssics i qualitat excepcional que mai passa de moda.',
+      ca: 'Muntures icónicas conegudes arreu del món pels seus dissenys clàssics i qualitat excepcional que mai passa de moda.',
     },
     brandTomFord: {
       en: 'Luxury frames featuring sophisticated designs, premium materials, and attention to detail for the discerning customer.',
