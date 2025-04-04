@@ -392,13 +392,13 @@ export const translations: Translations = {
   // Additional Audiology Terms
   audiologyCenter: {
     en: 'Audiology Center',
-    es: 'Centro de Audiología',
-    ca: 'Centre d\'Audiologia',
+    es: 'Centro Auditivo',
+    ca: 'Centre Auditiu',
   },
   hearingLoss: {
     en: 'Hearing Loss Treatment',
     es: 'Tratamiento de Pérdida Auditiva',
-    ca: 'Tractament de Pèrdua Auditiva',
+    ca: 'Tractament de la Pèrdua Auditiva',
   },
   audiometry: {
     en: 'Audiometry in Barcelona Poblenou',
