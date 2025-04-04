@@ -103,8 +103,8 @@ export const translations: Translations = {
   },
   opticalDescription: {
     en: 'Our certified opticians provide comprehensive visual assessments and personalized solutions to improve your visual health.',
-    es: 'Nuestros ópticos certificados ofrecen servicios completos y soluciones personalizadas para mejorar tu salud visual.',
-    ca: 'Els nostres òptics certificats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
+    es: 'Nuestros ópticos optometristas graduados ofrecen servicios completos y soluciones personalizadas para mejorar tu salud visual.',
+    ca: 'Els nostres òptics optometristes graduats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
   },
   visualHealth: {
     en: 'Visual Health',
@@ -112,9 +112,9 @@ export const translations: Translations = {
     ca: 'Salut Visual',
   },
   visualHealthDesc: {
-    en: 'Optometric visual examination, retinoscopy, tired eyesight, dry eye, etc.',
-    es: 'Exámen visual optométrico, retinoscopia, vista cansada, ojo seco, etc.',
-    ca: 'Examen visual optomètric, retinoscòpia, vista cansada, ull sec, etc.',
+    en: 'Optometric visual examination, retinoscopy, tired eyesight, cornea topography, dry eye, etc.',
+    es: 'Exámen visual optométrico, retinoscopia, vista cansada, topografia corneal, ojo seco, etc.',
+    ca: 'Examen visual optomètric, retinoscòpia, topografia corneal, vista cansada, ull sec, etc.',
   },
   contactLenses: {
     en: 'Contact Lenses',
@@ -122,9 +122,9 @@ export const translations: Translations = {
     ca: 'Lents de Contacte',
   },
   contactLensesDesc: {
-    en: 'Adaptation of contact lenses for myopia, hyperopia, astigmatism, progressive and ortho-k.',
-    es: 'Adaptación de lentes de contacto para miopia, hipermetropia, astigmatismo, progresivas y orto-k.',
-    ca: 'Adaptació de lents de contacte per miopia, hipermetropia, astigmatisme, progressives i orto-k.',
+    en: 'Adaptation of contact lenses for myopia, hyperopia, astigmatism, progressive, customized, myopia control, congenital cataracts and ortho-k.',
+    es: 'Adaptación de lentes de contacto para miopia, hipermetropia, astigmatismo, progresivas, individualizadas, de catarata congénita, control de miopía y orto-k.',
+    ca: 'Adaptació de lents de contacte per miopia, hipermetropia, astigmatisme, progressives, individualitzades, per cataracta congènita, control de miopia i orto-k.',
   },
   orthoK: {
     en: 'Ortho-K',
