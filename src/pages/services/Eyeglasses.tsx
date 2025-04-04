@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Glasses, PenTool, Shapes, BarChart3 } from 'lucide-react';
