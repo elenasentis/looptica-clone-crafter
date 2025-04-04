@@ -170,7 +170,7 @@ const About = () => {
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-48 h-48 object-contain rounded-full mx-auto mb-6"
+                      className="w-48 h-48 object-cover rounded-full mx-auto mb-6"
                     />
                     <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">{member.name}</h2>
                     {member.bio[language].map((paragraph, idx) => (
