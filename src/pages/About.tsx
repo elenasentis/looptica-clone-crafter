@@ -93,9 +93,7 @@ const About = () => {
             "With a background in optical dispensing and lens technology, Lorena ensures that style never compromises on vision quality or comfort."
           ],
           es: [
-            "Lorena es nuestra optica optometrista y audióloga con un interés especial en la rehabilitación auditiva. Su enfoque amable y paciente ayuda a los clientes a sentirse cómodos al abordar sus necesidades específicas.
-
-Con formación avanzada en las últimas tecnologías y su interés por las tendencias, le permiten brindar un enfoque integral a la salud visual y auditiva de sus pacientes."
+            "Lorena es nuestra optica optometrista y audióloga con un interés especial en la rehabilitación auditiva. Su enfoque amable y paciente ayuda a los clientes a sentirse cómodos al abordar sus necesidades específicas. Con formación avanzada en las últimas tecnologías y su interés por las tendencias, le permiten brindar un enfoque integral a la salud visual y auditiva de sus pacientes."
           ],
           ca: [
             "Lorena lidera el nostre equip d'estilisme òptic, combinant experiència tècnica amb un ull agut per a la moda. Excel·leix ajudant els clients a trobar ulleres que complementin perfectament els seus trets i estil de vida.",
