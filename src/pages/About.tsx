@@ -35,13 +35,13 @@ const About = () => {
     },
     teamMembers: [
       {
-        name: "Elena Sentís Coma",
+        name: "Elena",
         role: {
           en: "Owner",
           es: "Propietaria",
           ca: "Propietària"
         },
-        image: "/images/DSC4608.jpg",
+        image: "/images/_DSC4776.jpg",
         bio: {
           en: [
             "As the owner of Looptica, Elena brings over 20 years of experience in optometry. With her extensive knowledge and dedication to customer care, she has built Looptica into a trusted name for optical and audiological services in Barcelona.",
@@ -64,7 +64,7 @@ const About = () => {
           es: "Audióloga",
           ca: "Audiòloga"
         },
-        image: "/images/DSC4608.jpg",
+        image: "/images/irene.jpg",
         bio: {
           en: [
             "Irene is our senior audiologist with a special interest in hearing rehabilitation. Her kind and patient approach helps clients feel comfortable when addressing their hearing concerns.",
@@ -86,7 +86,7 @@ const About = () => {
           es: "Estilista Óptica",
           ca: "Estilista Òptica"
         },
-        image: "/images/DSC4608.jpg",
+        image: "/images/lorena.jpg",
         bio: {
           en: [
             "Lorena leads our optical styling team, combining technical expertise with a keen eye for fashion. She excels at helping clients find eyewear that perfectly complements their features and lifestyle.",
