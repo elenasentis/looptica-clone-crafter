@@ -29,8 +29,8 @@ const About = () => {
     page: {
       title: {
         en: "About Us",
-        es: "Sobre Nosotros",
-        ca: "Sobre Nosaltres"
+        es: "Quien somos",
+        ca: "Qui som"
       }
     },
     teamMembers: [
