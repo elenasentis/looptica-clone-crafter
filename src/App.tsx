@@ -50,6 +50,7 @@ function App() {
       <LanguageProvider>
         <Router>
           <PageTracker />
+          <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
             {/* About Page */}
@@ -77,6 +78,7 @@ function App() {
             
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
           <Toaster />
           <CookieConsent />
         </Router>

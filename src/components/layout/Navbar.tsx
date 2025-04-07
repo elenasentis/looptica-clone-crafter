@@ -83,7 +83,7 @@ const Navbar = () => {
         "fixed w-full top-0 left-0 z-50 transition-all duration-300 px-6 lg:px-12",
         scrolled 
           ? "py-2 bg-white shadow-md" 
-          : "py-4 glass shadow-sm text-gray-900"
+          : "py-4 bg-white shadow-sm text-gray-900" // Changed from glass to bg-white
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
