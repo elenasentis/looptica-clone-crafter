@@ -3,10 +3,11 @@ import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ShoppingBag } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Products = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const products = [
     {
@@ -43,6 +44,12 @@ const Products = () => {
     },
   ];
 
+  const handleNavigate = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section className="py-16 px-6 lg:px-12 bg-white" id="products">
       <div className="max-w-7xl mx-auto">
@@ -66,7 +73,11 @@ const Products = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
             <ScrollReveal key={product.id} delay={100 * (index + 1)}>
-              <Link to={product.link} className="block group relative bg-white rounded-lg overflow-hidden border border-gray-200 hover-lift">
+              <a 
+                href={product.link}
+                onClick={(e) => handleNavigate(e, product.link)}
+                className="block group relative bg-white rounded-lg overflow-hidden border border-gray-200 hover-lift"
+              >
                 {/* Product Image */}
                 <div className="aspect-[3/2] overflow-hidden">
                   <img 
@@ -94,7 +105,7 @@ const Products = () => {
                     {t('viewDetails')}
                   </Button>
                 </div>
-              </Link>
+              </a>
             </ScrollReveal>
           ))}
         </div>

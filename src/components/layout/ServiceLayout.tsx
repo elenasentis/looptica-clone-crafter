@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -23,6 +22,11 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   appointmentSubject = 'Looptica Consultation',
 }) => {
   const { t, language } = useLanguage();
+
+  // Use effect to scroll to top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Translations for WhatsApp component
   const whatsappText = {
@@ -74,7 +78,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-grow">
+      <main className="flex-grow pt-24">
         {/* Hero Banner */}
         <section 
           className="relative h-[50vh] flex items-center justify-center"
@@ -115,7 +119,6 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
         </div>
       </main>
       
-      <Footer />
       <FloatingWhatsApp 
         phoneNumber="34699594064"
         accountName="Looptica"

@@ -153,7 +153,6 @@ const About = () => {
         <title>{content.meta[language].title}</title>
         <meta name="description" content={content.meta[language].description} />
       </Helmet>
-      <Navbar />
       <main className="flex-grow pt-24">
         <section className="py-16 px-6 lg:px-12" id="about">
           <div className="max-w-7xl mx-auto">
@@ -166,16 +165,20 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
               {content.teamMembers.map((member, index) => (
                 <ScrollReveal key={member.name} origin={index === 0 ? "left" : (index === 2 ? "right" : undefined)}>
-                  <div className="bg-white p-8 rounded-xl shadow-md">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-48 h-48 object-cover rounded-full mx-auto mb-6"
-                    />
+                  <div className="bg-white p-8 rounded-xl shadow-md h-full flex flex-col">
+                    <div className="flex-shrink-0 flex justify-center">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-48 h-48 object-cover rounded-full mb-6"
+                      />
+                    </div>
                     <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">{member.name}</h2>
-                    {member.bio[language].map((paragraph, idx) => (
-                      <p key={idx} className="text-gray-700 mb-4">{paragraph}</p>
-                    ))}
+                    <div className="flex-grow">
+                      {member.bio[language].map((paragraph, idx) => (
+                        <p key={idx} className="text-gray-700 mb-4">{paragraph}</p>
+                      ))}
+                    </div>
                   </div>
                 </ScrollReveal>
               ))}
