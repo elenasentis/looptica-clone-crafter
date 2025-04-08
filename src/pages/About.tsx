@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
@@ -52,8 +51,8 @@ const About = () => {
             "Le apasiona brindar soluciones personalizadas de cuidado ocular para cada cliente."
           ],
           ca: [
-            "Com a propietària de Looptica, Elena aporta més de 20 anys d'experiència en optometria. Amb el seu ampli coneixement i dedicació a l'atenció al client, ha convertit Looptica en un nom de confiança per a serveis òptics i audiològics a Barcelona.",
-            "Elena s'especialitza en teràpia visual i li apassiona brindar solucions personalitzades de cura ocular per a cada client."
+            "Com a propietària de Looptica, Elena aporta més de 15 anys d'experiència en optometria. Amb el seu ampli coneixement i dedicació, ha convertit Looptica en un centre optomètric i audiològic de referència al barri del Poblenou a Barcelona.",
+            "Li apassiona oferir solucions personalitzades de cura ocular per a cada client."
           ]
         }
       },
@@ -67,15 +66,13 @@ const About = () => {
         image: "/images/irene.jpg",
         bio: {
           en: [
-            "Irene is our senior audiologist with a special interest in hearing rehabilitation. Her kind and patient approach helps clients feel comfortable when addressing their hearing concerns.",
-            "With advanced training in the latest hearing aid technologies, Irene ensures that our clients receive the most appropriate solutions for their hearing needs."
+            "Irene is our optical optometrist specialized in advanced contactology. Her extensive career has focused on pediatric contactology and special adaptations such as ortho-k, keratoconus, myopia control, scleral contact lenses, and other individualized solutions. With great knowledge of the current market, she offers excellent advice according to the patient's visual needs."
           ],
           es: [
             "Irene es nuestra óptica optometrista especializada en contactología avanzada. Su amplia trayectoria se ha centrado en la contactología pediátrica y adaptaciones especiales como orto-k, queratocono, control de miopía, lentes de contacto esclerales, y otras soluciones individualizadas. Con gran conocimiento del mercado actual, ofrece un excelente asesoramiento segun las necesidades visuales del paciente."
           ],
           ca: [
-            "Irene és la nostra audiòloga principal amb un interès especial en la rehabilitació auditiva. El seu enfocament amable i pacient ajuda els clients a sentir-se còmodes en abordar els seus problemes d'audició.",
-            "Amb formació avançada en les últimes tecnologies d'audiòfons, Irene s'assegura que els nostres clients rebin les solucions més apropiades per a les seves necessitats auditives."
+            "Irene és la nostra òptica optometrista especialitzada en contactologia avançada. La seva àmplia trajectòria s'ha centrat en contactologia pediàtrica i adaptacions especials com orto-k, queratocon, control de miopia, lents de contacte esclerals i altres solucions individualitzades. Amb gran coneixement del mercat actual, ofereix un excel·lent assessorament segons les necessitats visuals del pacient."
           ]
         }
       },
@@ -89,15 +86,13 @@ const About = () => {
         image: "/images/lorena2.png",
         bio: {
           en: [
-            "Lorena leads our optical styling team, combining technical expertise with a keen eye for fashion. She excels at helping clients find eyewear that perfectly complements their features and lifestyle.",
-            "With a background in optical dispensing and lens technology, Lorena ensures that style never compromises on vision quality or comfort."
+            "Lorena is our optical optometrist and audiologist with a special interest in hearing rehabilitation. Her kind and patient approach helps clients feel comfortable when addressing their specific needs. With advanced training in the latest technologies and her interest in trends, she is able to provide a comprehensive approach to her patients' visual and auditory health."
           ],
           es: [
             "Lorena es nuestra optica optometrista y audióloga con un interés especial en la rehabilitación auditiva. Su enfoque amable y paciente ayuda a los clientes a sentirse cómodos al abordar sus necesidades específicas. Con formación avanzada en las últimas tecnologías y su interés por las tendencias, le permiten brindar un enfoque integral a la salud visual y auditiva de sus pacientes."
           ],
           ca: [
-            "Lorena lidera el nostre equip d'estilisme òptic, combinant experiència tècnica amb un ull agut per a la moda. Excel·leix ajudant els clients a trobar ulleres que complementin perfectament els seus trets i estil de vida.",
-            "Amb experiència en dispensació òptica i tecnologia de lents, Lorena s'assegura que l'estil mai no comprometi la qualitat visual o la comoditat."
+            "Lorena és la nostra òptica optometrista i audiòloga amb un interès especial en la rehabilitació auditiva. El seu enfocament amable i pacient ajuda els clients a sentir-se còmodes en abordar les seves necessitats específiques. Amb formació avançada en les últimes tecnologies i el seu interès per les tendències, li permeten oferir un enfocament integral a la salut visual i auditiva dels seus pacients."
           ]
         }
       }
@@ -153,6 +148,7 @@ const About = () => {
         <title>{content.meta[language].title}</title>
         <meta name="description" content={content.meta[language].description} />
       </Helmet>
+      <Navbar />
       <main className="flex-grow pt-24">
         <section className="py-16 px-6 lg:px-12" id="about">
           <div className="max-w-7xl mx-auto">
@@ -174,6 +170,7 @@ const About = () => {
                       />
                     </div>
                     <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">{member.name}</h2>
+                    <p className="text-sm text-center text-[#55afa9] font-medium mb-4">{member.role[language]}</p>
                     <div className="flex-grow">
                       {member.bio[language].map((paragraph, idx) => (
                         <p key={idx} className="text-gray-700 mb-4">{paragraph}</p>
