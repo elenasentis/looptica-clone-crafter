@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
@@ -12,10 +11,11 @@ import Brands from '@/components/home/Brands';
 import StoreLocation from '@/components/home/StoreLocation';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Index = () => {
   const { language } = useLanguage();
+  const navigate = useNavigate();
   
   // Content organized by section first, then by language
   const content = {
@@ -92,9 +92,29 @@ const Index = () => {
     
     handleHashNavigation();
     
+    // Override default link behavior for service/product page links
+    const handleLinkClicks = () => {
+      const pageLinks = document.querySelectorAll('a[href^="/services/"], a[href^="/products/"]');
+      
+      pageLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+          if (href) {
+            // Use navigate from react-router-dom
+            navigate(href);
+            // Manually set scroll position to top
+            window.scrollTo(0, 0);
+          }
+        });
+      });
+    };
+    
+    handleLinkClicks();
+    
     // Log to check if component is mounting correctly
     console.log("Index component mounted");
-  }, []);
+  }, [navigate]);
 
   return (
     <>
@@ -107,8 +127,8 @@ const Index = () => {
         <meta property="og:description" content={content.meta[language].description} />
         <meta property="og:url" content="https://www.looptica.com/" />
       </Helmet>
+      <Navbar />
       <div className="min-h-screen flex flex-col">
-        <Navbar />
         <main className="flex-grow">
           <Hero />
           <div className="sr-only">
