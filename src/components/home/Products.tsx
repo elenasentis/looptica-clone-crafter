@@ -14,7 +14,7 @@ const Products = () => {
       id: 1,
       name: t('eyeglasses'),
       category: t('eyeglasses'),
-      price: 89,
+      price: '89€',
       image: '/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.png',
       link: '/services/eyeglasses'
     },
@@ -22,7 +22,7 @@ const Products = () => {
       id: 2,
       name: t('contactLenses'),
       category: t('contactLenses'),
-      price: 26,
+      price: '26€',
       image: '/images/adobestock-226007711_orig.jpeg',
       link: '/services/contact-lenses'
     },
@@ -30,7 +30,7 @@ const Products = () => {
       id: 3,
       name: t('sunglasses'),
       category: t('sunglasses'),
-      price: 49,
+      price: '49€',
       image: '/lovable-uploads/e288806f-89cb-4ae0-9a88-6b52ee0ccc4b.png',
       link: '/services/sunglasses'
     },
@@ -95,7 +95,7 @@ const Products = () => {
                   <h3 className="font-medium text-lg mt-1 mb-2 text-gray-900">
                     {product.name}
                   </h3>
-                  <p className="font-bold text-[#55afa9]">Des de {product.price}€</p>
+                  <p className="font-bold text-[#55afa9]">Des de {product.price}</p>
                   
                   <Button 
                     variant="outline"
