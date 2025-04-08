@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Headphones, Ear, Shield, Volume2 } from 'lucide-react';
+import { Headphones, Ear, Shield, Volume2, BadgeDollarSign } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -37,6 +38,17 @@ const Audiology = () => {
       description: t('earProtectionDesc'),
       image: "/lovable-uploads/58f8dffc-9095-4ff8-a7d3-4aa204a74b55.png",
       link: "/services/ear-protection"
+    },
+    {
+      icon: <BadgeDollarSign className="w-10 h-10 text-[#55afa9]" />,
+      title: language === 'es' ? "Ayudas y Subvenciones" : 
+              language === 'ca' ? "Ajudes i Subvencions" : 
+              "Subsidies and Grants",
+      description: language === 'es' ? "Asesoramiento y gestión de ayudas para la compra de audífonos en Cataluña" : 
+                  language === 'ca' ? "Assessorament i gestió d'ajudes per a la compra d'audiòfons a Catalunya" : 
+                  "Advice and management of subsidies for hearing aids in Catalonia",
+      image: "/lovable-uploads/b5e53adf-aa39-4826-ae3e-61dc5721b6ea.png",
+      link: "/services/audiologia-centro#subsidies"
     }
   ];
 
@@ -102,7 +114,7 @@ const Audiology = () => {
         {getSeoText()}
 
         <ScrollReveal delay={0.2}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             {audiologyServices.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden h-full">
                 <Link to={service.link} className="w-full h-48 overflow-hidden">

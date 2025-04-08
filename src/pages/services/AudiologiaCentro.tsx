@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -171,9 +172,9 @@ const AudiologiaCentro = () => {
         </div>
       </ScrollReveal>
       
-      {/* New Subsidies Section */}
+      {/* Subsidies Section with ID for direct linking */}
       <ScrollReveal>
-        <div className="bg-gray-50 p-8 rounded-lg mb-12">
+        <div id="subsidies" className="bg-gray-50 p-8 rounded-lg mb-12">
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">{content.subsidies.title[language]}</h2>
           
           <div className="prose prose-lg max-w-none mb-6">
