@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound';
 import { Toaster } from './components/ui/sonner';
 import { LanguageProvider } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
+import CriticalStyles from './components/CriticalStyles';
 import SalutVisual from './pages/services/SalutVisual';
 import LentsContacte from './pages/services/LentsContacte';
 import OrtoK from './pages/services/OrtoK';
@@ -48,6 +49,8 @@ function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
+        {/* Load critical styles first */}
+        <CriticalStyles />
         <Router>
           <PageTracker />
           <Navbar />

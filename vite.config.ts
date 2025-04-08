@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -19,4 +20,55 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    
+    // Add filenames with hashes for cache busting
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor code
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          // Split UI components
+          ui: [
+            'sonner',
+            'lucide-react',
+            'clsx',
+            'tailwind-merge'
+          ]
+        },
+        // Use hashed filenames for better caching
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    },
+    
+    // Optimize browser compatibility
+    target: 'es2015',
+    
+    // Minimize output
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production'
+      }
+    },
+    
+    // Generate source maps for debugging
+    sourcemap: mode !== 'production',
+  },
+  css: {
+    // Use PostCSS processing
+    postcss: './postcss.config.js',
+    
+    // Minimize CSS in production
+    devSourcemap: true,
+  },
+  optimizeDeps: {
+    // Include dependencies that might need optimization
+    include: ['react', 'react-dom', 'react-router-dom'],
+  }
 }));
