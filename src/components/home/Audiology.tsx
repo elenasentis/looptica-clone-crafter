@@ -36,7 +36,7 @@ const Audiology = () => {
       icon: <Shield className="w-10 h-10 text-[#55afa9]" />,
       title: t('customEarProtection'),
       description: t('earProtectionDesc'),
-      image: "/lovable-uploads/58f8dffc-9095-4ff8-a7d3-4aa204a74b55.png",
+      image: "/lovable-uploads/58f8dffc-9095-4ff8-a7d3-4aa204a74b55.jpeg",
       link: "/services/ear-protection"
     },
     {
