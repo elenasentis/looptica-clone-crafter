@@ -18,30 +18,36 @@ const Testimonials = () => {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Maria G.",
+      name: "Carlota F",
       rating: 5,
-      comment: "Excelente atención y profesionalidad. Me encantaron las gafas que me recomendaron.",
-      date: "2023-09-15"
+      comment: "Best Optical Shop In Poblenou 😎❣️✨
+The girls are super nice, they sell really good products and they help you with everything❤️🧡💖
+They are super sincere about everything, they don't ever try to sell u things just to make money. 👏🏻
+They care about the client🍀🌸✨
+They sell really good brands made in Barcelona. I recommend them  💯!!!!
+They do have really nice and good quality Sunglasses for the summer !!! ✨🕶️🌴🏖️🍹🥥🍸✨🌞🌊⛵🐚 🏄🏻‍♀️🩴🏖️✨",
+      date: "2024-09-15"
     },
     {
       id: 2,
-      name: "Jordi P.",
+      name: "Anna A.",
       rating: 5,
-      comment: "Gran servei i assessorament. Em van ajudar a trobar les ulleres perfectes per a mi.",
-      date: "2023-10-22"
+      comment: "Fa 3 anys em vaig comprar les ulleres diaries i les de sol, la meva parella igual. Vam sortir molt contentes! Però fa uns 10 dies se’m va trencar el flexo d’una de les varilles i, tot ser estiu i la complexitat que això suposa, m’ho van solucionar amb menys de 24h.
+Òptica de confiança i tracte proper",
+      date: "2024-10-22"
     },
     {
       id: 3,
-      name: "Alice D.",
+      name: "Olga L.",
       rating: 5,
-      comment: "Amazing service and quality products. The hearing test was thorough and professional.",
-      date: "2023-11-05"
+      comment: "Big thank you to Ms. Elena Sentis who helped me to choose very beautiful sunglasses. She was very professional and helpful. She showed me several sunglasses and recommended the most suitable in very honest way. I’m very happy with my purchase which is a local brand as well so I will remember my trip to Barcelona :) Thank you Elena!",
+      date: "2022-11-05"
     },
     {
       id: 4,
-      name: "Carlos M.",
-      rating: 4,
-      comment: "Buen servicio, pero un poco caro. La calidad de las lentes es excelente.",
+      name: "Cecilia T.",
+      rating: 5,
+      comment: "Absolutely wonderful services, client treatment and attention to details!  I have been an eyeglasses wearer for decades, and I have always been pushed to buy the most expensive frames and lens and this is the first time where I feel like they are really looking out for me, my vision and my pocket and not trying to max their profit.  They are very knowledgable in all aspects, and I even learned about how i can minimise the effect of rings on thick lens (something that I hate) by a special treatment that really upgraded my look.  I am super happy to have found an eyeglasses specialist that I can trust.",
       date: "2023-12-18"
     }
   ];
