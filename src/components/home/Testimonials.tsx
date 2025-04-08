@@ -20,27 +20,27 @@ const Testimonials = () => {
       id: 1,
       name: "Carlota F",
       rating: 5,
-      comment: "Best Optical Shop In Poblenou 😎❣️✨
-The girls are super nice, they sell really good products and they help you with everything❤️🧡💖
-They are super sincere about everything, they don't ever try to sell u things just to make money. 👏🏻
-They care about the client🍀🌸✨
-They sell really good brands made in Barcelona. I recommend them  💯!!!!
-They do have really nice and good quality Sunglasses for the summer !!! ✨🕶️🌴🏖️🍹🥥🍸✨🌞🌊⛵🐚 🏄🏻‍♀️🩴🏖️✨",
+      comment: "Best Optical Shop In Poblenou 😎❣️✨\n" +
+        "The girls are super nice, they sell really good products and they help you with everything❤️🧡💖\n" +
+        "They are super sincere about everything, they don't ever try to sell u things just to make money. 👏🏻\n" +
+        "They care about the client🍀🌸✨\n" +
+        "They sell really good brands made in Barcelona. I recommend them  💯!!!!\n" +
+        "They do have really nice and good quality Sunglasses for the summer !!! ✨🕶️🌴🏖️🍹🥥🍸✨🌞🌊⛵🐚 🏄🏻‍♀️🩴🏖️✨",
       date: "2024-09-15"
     },
     {
       id: 2,
       name: "Anna A.",
       rating: 5,
-      comment: "Fa 3 anys em vaig comprar les ulleres diaries i les de sol, la meva parella igual. Vam sortir molt contentes! Però fa uns 10 dies se’m va trencar el flexo d’una de les varilles i, tot ser estiu i la complexitat que això suposa, m’ho van solucionar amb menys de 24h.
-Òptica de confiança i tracte proper",
+      comment: "Fa 3 anys em vaig comprar les ulleres diaries i les de sol, la meva parella igual. Vam sortir molt contentes! Però fa uns 10 dies se'm va trencar el flexo d'una de les varilles i, tot ser estiu i la complexitat que això suposa, m'ho van solucionar amb menys de 24h.\n" +
+        "Òptica de confiança i tracte proper",
       date: "2024-10-22"
     },
     {
       id: 3,
       name: "Olga L.",
       rating: 5,
-      comment: "Big thank you to Ms. Elena Sentis who helped me to choose very beautiful sunglasses. She was very professional and helpful. She showed me several sunglasses and recommended the most suitable in very honest way. I’m very happy with my purchase which is a local brand as well so I will remember my trip to Barcelona :) Thank you Elena!",
+      comment: "Big thank you to Ms. Elena Sentis who helped me to choose very beautiful sunglasses. She was very professional and helpful. She showed me several sunglasses and recommended the most suitable in very honest way. I'm very happy with my purchase which is a local brand as well so I will remember my trip to Barcelona :) Thank you Elena!",
       date: "2022-11-05"
     },
     {
@@ -86,7 +86,7 @@ They do have really nice and good quality Sunglasses for the summer !!! ✨🕶�
                     {new Date(testimonial.date).toLocaleDateString()}
                   </span>
                 </div>
-                <p className="text-gray-700 mb-4 flex-grow">&ldquo;{testimonial.comment}&rdquo;</p>
+                <p className="text-gray-700 mb-4 flex-grow overflow-y-auto max-h-64">&ldquo;{testimonial.comment}&rdquo;</p>
                 <div className="mt-auto">
                   <p className="font-semibold text-gray-900">{testimonial.name}</p>
                   <div className="flex items-center mt-2">
