@@ -37,6 +37,9 @@ const CriticalStyles: React.FC = () => {
         setTimeout(loadNonCriticalCSS, 200);
       }
     }
+
+    // Add a class to the body when critical styles are loaded
+    document.body.classList.add('critical-loaded');
   }, []);
 
   return null; // This component doesn't render anything

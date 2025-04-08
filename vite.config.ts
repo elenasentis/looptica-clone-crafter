@@ -59,6 +59,9 @@ export default defineConfig(({ mode }) => ({
     
     // Generate source maps for debugging
     sourcemap: mode !== 'production',
+
+    // Ensure proper handling of special characters in URLs
+    assetsInlineLimit: 4096,
   },
   css: {
     // Use PostCSS processing
