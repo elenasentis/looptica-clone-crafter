@@ -143,7 +143,25 @@ const AudiologiaCentro = () => {
           <p>{content.servicesDescription[language]}</p>
         </div>
       </ScrollReveal>
-
+      {/* Subsidies Section with ID for direct linking */}
+      <ScrollReveal>
+        <div id="subsidies" className="bg-gray-50 p-8 rounded-lg mb-12">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900">{content.subsidies.title[language]}</h2>
+          
+          <div className="prose prose-lg max-w-none mb-6">
+            {content.subsidies.content[language].map((paragraph, idx) => (
+              <p key={idx} className="mb-4">{paragraph}</p>
+            ))}
+          </div>
+          
+          <h3 className="text-xl font-medium mb-4">{content.subsidies.eligibility[language]}</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            {content.subsidies.eligibilityContent[language].map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </ScrollReveal>
       <ScrollReveal>
         <div className="bg-gray-50 p-8 rounded-lg mb-12">
           <h3 className="text-2xl font-semibold mb-6">{content.hearingTests[language]}</h3>
@@ -172,25 +190,7 @@ const AudiologiaCentro = () => {
         </div>
       </ScrollReveal>
       
-      {/* Subsidies Section with ID for direct linking */}
-      <ScrollReveal>
-        <div id="subsidies" className="bg-gray-50 p-8 rounded-lg mb-12">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-900">{content.subsidies.title[language]}</h2>
-          
-          <div className="prose prose-lg max-w-none mb-6">
-            {content.subsidies.content[language].map((paragraph, idx) => (
-              <p key={idx} className="mb-4">{paragraph}</p>
-            ))}
-          </div>
-          
-          <h3 className="text-xl font-medium mb-4">{content.subsidies.eligibility[language]}</h3>
-          <ul className="list-disc pl-6 space-y-2">
-            {content.subsidies.eligibilityContent[language].map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </ScrollReveal>
+
     </ServiceLayout>
   );
 };
