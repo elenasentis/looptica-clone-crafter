@@ -14,15 +14,15 @@ const About = () => {
     meta: {
       en: {
         title: "About Looptica | Vision and Hearing Specialists in Barcelona",
-        description: "Learn about our experienced team of vision and hearing specialists at Looptica Barcelona. Providing personalized optical and audiological care since 2010."
+        description: "Learn about our experienced team of vision and hearing specialists at Looptica Barcelona. Providing personalized optical and audiological care since 2018."
       },
       es: {
         title: "Sobre Looptica | Especialistas en Visión y Audición en Barcelona",
-        description: "Conozca a nuestro experimentado equipo de especialistas en visión y audición en Looptica Barcelona. Brindando atención óptica y audiológica personalizada desde 2010."
+        description: "Conozca a nuestro experimentado equipo de especialistas en visión y audición en Looptica Barcelona. Brindando atención óptica y audiológica personalizada desde 2018."
       },
       ca: {
         title: "Sobre Looptica | Especialistes en Visió i Audició a Barcelona",
-        description: "Conegui el nostre experimentat equip d'especialistes en visió i audició a Looptica Barcelona. Oferint atenció òptica i audiològica personalitzada des de 2010."
+        description: "Conegui el nostre experimentat equip d'especialistes en visió i audició a Looptica Barcelona. Oferint atenció òptica i audiològica personalitzada des de 2018."
       }
     },
     page: {
@@ -43,8 +43,8 @@ const About = () => {
         image: "/images/_DSC4776.jpg",
         bio: {
           en: [
-            "As the owner of Looptica, Elena brings over 20 years of experience in optometry. With her extensive knowledge and dedication to customer care, she has built Looptica into a trusted name for optical and audiological services in Barcelona.",
-            "Elena specializes in vision therapy and is passionate about providing personalized eye care solutions for each client."
+            "As the owner of Looptica, Elena brings over 15 years of experience in optometry. With her extensive knowledge and dedication to customer care, she has built Looptica into a trusted name for optical and audiological services in Barcelona.",
+            "Elena specializes in providing personalized eye care solutions for each client."
           ],
           es: [
             "Como propietaria de Looptica, Elena aporta más de 15 años de experiencia en optometría. Con su amplio conocimiento y dedicación, ha convertido a Looptica en un centro optométrico y audiológico de referencia en el barrio del Poblenou en Barcelona.",
@@ -59,9 +59,9 @@ const About = () => {
       {
         name: "Irene",
         role: {
-          en: "Audiologist",
-          es: "Audióloga",
-          ca: "Audiòloga"
+          en: "Contactologist",
+          es: "Contactóloga",
+          ca: "Contactòloga"
         },
         image: "/images/irene.jpg",
         bio: {
@@ -79,9 +79,9 @@ const About = () => {
       {
         name: "Lorena",
         role: {
-          en: "Optical Stylist",
-          es: "Estilista Óptica",
-          ca: "Estilista Òptica"
+          en: "Audiologist",
+          es: "Audióloga",
+          ca: "Audiòloga"
         },
         image: "/images/lorena2.png",
         bio: {
