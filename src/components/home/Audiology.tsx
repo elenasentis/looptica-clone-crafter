@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Ear, HeadphonesIcon, Zap, ShieldCheck, BadgeDollarSign } from 'lucide-react';
+import { Ear, HeadphonesIcon, Zap, ShieldCheck } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Audiology = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const audiologyServices = [
     {
@@ -37,17 +37,6 @@ const Audiology = () => {
       description: t('earProtectionDesc'),
       image: "/lovable-uploads/3e7cc4b1-38d3-4374-ad90-9b7aff598cf4.png",
       path: "/services/ear-protection"
-    },
-    {
-      icon: <BadgeDollarSign className="w-10 h-10 text-[#55afa9]" />,
-      title: language === 'es' ? "Ayudas y Subvenciones" : 
-              language === 'ca' ? "Ajudes i Subvencions" : 
-              "Subsidies and Grants",
-      description: language === 'es' ? "Asesoramiento y gestión de ayudas para la compra de audífonos en Cataluña" : 
-                  language === 'ca' ? "Assessorament i gestió d'ajudes per a la compra d'audiòfons a Catalunya" : 
-                  "Advice and management of subsidies for hearing aids in Catalonia",
-      image: "/lovable-uploads/b5e53adf-aa39-4826-ae3e-61dc5721b6ea.png",
-      path: "/services/audiologia-centro#subsidies"
     }
   ];
 
@@ -68,7 +57,7 @@ const Audiology = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
             {audiologyServices.map((service, index) => (
               <div 
                 key={index} 
