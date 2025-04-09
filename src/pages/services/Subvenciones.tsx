@@ -81,6 +81,63 @@ const Subvenciones = () => {
         }
       }
     ],
+    subsidiesInfo: {
+      title: {
+        en: "Aid and Subsidies for Hearing Aids in Catalonia",
+        es: "Ayudas y Subvenciones para la compra de Audífonos en Cataluña",
+        ca: "Ajudes i Subvencions per a la compra d'Audiòfons a Catalunya"
+      },
+      paragraphs: {
+        en: [
+          "The purchase of hearing aids is an important investment for those with hearing loss. In Catalonia, there are several aid and subsidy programs that can help reduce these costs.",
+          "The healthcare system in Spain and Catalonia currently offers financial aid for hearing aids under certain conditions. Those under 26 years of age can receive significant subsidies, with each hearing aid receiving up to €1,000 in aid.",
+          "For people over 26 years old with recognized disability and specific forms of hearing loss, audiological support is also available from Social Security.",
+          "Additionally, there are various local administrations (town halls, provincial councils) that offer specific grants for hearing aids, especially for older people or those with limited resources.",
+          "At Looptica, we offer comprehensive advice on the subsidies available for hearing aids and help you with all necessary procedures to apply for these grants."
+        ],
+        es: [
+          "La compra de audífonos supone una inversión importante para aquellas personas con pérdida auditiva. En Cataluña, existen varios programas de ayudas y subvenciones que pueden ayudar a reducir estos costes.",
+          "El sistema sanitario en España y Cataluña actualmente ofrece ayudas económicas para audífonos bajo ciertas condiciones. Las personas menores de 26 años pueden recibir subvenciones importantes, recibiendo cada audífono hasta 1.000€ de ayuda.",
+          "Para las personas mayores de 26 años con discapacidad reconocida y formas específicas de pérdida auditiva, también está disponible el apoyo audiológico de la Seguridad Social.",
+          "Además, existen varias administraciones locales (ayuntamientos, diputaciones) que ofrecen subvenciones específicas para audífonos, especialmente para personas mayores o con recursos limitados.",
+          "En Looptica, ofrecemos asesoramiento integral sobre las subvenciones disponibles para audífonos y te ayudamos con todos los trámites necesarios para solicitar estas ayudas."
+        ],
+        ca: [
+          "La compra d'audiòfons suposa una inversió important per a aquelles persones amb pèrdua auditiva. A Catalunya, existeixen diversos programes d'ajudes i subvencions que poden ajudar a reduir aquests costos.",
+          "El sistema sanitari a Espanya i Catalunya actualment ofereix ajudes econòmiques per a audiòfons sota certes condicions. Les persones menors de 26 anys poden rebre subvencions importants, rebent cada audiòfon fins a 1.000€ d'ajuda.",
+          "Per a les persones majors de 26 anys amb discapacitat reconeguda i formes específiques de pèrdua auditiva, també està disponible el suport audiològic de la Seguretat Social.",
+          "A més, existeixen diverses administracions locals (ajuntaments, diputacions) que ofereixen subvencions específiques per a audiòfons, especialment per a persones grans o amb recursos limitats.",
+          "A Looptica, oferim assessorament integral sobre les subvencions disponibles per a audiòfons i t'ajudem amb tots els tràmits necessaris per sol·licitar aquestes ajudes."
+        ]
+      },
+      eligibility: {
+        title: {
+          en: "Who can access these subsidies?",
+          es: "¿Quién puede acceder a estas subvenciones?",
+          ca: "Qui pot accedir a aquestes subvencions?"
+        },
+        items: {
+          en: [
+            "People under 26 years of age with hearing loss",
+            "People with recognized disability and specific hearing loss profiles",
+            "Older adults (requirements vary depending on the municipality)",
+            "People with limited financial resources (subject to income assessment)"
+          ],
+          es: [
+            "Personas menores de 26 años con pérdida auditiva",
+            "Personas con discapacidad reconocida y perfiles específicos de pérdida auditiva",
+            "Adultos mayores (requisitos varían según el municipio)",
+            "Personas con recursos económicos limitados (sujeto a evaluación de ingresos)"
+          ],
+          ca: [
+            "Persones menors de 26 anys amb pèrdua auditiva",
+            "Persones amb discapacitat reconeguda i perfils específics de pèrdua auditiva",
+            "Adults grans (requisits varien segons el municipi)",
+            "Persones amb recursos econòmics limitats (subjecte a avaluació d'ingressos)"
+          ]
+        }
+      }
+    },
     consultation: {
       en: "For personalized guidance on subsidies and financial assistance for hearing aids, schedule a consultation with our team. We can help determine your eligibility and guide you through the application process.",
       es: "Para orientación personalizada sobre subvenciones y asistencia financiera para audífonos, programe una consulta con nuestro equipo. Podemos ayudarle a determinar su elegibilidad y guiarle a través del proceso de solicitud.",
@@ -106,6 +163,24 @@ const Subvenciones = () => {
       >
         <div className="prose prose-lg max-w-none mb-8">
           <p>{content.intro[language]}</p>
+        </div>
+
+        {/* Detailed subsidies information section */}
+        <div className="bg-gray-50 p-8 rounded-lg mb-12">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900">{content.subsidiesInfo.title[language]}</h2>
+          
+          <div className="prose prose-lg max-w-none mb-6">
+            {content.subsidiesInfo.paragraphs[language].map((paragraph, idx) => (
+              <p key={idx} className="mb-4">{paragraph}</p>
+            ))}
+          </div>
+          
+          <h3 className="text-xl font-medium mb-4">{content.subsidiesInfo.eligibility.title[language]}</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            {content.subsidiesInfo.eligibility.items[language].map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

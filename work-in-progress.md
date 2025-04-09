@@ -23,6 +23,8 @@
   - ✅ Hearing Aids
   - ✅ Tinnitus Treatment
   - ✅ Ear Protection
+  - ✅ Technical Aids
+  - ✅ Subsidies for Hearing Aids
 - ✅ Legal pages:
   - ✅ Privacy Policy (with exact content from looptica.com)
   - ✅ Terms & Conditions (with exact content from looptica.com)
@@ -66,6 +68,9 @@
 - ✅ Translated the About page content
 - ✅ Added hearing aid subsidies section in Audiology page
 - ✅ Added congenital cataract section to Contact Lenses page
+- ✅ Created dedicated Subsidies page with detailed information on financial aid for hearing aids
+- ✅ Improved Technical Aids page by removing tabs/slider and showing all information on one page
+- ✅ Swapped images between Technical Aids and Audiology Center pages
 
 ### Performance Optimizations
 - ✅ Optimized CSS loading:
@@ -90,6 +95,8 @@
 - ✅ Updated product prices
 - ✅ Added hearing aid subsidies section
 - ✅ Added congenital cataract information
+- ✅ Integrated comprehensive information about subsidies for hearing aids in Catalonia
+- ✅ Reorganized technical aids content for better readability and user experience
 
 ### Code Quality
 - ✅ Implemented consistent content object structure for all multilingual pages
@@ -97,6 +104,7 @@
 - ✅ Standardized content object structure across all service pages
 - ✅ Improved maintainability with more organized content structures
 - ✅ Created proper routes for legal pages in App.tsx
+- ✅ Fixed image swapping between Technical Aids and Audiology Center pages
 
 ## In Progress Tasks
 
@@ -188,3 +196,6 @@ The following images need to be optimized for better performance:
 - Added font-display: swap and preconnect directives to improve font loading performance
 - Implemented CSS code splitting and critical CSS loading for faster initial render
 - Fixed issues with special character encoding in URLs to prevent build errors
+- Created a dedicated Subsidies page with comprehensive information about financial aid for hearing aids
+- Improved the Technical Aids page by removing tabs/slider and showing all information on one page for better user experience
+- Swapped images between Technical Aids and Audiology Center pages to better match content

@@ -4,7 +4,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Helmet } from 'react-helmet-async';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { TabsContent, Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Zap, Headphones, Radio, Wifi } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -140,7 +139,7 @@ const TechnicalAids = () => {
       <ServiceLayout
         title={t('technicalAids')}
         subtitle={t('technicalAidsIntro')}
-        image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
+        image="/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png"
         appointmentSubject="Technical Aids Consultation at Looptica"
       >
         <div className="prose max-w-none mb-12">
@@ -149,140 +148,121 @@ const TechnicalAids = () => {
             {t('technicalAidsIntro')}
           </p>
           
-          <Tabs defaultValue="twinlink" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="twinlink">
-                <span className="flex items-center">
-                  <Wifi className="mr-2 h-4 w-4" /> {t('twinlinkTitle')}
-                </span>
-              </TabsTrigger>
-              <TabsTrigger value="edumic">
-                <span className="flex items-center">
-                  <Radio className="mr-2 h-4 w-4" /> {t('edumicTitle')}
-                </span>
-              </TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="twinlink">
-              <ScrollReveal>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <Wifi className="mr-2 h-6 w-6 text-[#55afa9]" /> 
-                      {content.twinlink[language].title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
+          <ScrollReveal>
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Wifi className="mr-2 h-6 w-6 text-[#55afa9]" /> 
+                  {content.twinlink[language].title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <p className="text-gray-700 mb-4">{content.twinlink[language].description}</p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                     <div>
-                      <p className="text-gray-700 mb-4">{content.twinlink[language].description}</p>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-                        <div>
-                          <h3 className="text-lg font-semibold mb-4 flex items-center">
-                            <Zap className="mr-2 h-5 w-5 text-[#55afa9]" /> 
-                            {language === 'en' ? 'Key Features' : (language === 'es' ? 'Características Principales' : 'Característiques Principals')}
-                          </h3>
-                          <ul className="space-y-2">
-                            {content.twinlink[language].features.map((feature, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="text-[#55afa9] mr-2">•</span>
-                                <span>{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-lg font-semibold mb-4 flex items-center">
-                            <Headphones className="mr-2 h-5 w-5 text-[#55afa9]" /> 
-                            {language === 'en' ? 'Benefits' : (language === 'es' ? 'Beneficios' : 'Beneficis')}
-                          </h3>
-                          <ul className="space-y-2">
-                            {content.twinlink[language].benefits.map((benefit, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="text-[#55afa9] mr-2">•</span>
-                                <span>{benefit}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
+                      <h3 className="text-lg font-semibold mb-4 flex items-center">
+                        <Zap className="mr-2 h-5 w-5 text-[#55afa9]" /> 
+                        {language === 'en' ? 'Key Features' : (language === 'es' ? 'Características Principales' : 'Característiques Principals')}
+                      </h3>
+                      <ul className="space-y-2">
+                        {content.twinlink[language].features.map((feature, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-[#55afa9] mr-2">•</span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                     
-                    <div className="mt-6">
-                      <img 
-                        src="/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.png" 
-                        alt="Oticon TwinLink technology"
-                        className="w-full h-64 object-cover rounded-lg shadow-md my-8"
-                        loading="lazy"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-            </TabsContent>
-            
-            <TabsContent value="edumic">
-              <ScrollReveal>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <Radio className="mr-2 h-6 w-6 text-[#55afa9]" /> 
-                      {content.edumic[language].title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
                     <div>
-                      <p className="text-gray-700 mb-4">{content.edumic[language].description}</p>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-                        <div>
-                          <h3 className="text-lg font-semibold mb-4 flex items-center">
-                            <Zap className="mr-2 h-5 w-5 text-[#55afa9]" /> 
-                            {language === 'en' ? 'Key Features' : (language === 'es' ? 'Características Principales' : 'Característiques Principals')}
-                          </h3>
-                          <ul className="space-y-2">
-                            {content.edumic[language].features.map((feature, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="text-[#55afa9] mr-2">•</span>
-                                <span>{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-lg font-semibold mb-4 flex items-center">
-                            <Headphones className="mr-2 h-5 w-5 text-[#55afa9]" /> 
-                            {language === 'en' ? 'Benefits' : (language === 'es' ? 'Beneficios' : 'Beneficis')}
-                          </h3>
-                          <ul className="space-y-2">
-                            {content.edumic[language].benefits.map((benefit, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="text-[#55afa9] mr-2">•</span>
-                                <span>{benefit}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
+                      <h3 className="text-lg font-semibold mb-4 flex items-center">
+                        <Headphones className="mr-2 h-5 w-5 text-[#55afa9]" /> 
+                        {language === 'en' ? 'Benefits' : (language === 'es' ? 'Beneficios' : 'Beneficis')}
+                      </h3>
+                      <ul className="space-y-2">
+                        {content.twinlink[language].benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-[#55afa9] mr-2">•</span>
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-6">
+                  <img 
+                    src="/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.png" 
+                    alt="Oticon TwinLink technology"
+                    className="w-full h-64 object-cover rounded-lg shadow-md my-8"
+                    loading="lazy"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+          
+          <Separator className="my-12" />
+          
+          <ScrollReveal>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Radio className="mr-2 h-6 w-6 text-[#55afa9]" /> 
+                  {content.edumic[language].title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <p className="text-gray-700 mb-4">{content.edumic[language].description}</p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4 flex items-center">
+                        <Zap className="mr-2 h-5 w-5 text-[#55afa9]" /> 
+                        {language === 'en' ? 'Key Features' : (language === 'es' ? 'Características Principales' : 'Característiques Principals')}
+                      </h3>
+                      <ul className="space-y-2">
+                        {content.edumic[language].features.map((feature, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-[#55afa9] mr-2">•</span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                     
-                    <Separator className="my-6" />
-                    
-                    <div className="mt-6">
-                      <img 
-                        src="/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png" 
-                        alt="Oticon EduMic device"
-                        className="w-full h-64 object-cover rounded-lg shadow-md my-8"
-                        loading="lazy"
-                      />
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4 flex items-center">
+                        <Headphones className="mr-2 h-5 w-5 text-[#55afa9]" /> 
+                        {language === 'en' ? 'Benefits' : (language === 'es' ? 'Beneficios' : 'Beneficis')}
+                      </h3>
+                      <ul className="space-y-2">
+                        {content.edumic[language].benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-[#55afa9] mr-2">•</span>
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-            </TabsContent>
-          </Tabs>
+                  </div>
+                </div>
+                
+                <div className="mt-6">
+                  <img 
+                    src="/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png" 
+                    alt="Oticon EduMic device"
+                    className="w-full h-64 object-cover rounded-lg shadow-md my-8"
+                    loading="lazy"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
         </div>
       </ServiceLayout>
       <Footer />
