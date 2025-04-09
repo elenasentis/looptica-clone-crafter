@@ -28,14 +28,14 @@ const Audiology = () => {
       icon: <Zap className="w-10 h-10 text-[#55afa9]" />,
       title: t('technicalAids'),
       description: t('technicalAidsDesc'),
-      image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
+      image: "/images/edumic-press-release.jpg",
       path: "/services/technical-aids"
     },
     {
       icon: <ShieldCheck className="w-10 h-10 text-[#55afa9]" />,
       title: t('customEarProtection'),
       description: t('earProtectionDesc'),
-      image: "/lovable-uploads/3e7cc4b1-38d3-4374-ad90-9b7aff598cf4.png",
+      image: "/images/moldes-a-medida-1.jpg",
       path: "/services/ear-protection"
     },
     {
