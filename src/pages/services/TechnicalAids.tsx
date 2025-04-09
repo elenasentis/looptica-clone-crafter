@@ -139,7 +139,7 @@ const TechnicalAids = () => {
       <ServiceLayout
         title={t('technicalAids')}
         subtitle={t('technicalAidsIntro')}
-        image="/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png"
+        image="/images/edumic-press-release.jpg"
         appointmentSubject="Technical Aids Consultation at Looptica"
       >
         <div className="prose max-w-none mb-12">
