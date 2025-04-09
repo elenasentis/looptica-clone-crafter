@@ -1,6 +1,7 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Index from './pages/Index';
@@ -8,6 +9,7 @@ import NotFound from './pages/NotFound';
 import { Toaster } from './components/ui/sonner';
 import { LanguageProvider } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
+import CriticalStyles from './components/CriticalStyles';
 import SalutVisual from './pages/services/SalutVisual';
 import LentsContacte from './pages/services/LentsContacte';
 import OrtoK from './pages/services/OrtoK';
@@ -27,11 +29,31 @@ import TermsConditions from './pages/legal/TermsConditions';
 import CookiesPolicy from './pages/legal/CookiesPolicy';
 import './App.css';
 
+// Google Analytics page tracker component
+const PageTracker = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    // Track page view when route changes
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: location.pathname + location.search
+      });
+    }
+  }, [location]);
+  
+  return null;
+};
+
 function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
+        {/* Load critical styles first */}
+        <CriticalStyles />
         <Router>
+          <PageTracker />
+          <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
             {/* About Page */}
@@ -59,6 +81,7 @@ function App() {
             
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
           <Toaster />
           <CookieConsent />
         </Router>

@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
@@ -78,7 +79,7 @@ export const translations: Translations = {
   productsDescription: {
     en: 'At Looptica you will find everything you need to take care of your vision and hearing with high quality products and advice from our optical and audiology specialists.',
     es: 'En Looptica encontrarás todo lo que necesitas para cuidar tu visión y audición con productos y asesoramiento de alta calidad de nuestros especialistas en óptica y audiología.',
-    ca: 'A Looptica trobràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d\'alta qualitat dels nostres especialistes en òptica i audiologia.',
+    ca: 'A Looptica trobaràs tot el que necessites per cuidar la teva visió i audició amb productes i assessorament d\'alta qualitat dels nostres especialistes en òptica i audiologia.',
   },
   addToCart: {
     en: 'More Information',
@@ -134,7 +135,7 @@ export const translations: Translations = {
   orthoKDesc: {
     en: 'Correct your vision with overnight contact lenses and forget about glasses during the day.',
     es: 'Corrige tu vision con lentes de contacto nocturnas y olvidate de las gafas durante el día.',
-    ca: 'Corregeix la teva visió amb lents de contacte nocturnes i oblida\\\'t de les ulleres durant el dia.',
+    ca: 'Corregeix la teva visió amb lents de contacte nocturnes i oblida\'t de les ulleres durant el dia.',
   },
   imageConsulting: {
     en: 'Image Consulting',
@@ -153,8 +154,8 @@ export const translations: Translations = {
   },
   lensConsultingDesc: {
     en: 'We find the best option for your vision problem with the latest generation lenses from the best brands.',
-    es: 'Buscamos la mejor opción para tu problema de visión con lentes de última generación de las mejores marcas.',
-    ca: 'Busquem la millor opció pel teu problema de visió amb lents d\'última generació de les millors marques.',
+    es: 'Buscamos la mejor opción para tu problema visual con lentes de última generación de las mejores marcas.',
+    ca: 'Busquem la millor opció pel teu problema visual amb lents d\'última generació de les millors marques.',
   },
   sunglassesService: {
     en: 'Sunglasses',
@@ -214,8 +215,8 @@ export const translations: Translations = {
   },
   tinnitusDesc: {
     en: 'Specialized solutions at our Barcelona Poblenou audiology clinic to help manage and reduce tinnitus symptoms associated with hearing loss.',
-    es: 'Soluciones especializadas en nuestra clínica de audiología en Barcelona Poblenou para ayudar a controlar y reducir los síntomas de acúfenos asociados con la pérdida auditiva.',
-    ca: 'Solucions especialitzades a la nostra clínica d\'audiologia a Barcelona Poblenou per ajudar a controlar i reduir els símptomes d\'acúfens associats amb la pèrdua auditiva.',
+    es: 'Soluciones especializadas en nuestro centro auditivo en Barcelona Poblenou para ayudar a controlar y reducir los síntomas de acúfenos asociados con la pérdida auditiva.',
+    ca: 'Solucions especialitzades al nostre centre auditiu a Barcelona Poblenou per ajudar a controlar i reduir els símptomes d\'acúfens associats amb la pèrdua auditiva.',
   },
   customEarProtection: {
     en: 'Custom Ear Protection',
@@ -246,7 +247,7 @@ export const translations: Translations = {
   reviewsDescription: {
     en: 'Read what our customers have to say about their experiences with our eyewear, hearing aids, and audiology services.',
     es: 'Lea lo que nuestros clientes tienen que decir sobre sus experiencias con nuestras gafas, audífonos y servicios de audiología.',
-    ca: 'Llegiu el que els nostres clients tenen a dir sobre les seves experiències amb les nostres ulleres, audiòfons i serveis d\'audiologia.',
+    ca: 'Llegiu el que els nostres clients diuen sobre les seves experiències amb les nostres ulleres, audiòfons i serveis d\'audiologia.',
   },
   viewAllReviews: {
     en: 'View All Reviews on Google',

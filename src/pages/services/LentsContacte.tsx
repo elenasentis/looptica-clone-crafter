@@ -158,6 +158,53 @@ const LentsContacte = () => {
       es: "El cuidado adecuado de las lentes de contacto es esencial para mantener la salud ocular y prevenir infecciones. En Looptica, proporcionamos instrucciones detalladas sobre cómo manipular, limpiar y almacenar sus lentes de contacto. Además, ofrecemos todos los productos de limpieza y mantenimiento que necesitará.",
       ca: "La cura adequada de les lents de contacte és essencial per mantenir la salut ocular i prevenir infeccions. A Looptica, proporcionem instruccions detallades sobre com manipular, netejar i emmagatzemar les seves lents de contacte. A més, oferim tots els productes de neteja i manteniment que necessitarà.",
     },
+    congenitalCataract: {
+      title: {
+        en: "Congenital Cataracts and Contact Lenses",
+        es: "Cataratas Congénitas y Lentes de Contacto",
+        ca: "Cataractes Congènites i Lents de Contacte"
+      },
+      content: {
+        en: [
+          "Congenital cataracts are opacities of the lens that are present at birth or develop in the first months of life. Early detection and treatment are essential to avoid permanent visual impairment.",
+          "After surgical removal of the cataract, visual rehabilitation is crucial. Contact lenses are often the preferred option for optical correction in children with aphakia (absence of the natural lens) following cataract surgery.",
+          "The visual stimulation of these children is essential and must be carried out properly. The ophthalmologist will determine when to start visual rehabilitation, which should begin as soon as possible after surgery."
+        ],
+        es: [
+          "Las cataratas congénitas son opacidades del cristalino que están presentes en el nacimiento o se desarrollan en los primeros meses de vida. La detección y el tratamiento temprano son esenciales para evitar la discapacidad visual permanente.",
+          "Tras la extirpación quirúrgica de la catarata, la rehabilitación visual es crucial. Las lentes de contacto suelen ser la opción preferida para la corrección óptica en niños con afaquia (ausencia del cristalino natural) tras la cirugía de cataractes.",
+          "La estimulación visual de estos niños es esencial y debe llevarse a cabo adecuadamente. El oftalmólogo determinará cuándo comenzar la rehabilitación visual, que debe iniciarse lo antes posible después de la cirugía."
+        ],
+        ca: [
+          "Les cataractes congènites són opacitats del cristal·lí que estan presents en el naixement o es desenvolupen en els primers mesos de vida. La detecció i el tractament primerenc són essencials per evitar la discapacitat visual permanent.",
+          "Després de l'extirpació quirúrgica de la cataracta, la rehabilitació visual és crucial. Les lents de contacte solen ser l'opció preferida per a la correcció òptica en nens amb afàquia (absència del cristal·lí natural) després de la cirurgia de cataractes.",
+          "L'estimulació visual d'aquests nens és essencial i s'ha de dur a terme adequadament. L'oftalmòleg determinarà quan començar la rehabilitació visual, que ha d'iniciar-se al més aviat possible després de la cirurgia."
+        ]
+      },
+      benefits: {
+        en: [
+          "Better visual quality compared to glasses in cases of aphakia",
+          "Better peripheral vision",
+          "No magnification of objects that can be disorienting",
+          "Superior visual development support",
+          "More natural appearance for the child"
+        ],
+        es: [
+          "Mejor calidad visual en comparación con las gafas en casos de afaquia",
+          "Mejor visión periférica",
+          "Sin aumento de objetos que puede ser desorientador",
+          "Mejor apoyo al desarrollo visual",
+          "Apariencia más natural para el niño"
+        ],
+        ca: [
+          "Millor qualitat visual en comparació amb les ulleres en casos d'afàquia",
+          "Millor visió perifèrica",
+          "Sense augment d'objectes que pot ser desorientador",
+          "Millor suport al desenvolupament visual",
+          "Aparença més natural per al nen"
+        ]
+      }
+    }
   };
   
   return (
@@ -270,6 +317,35 @@ const LentsContacte = () => {
           <h2>{content.lensCareTtl[language]}</h2>
           <p>
             {content.lensCareP1[language]}
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <div className="prose prose-lg max-w-none mb-12">
+          <h2>{content.congenitalCataract.title[language]}</h2>
+          {content.congenitalCataract.content[language].map((paragraph, idx) => (
+            <p key={idx}>
+              {paragraph}
+            </p>
+          ))}
+          
+          <h3 className="text-xl font-medium mt-6 mb-4">
+            {language === 'en' ? 'Benefits of contact lenses for congenital cataracts:' : 
+             language === 'es' ? 'Beneficios de las lentes de contacto para cataratas congénitas:' :
+             'Beneficis de les lents de contacte per a cataractes congènites:'}
+          </h3>
+          
+          <ul className="list-disc pl-6 space-y-2">
+            {content.congenitalCataract.benefits[language].map((benefit, idx) => (
+              <li key={idx}>{benefit}</li>
+            ))}
+          </ul>
+          
+          <p className="mt-4">
+            {language === 'en' ? 'At Looptica, our team of specialists has experience in the adaptation of contact lenses for children with congenital cataracts. We work closely with ophthalmologists to provide the best optical solution for each case.' : 
+             language === 'es' ? 'En Looptica, nuestro equipo de especialistas tiene experiencia en la adaptación de lentes de contacto para niños con cataratas congénitas. Trabajamos estrechamente con oftalmólogos para proporcionar la mejor solución óptica para cada caso.' :
+             'A Looptica, el nostre equip d\'especialistes té experiència en l\'adaptació de lents de contacte per a nens amb cataractes congènites. Treballem estretament amb oftalmòlegs per proporcionar la millor solució òptica per a cada cas.'}
           </p>
         </div>
       </ScrollReveal>

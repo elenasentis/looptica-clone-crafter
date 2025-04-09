@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,6 +10,13 @@ import {
 } from '@/components/ui/dialog';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Check, Settings } from 'lucide-react';
+
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
 
 const CookieConsent = () => {
   const [showConsent, setShowConsent] = useState(false);
@@ -33,13 +39,43 @@ const CookieConsent = () => {
         setShowConsent(true);
       }, 1000);
       return () => clearTimeout(timer);
+    } else {
+      // If user has already consented, apply their preferences
+      try {
+        const savedPreferences = JSON.parse(hasConsented);
+        if (typeof savedPreferences === 'object') {
+          setCookiePreferences(prev => ({
+            ...prev,
+            ...(savedPreferences as { analytics?: boolean; marketing?: boolean })
+          }));
+          
+          // Initialize Google Analytics based on saved preferences
+          if (savedPreferences.analytics) {
+            enableGoogleAnalytics();
+          }
+        } else if (hasConsented === 'all') {
+          enableGoogleAnalytics();
+        }
+      } catch (e) {
+        console.error('Error parsing cookie consent:', e);
+      }
     }
   }, []);
+
+  const enableGoogleAnalytics = () => {
+    // Enable Google Analytics tracking
+    if (window.gtag && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+  };
 
   const handleAcceptAll = () => {
     localStorage.setItem('cookieConsent', 'all');
     setShowConsent(false);
-    // Here you would initialize all your cookies/tracking
+    // Initialize all cookies/tracking
+    enableGoogleAnalytics();
     console.log('All cookies accepted');
   };
 
@@ -47,7 +83,11 @@ const CookieConsent = () => {
     localStorage.setItem('cookieConsent', JSON.stringify(cookiePreferences));
     setShowSettings(false);
     setShowConsent(false);
-    // Here you would initialize cookies based on preferences
+    
+    // Initialize cookies based on preferences
+    if (cookiePreferences.analytics) {
+      enableGoogleAnalytics();
+    }
     console.log('Saved cookie preferences:', cookiePreferences);
   };
 

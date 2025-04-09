@@ -47,7 +47,7 @@ const Eyeglasses = () => {
     hdLensesDesc: {
       en: 'Our digitally-surfaced lenses provide superior clarity and visual comfort compared to traditional lenses, reducing eye strain and fatigue even after long hours of wear.',
       es: 'Nuestras lentes con superficie digital proporcionan una claridad superior y comodidad visual en comparación con las lentes tradicionales, reduciendo la fatiga ocular incluso después de largas horas de uso.',
-      ca: 'Les nostres lents amb superfície digital proporcionan una claredat superior i comoditat visual en comparació amb les lents tradicionals, reduint la fatiga ocular fins i tot després de llargues hores d\'ús.',
+      ca: 'Les nostres lents amb superfície digital proporcionen una claredat superior i comoditat visual en comparació amb les lents tradicionals, reduint la fatiga ocular fins i tot després de llargues hores d\'ús.',
     },
     progressive: {
       en: 'Progressive Lenses',
@@ -107,7 +107,7 @@ const Eyeglasses = () => {
     brandRayBan: {
       en: 'Iconic frames known worldwide for their classic designs and exceptional quality that never goes out of style.',
       es: 'Monturas icónicas conocidas en todo el mundo por sus diseños clásicos y calidad excepcional que nunca pasa de moda.',
-      ca: 'Muntures icóniques conegudes arreu del món pels seus dissenys clàssics i qualitat excepcional que mai passa de moda.',
+      ca: 'Muntures icónicas conegudes arreu del món pels seus dissenys clàssics i qualitat excepcional que mai passa de moda.',
     },
     brandTomFord: {
       en: 'Luxury frames featuring sophisticated designs, premium materials, and attention to detail for the discerning customer.',
@@ -181,8 +181,8 @@ const Eyeglasses = () => {
     },
     guaranteeDesc: {
       en: 'Every pair of eyeglasses from Looptica comes with our comprehensive quality guarantee:',
-      es: 'Cada par de gafas de Looptica viene con nuestra garantía de calidad integral:',
-      ca: 'Cada parell d\'ulleres de Looptica ve amb la nostra garantia de qualitat integral:',
+      es: 'Cada par de gafas de Looptica incluye nuestra garantía de calidad integral:',
+      ca: 'Cada parell d\'ulleres de Looptica inclou la nostra garantia de qualitat integral:',
     },
     guarantee1: {
       en: '30-day adaptation guarantee for progressive lenses',
@@ -191,8 +191,8 @@ const Eyeglasses = () => {
     },
     guarantee2: {
       en: 'One-year warranty against manufacturing defects',
-      es: 'Un año de garantía contra defectos de fabricación',
-      ca: 'Un any de garantia contra defectes de fabricació',
+      es: 'Un año de garantía para defectos de fabricación',
+      ca: 'Un any de garantia per defectes de fabricació',
     },
     guarantee3: {
       en: 'Six months of free adjustments and maintenance',

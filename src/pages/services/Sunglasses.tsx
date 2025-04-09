@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Sun, Shield, Zap, Heart } from 'lucide-react';
