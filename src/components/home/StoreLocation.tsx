@@ -57,7 +57,7 @@ const StoreLocation = () => {
                   <h4 className="font-semibold text-gray-900 mb-1">{t('openingHours')}</h4>
                   <p className="text-gray-600">
                     {t('mondayFriday')}: 10:00 - 13:30, 16:30 - 20:00<br />
-                    {t('saturday')}: 10:30 - 14:30<br />
+                    {t('saturday')}: 10:30 - 14:00<br />
                     {t('sunday')}: {t('closed')}
                   </p>
                 </div>
