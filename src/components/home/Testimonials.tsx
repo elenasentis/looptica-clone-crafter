@@ -77,12 +77,12 @@ const Testimonials = () => {
             <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-3">
               {t('customerReviews')}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('whatCustomersSay')}</h2>
+            <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">{t('whatCustomersSay')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">{t('reviewsDescription')}</p>
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial) => (
             <ScrollReveal key={testimonial.id} origin="bottom" delay={200 + testimonial.id * 100}>
               <div className="p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
