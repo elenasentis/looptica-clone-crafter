@@ -206,7 +206,7 @@ export const translations: Translations = {
   hearingAidsDesc: {
     en: 'High-quality digital hearing aids tailored to your specific hearing loss profile and lifestyle at our hearing center in Barcelona Poblenou.',
     es: 'Audífonos digitales de alta calidad adaptados a su perfil específico de pérdida auditiva y estilo de vida en nuestro centro auditivo en Barcelona Poblenou.',
-    ca: 'Audiòfons digitals d\'alta qualitat adaptados a les seves necessitats específiques de pèrdua auditiva i estil de vida al nostre centre auditiu a Barcelona Poblenou.',
+    ca: 'Audiòfons digitals d\'alta qualitat adaptats a les seves necessitats específiques de pèrdua auditiva i estil de vida al nostre centre auditiu a Barcelona Poblenou.',
   },
   tinnitusTreatment: {
     en: 'Tinnitus Treatment',
