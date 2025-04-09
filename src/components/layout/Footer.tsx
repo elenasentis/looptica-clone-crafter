@@ -28,7 +28,6 @@ const Footer = () => {
         links: [
           { name: t('hearingTest'), path: '/services/hearing-test' },
           { name: t('hearingAids'), path: '/services/hearing-aids' },
-          { name: t('tinnitusTreatment'), path: '/services/tinnitus-treatment' },
           { name: t('customEarProtection'), path: '/services/ear-protection' },
           { name: t('technicalAids'), path: '/services/technical-aids' },
           { name: t('subvenciones'), path: '/services/subvenciones' },
