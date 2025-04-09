@@ -250,7 +250,7 @@ const EarProtection = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/lovable-uploads/58f8dffc-9095-4ff8-a7d3-4aa204a74b55.jpeg"
+      image="/images/moldes-a-medida-1.jpg"
       appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
