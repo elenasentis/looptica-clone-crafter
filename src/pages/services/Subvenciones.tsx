@@ -101,9 +101,13 @@ const Subvenciones = () => {
       <ServiceLayout
         title={content.pageTitle[language]}
         subtitle={content.pageSubtitle[language]}
-        icon={<BadgeDollarSign className="h-12 w-12 text-[#55afa9]" />}
-        description={content.intro[language]}
+        image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
+        appointmentSubject="Hearing Aid Subsidies Consultation"
       >
+        <div className="prose prose-lg max-w-none mb-8">
+          <p>{content.intro[language]}</p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {content.sections.map((section, index) => (
             <Card key={index} className="border-t-4 border-t-[#55afa9]">
