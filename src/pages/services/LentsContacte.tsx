@@ -178,7 +178,7 @@ const LentsContacte = () => {
         ca: [
           "Les cataractes congènites són opacitats del cristal·lí que estan presents en el naixement o es desenvolupen en els primers mesos de vida. La detecció i el tractament primerenc són essencials per evitar la discapacitat visual permanent.",
           "Després de l'extirpació quirúrgica de la cataracta, la rehabilitació visual és crucial. Les lents de contacte solen ser l'opció preferida per a la correcció òptica en nens amb afàquia (absència del cristal·lí natural) després de la cirurgia de cataractes.",
-          "L'estimulació visual d'aquests nens és essencial i s'ha de dur a terme adequadament. L'oftalmòleg determinarà quan començar la rehabilitació visual, que ha d'iniciar-se al més aviat possible després de la cirurgia."
+          "L'estimulació visual d'aquests nens és essencial i s'ha de dur a terme adequadament. L'oftalmòleg determinarà quan començar la rehabilitació visual, que ha d'iniciar-se el més aviat possible després de la cirurgia."
         ]
       },
       benefits: {
@@ -201,7 +201,7 @@ const LentsContacte = () => {
           "Millor visió perifèrica",
           "Sense augment d'objectes que pot ser desorientador",
           "Millor suport al desenvolupament visual",
-          "Aparença més natural per al nen"
+          "Aparença més natural pel nen"
         ]
       }
     }

@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound';
 import { Toaster } from './components/ui/sonner';
 import { LanguageProvider } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
+import CriticalStyles from './components/CriticalStyles';
 import SalutVisual from './pages/services/SalutVisual';
 import LentsContacte from './pages/services/LentsContacte';
 import OrtoK from './pages/services/OrtoK';
@@ -19,6 +20,8 @@ import HearingTest from './pages/services/HearingTest';
 import HearingAids from './pages/services/HearingAids';
 import TinnitusTreatment from './pages/services/TinnitusTreatment';
 import EarProtection from './pages/services/EarProtection';
+import TechnicalAids from './pages/services/TechnicalAids';
+import Subvenciones from './pages/services/Subvenciones';
 import ImageConsulting from './pages/services/ImageConsulting';
 import LensConsulting from './pages/services/LensConsulting';
 import About from './pages/About';
@@ -48,6 +51,8 @@ function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
+        {/* Load critical styles first */}
+        <CriticalStyles />
         <Router>
           <PageTracker />
           <Navbar />
@@ -69,6 +74,8 @@ function App() {
             <Route path="/services/hearing-aids" element={<HearingAids />} />
             <Route path="/services/tinnitus-treatment" element={<TinnitusTreatment />} />
             <Route path="/services/ear-protection" element={<EarProtection />} />
+            <Route path="/services/technical-aids" element={<TechnicalAids />} />
+            <Route path="/services/subvenciones" element={<Subvenciones />} />
             {/* Audiology Landing Page */}
             <Route path="/services/audiologia-centro" element={<AudiologiaCentro />} />
             {/* Legal Pages */}
