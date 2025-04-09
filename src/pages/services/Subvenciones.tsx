@@ -158,7 +158,7 @@ const Subvenciones = () => {
       <ServiceLayout
         title={content.pageTitle[language]}
         subtitle={content.pageSubtitle[language]}
-        image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
+        image="/images/oticonopnscoupleincitymg9377300dpicoticon2.jpg"
         appointmentSubject="Hearing Aid Subsidies Consultation"
       >
         <div className="prose prose-lg max-w-none mb-8">
