@@ -38,7 +38,7 @@ const About = () => {
         role: {
           en: "Owner",
           es: "Propietaria",
-          ca: "Propietària"
+          ca: "Propietària\nÒptica Optometrista"
         },
         image: "/images/_DSC4776.jpg",
         bio: {
@@ -61,7 +61,7 @@ const About = () => {
         role: {
           en: "Contactologist",
           es: "Contactóloga",
-          ca: "Contactòloga"
+          ca: "Contactòloga\nÒptica Optometrista"
         },
         image: "/images/irene.jpg",
         bio: {
@@ -81,7 +81,7 @@ const About = () => {
         role: {
           en: "Audiologist",
           es: "Audióloga",
-          ca: "Audiòloga"
+          ca: "Audiòloga\nÒptica Optometrista"
         },
         image: "/images/lorena2.png",
         bio: {
