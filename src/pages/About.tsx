@@ -38,7 +38,7 @@ const About = () => {
         role: {
           en: "Owner",
           es: "Propietaria",
-          ca: "Propietària\nÒptica Optometrista"
+          ca: "Propietària\n"+"Òptica Optometrista"
         },
         image: "/images/_DSC4776.jpg",
         bio: {
