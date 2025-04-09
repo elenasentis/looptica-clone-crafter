@@ -14,7 +14,7 @@ const Audiology = () => {
       icon: <Ear className="w-10 h-10 text-[#55afa9]" />,
       title: t('hearingTest'),
       description: t('hearingTestDesc'),
-      image: "/images/oticonopnscoupleincitymg9377300dpicoticon2.jpg",
+      image: "/images/oticon_act_key_visual_woman_in-anechoic_chamber_as_453913390_as_190510297.jpg",
       path: "/services/hearing-test"
     },
     {
@@ -28,7 +28,7 @@ const Audiology = () => {
       icon: <Zap className="w-10 h-10 text-[#55afa9]" />,
       title: t('technicalAids'),
       description: t('technicalAidsDesc'),
-      image: "/images/oticon_act_key_visual_woman_in-anechoic_chamber_as_453913390_as_190510297.jpg",
+      image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
       path: "/services/technical-aids"
     },
     {
@@ -42,7 +42,7 @@ const Audiology = () => {
       icon: <BadgeDollarSign className="w-10 h-10 text-[#55afa9]" />,
       title: t('subvenciones'),
       description: t('subvencionesDesc'),
-      image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
+      image: "/images/oticonopnscoupleincitymg9377300dpicoticon2.jpg",
       path: "/services/subvenciones"
     }
   ];
