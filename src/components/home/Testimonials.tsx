@@ -114,7 +114,7 @@ const Testimonials = () => {
         <ScrollReveal origin="bottom" delay={600}>
           <div className="text-center mt-10">
             <a 
-              href="https://g.page/r/CRm06z5-qFy4EBM/review" 
+              href="https://maps.app.goo.gl/pCsdcon4p9GewN7e6" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium text-[#55afa9] hover:text-[#55afa9]"
