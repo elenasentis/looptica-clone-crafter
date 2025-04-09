@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Eye, Contact, Moon, User, Glasses, Sun } from 'lucide-react';
+import { Eye, Contact, Moon, User, Glasses } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -44,13 +45,6 @@ const OpticalServices = () => {
       description: t('lensConsultingDesc'),
       image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png",
       path: "/services/lens-consulting"
-    },
-    {
-      icon: <Sun className="w-10 h-10 text-[#55afa9]" />,
-      title: t('sunglassesService'),
-      description: t('sunglassesServiceDesc'),
-      image: "/lovable-uploads/e288806f-89cb-4ae0-9a88-6b52ee0ccc4b.png",
-      path: "/services/sunglasses"
     }
   ];
 
@@ -71,7 +65,7 @@ const OpticalServices = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-12">
             {opticalServices.map((service, index) => (
               <div 
                 key={index} 
@@ -82,6 +76,7 @@ const OpticalServices = () => {
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                    loading="lazy"
                     onError={(e) => {
                       console.error(`Failed to load image: ${service.image}`);
                       e.currentTarget.src = '/placeholder.svg';

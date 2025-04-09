@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
@@ -73,6 +74,24 @@ const Index = () => {
   };
   
   useEffect(() => {
+    // Lazy load all images except for critical ones
+    const lazyLoadImages = () => {
+      const allImages = document.querySelectorAll('img');
+      
+      allImages.forEach(img => {
+        // Skip the hero image which is loaded as background
+        if (img.src.includes('DSC4608.jpg')) return;
+        
+        // Add loading="lazy" attribute to all other images
+        if (!img.hasAttribute('loading')) {
+          img.setAttribute('loading', 'lazy');
+        }
+      });
+    };
+    
+    // Call the function after a short delay to ensure DOM is fully loaded
+    setTimeout(lazyLoadImages, 100);
+    
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
     

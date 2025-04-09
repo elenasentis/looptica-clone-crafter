@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
@@ -36,9 +37,9 @@ const About = () => {
       {
         name: "Elena",
         role: {
-          en: "Owner",
-          es: "Propietaria",
-          ca: "Propietària"
+          en: "Owner\n\nOptician Optometrist",
+          es: "Propietaria\n\nÓptica Optometrista",
+          ca: "Propietària\n\nÒptica Optometrista"
         },
         image: "/images/_DSC4776.jpg",
         bio: {
@@ -59,9 +60,9 @@ const About = () => {
       {
         name: "Irene",
         role: {
-          en: "Contactologist",
-          es: "Contactóloga",
-          ca: "Contactòloga"
+          en: "Contactologist\n\nOptician Optometrist",
+          es: "Contactóloga\n\nÓptica Optometrista",
+          ca: "Contactòloga\n\nÒptica Optometrista"
         },
         image: "/images/irene.jpg",
         bio: {
@@ -79,9 +80,9 @@ const About = () => {
       {
         name: "Lorena",
         role: {
-          en: "Audiologist",
-          es: "Audióloga",
-          ca: "Audiòloga"
+          en: "Audiologist\n\nOptician Optometrist",
+          es: "Audióloga\n\nÓptica Optometrista",
+          ca: "Audiòloga\n\nÒptica Optometrista"
         },
         image: "/images/lorena2.png",
         bio: {
@@ -170,7 +171,7 @@ const About = () => {
                       />
                     </div>
                     <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">{member.name}</h2>
-                    <p className="text-sm text-center text-[#55afa9] font-medium mb-4">{member.role[language]}</p>
+                    <p className="text-sm text-center text-[#55afa9] font-medium mb-4 whitespace-pre-line">{member.role[language]}</p>
                     <div className="flex-grow">
                       {member.bio[language].map((paragraph, idx) => (
                         <p key={idx} className="text-gray-700 mb-4">{paragraph}</p>

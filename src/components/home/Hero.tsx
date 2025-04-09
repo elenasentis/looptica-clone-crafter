@@ -38,7 +38,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <GoogleCalendarButton 
                   size="lg" 
-                  className="group bg-[#55afa9] hover:bg-[#ea384c] text-white"
+                  className="group bg-[#55afa9] hover:bg-[#ca6664] text-white"
                 >
                   {t('demanaCita')}
                 </GoogleCalendarButton>

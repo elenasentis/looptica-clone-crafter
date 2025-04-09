@@ -18,6 +18,13 @@ const Testimonials = () => {
   const testimonials: Testimonial[] = [
     {
       id: 1,
+      name: "Gerard S.",
+      rating: 5,
+      comment: "Una òptica per recomanar. En el meu cas em vaig fer les lents de contacte orto-k, i els resultats van ser millors dels esperats (a causa de la meva graduació). Destacaria la gran professionalitat i l'atenció que brinden, a més, tenen molt bona relació qualitat-preu. Us mereixeu totes les ressenyes positives. Per part meva he quedat molt satisfet.",
+      date: "2024-7-17"
+    },
+    {
+      id: 2,
       name: "Carlota F",
       rating: 5,
       comment: "Best Optical Shop In Poblenou 😎❣️✨\n" +
@@ -29,7 +36,7 @@ const Testimonials = () => {
       date: "2024-09-15"
     },
     {
-      id: 2,
+      id: 3,
       name: "Anna A.",
       rating: 5,
       comment: "Fa 3 anys em vaig comprar les ulleres diaries i les de sol, la meva parella igual. Vam sortir molt contentes! Però fa uns 10 dies se'm va trencar el flexo d'una de les varilles i, tot ser estiu i la complexitat que això suposa, m'ho van solucionar amb menys de 24h.\n" +
@@ -37,19 +44,20 @@ const Testimonials = () => {
       date: "2024-10-22"
     },
     {
-      id: 3,
+      id: 4,
       name: "Olga L.",
       rating: 5,
       comment: "Big thank you to Ms. Elena Sentis who helped me to choose very beautiful sunglasses. She was very professional and helpful. She showed me several sunglasses and recommended the most suitable in very honest way. I'm very happy with my purchase which is a local brand as well so I will remember my trip to Barcelona :) Thank you Elena!",
       date: "2022-11-05"
     },
     {
-      id: 4,
+      id: 5,
       name: "Cecilia T.",
       rating: 5,
       comment: "Absolutely wonderful services, client treatment and attention to details!  I have been an eyeglasses wearer for decades, and I have always been pushed to buy the most expensive frames and lens and this is the first time where I feel like they are really looking out for me, my vision and my pocket and not trying to max their profit.  They are very knowledgable in all aspects, and I even learned about how i can minimise the effect of rings on thick lens (something that I hate) by a special treatment that really upgraded my look.  I am super happy to have found an eyeglasses specialist that I can trust.",
       date: "2023-12-18"
     }
+    
   ];
 
   const renderStars = (rating: number) => {
@@ -74,7 +82,7 @@ const Testimonials = () => {
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {testimonials.map((testimonial) => (
             <ScrollReveal key={testimonial.id} origin="bottom" delay={200 + testimonial.id * 100}>
               <div className="p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
