@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Ear, HeadphonesIcon, Zap, ShieldCheck } from 'lucide-react';
+import { Ear, HeadphonesIcon, Zap, ShieldCheck, BadgeDollarSign } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Audiology = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const audiologyServices = [
     {
@@ -47,7 +47,7 @@ const Audiology = () => {
                   language === 'ca' ? "Assessorament i gestió d'ajudes per a la compra d'audiòfons a Catalunya" : 
                   "Advice and management of subsidies for hearing aids in Catalonia",
       image: "/lovable-uploads/b5e53adf-aa39-4826-ae3e-61dc5721b6ea.png",
-      link: "/services/audiologia-centro#subsidies"
+      path: "/services/audiologia-centro#subsidies"
     }
   ];
 
