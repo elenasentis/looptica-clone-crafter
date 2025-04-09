@@ -82,7 +82,7 @@ const Testimonials = () => {
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {testimonials.map((testimonial) => (
             <ScrollReveal key={testimonial.id} origin="bottom" delay={200 + testimonial.id * 100}>
               <div className="p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
