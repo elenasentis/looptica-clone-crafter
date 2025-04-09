@@ -94,7 +94,7 @@ const Testimonials = () => {
                     {new Date(testimonial.date).toLocaleDateString()}
                   </span>
                 </div>
-                <p className="text-gray-700 mb-4 flex-grow overflow-y-auto max-h-64">&ldquo;{testimonial.comment}&rdquo;</p>
+                <p className="text-gray-700 mb-4 flex-grow overflow-y-auto max-h-64 text-sm">&ldquo;{testimonial.comment}&rdquo;</p>
                 <div className="mt-auto">
                   <p className="font-semibold text-gray-900">{testimonial.name}</p>
                   <div className="flex items-center mt-2">
@@ -114,7 +114,7 @@ const Testimonials = () => {
         <ScrollReveal origin="bottom" delay={600}>
           <div className="text-center mt-10">
             <a 
-              href="https://g.page/r/CRm06z5-qFy4EBM/review" 
+              href="https://maps.app.goo.gl/2iYtQyPFexCGZPaF9" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm font-medium text-[#55afa9] hover:text-[#55afa9]"
