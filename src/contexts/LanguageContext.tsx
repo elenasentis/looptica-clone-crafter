@@ -227,6 +227,16 @@ export const translations: Translations = {
     es: 'Tapones para los oídos hechos a medida en nuestro centro de audiología en Barcelona Poblenou diseñados para comodidad y protección óptima contra el ruido para prevenir la pérdida auditiva.',
     ca: 'Taps per a les orelles fets a mida al nostre centre d\'audiologia a Barcelona Poblenou dissenyats per a comoditat i protecció òptima contra el soroll per prevenir la pèrdua auditiva.',
   },
+  subvenciones: {
+    en: 'Hearing Aid Subsidies',
+    es: 'Subvenciones para Audífonos',
+    ca: 'Subvencions per a Audiòfons',
+  },
+  subvencionesDesc: {
+    en: 'Information about available subsidies and financial aid for hearing aids and hearing assistance devices in Barcelona.',
+    es: 'Información sobre ayudas y subvenciones disponibles para audífonos y dispositivos de ayuda auditiva en Barcelona.',
+    ca: 'Informació sobre ajudes i subvencions disponibles per a audiòfons i dispositius d\'ajuda auditiva a Barcelona.',
+  },
   scheduleConsultation: {
     en: 'Schedule a Hearing Consultation',
     es: 'Programar una Consulta Auditiva',

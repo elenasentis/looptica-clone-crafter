@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Ear, HeadphonesIcon, Zap, ShieldCheck } from 'lucide-react';
+import { Ear, HeadphonesIcon, Zap, ShieldCheck, BadgeDollarSign } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -37,6 +37,13 @@ const Audiology = () => {
       description: t('earProtectionDesc'),
       image: "/lovable-uploads/3e7cc4b1-38d3-4374-ad90-9b7aff598cf4.png",
       path: "/services/ear-protection"
+    },
+    {
+      icon: <BadgeDollarSign className="w-10 h-10 text-[#55afa9]" />,
+      title: t('subvenciones'),
+      description: t('subvencionesDesc'),
+      image: "/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png",
+      path: "/services/subvenciones"
     }
   ];
 

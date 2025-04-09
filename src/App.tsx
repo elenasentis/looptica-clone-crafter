@@ -21,6 +21,7 @@ import HearingAids from './pages/services/HearingAids';
 import TinnitusTreatment from './pages/services/TinnitusTreatment';
 import EarProtection from './pages/services/EarProtection';
 import TechnicalAids from './pages/services/TechnicalAids';
+import Subvenciones from './pages/services/Subvenciones';
 import ImageConsulting from './pages/services/ImageConsulting';
 import LensConsulting from './pages/services/LensConsulting';
 import About from './pages/About';
@@ -74,6 +75,7 @@ function App() {
             <Route path="/services/tinnitus-treatment" element={<TinnitusTreatment />} />
             <Route path="/services/ear-protection" element={<EarProtection />} />
             <Route path="/services/technical-aids" element={<TechnicalAids />} />
+            <Route path="/services/subvenciones" element={<Subvenciones />} />
             {/* Audiology Landing Page */}
             <Route path="/services/audiologia-centro" element={<AudiologiaCentro />} />
             {/* Legal Pages */}
