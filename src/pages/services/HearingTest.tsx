@@ -210,7 +210,7 @@ const HearingTest = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/lovable-uploads/b5661196-c8c2-4fad-9207-094e65ba3642.png"
+      image="/images/oticonopnscoupleincitymg9377300dpicoticon2.jpg"
       appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
