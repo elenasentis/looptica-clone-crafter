@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Helmet } from 'react-helmet-async';
@@ -348,9 +347,9 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png" 
+                    src="https://www.oticon.es/-/media/oticon/main/accessories/imgs/edumic/710x473px-edumic-w-background.png" 
                     alt="Oticon EduMic device"
-                    className="w-full h-64 object-cover rounded-lg shadow-md my-8"
+                    className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
                   />
                 </div>
