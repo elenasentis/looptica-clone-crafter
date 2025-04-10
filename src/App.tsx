@@ -10,6 +10,7 @@ import { Toaster } from './components/ui/sonner';
 import { LanguageProvider } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
 import CriticalStyles from './components/CriticalStyles';
+import RedirectHandler from './components/RedirectHandler';
 import SalutVisual from './pages/services/SalutVisual';
 import LentsContacte from './pages/services/LentsContacte';
 import OrtoK from './pages/services/OrtoK';
@@ -54,6 +55,7 @@ function App() {
         {/* Load critical styles first */}
         <CriticalStyles />
         <Router>
+          <RedirectHandler />
           <PageTracker />
           <Navbar />
           <Routes>
