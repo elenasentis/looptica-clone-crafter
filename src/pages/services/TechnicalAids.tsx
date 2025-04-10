@@ -465,7 +465,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="/images/brands/oticon/Oticon_TV_adapter-3.0.webp" 
+                    src="/images/brands/oticon/connect-tv-3.0-1.webp" 
                     alt="Oticon TV Adapter device"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
@@ -524,7 +524,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="/images/brands/oticon/imgbin-oticon-connect-line-tv-adapter-tv-3-0-for-opn-hearing-aids-oticon-remote-control-3-0-f-r-h-rger-te-remote-controls-iBXetExbkb2cRBkFrU22DPRFf.jpg" 
+                    src="/images/brands/oticon/oticon-oticon-remote-control-30-remote-control.webp" 
                     alt="Oticon Remote Control device"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
