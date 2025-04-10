@@ -347,7 +347,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="https://www.oticon.es/-/media/oticon/main/accessories/imgs/edumic/710x473px-edumic-w-background.png" 
+                    src="/images/brands/oticon/Oticon_EduMic_1000x1000.webp" 
                     alt="Oticon EduMic device"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
@@ -406,7 +406,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="https://www.oticon.es/-/media/oticon/main/accessories/imgs/connectclip/710x473px-connectclip-w-background.png" 
+                    src="/images/brands/oticon/connectclip-2-900-638x638.jpg" 
                     alt="Oticon ConnectClip device"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
@@ -465,7 +465,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="https://www.oticon.es/-/media/oticon/main/accessories/imgs/tv-adapter-3.0/710x473px-tv-adapter-3-0-w-background.png" 
+                    src="/images/brands/oticon/Oticon_TV_adapter-3.0.webp" 
                     alt="Oticon TV Adapter device"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
@@ -524,7 +524,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="https://www.oticon.es/-/media/oticon/main/accessories/imgs/remote-control-3.0/710x473px-remote-control-3-0-w-background.png" 
+                    src="/images/brands/oticon/imgbin-oticon-connect-line-tv-adapter-tv-3-0-for-opn-hearing-aids-oticon-remote-control-3-0-f-r-h-rger-te-remote-controls-iBXetExbkb2cRBkFrU22DPRFf.jpg" 
                     alt="Oticon Remote Control device"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
@@ -583,7 +583,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="https://www.oticon.es/-/media/oticon/main/accessories/imgs/charger/otico-more-smartcharger.png" 
+                    src="/images/brands/oticon/Oticon-Smart_Charger_angled.png" 
                     alt="Oticon SmartCharger device"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
