@@ -86,3 +86,17 @@ FileETag None
   AddOutputFilterByType DEFLATE font/woff
   AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
+
+# 301 Redirects for specified URLs
+Redirect 301 /en/contact-lenses-poblenou-barcelona/ https://www.looptica.com/services/lents-contacte
+Redirect 301 /lentillas-poblenou-barcelona/ https://www.looptica.com/services/lents-contacte
+
+Redirect 301 /cat/ https://www.looptica.com/
+Redirect 301 /en/ https://www.looptica.com/
+Redirect 301 /cat/?noredirect=ca-ES https://www.looptica.com/
+
+Redirect 301 /orto-k-poblenou-barcelona/ https://www.looptica.com/services/orto-k
+Redirect 301 /en/orto-k-in-poblenou-barcelona/ https://www.looptica.com/services/orto-k
+
+Redirect 301 /salud-visual-poblenou-barcelona/ https://www.looptica.com/services/salut-visual
+
