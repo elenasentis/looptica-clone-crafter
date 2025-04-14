@@ -22,17 +22,17 @@ const Index = () => {
   const content = {
     meta: {
       en: {
-        title: "Looptica - Optical and Audiology Services in Barcelona Poblenou | Glasses, Lenses, and Hearing Aids",
+        title: "Looptica - Optical and Audiology Services in Barcelona Poblenou | Glasses, Contact Lenses, and Hearing Aids",
         description: "Specialized center for optical and audiological services in Barcelona Poblenou. We offer eye exams, prescription glasses, contact lenses, hearing tests, hearing loss treatment, and high-quality digital hearing aids.",
         keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiology barcelona poblenou, hearing aids barcelona poblenou, hearing loss, hearing test barcelona poblenou, clinical audiology barcelona poblenou, hearing center barcelona poblenou"
       },
       es: {
-        title: "Looptica - Óptica y Audiología en Barcelona Poblenou | Gafas, Lentes y Audífonos",
-        description: "Centro especializado en servicios ópticos y audiológicos en Barcelona Poblenou. Ofrecemos exámenes visuales, gafas graduadas, lentes de contacto, pruebas auditivas, tratamiento de pérdida auditiva y audífonos digitales de alta calidad.",
+        title: "Looptica - Óptica y Audiología en Barcelona Poblenou | Gafas, Lentillas y Audífonos",
+        description: "Centro especializado en servicios ópticos y audiológicos en Barcelona Poblenou. Ofrecemos exámenes visuales, gafas graduadas, lentillas, pruebas auditivas, tratamiento de pérdida auditiva y audífonos digitales de alta calidad.",
         keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiología barcelona poblenou, audífonos barcelona poblenou, pérdida auditiva, prueba auditiva barcelona poblenou, audiología clínica barcelona poblenou, centro auditivo barcelona poblenou"
       },
       ca: {
-        title: "Looptica - Òptica i Audiologia a Barcelona Poblenou | Ulleres, Lents i Audiòfons",
+        title: "Looptica - Òptica i Audiologia a Barcelona Poblenou | Ulleres, Lents de Contacte i Audiòfons",
         description: "Centre especialitzat en serveis òptics i audiològics a Barcelona Poblenou. Oferim exàmens visuals, ulleres graduades, lents de contacte, proves auditives, tractament de pèrdua auditiva i audiòfons d'alta qualitat.",
         keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiologia barcelona poblenou, audiòfons barcelona poblenou, pèrdua auditiva, prova auditiva barcelona poblenou, audiologia clínica barcelona poblenou, centre auditiu barcelona poblenou"
       }
