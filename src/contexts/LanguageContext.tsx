@@ -104,7 +104,7 @@ export const translations: Translations = {
   opticalDescription: {
     en: 'Our certified opticians provide comprehensive visual assessments and personalized solutions to improve your visual health.',
     es: 'Nuestros ópticos optometristas graduados ofrecen servicios completos y soluciones personalizadas para mejorar tu salud visual.',
-    ca: 'Els nostres òptics optometristas graduats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
+    ca: 'Els nostres òptics optometristes graduats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
   },
   visualHealth: {
     en: 'Visual Health',
