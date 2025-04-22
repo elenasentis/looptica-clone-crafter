@@ -189,9 +189,44 @@ const AudiologiaCentro = () => {
           <p>{content.earProtectionDesc[language]}</p>
         </div>
       </ScrollReveal>
-      
+
+      {/* Improved Internal Linking Section */}
+      <div className="mt-10 pt-6 border-t border-gray-200 text-center">
+        <h4 className="text-lg font-semibold mb-2 text-[#55afa9]">
+          {language === 'en' && "Learn More"}
+          {language === 'es' && "Descubre Más"}
+          {language === 'ca' && "Descobreix Més"}
+        </h4>
+        <ul className="flex flex-wrap gap-4 justify-center">
+          <li>
+            <Link
+              to="/services/subvenciones"
+              className="text-[#55afa9] hover:underline font-medium"
+            >
+              {language === 'en'
+                ? "Explore financial aid & subsidies for hearing aids in Catalonia"
+                : language === 'es'
+                ? "Descubre las subvenciones para audífonos en Cataluña"
+                : "Descobreix les subvencions per a audiòfons a Catalunya"}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/services/contact-lenses"
+              className="text-[#55afa9] hover:underline font-medium"
+            >
+              {language === 'en'
+                ? "Contact lens fitting for presbyopia, myopia, and children"
+                : language === 'es'
+                ? "Adaptación de lentes de contacto para presbicia, miopía y niños"
+                : "Adaptació de lents de contacte per presbícia, miopia i infants"}
+            </Link>
+          </li>
+        </ul>
+      </div>
     </ServiceLayout>
   );
 };
 
 export default AudiologiaCentro;
+
