@@ -188,68 +188,9 @@ const Index = () => {
           chatMessage={content.whatsapp.chatMessage[language]}
           placeholder={content.whatsapp.placeholder[language]}
         />
-        {/* Improved Internal Linking Section */}
-        <div className="container mx-auto px-4 py-12 mt-6 border-t border-gray-100">
-          <h3 className="text-xl font-semibold mb-4 text-[#55afa9] text-center">
-            {language === 'en' && "Explore Our Specialized Services"}
-            {language === 'es' && "Explora Nuestros Servicios Especializados"}
-            {language === 'ca' && "Explora els Nostres Serveis Especialitzats"}
-          </h3>
-          <ul className="flex flex-wrap justify-center gap-4 text-center">
-            <li>
-              <Link
-                to="/services/audiologia-centro"
-                className="text-[#55afa9] hover:underline font-medium"
-              >
-                {language === 'en'
-                  ? "Comprehensive hearing care and digital hearing aid fitting"
-                  : language === 'es'
-                  ? "Soluciones auditivas y adaptación de audífonos digitales"
-                  : "Solucions auditives i adaptació d'audiòfons digitals"}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services/subvenciones"
-                className="text-[#55afa9] hover:underline font-medium"
-              >
-                {language === 'en'
-                  ? "Learn about hearing aid financial aid in Catalonia"
-                  : language === 'es'
-                  ? "Infórmate sobre ayudas para audífonos en Cataluña"
-                  : "Informa't sobre ajudes per a audiòfons a Catalunya"}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services/contact-lenses"
-                className="text-[#55afa9] hover:underline font-medium"
-              >
-                {language === 'en'
-                  ? "Personalized contact lens fitting for all visual profiles"
-                  : language === 'es'
-                  ? "Adaptación personalizada de lentes de contacto"
-                  : "Adaptació personalitzada de lents de contacte"}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services/OrtoK"
-                className="text-[#55afa9] hover:underline font-medium"
-              >
-                {language === 'en'
-                  ? "Overnight Ortho-K lenses for day-time vision, surgery-free"
-                  : language === 'es'
-                  ? "Lentes Orto-K nocturnas para visión diurna sin cirugía"
-                  : "Lents Orto-K nocturnes per a visió diürna sense cirurgia"}
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </>
   );
 };
 
 export default Index;
-

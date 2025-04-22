@@ -207,44 +207,9 @@ const Subvenciones = () => {
             <p className="text-gray-700">{content.consultation[language]}</p>
           </div>
         </div>
-        {/* Improved Internal Linking Section */}
-        <div className="mt-10 pt-6 border-t border-gray-200 text-center">
-          <h4 className="text-lg font-semibold mb-2 text-[#55afa9]">
-            {language === 'en' && "Related Services"}
-            {language === 'es' && "Servicios Relacionados"}
-            {language === 'ca' && "Serveis Relacionats"}
-          </h4>
-          <ul className="flex flex-wrap gap-4 justify-center">
-            <li>
-              <Link
-                to="/services/audiologia-centro"
-                className="text-[#55afa9] hover:underline font-medium"
-              >
-                {language === 'en'
-                  ? "Audiology: Professional hearing tests & digital aids in Barcelona"
-                  : language === 'es'
-                  ? "Audiología: Pruebas auditivas profesionales y audífonos digitales en Barcelona"
-                  : "Audiologia: Proves auditives professionals i audiòfons digitals a Barcelona"}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services/contact-lenses"
-                className="text-[#55afa9] hover:underline font-medium"
-              >
-                {language === 'en'
-                  ? "Contact Lenses: Custom solutions and Ortho-K for visual needs"
-                  : language === 'es'
-                  ? "Lentes de Contacto: Soluciones personalizadas y Orto-K"
-                  : "Lents de Contacte: Solucions personalitzades i Orto-K"}
-              </Link>
-            </li>
-          </ul>
-        </div>
       </ServiceLayout>
     </>
   );
 };
 
 export default Subvenciones;
-
