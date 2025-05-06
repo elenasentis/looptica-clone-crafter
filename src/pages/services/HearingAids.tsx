@@ -231,9 +231,7 @@ const HearingAids = () => {
       title={content.title[language]}
       subtitle={content.subtitle[language]}
       image="/images/oticon_xceed_connectivity_iphone_x_nds_199359.jpg"
-      appointmentSubject={language === 'es' ? "Consulta de Audífonos en Looptica Barcelona Poblenou" : 
-                        language === 'ca' ? "Consulta d'Audiòfons a Looptica Barcelona Poblenou" : 
-                        "Hearing Aids Consultation at Looptica Barcelona Poblenou"}
+      appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
         <div className="prose prose-lg max-w-none mb-12">
@@ -329,34 +327,42 @@ const HearingAids = () => {
           <p>
             {content.processIntro[language]}
           </p>
-          <ol>
+          <ol className="space-y-4 pl-6">
             <li>
-              <strong>{content.step1[language]}</strong>
+              <p className="font-medium">{content.step1[language].split(':')[0]}:</p>
+              <p>{content.step1[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.step2[language]}</strong>
+              <p className="font-medium">{content.step2[language].split(':')[0]}:</p>
+              <p>{content.step2[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.step3[language]}</strong>
+              <p className="font-medium">{content.step3[language].split(':')[0]}:</p>
+              <p>{content.step3[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.step4[language]}</strong>
+              <p className="font-medium">{content.step4[language].split(':')[0]}:</p>
+              <p>{content.step4[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.step5[language]}</strong>
+              <p className="font-medium">{content.step5[language].split(':')[0]}:</p>
+              <p>{content.step5[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.step6[language]}</strong>
+              <p className="font-medium">{content.step6[language].split(':')[0]}:</p>
+              <p>{content.step6[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.step7[language]}</strong>
+              <p className="font-medium">{content.step7[language].split(':')[0]}:</p>
+              <p>{content.step7[language].split(':')[1]}</p>
             </li>
           </ol>
+          
           <h3>{content.brandsTitle[language]}</h3>
           <p>
             {content.brandsIntro[language]}
           </p>
-          <ul>
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 pl-6">
             <li>Oticon</li>
             <li>Phonak</li>
             <li>ReSound</li>
@@ -364,11 +370,12 @@ const HearingAids = () => {
             <li>Starkey</li>
             <li>Widex</li>
           </ul>
+          
           <h3>{content.supportTitle[language]}</h3>
           <p>
             {content.supportIntro[language]}
           </p>
-          <ul>
+          <ul className="space-y-2 pl-6">
             <li>{content.service1[language]}</li>
             <li>{content.service2[language]}</li>
             <li>{content.service3[language]}</li>

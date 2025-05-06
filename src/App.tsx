@@ -30,6 +30,9 @@ import AudiologiaCentro from './pages/services/AudiologiaCentro';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsConditions from './pages/legal/TermsConditions';
 import CookiesPolicy from './pages/legal/CookiesPolicy';
+// Import new Oticon pages
+import OticonModels from './pages/products/OticonModels';
+import OticonModelPage from './pages/products/OticonModelPage';
 import './App.css';
 
 // Google Analytics page tracker component
@@ -57,7 +60,6 @@ function App() {
         <Router>
           <RedirectHandler />
           <PageTracker />
-          <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
             {/* About Page */}
@@ -80,6 +82,9 @@ function App() {
             <Route path="/services/subvenciones" element={<Subvenciones />} />
             {/* Audiology Landing Page */}
             <Route path="/services/audiologia-centro" element={<AudiologiaCentro />} />
+            {/* Oticon Models Pages (hidden, only accessible via direct link) */}
+            <Route path="/products/oticon-models" element={<OticonModels />} />
+            <Route path="/products/oticon-models/:id" element={<OticonModelPage />} />
             {/* Legal Pages */}
             <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/legal/terms-conditions" element={<TermsConditions />} />

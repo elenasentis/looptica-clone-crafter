@@ -1,13 +1,14 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ServiceLayout from '@/components/layout/ServiceLayout';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { BadgeDollarSign, FileText, Landmark, PiggyBank } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Subvenciones = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   // Content organized by language
   const content = {

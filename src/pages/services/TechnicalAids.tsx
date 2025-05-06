@@ -3,10 +3,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Helmet } from 'react-helmet-async';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Zap, Headphones, Radio, Wifi, Smartphone, Award, Monitor, Bluetooth } from 'lucide-react';
+import { Zap, Headphones, Radio, Wifi, Smartphone, Award, Monitor, Bluetooth, Ear } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import Footer from '@/components/layout/Footer';
+import { Link } from 'react-router-dom';
 
 const TechnicalAids = () => {
   const { t, language } = useLanguage();
@@ -25,6 +27,62 @@ const TechnicalAids = () => {
       ca: {
         title: "Ajudes Tècniques per a Pèrdua Auditiva | Looptica Barcelona",
         description: "Descobreix la nostra gamma d'ajudes tècniques especialitzades per a pèrdua auditiva, incloent Oticon EduMic, ConnectClip, TV Adapter, Control Remot i més a Looptica Barcelona."
+      }
+    },
+    audiofonsDigitals: {
+      en: {
+        title: "Digital Hearing Aids",
+        description: "State-of-the-art digital hearing aids that offer advanced sound processing, connectivity features, and personalized listening experiences for various hearing loss needs.",
+        features: [
+          "Advanced digital sound processing technology",
+          "Bluetooth connectivity for seamless device pairing",
+          "Rechargeable options with long battery life",
+          "Discreet and comfortable designs for all-day wear"
+        ],
+        benefits: [
+          "Improved speech understanding even in noisy environments",
+          "Personalized sound profiles tailored to individual hearing needs",
+          "Direct streaming from smartphones and other digital devices",
+          "Reduced listening effort and fatigue",
+          "Enhanced overall quality of life"
+        ],
+        buttonText: "Explore Digital Hearing Aids"
+      },
+      es: {
+        title: "Audífonos Digitales",
+        description: "Audífonos digitales de última generación que ofrecen procesamiento avanzado del sonido, funciones de conectividad y experiencias de escucha personalizadas para diversas necesidades de pérdida auditiva.",
+        features: [
+          "Tecnología avanzada de procesamiento digital de sonido",
+          "Conectividad Bluetooth para emparejamiento perfecto con dispositivos",
+          "Opciones recargables con larga duración de batería",
+          "Diseños discretos y cómodos para uso durante todo el día"
+        ],
+        benefits: [
+          "Mejor comprensión del habla incluso en entornos ruidosos",
+          "Perfiles de sonido personalizados adaptados a necesidades auditivas individuales",
+          "Transmisión directa desde smartphones y otros dispositivos digitales",
+          "Menor esfuerzo de escucha y fatiga",
+          "Mejor calidad de vida en general"
+        ],
+        buttonText: "Explorar Audífonos Digitales"
+      },
+      ca: {
+        title: "Audiòfons Digitals",
+        description: "Audiòfons digitals d'última generació que ofereixen processament avançat del so, funcions de connectivitat i experiències d'escolta personalitzades per a diverses necessitats de pèrdua auditiva.",
+        features: [
+          "Tecnologia avançada de processament digital de so",
+          "Connectivitat Bluetooth per a emparellament perfecte amb dispositius",
+          "Opcions recarregables amb llarga durada de bateria",
+          "Dissenys discrets i còmodes per a ús durant tot el dia"
+        ],
+        benefits: [
+          "Millor comprensió de la parla fins i tot en entorns sorollosos",
+          "Perfils de so personalitzats adaptats a necessitats auditives individuals",
+          "Transmissió directa des de smartphones i altres dispositius digitals",
+          "Menor esforç d'escolta i fatiga",
+          "Millor qualitat de vida en general"
+        ],
+        buttonText: "Explorar Audiòfons Digitals"
       }
     },
     edumic: {
@@ -299,6 +357,73 @@ const TechnicalAids = () => {
           <p className="text-gray-700 mb-8">
             {t('technicalAidsIntro')}
           </p>
+          
+          <ScrollReveal>
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Ear className="mr-2 h-6 w-6 text-[#55afa9]" /> 
+                  {content.audiofonsDigitals[language].title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <p className="text-gray-700 mb-4">{content.audiofonsDigitals[language].description}</p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4 flex items-center">
+                        <Zap className="mr-2 h-5 w-5 text-[#55afa9]" /> 
+                        {language === 'en' ? 'Key Features' : (language === 'es' ? 'Características Principales' : 'Característiques Principals')}
+                      </h3>
+                      <ul className="space-y-2">
+                        {content.audiofonsDigitals[language].features.map((feature, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-[#55afa9] mr-2">•</span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg font-semibold mb-4 flex items-center">
+                        <Headphones className="mr-2 h-5 w-5 text-[#55afa9]" /> 
+                        {language === 'en' ? 'Benefits' : (language === 'es' ? 'Beneficios' : 'Beneficis')}
+                      </h3>
+                      <ul className="space-y-2">
+                        {content.audiofonsDigitals[language].benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-[#55afa9] mr-2">•</span>
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-6">
+                  <img 
+                    src="/images/brands/oticon/Oticon_EduMic_1000x1000.webp" 
+                    alt="Digital hearing aids"
+                    className="w-full h-64 object-contain rounded-lg shadow-md my-8"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <div className="flex justify-center">
+                  <Link to="/services/hearing-aids">
+                    <Button className="bg-[#55afa9] hover:bg-[#3d7d78]">
+                      {content.audiofonsDigitals[language].buttonText}
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+          
+          <Separator className="my-12" />
           
           <ScrollReveal>
             <Card className="mb-8">
