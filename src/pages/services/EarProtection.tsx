@@ -255,7 +255,7 @@ const EarProtection = () => {
     >
       <ScrollReveal>
         <div className="prose prose-lg max-w-none mb-12">
-          <h2>{content.introTitle[language]}</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">{content.introTitle[language]}</h2>
           <p>{content.intro1[language]}</p>
           <p>{content.intro2[language]}</p>
         </div>
@@ -263,15 +263,15 @@ const EarProtection = () => {
 
       <ScrollReveal>
         <div className="bg-gray-50 p-8 rounded-lg mb-12">
-          <h3 className="text-2xl font-semibold mb-6">{content.importanceTitle[language]}</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">{content.importanceTitle[language]}</h3>
           
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="flex gap-4">
               <div className="bg-[#55afa9] rounded-full p-3 h-fit">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="text-xl font-medium mb-2">{content.precisionTitle[language]}</h4>
+                <h4 className="text-xl font-bold mb-2">{content.precisionTitle[language]}</h4>
                 <p>{content.precisionDesc[language]}</p>
               </div>
             </div>
@@ -281,7 +281,7 @@ const EarProtection = () => {
                 <Music className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="text-xl font-medium mb-2">{content.soundTitle[language]}</h4>
+                <h4 className="text-xl font-bold mb-2">{content.soundTitle[language]}</h4>
                 <p>{content.soundDesc[language]}</p>
               </div>
             </div>
@@ -291,7 +291,7 @@ const EarProtection = () => {
                 <Headphones className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="text-xl font-medium mb-2">{content.comfortTitle[language]}</h4>
+                <h4 className="text-xl font-bold mb-2">{content.comfortTitle[language]}</h4>
                 <p>{content.comfortDesc[language]}</p>
               </div>
             </div>
@@ -301,7 +301,7 @@ const EarProtection = () => {
                 <Droplet className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="text-xl font-medium mb-2">{content.durabilityTitle[language]}</h4>
+                <h4 className="text-xl font-bold mb-2">{content.durabilityTitle[language]}</h4>
                 <p>{content.durabilityDesc[language]}</p>
               </div>
             </div>
@@ -311,36 +311,36 @@ const EarProtection = () => {
 
       <ScrollReveal>
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6">{content.solutionsTitle[language]}</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">{content.solutionsTitle[language]}</h3>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">{content.musiciansTitle[language]}</h4>
+              <h4 className="text-xl font-bold mb-3">{content.musiciansTitle[language]}</h4>
               <p>{content.musiciansDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">{content.industrialTitle[language]}</h4>
+              <h4 className="text-xl font-bold mb-3">{content.industrialTitle[language]}</h4>
               <p>{content.industrialDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">{content.shootingTitle[language]}</h4>
+              <h4 className="text-xl font-bold mb-3">{content.shootingTitle[language]}</h4>
               <p>{content.shootingDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">{content.motorTitle[language]}</h4>
+              <h4 className="text-xl font-bold mb-3">{content.motorTitle[language]}</h4>
               <p>{content.motorDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">{content.swimTitle[language]}</h4>
+              <h4 className="text-xl font-bold mb-3">{content.swimTitle[language]}</h4>
               <p>{content.swimDesc[language]}</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2">{content.sleepTitle[language]}</h4>
+              <h4 className="text-xl font-bold mb-3">{content.sleepTitle[language]}</h4>
               <p>{content.sleepDesc[language]}</p>
             </div>
           </div>
@@ -349,35 +349,36 @@ const EarProtection = () => {
 
       <ScrollReveal>
         <div className="prose prose-lg max-w-none mb-12">
-          <h2>{content.processTitle[language]}</h2>
-          <p>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">{content.processTitle[language]}</h2>
+          <p className="mb-6">
             {content.processIntro[language]}
           </p>
-          <ol>
+          <ol className="space-y-4 list-decimal pl-5">
             <li>
-              <strong>{content.consultation[language]}</strong>
+              <p className="m-0"><span className="font-bold">{content.consultation[language].split(':')[0]}:</span> {content.consultation[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.impression[language]}</strong>
+              <p className="m-0"><span className="font-bold">{content.impression[language].split(':')[0]}:</span> {content.impression[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.design[language]}</strong>
+              <p className="m-0"><span className="font-bold">{content.design[language].split(':')[0]}:</span> {content.design[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.manufacturing[language]}</strong>
+              <p className="m-0"><span className="font-bold">{content.manufacturing[language].split(':')[0]}:</span> {content.manufacturing[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.fitting[language]}</strong>
+              <p className="m-0"><span className="font-bold">{content.fitting[language].split(':')[0]}:</span> {content.fitting[language].split(':')[1]}</p>
             </li>
             <li>
-              <strong>{content.followup[language]}</strong>
+              <p className="m-0"><span className="font-bold">{content.followup[language].split(':')[0]}:</span> {content.followup[language].split(':')[1]}</p>
             </li>
           </ol>
-          <h3>{content.whenTitle[language]}</h3>
-          <p>
+          
+          <h3 className="text-xl font-bold text-gray-800 mt-10 mb-4">{content.whenTitle[language]}</h3>
+          <p className="mb-6">
             {content.whenIntro[language]}
           </p>
-          <ul>
+          <ul className="space-y-2 list-disc pl-5">
             <li>{content.situation1[language]}</li>
             <li>{content.situation2[language]}</li>
             <li>{content.situation3[language]}</li>
@@ -387,8 +388,8 @@ const EarProtection = () => {
             <li>{content.situation7[language]}</li>
             <li>{content.situation8[language]}</li>
           </ul>
-          <p>
-            {content.outro[language]}
+          <p className="mt-6">
+            <strong>{content.outro[language]}</strong>
           </p>
         </div>
       </ScrollReveal>

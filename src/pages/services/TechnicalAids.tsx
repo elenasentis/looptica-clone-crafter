@@ -405,7 +405,7 @@ const TechnicalAids = () => {
                 
                 <div className="mt-6">
                   <img 
-                    src="/images/oticon_intent_still_life.jpg" 
+                    src="/images/oticonmoreminiritet.jpg" 
                     alt="Digital hearing aids"
                     className="w-full h-64 object-contain rounded-lg shadow-md my-8"
                     loading="lazy"
