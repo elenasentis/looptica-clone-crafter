@@ -355,22 +355,22 @@ const EarProtection = () => {
           </p>
           <ol className="space-y-4 list-decimal pl-5">
             <li>
-              <p className="m-0"><span className="font-bold">1. {content.consultation[language].split(':')[0]}:</span> {content.consultation[language].split(':')[1]}</p>
+              <p className="m-0"><span className="font-bold">{content.consultation[language].split(':')[0]}:</span> {content.consultation[language].split(':')[1]}</p>
             </li>
             <li>
-              <p className="m-0"><span className="font-bold">2. {content.impression[language].split(':')[0]}:</span> {content.impression[language].split(':')[1]}</p>
+              <p className="m-0"><span className="font-bold">{content.impression[language].split(':')[0]}:</span> {content.impression[language].split(':')[1]}</p>
             </li>
             <li>
-              <p className="m-0"><span className="font-bold">3. {content.design[language].split(':')[0]}:</span> {content.design[language].split(':')[1]}</p>
+              <p className="m-0"><span className="font-bold">{content.design[language].split(':')[0]}:</span> {content.design[language].split(':')[1]}</p>
             </li>
             <li>
-              <p className="m-0"><span className="font-bold">4. {content.manufacturing[language].split(':')[0]}:</span> {content.manufacturing[language].split(':')[1]}</p>
+              <p className="m-0"><span className="font-bold">{content.manufacturing[language].split(':')[0]}:</span> {content.manufacturing[language].split(':')[1]}</p>
             </li>
             <li>
-              <p className="m-0"><span className="font-bold">5. {content.fitting[language].split(':')[0]}:</span> {content.fitting[language].split(':')[1]}</p>
+              <p className="m-0"><span className="font-bold">{content.fitting[language].split(':')[0]}:</span> {content.fitting[language].split(':')[1]}</p>
             </li>
             <li>
-              <p className="m-0"><span className="font-bold">6. {content.followup[language].split(':')[0]}:</span> {content.followup[language].split(':')[1]}</p>
+              <p className="m-0"><span className="font-bold">{content.followup[language].split(':')[0]}:</span> {content.followup[language].split(':')[1]}</p>
             </li>
           </ol>
           
