@@ -10,17 +10,17 @@ import {
 } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-// Updated brands array using uploaded images
+// Updated brands array using JPG files instead of PNG
 const brands = [
   { 
     id: 1, 
     name: "Woodys", 
-    logo: "/lovable-uploads/9fbf92da-415f-43d4-a177-3de7dcb1195a.png" 
+    logo: "/lovable-uploads/9fbf92da-415f-43d4-a177-3de7dcb1195a.jpg" 
   },
   { 
     id: 2, 
     name: "Etnia Barcelona", 
-    logo: "/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.png" 
+    logo: "/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.jpg" 
   },
   { 
     id: 3, 

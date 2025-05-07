@@ -15,7 +15,7 @@ const Products = () => {
       name: t('eyeglasses'),
       category: t('eyeglasses'),
       price: '89€',
-      image: '/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.png',
+      image: '/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.jpg',
       link: '/services/eyeglasses'
     },
     {

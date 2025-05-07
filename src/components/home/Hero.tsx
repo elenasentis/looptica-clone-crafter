@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -8,23 +8,17 @@ import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 
 const Hero = () => {
   const { t } = useLanguage();
-  const [backgroundImage, setBackgroundImage] = useState('/images/DSC4608_compressed.jpg');
   const [isLoaded, setIsLoaded] = useState(false);
   
-  useEffect(() => {
-    // First load the page with the compressed image
-    const img = new Image();
-    img.src = '/images/DSC4608.jpg';
-    
-    // When the high-quality image is loaded, switch to it
-    img.onload = () => {
-      setBackgroundImage('/images/DSC4608.jpg');
+  // Use only the compressed version of the image
+  useState(() => {
+    // Mark as loaded after a short delay to ensure smooth transition
+    const timer = setTimeout(() => {
       setIsLoaded(true);
-    };
+    }, 200);
     
     return () => {
-      // Cleanup
-      img.onload = null;
+      clearTimeout(timer);
     };
   }, []);
   
@@ -32,7 +26,7 @@ const Hero = () => {
     <section 
       className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden"
       style={{
-        backgroundImage: `url('${backgroundImage}')`,
+        backgroundImage: "url('/images/DSC4608_compressed.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
