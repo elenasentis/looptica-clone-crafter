@@ -60,10 +60,6 @@ const CriticalStyles: React.FC = () => {
           (heroImage as HTMLImageElement).fetchPriority = 'high';
         }
         
-        // Set loading and decoding attributes
-        (heroImage as HTMLImageElement).loading = 'eager';
-        (heroImage as HTMLImageElement).decoding = 'async';
-        
         // Remove any opacity transitions that might delay rendering
         (heroImage as HTMLImageElement).style.transition = 'none';
         (heroImage as HTMLImageElement).style.opacity = '1';
