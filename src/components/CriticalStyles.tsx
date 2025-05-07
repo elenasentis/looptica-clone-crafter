@@ -29,6 +29,26 @@ const CriticalStyles: React.FC = () => {
       });
     };
     
+    // Load remaining font weights that weren't preloaded in the <head>
+    const loadNonCriticalFonts = () => {
+      const fontWeights = [
+        { weight: 300, file: 'Poppins-Light.ttf' },
+        { weight: 600, file: 'Poppins-SemiBold.ttf' },
+        { weight: 700, file: 'Poppins-Bold.ttf' },
+        { weight: 800, file: 'Poppins-ExtraBold.ttf' }
+      ];
+      
+      fontWeights.forEach(font => {
+        const fontLink = document.createElement('link');
+        fontLink.rel = 'preload';
+        fontLink.href = `/fonts/poppins/${font.file}`;
+        fontLink.as = 'font';
+        fontLink.type = 'font/ttf';
+        fontLink.crossOrigin = 'anonymous';
+        document.head.appendChild(fontLink);
+      });
+    };
+    
     // Optimize image loading strategy
     const optimizeImages = () => {
       // Find all images that aren't explicitly marked with loading attributes
@@ -62,17 +82,19 @@ const CriticalStyles: React.FC = () => {
       });
     };
     
-    // Load non-critical CSS after the main content is loaded
+    // Load non-critical resources after the main content is loaded
     if (typeof window !== 'undefined') {
       // Use requestIdleCallback if available, otherwise setTimeout
       if ('requestIdleCallback' in window) {
         (window as any).requestIdleCallback(() => {
           loadNonCriticalCSS();
+          loadNonCriticalFonts();
           optimizeImages();
         });
       } else {
         setTimeout(() => {
           loadNonCriticalCSS();
+          loadNonCriticalFonts();
           optimizeImages();
         }, 200);
       }
@@ -81,7 +103,6 @@ const CriticalStyles: React.FC = () => {
     // Add a class to the body when critical styles are loaded
     document.body.classList.add('critical-loaded');
     
-    // This helps with debugging
     console.log('Critical styles and optimizations applied');
   }, []);
 
