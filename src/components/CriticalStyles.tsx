@@ -6,6 +6,17 @@ const CriticalStyles: React.FC = () => {
   useEffect(() => {
     // Function to load non-critical CSS after main content is loaded
     const loadNonCriticalCSS = () => {
+      // Create link for main stylesheet with non-blocking loading
+      const mainStylesheet = document.createElement('link');
+      mainStylesheet.rel = 'stylesheet';
+      mainStylesheet.href = '/assets/index-Dr1koqt0.css'; // Update this to match your actual CSS filename
+      mainStylesheet.media = 'print';
+      mainStylesheet.onload = () => {
+        mainStylesheet.media = 'all';
+      };
+      document.head.appendChild(mainStylesheet);
+      
+      // Add other non-critical stylesheets here if needed
       const nonCriticalStyles = [
         // Add paths to non-critical stylesheets here if needed
       ];
