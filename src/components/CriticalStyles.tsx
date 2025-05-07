@@ -49,10 +49,27 @@ const CriticalStyles: React.FC = () => {
       });
     };
     
-    // Optimize image loading strategy
+    // Optimize hero image loading strategy - improved for better LCP
+    const optimizeHeroImage = () => {
+      // Find the hero image that needs highest priority
+      const heroImage = document.querySelector('img[alt="Looptica Hero"]');
+      
+      if (heroImage) {
+        // Apply high priority explicitly through JS as backup
+        if ('fetchPriority' in heroImage) {
+          (heroImage as HTMLImageElement).fetchPriority = 'high';
+        }
+        
+        // Remove any opacity transitions that might delay rendering
+        (heroImage as HTMLImageElement).style.transition = 'none';
+        (heroImage as HTMLImageElement).style.opacity = '1';
+      }
+    };
+    
+    // Optimize image loading strategy for non-hero images
     const optimizeImages = () => {
-      // Find all images that aren't explicitly marked with loading attributes
-      const images = document.querySelectorAll('img:not([loading])');
+      // Find all images that aren't explicitly marked with loading attributes and aren't the hero
+      const images = document.querySelectorAll('img:not([loading]):not([alt="Looptica Hero"])');
       
       // Check if we're in the viewport for each image
       const io = new IntersectionObserver((entries) => {
@@ -81,6 +98,9 @@ const CriticalStyles: React.FC = () => {
         io.observe(image);
       });
     };
+    
+    // Optimize hero image immediately, don't wait for idle time
+    optimizeHeroImage();
     
     // Load non-critical resources after the main content is loaded
     if (typeof window !== 'undefined') {

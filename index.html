@@ -29,14 +29,14 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.looptica.com/" />
 
-    <!-- Preload hero image with high fetchpriority -->
-    <link rel="preload" as="image" href="/images/DSC4608_compressed.jpg" fetchpriority="high" />
+    <!-- Improved preload for hero image with high fetchpriority and importance -->
+    <link rel="preload" as="image" href="/images/DSC4608_compressed.jpg" fetchpriority="high" importance="high" />
     
-    <!-- Preload critical font files -->
-    <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossorigin />
+    <!-- Preload critical font files with improved attributes -->
+    <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" fetchpriority="high" />
+    <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous" fetchpriority="high" />
     
-    <!-- Inline critical CSS for hero section -->
+    <!-- Inline critical CSS for hero section with enhanced coverage -->
     <style>
       .hero-section {
         position: relative;
@@ -67,6 +67,28 @@
         margin-left: auto;
         margin-right: auto;
       }
+      /* Static hero image rendition for immediate display before JS loads */
+      #static-hero {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9;
+        background-image: url('/images/DSC4608_compressed.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 1;
+      }
+      #static-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+      }
+      /* Hide static hero when real content loads */
+      .loaded #static-hero {
+        display: none;
+      }
       @media (min-width: 1024px) {
         .hero-content {
           display: grid;
@@ -74,6 +96,15 @@
           gap: 6rem;
           align-items: center;
         }
+      }
+      
+      /* Glass effect for immediate visual feedback */
+      .glass {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 0.75rem;
       }
       
       /* Inline critical font styles */
@@ -94,9 +125,24 @@
       }
     </style>
     
+    <!-- Script to mark loading completion and remove static hero -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Mark the page as loaded after a short delay to ensure React has rendered
+        setTimeout(function() {
+          document.body.classList.add('loaded');
+        }, 500);
+      });
+    </script>
+    
     <!-- Preload critical CSS instead of blocking with link tags -->
     <link rel="preload" href="/src/index.css" as="style">
     <link rel="preload" href="/src/App.css" as="style">
+
+    <!-- Static hero placeholder that displays immediately before any JS loads -->
+    <div id="static-hero">
+      <div id="static-hero-overlay"></div>
+    </div>
 
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:title" content="Looptica - Óptica y Audiología en Barcelona Poblenou | Centro Auditivo Especializado" />
