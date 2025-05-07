@@ -29,8 +29,9 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.looptica.com/" />
 
-    <!-- Improved preload for hero image with high fetchpriority and importance -->
-    <link rel="preload" as="image" href="/images/DSC4608_compressed.jpg" fetchpriority="high" importance="high" />
+    <!-- Improved preload with WebP and JPEG fallback -->
+    <link rel="preload" as="image" href="/images/DSC4608_compressed.webp" type="image/webp" fetchpriority="high" importance="high" />
+    <link rel="preload" as="image" href="/images/DSC4608_compressed.jpg" type="image/jpeg" fetchpriority="high" importance="high" />
     
     <!-- Preload critical font files with improved attributes -->
     <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" fetchpriority="high" />
@@ -75,10 +76,13 @@
         width: 100%;
         height: 100vh;
         z-index: 9;
-        background-image: url('/images/DSC4608_compressed.jpg');
-        background-size: cover;
-        background-position: center;
+        background: none;
         opacity: 1;
+      }
+      #static-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       #static-hero-overlay {
         position: absolute;
@@ -139,8 +143,13 @@
     <link rel="preload" href="/src/index.css" as="style">
     <link rel="preload" href="/src/App.css" as="style">
 
-    <!-- Static hero placeholder that displays immediately before any JS loads -->
+    <!-- Static hero placeholder using picture element for WebP support -->
     <div id="static-hero">
+      <picture>
+        <source srcset="/images/DSC4608_compressed.webp" type="image/webp">
+        <img src="/images/DSC4608_compressed.jpg" alt="Static Hero" width="1920" height="1080" 
+             fetchpriority="high" decoding="async" loading="eager">
+      </picture>
       <div id="static-hero-overlay"></div>
     </div>
 
