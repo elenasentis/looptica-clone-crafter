@@ -135,7 +135,7 @@ const LensConsulting = () => {
       <ServiceLayout
         title={content.hero[language].title}
         subtitle={content.hero[language].subtitle}
-        image="/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png"
+        image="/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.jpeg"
         appointmentSubject={content.hero[language].appointmentSubject}
       >
         <ScrollReveal>

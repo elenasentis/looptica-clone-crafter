@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -30,41 +29,9 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // If the image path includes a high-resolution image, try to find a compressed version
-    const imagePath = image;
-    const imageNameParts = imagePath.split('.');
-    const imageExt = imageNameParts.pop() || 'jpg';
-    const imageName = imageNameParts.join('.');
-    const compressedImagePath = `${imageName}_compressed.${imageExt}`;
-
-    // First set the image to whatever was provided
+    // Use the provided image directly
     setLoadedImage(image);
-    
-    // Check if a compressed version exists, if so use that while loading the high-res version
-    const checkCompressedExists = () => {
-      const img = new Image();
-      img.onload = () => {
-        // Compressed image exists, use it while we load the high-res
-        setLoadedImage(compressedImagePath);
-        
-        // Now load the high-res version
-        const highResImg = new Image();
-        highResImg.onload = () => {
-          setLoadedImage(image);
-          setIsImageLoaded(true);
-        };
-        highResImg.src = image;
-      };
-      img.onerror = () => {
-        // No compressed version, just load the original
-        setLoadedImage(image);
-        setIsImageLoaded(true);
-      };
-      img.src = compressedImagePath;
-    };
-    
-    // Try to find and use a compressed version
-    checkCompressedExists();
+    setIsImageLoaded(true);
   }, [image]);
 
   // Translations for WhatsApp component

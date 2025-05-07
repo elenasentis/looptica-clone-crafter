@@ -135,7 +135,7 @@ const AudiologiaCentro = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.png"
+      image="/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.jpg"
       appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
