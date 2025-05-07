@@ -4,31 +4,23 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 
-// Optimized Hero component with responsive images and WebP support
+// Optimized Hero component to improve LCP
 const Hero = () => {
   const { t } = useLanguage();
   const heroImageRef = useRef<HTMLImageElement>(null);
   
   return (
     <section className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden">
-      {/* Hero image with picture element for better browser optimization */}
-      <picture>
-        <source 
-          srcSet="/images/DSC4608_compressed.webp" 
-          type="image/webp" 
-        />
-        <img
-          ref={heroImageRef}
-          src="/images/DSC4608_compressed.jpg"
-          alt="Looptica Hero"
-          className="absolute inset-0 w-full h-full object-cover"
-          width={1920}
-          height={1080}
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-        />
-      </picture>
+      {/* Hero image without state-based opacity handling */}
+      <img
+        ref={heroImageRef}
+        src="/images/DSC4608_compressed.jpg"
+        alt="Looptica Hero"
+        className="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+      />
       
       {/* Semi-transparent overlay with reduced opacity */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/30"></div>

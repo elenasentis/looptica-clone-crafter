@@ -60,34 +60,9 @@ const CriticalStyles: React.FC = () => {
           (heroImage as HTMLImageElement).fetchPriority = 'high';
         }
         
-        // Support for WebP images - check if browser supports WebP
-        const testWebP = () => {
-          const webP = new Image();
-          webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-          return webP.onload;
-        };
-        
-        // If WebP is supported, switch sources dynamically
-        if (testWebP()) {
-          const picture = heroImage.closest('picture');
-          if (picture) {
-            const webpSource = picture.querySelector('source[type="image/webp"]');
-            if (webpSource) {
-              (webpSource as HTMLSourceElement).srcset = '/images/DSC4608_compressed.webp';
-            }
-          }
-        }
-        
         // Remove any opacity transitions that might delay rendering
         (heroImage as HTMLImageElement).style.transition = 'none';
         (heroImage as HTMLImageElement).style.opacity = '1';
-        
-        // Decode the image asynchronously
-        if ('decode' in heroImage) {
-          (heroImage as HTMLImageElement).decode().catch(() => {
-            // Silently handle decode errors
-          });
-        }
       }
     };
     
