@@ -43,7 +43,7 @@ const OpticalServices = () => {
       icon: <Glasses className="w-10 h-10 text-[#55afa9]" />,
       title: t('lensConsulting'),
       description: t('lensConsultingDesc'),
-      image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.jpg",
+      image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.jpeg",
       path: "/services/lens-consulting"
     }
   ];
