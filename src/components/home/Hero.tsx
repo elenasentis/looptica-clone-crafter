@@ -1,4 +1,5 @@
 
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -7,16 +8,36 @@ import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [backgroundImage, setBackgroundImage] = useState('/images/DSC4608_compressed.jpg');
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  useEffect(() => {
+    // First load the page with the compressed image
+    const img = new Image();
+    img.src = '/images/DSC4608.jpg';
+    
+    // When the high-quality image is loaded, switch to it
+    img.onload = () => {
+      setBackgroundImage('/images/DSC4608.jpg');
+      setIsLoaded(true);
+    };
+    
+    return () => {
+      // Cleanup
+      img.onload = null;
+    };
+  }, []);
   
   return (
     <section 
       className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden"
       style={{
-        backgroundImage: "url('/images/DSC4608.jpg')",
+        backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        position: 'relative'
+        position: 'relative',
+        transition: isLoaded ? 'background-image 0.5s ease-in' : 'none'
       }}
     >
       {/* Semi-transparent overlay with reduced opacity */}

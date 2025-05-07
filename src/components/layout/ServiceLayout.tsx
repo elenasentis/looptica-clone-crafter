@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -22,11 +23,49 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   appointmentSubject = 'Looptica Consultation',
 }) => {
   const { t, language } = useLanguage();
-
-  // Use effect to scroll to top when the component mounts
+  const [loadedImage, setLoadedImage] = useState('');
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  
+  // Use effect to scroll to top when the component mounts and handle image loading
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    
+    // If the image path includes a high-resolution image, try to find a compressed version
+    const imagePath = image;
+    const imageNameParts = imagePath.split('.');
+    const imageExt = imageNameParts.pop() || 'jpg';
+    const imageName = imageNameParts.join('.');
+    const compressedImagePath = `${imageName}_compressed.${imageExt}`;
+
+    // First set the image to whatever was provided
+    setLoadedImage(image);
+    
+    // Check if a compressed version exists, if so use that while loading the high-res version
+    const checkCompressedExists = () => {
+      const img = new Image();
+      img.onload = () => {
+        // Compressed image exists, use it while we load the high-res
+        setLoadedImage(compressedImagePath);
+        
+        // Now load the high-res version
+        const highResImg = new Image();
+        highResImg.onload = () => {
+          setLoadedImage(image);
+          setIsImageLoaded(true);
+        };
+        highResImg.src = image;
+      };
+      img.onerror = () => {
+        // No compressed version, just load the original
+        setLoadedImage(image);
+        setIsImageLoaded(true);
+      };
+      img.src = compressedImagePath;
+    };
+    
+    // Try to find and use a compressed version
+    checkCompressedExists();
+  }, [image]);
 
   // Translations for WhatsApp component
   const whatsappText = {
@@ -83,9 +122,10 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
         <section 
           className="relative h-[50vh] flex items-center justify-center"
           style={{
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${loadedImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            transition: isImageLoaded ? 'background-image 0.5s ease-in' : 'none'
           }}
           onError={handleImageError}
         >
