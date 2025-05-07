@@ -14,29 +14,9 @@ import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Index = () => {
-  const { language } = useLanguage();
-  const navigate = useNavigate();
-  
-  // Content organized by section first, then by language
+// Create a new component for SEO content to avoid it blocking rendering
+const SeoContent = ({ language }: { language: string }) => {
   const content = {
-    meta: {
-      en: {
-        title: "Looptica - Optical and Audiology Services in Barcelona Poblenou | Glasses, Contact Lenses, and Hearing Aids",
-        description: "Specialized center for optical and audiological services in Barcelona Poblenou. We offer eye exams, prescription glasses, contact lenses, hearing tests, hearing loss treatment, and high-quality digital hearing aids.",
-        keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiology barcelona poblenou, hearing aids barcelona poblenou, hearing loss, hearing test barcelona poblenou, clinical audiology barcelona poblenou, hearing center barcelona poblenou"
-      },
-      es: {
-        title: "Looptica - Óptica y Audiología en Barcelona Poblenou | Gafas, Lentillas y Audífonos",
-        description: "Centro especializado en servicios ópticos y audiológicos en Barcelona Poblenou. Ofrecemos exámenes visuales, gafas graduadas, lentillas, pruebas auditivas, tratamiento de pérdida auditiva y audífonos digitales de alta calidad.",
-        keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiología barcelona poblenou, audífonos barcelona poblenou, pérdida auditiva, prueba auditiva barcelona poblenou, audiología clínica barcelona poblenou, centro auditivo barcelona poblenou"
-      },
-      ca: {
-        title: "Looptica - Òptica i Audiologia a Barcelona Poblenou | Ulleres, Lents de Contacte i Audiòfons",
-        description: "Centre especialitzat en serveis òptics i audiològics a Barcelona Poblenou. Oferim exàmens visuals, ulleres graduades, lents de contacte, proves auditives, tractament de pèrdua auditiva i audiòfons d'alta qualitat.",
-        keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiologia barcelona poblenou, audiòfons barcelona poblenou, pèrdua auditiva, prova auditiva barcelona poblenou, audiologia clínica barcelona poblenou, centre auditiu barcelona poblenou"
-      }
-    },
     seo: {
       title: {
         en: "Barcelona Poblenou Audiology Center - Hearing Tests and Digital Hearing Aids",
@@ -49,39 +29,37 @@ const Index = () => {
         ca: "A Looptica oferim serveis complets d'audiologia a Barcelona Poblenou, incloent proves auditives professionals, tractament de pèrdua auditiva, adaptació d'audiòfons digitals, audiometria Barcelona Poblenou i solucions per a acúfens. El nostre centre auditiu a Barcelona Poblenou compta amb audiologia clínica d'alta qualitat i especialistes en audiologia pediàtrica."
       }
     },
+  };
+
+  return (
+    <div className="sr-only">
+      <h2>{content.seo.title[language as keyof typeof content.seo.title]}</h2>
+      <p>
+        {content.seo.text[language as keyof typeof content.seo.text]}
+      </p>
+    </div>
+  );
+};
+
+// Create a component for non-critical sections that will be loaded after hero
+const DeferredContent = () => {
+  const { language } = useLanguage();
+  const navigate = useNavigate();
+
+  const content = {
     audiologyLink: {
       en: "Visit our Audiology Page",
       es: "Visitar nuestra página de Audiología",
       ca: "Visitar la nostra pàgina d'Audiologia"
     },
-    whatsapp: {
-      statusMessage: {
-        en: "Typically replies within 1 hour",
-        es: "Normalmente responde en 1 hora",
-        ca: "Normalment respon en 1 hora"
-      },
-      chatMessage: {
-        en: "Hello! 👋🏼 How can we help you with your vision or hearing?",
-        es: "¡Hola! 👋🏼 ¿En qué podemos ayudarte con tu visión o audición?",
-        ca: "Hola! 👋🏼 En què podem ajudar-te amb la teva visió o audició?"
-      },
-      placeholder: {
-        en: "Type a message...",
-        es: "Escribe un mensaje...",
-        ca: "Escriu un missatge..."
-      }
-    }
   };
-  
+
   useEffect(() => {
     // Lazy load all images except for critical ones
     const lazyLoadImages = () => {
-      const allImages = document.querySelectorAll('img');
+      const allImages = document.querySelectorAll('img:not([fetchpriority="high"])');
       
       allImages.forEach(img => {
-        // Skip the hero image which is loaded as background
-        if (img.src.includes('DSC4608.jpg')) return;
-        
         // Add loading="lazy" attribute to all other images
         if (!img.hasAttribute('loading')) {
           img.setAttribute('loading', 'lazy');
@@ -90,10 +68,7 @@ const Index = () => {
     };
     
     // Call the function after a short delay to ensure DOM is fully loaded
-    setTimeout(lazyLoadImages, 100);
-    
-    // Scroll to top when component mounts
-    window.scrollTo(0, 0);
+    const lazyLoadTimer = setTimeout(lazyLoadImages, 100);
     
     // Handle hash navigation after page load
     const handleHashNavigation = () => {
@@ -129,64 +104,118 @@ const Index = () => {
       });
     };
     
-    handleLinkClicks();
+    const linkTimer = setTimeout(handleLinkClicks, 300);
     
-    // Log to check if component is mounting correctly
-    console.log("Index component mounted");
+    return () => {
+      clearTimeout(lazyLoadTimer);
+      clearTimeout(linkTimer);
+    };
   }, [navigate]);
 
   return (
     <>
+      <div id="products">
+        <Products />
+      </div>
+      <div id="optical">
+        <OpticalServices />
+      </div>
+      <div id="audiology">
+        <Audiology />
+        <div className="container mx-auto px-4 mt-4 text-center">
+          <Link to="/services/audiologia-centro" className="text-[#55afa9] hover:underline">
+            {content.audiologyLink[language as keyof typeof content.audiologyLink]}
+          </Link>
+        </div>
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="brands">
+        <Brands />
+      </div>
+      <div id="contact">
+        <StoreLocation />
+      </div>
+    </>
+  );
+};
+
+const Index = () => {
+  const { language } = useLanguage();
+  const navigate = useNavigate();
+  
+  // Content organized by section first, then by language
+  const content = {
+    meta: {
+      en: {
+        title: "Looptica - Optical and Audiology Services in Barcelona Poblenou | Glasses, Contact Lenses, and Hearing Aids",
+        description: "Specialized center for optical and audiological services in Barcelona Poblenou. We offer eye exams, prescription glasses, contact lenses, hearing tests, hearing loss treatment, and high-quality digital hearing aids.",
+        keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiology barcelona poblenou, hearing aids barcelona poblenou, hearing loss, hearing test barcelona poblenou, clinical audiology barcelona poblenou, hearing center barcelona poblenou"
+      },
+      es: {
+        title: "Looptica - Óptica y Audiología en Barcelona Poblenou | Gafas, Lentillas y Audífonos",
+        description: "Centro especializado en servicios ópticos y audiológicos en Barcelona Poblenou. Ofrecemos exámenes visuales, gafas graduadas, lentillas, pruebas auditivas, tratamiento de pérdida auditiva y audífonos digitales de alta calidad.",
+        keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiología barcelona poblenou, audífonos barcelona poblenou, pérdida auditiva, prueba auditiva barcelona poblenou, audiología clínica barcelona poblenou, centro auditivo barcelona poblenou"
+      },
+      ca: {
+        title: "Looptica - Òptica i Audiologia a Barcelona Poblenou | Ulleres, Lents de Contacte i Audiòfons",
+        description: "Centre especialitzat en serveis òptics i audiològics a Barcelona Poblenou. Oferim exàmens visuals, ulleres graduades, lents de contacte, proves auditives, tractament de pèrdua auditiva i audiòfons d'alta qualitat.",
+        keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiologia barcelona poblenou, audiòfons barcelona poblenou, pèrdua auditiva, prova auditiva barcelona poblenou, audiologia clínica barcelona poblenou, centre auditiu barcelona poblenou"
+      }
+    },
+    whatsapp: {
+      statusMessage: {
+        en: "Typically replies within 1 hour",
+        es: "Normalmente responde en 1 hora",
+        ca: "Normalment respon en 1 hora"
+      },
+      chatMessage: {
+        en: "Hello! 👋🏼 How can we help you with your vision or hearing?",
+        es: "¡Hola! 👋🏼 ¿En qué podemos ayudarte con tu visión o audición?",
+        ca: "Hola! 👋🏼 En què podem ajudar-te amb la teva visió o audició?"
+      },
+      placeholder: {
+        en: "Type a message...",
+        es: "Escribe un mensaje...",
+        ca: "Escriu un missatge..."
+      }
+    }
+  };
+  
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    // Log to check if component is mounting correctly
+    console.log("Index component mounted");
+  }, []);
+
+  return (
+    <>
       <Helmet>
-        <title>{content.meta[language].title}</title>
-        <meta name="description" content={content.meta[language].description} />
-        <meta name="keywords" content={content.meta[language].keywords} />
+        <title>{content.meta[language as keyof typeof content.meta].title}</title>
+        <meta name="description" content={content.meta[language as keyof typeof content.meta].description} />
+        <meta name="keywords" content={content.meta[language as keyof typeof content.meta].keywords} />
         <link rel="canonical" href="https://www.looptica.com/" />
-        <meta property="og:title" content={content.meta[language].title} />
-        <meta property="og:description" content={content.meta[language].description} />
+        <meta property="og:title" content={content.meta[language as keyof typeof content.meta].title} />
+        <meta property="og:description" content={content.meta[language as keyof typeof content.meta].description} />
         <meta property="og:url" content="https://www.looptica.com/" />
       </Helmet>
       <Navbar />
       <div className="min-h-screen flex flex-col">
         <main className="flex-grow">
           <Hero />
-          <div className="sr-only">
-            <h2>{content.seo.title[language]}</h2>
-            <p>
-              {content.seo.text[language]}
-            </p>
-          </div>
-          <div id="products">
-            <Products />
-          </div>
-          <div id="optical">
-            <OpticalServices />
-          </div>
-          <div id="audiology">
-            <Audiology />
-            <div className="container mx-auto px-4 mt-4 text-center">
-              <Link to="/services/audiologia-centro" className="text-[#55afa9] hover:underline">
-                {content.audiologyLink[language]}
-              </Link>
-            </div>
-          </div>
-          <div id="testimonials">
-            <Testimonials />
-          </div>
-          <div id="brands">
-            <Brands />
-          </div>
-          <div id="contact">
-            <StoreLocation />
-          </div>
+          <SeoContent language={language} />
+          <DeferredContent />
         </main>
         <Footer />
         <FloatingWhatsApp 
           phoneNumber="34699594064"
           accountName="Looptica"
-          statusMessage={content.whatsapp.statusMessage[language]}
-          chatMessage={content.whatsapp.chatMessage[language]}
-          placeholder={content.whatsapp.placeholder[language]}
+          statusMessage={content.whatsapp.statusMessage[language as keyof typeof content.whatsapp.statusMessage]}
+          chatMessage={content.whatsapp.chatMessage[language as keyof typeof content.whatsapp.chatMessage]}
+          placeholder={content.whatsapp.placeholder[language as keyof typeof content.whatsapp.placeholder]}
         />
       </div>
     </>

@@ -1,13 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - deferred loading -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H170LQBT19"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-H170LQBT19');
+      gtag('config', 'G-H170LQBT19', { 'send_page_view': false });
+      // Delayed send of pageview after critical content loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          gtag('event', 'page_view', {
+            page_title: document.title,
+            page_location: window.location.href
+          });
+        }, 2000);
+      });
     </script>
     
     <meta charset="UTF-8" />
@@ -19,12 +29,53 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.looptica.com/" />
 
-    <!-- Preload hero image - only compressed with high fetchpriority -->
+    <!-- Preload hero image with high fetchpriority -->
     <link rel="preload" as="image" href="/images/DSC4608_compressed.jpg" fetchpriority="high" />
     
     <!-- Preconnect to Google Fonts to establish early connection -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Inline critical CSS for hero section -->
+    <style>
+      .hero-section {
+        position: relative;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+        overflow: hidden;
+      }
+      .hero-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 80rem;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (min-width: 1024px) {
+        .hero-content {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 6rem;
+          align-items: center;
+        }
+      }
+    </style>
     
     <!-- Font optimization: load with font-display:swap - properly encoded -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:/%26">
