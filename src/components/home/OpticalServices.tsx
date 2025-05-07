@@ -36,14 +36,14 @@ const OpticalServices = () => {
       icon: <User className="w-10 h-10 text-[#55afa9]" />,
       title: t('imageConsulting'),
       description: t('imageConsultingDesc'),
-      image: "/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.png",
+      image: "/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.jpg",
       path: "/services/image-consulting"
     },
     {
       icon: <Glasses className="w-10 h-10 text-[#55afa9]" />,
       title: t('lensConsulting'),
       description: t('lensConsultingDesc'),
-      image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.png",
+      image: "/lovable-uploads/a99c44aa-a4a4-45a4-9616-1ef080bd49db.jpg",
       path: "/services/lens-consulting"
     }
   ];
