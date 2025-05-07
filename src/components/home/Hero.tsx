@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -11,7 +11,7 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   
   // Use only the compressed version of the image
-  useState(() => {
+  useEffect(() => {
     // Mark as loaded after a short delay to ensure smooth transition
     const timer = setTimeout(() => {
       setIsLoaded(true);
