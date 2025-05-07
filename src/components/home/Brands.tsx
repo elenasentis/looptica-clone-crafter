@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-// Updated brands array using JPG files instead of PNG
+// Updated brands array using JPG files
 const brands = [
   { 
     id: 1, 
