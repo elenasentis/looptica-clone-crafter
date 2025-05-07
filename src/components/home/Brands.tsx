@@ -25,17 +25,17 @@ const brands = [
   { 
     id: 3, 
     name: "Woodys", 
-    logo: "/lovable-uploads/0cb156b5-17ce-4173-aa0c-c9c92d478dd6.png" 
+    logo: "/lovable-uploads/0cb156b5-17ce-4173-aa0c-c9c92d478dd6.jpg" 
   },
   { 
     id: 4, 
     name: "Kaleos", 
-    logo: "/lovable-uploads/061283d4-a89e-4a50-9883-393a64c34e4e.png" 
+    logo: "/lovable-uploads/061283d4-a89e-4a50-9883-393a64c34e4e.jpg" 
   },
   { 
     id: 5, 
     name: "Xavier Garcia", 
-    logo: "/lovable-uploads/fbb3f53d-cb3a-4b23-bf37-ee5a9fb68e8f.png" 
+    logo: "/lovable-uploads/fbb3f53d-cb3a-4b23-bf37-ee5a9fb68e8f.jpg" 
     
   },
   { 
