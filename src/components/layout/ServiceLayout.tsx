@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -22,11 +22,17 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   appointmentSubject = 'Looptica Consultation',
 }) => {
   const { t, language } = useLanguage();
-
-  // Use effect to scroll to top when the component mounts
+  const [loadedImage, setLoadedImage] = useState('');
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  
+  // Use effect to scroll to top when the component mounts and handle image loading
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    
+    // Use the provided image directly
+    setLoadedImage(image);
+    setIsImageLoaded(true);
+  }, [image]);
 
   // Translations for WhatsApp component
   const whatsappText = {
@@ -83,9 +89,10 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
         <section 
           className="relative h-[50vh] flex items-center justify-center"
           style={{
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${loadedImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            transition: isImageLoaded ? 'background-image 0.5s ease-in' : 'none'
           }}
           onError={handleImageError}
         >

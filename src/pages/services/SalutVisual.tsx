@@ -237,7 +237,7 @@ const SalutVisual = () => {
       <ServiceLayout
         title={content.hero[language].title}
         subtitle={content.hero[language].subtitle}
-        image="/lovable-uploads/cb898a8f-0dd3-4ffb-aa14-822fcefb417d.png"
+        image="/images/_DSC4696.jpg"
         appointmentSubject={content.hero[language].appointmentSubject}
       >
         <ScrollReveal>

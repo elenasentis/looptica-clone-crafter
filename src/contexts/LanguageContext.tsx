@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
@@ -186,7 +185,7 @@ export const translations: Translations = {
   audiologyDescription: {
     en: 'Our certified audiologists in Barcelona Poblenou provide comprehensive hearing assessments and personalized solutions to improve your hearing health and treat hearing loss.',
     es: 'Nuestros audiólogos certificados en Barcelona Poblenou ofrecen evaluaciones auditivas completas y soluciones personalizadas para mejorar su salud auditiva y tratar la pérdida auditiva.',
-    ca: 'Els nostres audioprotessistes titulats ofereixen avaluacions auditives completes i solucions personalitzades per millorar la seva salut auditiva i tractar la pèrdua auditiva.',
+    ca: 'Els nostres audioprotessistes titulats ofereixen avaluacions auditives completes i solucions personalitzades per millorar la teva salut auditiva i tractar la pèrdua auditiva.',
   },
   hearingTest: {
     en: 'Professional Hearing Tests',
@@ -227,6 +226,16 @@ export const translations: Translations = {
     en: 'Custom-made ear plugs at our Barcelona Poblenou audiology center designed for comfort and optimal noise protection to prevent hearing loss.',
     es: 'Tapones para los oídos hechos a medida en nuestro centro de audiología en Barcelona Poblenou diseñados para comodidad y protección óptima contra el ruido para prevenir la pérdida auditiva.',
     ca: 'Taps per a les orelles fets a mida al nostre centre d\'audiologia a Barcelona Poblenou dissenyats per a comoditat i protecció òptima contra el soroll per prevenir la pèrdua auditiva.',
+  },
+  subvenciones: {
+    en: 'Hearing Aid Subsidies',
+    es: 'Subvenciones para Audífonos',
+    ca: 'Subvencions per a Audiòfons',
+  },
+  subvencionesDesc: {
+    en: 'Information about available subsidies and financial aid for hearing aids and hearing assistance devices in Barcelona.',
+    es: 'Información sobre ayudas y subvenciones disponibles para audífonos y dispositivos de ayuda auditiva en Barcelona.',
+    ca: 'Informació sobre ajudes i subvencions disponibles per a audiòfons i dispositius d\'ajuda auditiva a Barcelona.',
   },
   scheduleConsultation: {
     en: 'Schedule a Hearing Consultation',
@@ -295,6 +304,16 @@ export const translations: Translations = {
     en: 'Opening Hours',
     es: 'Horario de Apertura',
     ca: 'Horari d\'Obertura',
+  },
+  mondayThursday: {
+    en: 'Monday-Thursday',
+    es: 'Lunes-Jueves',
+    ca: 'Dilluns-Dijous',
+  },
+  friday: {
+    en: 'Friday',
+    es: 'Viernes',
+    ca: 'Divendres',
   },
   mondayFriday: {
     en: 'Monday-Friday',
@@ -415,6 +434,47 @@ export const translations: Translations = {
     en: 'Digital Hearing Aids',
     es: 'Audífonos Digitales',
     ca: 'Audiòfons Digitals',
+  },
+  // Technical Aids
+  technicalAids: {
+    en: 'Technical Aids',
+    es: 'Ayudas Técnicas',
+    ca: 'Ajudes Tècniques',
+  },
+  technicalAidsDesc: {
+    en: 'Specialized solutions to improve communication in different environments for people with hearing loss.',
+    es: 'Soluciones especializadas para mejorar la comunicación en diferentes entornos para personas con pérdida auditiva.',
+    ca: 'Solucions especialitzades per millorar la comunicació en diferents entorns per a persones amb pèrdua auditiva.',
+  },
+  technicalAidsTitle: {
+    en: 'Technical Aid Solutions for Hearing Loss',
+    es: 'Soluciones de Ayuda Técnica para Pérdida Auditiva',
+    ca: 'Solucions d\'Ajuda Tècnica per a Pèrdua Auditiva',
+  },
+  technicalAidsIntro: {
+    en: 'Discover our range of technical aid solutions designed to enhance communication for people with hearing loss in various environments.',
+    es: 'Descubra nuestra gama de soluciones de ayuda técnica diseñadas para mejorar la comunicación de personas con pérdida auditiva en diversos entornos.',
+    ca: 'Descobreix la nostra gamma de solucions d\'ajuda tècnica dissenyades per millorar la comunicació de persones amb pèrdua auditiva en diversos entorns.',
+  },
+  twinlinkTitle: {
+    en: 'Oticon TwinLink',
+    es: 'Oticon TwinLink',
+    ca: 'Oticon TwinLink',
+  },
+  twinlinkDesc: {
+    en: 'Dual communication technology that provides simultaneous binaural processing and wireless connectivity for hearing aids.',
+    es: 'Tecnología de comunicación dual que proporciona procesamiento binaural simultáneo y conectividad inalámbrica para audífonos.',
+    ca: 'Tecnologia de comunicació dual que proporciona processament binaural simultani i connectivitat sense fils per a audiòfons.',
+  },
+  edumicTitle: {
+    en: 'Oticon EduMic',
+    es: 'Oticon EduMic',
+    ca: 'Oticon EduMic',
+  },
+  edumicDesc: {
+    en: 'A versatile wireless remote microphone system designed for educational settings, helping students with hearing loss.',
+    es: 'Un sistema versátil de micrófono remoto inalámbrico diseñado para entornos educativos, ayudando a estudiantes con pérdida auditiva.',
+    ca: 'Un sistema versàtil de micròfon remot sense fils dissenyat per a entorns educatius, ajudant a estudiants amb pèrdua auditiva.',
   },
 };
 

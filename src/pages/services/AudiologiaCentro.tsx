@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -134,7 +135,7 @@ const AudiologiaCentro = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/images/oticon_act_key_visual_woman_in-anechoic_chamber_as_453913390_as_190510297.jpg"
+      image="/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.jpg"
       appointmentSubject={content.appointmentSubject[language]}
     >
       <ScrollReveal>
@@ -190,7 +191,6 @@ const AudiologiaCentro = () => {
         </div>
       </ScrollReveal>
       
-
     </ServiceLayout>
   );
 };

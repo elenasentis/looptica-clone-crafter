@@ -10,32 +10,33 @@ import {
 } from "@/components/ui/carousel";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-// Updated brands array using uploaded images
+// Updated brands array using JPG files
 const brands = [
   { 
     id: 1, 
     name: "Woodys", 
-    logo: "/lovable-uploads/9fbf92da-415f-43d4-a177-3de7dcb1195a.png" 
+    logo: "/lovable-uploads/9fbf92da-415f-43d4-a177-3de7dcb1195a.jpg" 
   },
   { 
     id: 2, 
     name: "Etnia Barcelona", 
-    logo: "/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.png" 
+    logo: "/lovable-uploads/4e50b490-59f3-40a9-a3a6-a1c02cf017a3.jpg" 
   },
   { 
     id: 3, 
-    name: "Xavier Garcia", 
-    logo: "/lovable-uploads/fbb3f53d-cb3a-4b23-bf37-ee5a9fb68e8f.png" 
+    name: "Woodys", 
+    logo: "/lovable-uploads/0cb156b5-17ce-4173-aa0c-c9c92d478dd6.jpg" 
   },
   { 
     id: 4, 
     name: "Kaleos", 
-    logo: "/lovable-uploads/061283d4-a89e-4a50-9883-393a64c34e4e.png" 
+    logo: "/lovable-uploads/061283d4-a89e-4a50-9883-393a64c34e4e.jpg" 
   },
   { 
     id: 5, 
-    name: "Woodys", 
-    logo: "/lovable-uploads/0cb156b5-17ce-4173-aa0c-c9c92d478dd6.png" 
+    name: "Xavier Garcia", 
+    logo: "/lovable-uploads/fbb3f53d-cb3a-4b23-bf37-ee5a9fb68e8f.jpg" 
+    
   },
   { 
     id: 6, 

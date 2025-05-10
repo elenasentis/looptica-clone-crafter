@@ -241,21 +241,7 @@ const ContactLenses = () => {
       image="/images/adobestock-226007711_orig.jpeg"
       appointmentSubject={content.appointmentSubject[language]}
     >
-      <ScrollReveal>
-        <div className="prose prose-lg max-w-none mb-12">
-          <h2>{content.advancedTitle[language]}</h2>
-          <p>{content.intro1[language]}</p>
-          <p>{content.intro2[language]}</p>
-          <div className="mt-8 text-center">
-            <Button 
-              onClick={() => navigate('/services/lents-contacte')}
-              className="bg-[#55afa9] hover:bg-[#ea384c] text-white"
-            >
-              {content.viewCatalan[language]}
-            </Button>
-          </div>
-        </div>
-      </ScrollReveal>
+    
 
       <ScrollReveal>
         <div className="bg-gray-50 p-8 rounded-lg mb-12">

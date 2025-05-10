@@ -18,6 +18,9 @@ const Footer = () => {
           { name: t('sunglasses'), path: '/services/sunglasses' },
           { name: t('contactLenses'), path: '/services/contact-lenses' },
           { name: t('visualHealth'), path: '/services/salut-visual' },
+          { name: t('ortoK'), path: '/services/orto-k' },
+          { name: t('imageConsulting'), path: '/services/image-consulting' },
+          { name: t('lensConsulting'), path: '/services/lens-consulting' },
         ],
       },
       {
@@ -25,8 +28,9 @@ const Footer = () => {
         links: [
           { name: t('hearingTest'), path: '/services/hearing-test' },
           { name: t('hearingAids'), path: '/services/hearing-aids' },
-          { name: t('tinnitusTreatment'), path: '/services/tinnitus-treatment' },
           { name: t('customEarProtection'), path: '/services/ear-protection' },
+          { name: t('technicalAids'), path: '/services/technical-aids' },
+          { name: t('subvenciones'), path: '/services/subvenciones' },
         ],
       },
       {
