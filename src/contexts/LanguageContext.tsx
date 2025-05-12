@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 import { useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
 
@@ -127,6 +126,12 @@ export const translations: Translations = {
     en: 'Adaptation of contact lenses for myopia, hyperopia, astigmatism, progressive, customized, myopia control, congenital cataracts, queratoconus and ortho-k.',
     es: 'Adaptación de lentes de contacto para miopia, hipermetropia, astigmatismo, progresivas, individualizadas, de catarata congénita, control de miopía, queratocono y orto-k.',
     ca: 'Adaptació de lents de contacte per miopia, hipermetropia, astigmatisme, progressives, individualitzades, per cataracta congènita, control de miopia, queratocono i orto-k.',
+  },
+  // Add the missing translation key "ortoK"
+  ortoK: {
+    en: 'Ortho-K',
+    es: 'Orto-K',
+    ca: 'Orto-K',
   },
   orthoK: {
     en: 'Ortho-K',
