@@ -1,6 +1,6 @@
 
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
 
 type Language = 'en' | 'es' | 'ca';
 
@@ -490,21 +490,29 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// Create a safe version of hooks that won't crash outside of Router context
+const useSafeNavigate = (): NavigateFunction => {
+  try {
+    return useNavigate();
+  } catch (e) {
+    // Return a no-op function if not in Router context
+    return (() => {}) as NavigateFunction;
+  }
+};
+
+const useSafeLocation = () => {
+  try {
+    return useLocation();
+  } catch (e) {
+    // Return a default location object if not in Router context
+    return { pathname: '/', search: '', hash: '', state: null, key: 'default' };
+  }
+};
+
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('ca');
-  
-  // Safely get navigation tools - will only be used when inside Router
-  let navigate;
-  let location;
-  
-  try {
-    navigate = useNavigate();
-    location = useLocation();
-  } catch (e) {
-    // If not in Router context, provide fallbacks
-    navigate = (path: string) => console.warn('Navigation attempted outside Router:', path);
-    location = { pathname: '/', search: '', hash: '' };
-  }
+  const navigate = useSafeNavigate();
+  const location = useSafeLocation();
   
   // Extract language from URL path
   const extractLanguageFromPath = useCallback((): Language | null => {
@@ -548,17 +556,14 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     setLanguageState(lang);
     localStorage.setItem('preferredLanguage', lang);
     
-    // Only attempt to navigate if we're in a Router context
-    try {
-      // Update URL to include language prefix if not already present
+    // Only navigate if we're in a valid Router context
+    if (typeof navigate === 'function') {
       const urlLang = extractLanguageFromPath();
       if (urlLang !== lang) {
         const pathWithoutLang = location.pathname.replace(/^\/(ca|es|en)/, '');
         const newPath = `/${lang}${pathWithoutLang || ''}${location.search}${location.hash}`;
         navigate(newPath, { replace: true });
       }
-    } catch (e) {
-      console.warn('Navigation attempted outside Router context');
     }
   }, [extractLanguageFromPath, location, navigate]);
   
