@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -491,8 +492,19 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('ca');
-  const navigate = useNavigate();
-  const location = useLocation();
+  
+  // Safely get navigation tools - will only be used when inside Router
+  let navigate;
+  let location;
+  
+  try {
+    navigate = useNavigate();
+    location = useLocation();
+  } catch (e) {
+    // If not in Router context, provide fallbacks
+    navigate = (path: string) => console.warn('Navigation attempted outside Router:', path);
+    location = { pathname: '/', search: '', hash: '' };
+  }
   
   // Extract language from URL path
   const extractLanguageFromPath = useCallback((): Language | null => {
@@ -536,12 +548,17 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     setLanguageState(lang);
     localStorage.setItem('preferredLanguage', lang);
     
-    // Update URL to include language prefix if not already present
-    const urlLang = extractLanguageFromPath();
-    if (urlLang !== lang) {
-      const pathWithoutLang = location.pathname.replace(/^\/(ca|es|en)/, '');
-      const newPath = `/${lang}${pathWithoutLang || ''}${location.search}${location.hash}`;
-      navigate(newPath, { replace: true });
+    // Only attempt to navigate if we're in a Router context
+    try {
+      // Update URL to include language prefix if not already present
+      const urlLang = extractLanguageFromPath();
+      if (urlLang !== lang) {
+        const pathWithoutLang = location.pathname.replace(/^\/(ca|es|en)/, '');
+        const newPath = `/${lang}${pathWithoutLang || ''}${location.search}${location.hash}`;
+        navigate(newPath, { replace: true });
+      }
+    } catch (e) {
+      console.warn('Navigation attempted outside Router context');
     }
   }, [extractLanguageFromPath, location, navigate]);
   

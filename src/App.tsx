@@ -1,5 +1,4 @@
-
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
@@ -169,32 +168,31 @@ function App() {
       <LanguageProvider>
         {/* Load critical styles first */}
         <CriticalStyles />
-        <Router>
-          <RedirectHandler />
-          <PageTracker />
-          <Routes>
-            {/* Default route with language detection */}
-            <Route path="/" element={<RootRedirect />} />
-            
-            {/* Language-specific home pages */}
-            <Route path="/ca" element={<Index />} />
-            <Route path="/es" element={<Index />} />
-            <Route path="/en" element={<Index />} />
-            
-            {/* Language-specific routes */}
-            <RouteGroup langPrefix="ca" />
-            <RouteGroup langPrefix="es" />
-            <RouteGroup langPrefix="en" />
-            
-            {/* Legacy routes without language prefix (for backward compatibility) */}
-            <RouteGroup langPrefix="" />
-            
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-          <Toaster />
-          <CookieConsent />
-        </Router>
+        <RedirectHandler />
+        <PageTracker />
+        <Navbar />
+        <Routes>
+          {/* Default route with language detection */}
+          <Route path="/" element={<RootRedirect />} />
+          
+          {/* Language-specific home pages */}
+          <Route path="/ca" element={<Index />} />
+          <Route path="/es" element={<Index />} />
+          <Route path="/en" element={<Index />} />
+          
+          {/* Language-specific routes */}
+          <RouteGroup langPrefix="ca" />
+          <RouteGroup langPrefix="es" />
+          <RouteGroup langPrefix="en" />
+          
+          {/* Legacy routes without language prefix (for backward compatibility) */}
+          <RouteGroup langPrefix="" />
+          
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+        <Toaster />
+        <CookieConsent />
       </LanguageProvider>
     </HelmetProvider>
   );
