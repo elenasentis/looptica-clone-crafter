@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ShoppingBag, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -10,20 +10,21 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t } = useLanguage();
+  const { t, language, getUrlWithLanguage } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Check if we're on the homepage to determine whether to use anchor links or router links
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === `/${language}` || location.pathname === '/';
 
   // Using translation keys for navigation
   const navLinks = [
-    { name: t('home'), path: '/' },
-    { name: t('products'), path: isHomePage ? '#products' : '/#products' },
-    { name: t('opticalServices'), path: isHomePage ? '#optical' : '/#optical' },
-    { name: t('audiologyServices'), path: isHomePage ? '#audiology' : '/#audiology' },
-    { name: t('about'), path: '/about' },
-    { name: t('contact'), path: isHomePage ? '#contact' : '/#contact' },
+    { name: t('home'), path: `/${language}` },
+    { name: t('products'), path: isHomePage ? '#products' : `/${language}#products` },
+    { name: t('opticalServices'), path: isHomePage ? '#optical' : `/${language}#optical` },
+    { name: t('audiologyServices'), path: isHomePage ? '#audiology' : `/${language}#audiology` },
+    { name: t('about'), path: getUrlWithLanguage('/about') },
+    { name: t('contact'), path: isHomePage ? '#contact' : `/${language}#contact` },
   ];
 
   useEffect(() => {
@@ -68,15 +69,29 @@ const Navbar = () => {
         if (isOpen) closeMenu();
       }
     } else if (href && href.includes('#') && !isHomePage) {
-      // For links like "/#section" when not on homepage, we'll let the router handle it
-      // The useEffect in Index.tsx will handle the scrolling after navigation
-      closeMenu();
+      // For links like "/ca#section" when not on homepage
+      e.preventDefault();
+      const targetLang = href.split('/')[1];
+      const targetHash = href.substring(href.indexOf('#'));
+      
+      navigate(`/${targetLang}`, { replace: true });
+      
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const targetElement = document.getElementById(targetHash.substring(1));
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      
+      if (isOpen) closeMenu();
     } else {
       // For regular page links
       closeMenu();
     }
   };
 
+  // The rest of the Navbar component stays the same
   return (
     <nav 
       className={cn(
@@ -89,7 +104,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link 
-          to="/" 
+          to={`/${language}`} 
           className="relative z-50 transition-all"
           onClick={closeMenu}
         >
@@ -107,7 +122,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            link.path.startsWith('#') ? (
+            link.path.includes('#') ? (
               <a
                 key={link.name}
                 href={link.path}
@@ -168,7 +183,7 @@ const Navbar = () => {
         >
           <div className="h-full flex flex-col items-center justify-center space-y-8 p-8">
             {navLinks.map((link) => (
-              link.path.startsWith('#') ? (
+              link.path.includes('#') ? (
                 <a
                   key={link.name}
                   href={link.path}

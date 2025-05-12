@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
@@ -7,7 +7,7 @@ import Footer from './components/layout/Footer';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
 import { Toaster } from './components/ui/sonner';
-import { LanguageProvider } from './contexts/LanguageContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
 import CriticalStyles from './components/CriticalStyles';
 import RedirectHandler from './components/RedirectHandler';
@@ -45,6 +45,21 @@ const CookiesPolicy = lazy(() => import('./pages/legal/CookiesPolicy'));
 const OticonModels = lazy(() => import('./pages/products/OticonModels'));
 const OticonModelPage = lazy(() => import('./pages/products/OticonModelPage'));
 
+// Language route wrapper to handle language detection and page routing
+const LanguageRouteWrapper = ({ component: Component, ...rest }) => {
+  const { language, setLanguage, detectLanguage } = useLanguage();
+  const location = useLocation();
+  
+  useEffect(() => {
+    // If we're at the root without a language prefix, detect and redirect
+    if (location.pathname === '/') {
+      detectLanguage();
+    }
+  }, [location.pathname, detectLanguage]);
+  
+  return <Component {...rest} />;
+};
+
 // Google Analytics page tracker component
 const PageTracker = () => {
   const location = useLocation();
@@ -65,6 +80,89 @@ const PageTracker = () => {
   return null;
 };
 
+// Root redirect component to handle redirection to language-based URLs
+const RootRedirect = () => {
+  const { detectLanguage } = useLanguage();
+  const detectedLanguage = detectLanguage();
+  return <Navigate to={`/${detectedLanguage}`} replace />;
+};
+
+// Define route groups to avoid repetition
+function RouteGroup({ langPrefix }) {
+  return (
+    <>
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}about`} element={
+        <Suspense fallback={<PageLoader />}><About /></Suspense>
+      } />
+      {/* Optical Services */}
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/salut-visual`} element={
+        <Suspense fallback={<PageLoader />}><SalutVisual /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/lents-contacte`} element={
+        <Suspense fallback={<PageLoader />}><LentsContacte /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/orto-k`} element={
+        <Suspense fallback={<PageLoader />}><OrtoK /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/eyeglasses`} element={
+        <Suspense fallback={<PageLoader />}><Eyeglasses /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/sunglasses`} element={
+        <Suspense fallback={<PageLoader />}><Sunglasses /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/contact-lenses`} element={
+        <Suspense fallback={<PageLoader />}><ContactLenses /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/image-consulting`} element={
+        <Suspense fallback={<PageLoader />}><ImageConsulting /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/lens-consulting`} element={
+        <Suspense fallback={<PageLoader />}><LensConsulting /></Suspense>
+      } />
+      {/* Audiology Services */}
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/hearing-test`} element={
+        <Suspense fallback={<PageLoader />}><HearingTest /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/hearing-aids`} element={
+        <Suspense fallback={<PageLoader />}><HearingAids /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/tinnitus-treatment`} element={
+        <Suspense fallback={<PageLoader />}><TinnitusTreatment /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/ear-protection`} element={
+        <Suspense fallback={<PageLoader />}><EarProtection /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/technical-aids`} element={
+        <Suspense fallback={<PageLoader />}><TechnicalAids /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/subvenciones`} element={
+        <Suspense fallback={<PageLoader />}><Subvenciones /></Suspense>
+      } />
+      {/* Audiology Landing Page */}
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}services/audiologia-centro`} element={
+        <Suspense fallback={<PageLoader />}><AudiologiaCentro /></Suspense>
+      } />
+      {/* Oticon Models Pages (hidden, only accessible via direct link) */}
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}products/oticon-models`} element={
+        <Suspense fallback={<PageLoader />}><OticonModels /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}products/oticon-models/:id`} element={
+        <Suspense fallback={<PageLoader />}><OticonModelPage /></Suspense>
+      } />
+      {/* Legal Pages */}
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}legal/privacy-policy`} element={
+        <Suspense fallback={<PageLoader />}><PrivacyPolicy /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}legal/terms-conditions`} element={
+        <Suspense fallback={<PageLoader />}><TermsConditions /></Suspense>
+      } />
+      <Route path={`${langPrefix ? `${langPrefix}/` : ''}legal/cookies-policy`} element={
+        <Suspense fallback={<PageLoader />}><CookiesPolicy /></Suspense>
+      } />
+    </>
+  );
+}
+
 function App() {
   return (
     <HelmetProvider>
@@ -75,76 +173,21 @@ function App() {
           <RedirectHandler />
           <PageTracker />
           <Routes>
-            <Route path="/" element={<Index />} />
-            {/* All other routes wrapped with Suspense for lazy loading */}
-            <Route path="/about" element={
-              <Suspense fallback={<PageLoader />}><About /></Suspense>
-            } />
-            {/* Optical Services */}
-            <Route path="/services/salut-visual" element={
-              <Suspense fallback={<PageLoader />}><SalutVisual /></Suspense>
-            } />
-            <Route path="/services/lents-contacte" element={
-              <Suspense fallback={<PageLoader />}><LentsContacte /></Suspense>
-            } />
-            <Route path="/services/orto-k" element={
-              <Suspense fallback={<PageLoader />}><OrtoK /></Suspense>
-            } />
-            <Route path="/services/eyeglasses" element={
-              <Suspense fallback={<PageLoader />}><Eyeglasses /></Suspense>
-            } />
-            <Route path="/services/sunglasses" element={
-              <Suspense fallback={<PageLoader />}><Sunglasses /></Suspense>
-            } />
-            <Route path="/services/contact-lenses" element={
-              <Suspense fallback={<PageLoader />}><ContactLenses /></Suspense>
-            } />
-            <Route path="/services/image-consulting" element={
-              <Suspense fallback={<PageLoader />}><ImageConsulting /></Suspense>
-            } />
-            <Route path="/services/lens-consulting" element={
-              <Suspense fallback={<PageLoader />}><LensConsulting /></Suspense>
-            } />
-            {/* Audiology Services */}
-            <Route path="/services/hearing-test" element={
-              <Suspense fallback={<PageLoader />}><HearingTest /></Suspense>
-            } />
-            <Route path="/services/hearing-aids" element={
-              <Suspense fallback={<PageLoader />}><HearingAids /></Suspense>
-            } />
-            <Route path="/services/tinnitus-treatment" element={
-              <Suspense fallback={<PageLoader />}><TinnitusTreatment /></Suspense>
-            } />
-            <Route path="/services/ear-protection" element={
-              <Suspense fallback={<PageLoader />}><EarProtection /></Suspense>
-            } />
-            <Route path="/services/technical-aids" element={
-              <Suspense fallback={<PageLoader />}><TechnicalAids /></Suspense>
-            } />
-            <Route path="/services/subvenciones" element={
-              <Suspense fallback={<PageLoader />}><Subvenciones /></Suspense>
-            } />
-            {/* Audiology Landing Page */}
-            <Route path="/services/audiologia-centro" element={
-              <Suspense fallback={<PageLoader />}><AudiologiaCentro /></Suspense>
-            } />
-            {/* Oticon Models Pages (hidden, only accessible via direct link) */}
-            <Route path="/products/oticon-models" element={
-              <Suspense fallback={<PageLoader />}><OticonModels /></Suspense>
-            } />
-            <Route path="/products/oticon-models/:id" element={
-              <Suspense fallback={<PageLoader />}><OticonModelPage /></Suspense>
-            } />
-            {/* Legal Pages */}
-            <Route path="/legal/privacy-policy" element={
-              <Suspense fallback={<PageLoader />}><PrivacyPolicy /></Suspense>
-            } />
-            <Route path="/legal/terms-conditions" element={
-              <Suspense fallback={<PageLoader />}><TermsConditions /></Suspense>
-            } />
-            <Route path="/legal/cookies-policy" element={
-              <Suspense fallback={<PageLoader />}><CookiesPolicy /></Suspense>
-            } />
+            {/* Default route with language detection */}
+            <Route path="/" element={<RootRedirect />} />
+            
+            {/* Language-specific home pages */}
+            <Route path="/ca" element={<Index />} />
+            <Route path="/es" element={<Index />} />
+            <Route path="/en" element={<Index />} />
+            
+            {/* Language-specific routes */}
+            <RouteGroup langPrefix="ca" />
+            <RouteGroup langPrefix="es" />
+            <RouteGroup langPrefix="en" />
+            
+            {/* Legacy routes without language prefix (for backward compatibility) */}
+            <RouteGroup langPrefix="" />
             
             <Route path="*" element={<NotFound />} />
           </Routes>

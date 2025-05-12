@@ -60,6 +60,11 @@
   <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2)$">
     Header set Cache-Control "public, max-age=31536000"
   </FilesMatch>
+  
+  # Add hreflang tags via headers for SEO
+  <FilesMatch "index\.html$">
+    Header set Link "<https://www.looptica.com/ca/>; rel=\"alternate\"; hreflang=\"ca\", <https://www.looptica.com/es/>; rel=\"alternate\"; hreflang=\"es\", <https://www.looptica.com/en/>; rel=\"alternate\"; hreflang=\"en\", <https://www.looptica.com/ca/>; rel=\"alternate\"; hreflang=\"x-default\""
+  </FilesMatch>
 </IfModule>
 
 # Disable ETags
@@ -87,7 +92,7 @@ FileETag None
   AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
-# 301 Redirects for specified URLs
+# Redirect rules for language URLs
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -95,41 +100,63 @@ FileETag None
   # Contact lenses redirects
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^en/contact-lenses-poblenou-barcelona/?$ https://www.looptica.com/services/lents-contacte [R=301,L]
+  RewriteRule ^en/contact-lenses-poblenou-barcelona/?$ https://www.looptica.com/en/services/lents-contacte [R=301,L]
   
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^lentillas-poblenou-barcelona/?$ https://www.looptica.com/services/lents-contacte [R=301,L]
+  RewriteRule ^lentillas-poblenou-barcelona/?$ https://www.looptica.com/es/services/lents-contacte [R=301,L]
   
   # Root redirects
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^cat/?$ https://www.looptica.com/ [R=301,L]
+  RewriteRule ^cat/?$ https://www.looptica.com/ca/ [R=301,L]
   
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^en/?$ https://www.looptica.com/ [R=301,L]
+  RewriteRule ^en/?$ https://www.looptica.com/en/ [R=301,L]
   
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^cat/\?noredirect=ca-ES$ https://www.looptica.com/ [R=301,L]
+  RewriteRule ^cat/\?noredirect=ca-ES$ https://www.looptica.com/ca/ [R=301,L]
   
   # Orto-K redirects
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^orto-k-poblenou-barcelona/?$ https://www.looptica.com/services/orto-k [R=301,L]
+  RewriteRule ^orto-k-poblenou-barcelona/?$ https://www.looptica.com/es/services/orto-k [R=301,L]
   
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^en/orto-k-in-poblenou-barcelona/?$ https://www.looptica.com/services/orto-k [R=301,L]
+  RewriteRule ^en/orto-k-in-poblenou-barcelona/?$ https://www.looptica.com/en/services/orto-k [R=301,L]
   
   # Salud visual redirect
   RewriteCond %{HTTP_HOST} ^looptica\.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www\.looptica\.com$
-  RewriteRule ^salud-visual-poblenou-barcelona/?$ https://www.looptica.com/services/salut-visual [R=301,L]
+  RewriteRule ^salud-visual-poblenou-barcelona/?$ https://www.looptica.com/es/services/salut-visual [R=301,L]
+
+  # Legacy non-language prefixed pages to default language
+  RewriteCond %{REQUEST_URI} !^/(ca|es|en)/
+  RewriteCond %{REQUEST_URI} ^/(services|about|legal)/
+  RewriteRule ^(.*)$ /ca/$1 [R=302,L]
+  
+  # Root path with no language - detect from browser if possible, default to Catalan
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteCond %{HTTP:Accept-Language} ^ca [NC]
+  RewriteRule ^$ /ca/ [R=302,L]
+  
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteCond %{HTTP:Accept-Language} ^es [NC]
+  RewriteRule ^$ /es/ [R=302,L]
+  
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteCond %{HTTP:Accept-Language} ^en [NC]
+  RewriteRule ^$ /en/ [R=302,L]
+  
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^$ /ca/ [R=302,L]
   
   # Handle SPA routing (for React Router)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [QSA,L]
 </IfModule>
+

@@ -6,7 +6,7 @@ import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 
 // Optimized Hero component to improve LCP
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language, getUrlWithLanguage } = useLanguage();
   const heroImageRef = useRef<HTMLImageElement>(null);
   
   return (

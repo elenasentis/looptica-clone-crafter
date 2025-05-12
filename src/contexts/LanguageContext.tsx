@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 type Language = 'en' | 'es' | 'ca';
 
@@ -104,7 +105,7 @@ export const translations: Translations = {
   opticalDescription: {
     en: 'Our certified opticians provide comprehensive visual assessments and personalized solutions to improve your visual health.',
     es: 'Nuestros ópticos optometristas graduados ofrecen servicios completos y soluciones personalizadas para mejorar tu salud visual.',
-    ca: 'Els nostres òptics optometristes graduats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
+    ca: 'Els nostres òptics optometristas graduats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
   },
   visualHealth: {
     en: 'Visual Health',
@@ -482,13 +483,102 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  detectLanguage: () => Language;
+  getUrlWithLanguage: (path: string, lang?: Language) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('ca');
-
+  const [language, setLanguageState] = useState<Language>('ca');
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Extract language from URL path
+  const extractLanguageFromPath = useCallback((): Language | null => {
+    const pathSegments = location.pathname.split('/').filter(Boolean);
+    const firstSegment = pathSegments[0];
+    
+    if (firstSegment === 'ca' || firstSegment === 'es' || firstSegment === 'en') {
+      return firstSegment as Language;
+    }
+    
+    return null;
+  }, [location.pathname]);
+  
+  // Detect user's preferred language
+  const detectLanguage = useCallback((): Language => {
+    // First, check if language is already set in URL
+    const urlLanguage = extractLanguageFromPath();
+    if (urlLanguage) {
+      return urlLanguage;
+    }
+    
+    // Second, check if language is stored in localStorage
+    const storedLanguage = localStorage.getItem('preferredLanguage');
+    if (storedLanguage === 'ca' || storedLanguage === 'es' || storedLanguage === 'en') {
+      return storedLanguage as Language;
+    }
+    
+    // Third, check browser language preferences
+    const browserLang = navigator.language.toLowerCase();
+    if (browserLang.startsWith('ca') || browserLang.startsWith('cat')) {
+      return 'ca';
+    } else if (browserLang.startsWith('es') || browserLang.startsWith('spa')) {
+      return 'es';
+    } else {
+      return 'en'; // Default to English for all other languages
+    }
+  }, [extractLanguageFromPath]);
+  
+  // Update language state and persist to localStorage
+  const setLanguage = useCallback((lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('preferredLanguage', lang);
+    
+    // Update URL to include language prefix if not already present
+    const urlLang = extractLanguageFromPath();
+    if (urlLang !== lang) {
+      const pathWithoutLang = location.pathname.replace(/^\/(ca|es|en)/, '');
+      const newPath = `/${lang}${pathWithoutLang || ''}${location.search}${location.hash}`;
+      navigate(newPath, { replace: true });
+    }
+  }, [extractLanguageFromPath, location, navigate]);
+  
+  // Get URL with the correct language prefix
+  const getUrlWithLanguage = useCallback((path: string, lang?: Language): string => {
+    const targetLang = lang || language;
+    
+    // If path already starts with language code, replace it
+    if (path.match(/^\/(ca|es|en)\//)) {
+      return path.replace(/^\/(ca|es|en)/, `/${targetLang}`);
+    }
+    
+    // If path doesn't start with slash, add it
+    if (!path.startsWith('/')) {
+      path = `/${path}`;
+    }
+    
+    // If path is just the root, return language prefix
+    if (path === '/') {
+      return `/${targetLang}`;
+    }
+    
+    // Otherwise, add language prefix to path
+    return `/${targetLang}${path}`;
+  }, [language]);
+  
+  // Initialize language from URL or detect it
+  useEffect(() => {
+    const urlLang = extractLanguageFromPath();
+    if (urlLang) {
+      setLanguageState(urlLang);
+    } else {
+      const detectedLang = detectLanguage();
+      setLanguageState(detectedLang);
+    }
+  }, [extractLanguageFromPath, detectLanguage]);
+  
   const t = (key: string): string => {
     if (translations[key]) {
       return translations[key][language];
@@ -498,7 +588,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, detectLanguage, getUrlWithLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
