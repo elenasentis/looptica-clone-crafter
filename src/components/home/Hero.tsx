@@ -4,26 +4,30 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 
-// Optimized Hero component to improve LCP
+// Optimized Hero component to improve LCP and reduce CLS
 const Hero = () => {
   const { t, language, getUrlWithLanguage } = useLanguage();
   const heroImageRef = useRef<HTMLImageElement>(null);
   
   return (
     <section className="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 lg:px-12 overflow-hidden">
-      {/* Hero image without state-based opacity handling */}
-      <img
-        ref={heroImageRef}
-        src="/images/DSC4608_compressed.jpg"
-        alt="Looptica Hero"
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
-        fetchPriority="high"
-      />
-      
-      {/* Semi-transparent overlay with reduced opacity */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/30"></div>
+      {/* Hero image container with explicit aspect ratio to prevent layout shift */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Image with explicit width/height and aspect ratio */}
+        <img
+          ref={heroImageRef}
+          src="/images/DSC4608_compressed.jpg"
+          alt="Looptica Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          style={{ aspectRatio: '16/9' }}
+        />
+        
+        {/* Semi-transparent overlay with reduced opacity */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-white/30"></div>
+      </div>
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
         {/* Hero Text and CTA */}
