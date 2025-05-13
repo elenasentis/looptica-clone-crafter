@@ -29,14 +29,18 @@ const CriticalStyles: React.FC = () => {
       });
     };
     
-    // Preload critical fonts to avoid FOIT (Flash of Invisible Text)
-    const preloadCriticalFonts = () => {
-      const criticalFonts = [
+    // Preload ALL font weights to avoid FOIT (Flash of Invisible Text) and layout shifts
+    const preloadAllFonts = () => {
+      const allFonts = [
+        { weight: 300, file: 'Poppins-Light.ttf' },
         { weight: 400, file: 'Poppins-Regular.ttf' },
-        { weight: 500, file: 'Poppins-Medium.ttf' }
+        { weight: 500, file: 'Poppins-Medium.ttf' },
+        { weight: 600, file: 'Poppins-SemiBold.ttf' },
+        { weight: 700, file: 'Poppins-Bold.ttf' },
+        { weight: 800, file: 'Poppins-ExtraBold.ttf' }
       ];
       
-      criticalFonts.forEach(font => {
+      allFonts.forEach(font => {
         const fontLink = document.createElement('link');
         fontLink.rel = 'preload';
         fontLink.as = 'font';
@@ -45,21 +49,10 @@ const CriticalStyles: React.FC = () => {
         fontLink.crossOrigin = 'anonymous';
         document.head.appendChild(fontLink);
       });
-    };
-    
-    // Load remaining font weights that weren't preloaded in the <head>
-    // But add font-display: swap to prevent layout shifts
-    const loadNonCriticalFonts = () => {
-      const fontWeights = [
-        { weight: 300, file: 'Poppins-Light.ttf' },
-        { weight: 600, file: 'Poppins-SemiBold.ttf' },
-        { weight: 700, file: 'Poppins-Bold.ttf' },
-        { weight: 800, file: 'Poppins-ExtraBold.ttf' }
-      ];
       
-      // Create a style element for font-face definitions with font-display: swap
+      // Create a style element with font-display: swap for ALL fonts
       const fontFaceStyle = document.createElement('style');
-      fontFaceStyle.textContent = fontWeights.map(font => `
+      fontFaceStyle.textContent = allFonts.map(font => `
         @font-face {
           font-family: 'Poppins';
           font-style: normal;
@@ -70,17 +63,6 @@ const CriticalStyles: React.FC = () => {
         }
       `).join('');
       document.head.appendChild(fontFaceStyle);
-      
-      // Also preload the fonts for faster loading
-      fontWeights.forEach(font => {
-        const fontLink = document.createElement('link');
-        fontLink.rel = 'preload';
-        fontLink.href = `/fonts/poppins/${font.file}`;
-        fontLink.as = 'font';
-        fontLink.type = 'font/ttf';
-        fontLink.crossOrigin = 'anonymous';
-        document.head.appendChild(fontLink);
-      });
     };
     
     // Optimize hero image loading strategy - improved for better LCP and reduced CLS
@@ -101,68 +83,62 @@ const CriticalStyles: React.FC = () => {
       }
     };
     
-    // Optimize image loading strategy for non-hero images
-    const optimizeImages = () => {
-      // Find all images that aren't explicitly marked with loading attributes and aren't the hero
-      const images = document.querySelectorAll('img:not([loading]):not([alt="Looptica Hero"])');
+    // Optimize image loading strategy for all images
+    const optimizeAllImages = () => {
+      // Find all images
+      const images = document.querySelectorAll('img');
       
       // Set explicit dimensions for images to prevent layout shifts
       images.forEach(img => {
         const image = img as HTMLImageElement;
-        if (!image.hasAttribute('width') && !image.hasAttribute('height')) {
-          // Default dimensions if not specified, helps prevent CLS
-          image.setAttribute('width', '100%');
-          image.setAttribute('height', 'auto');
-          // Add aspect ratio if possible based on intrinsic size
-          if (image.naturalWidth && image.naturalHeight) {
-            const ratio = (image.naturalHeight / image.naturalWidth) * 100;
-            image.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+        
+        // Skip images that already have both width and height
+        if (image.hasAttribute('width') && image.hasAttribute('height')) {
+          return;
+        }
+        
+        // For logo or icons that don't have dimensions
+        if (image.src.includes('logo') || image.alt.includes('Logo') || image.alt.includes('Icon')) {
+          // Set explicit dimensions based on the class or use default values
+          if (image.className.includes('h-8') || image.className.includes('h-10')) {
+            const height = image.className.includes('h-10') ? 40 : 32;
+            // Calculate width based on typical logo aspect ratio
+            const width = Math.round(height * 3.5);
+            image.width = width;
+            image.height = height;
+          } else {
+            // Default dimensions for logos/icons without specific classes
+            image.width = 150;
+            image.height = 40;
           }
         }
         
-        if (!image.hasAttribute('loading')) {
+        // Add loading="lazy" to non-hero images without this attribute
+        if (!image.hasAttribute('loading') && !image.alt.includes('Hero')) {
           image.setAttribute('loading', 'lazy');
         }
+        
+        // Ensure all images have an aspect ratio to prevent layout shifts
+        if (image.naturalWidth && image.naturalHeight && !image.style.aspectRatio) {
+          image.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+        }
       });
-      
-      // Use Intersection Observer for lazy loading
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const image = entry.target as HTMLImageElement;
-            if (image.dataset.src) {
-              image.src = image.dataset.src;
-              delete image.dataset.src;
-            }
-            io.unobserve(image);
-          }
-        });
-      }, {
-        rootMargin: '200px 0px', // Start loading 200px before they come into view
-        threshold: 0.01
-      });
-      
-      // Observe images with data-src
-      document.querySelectorAll('img[data-src]').forEach(img => io.observe(img));
     };
     
     // Run in optimal order to minimize CLS
-    preloadCriticalFonts(); // First preload critical fonts
-    optimizeHeroImage(); // Then optimize hero image immediately
+    preloadAllFonts(); // Load ALL fonts first
+    optimizeHeroImage(); // Then optimize hero image
+    optimizeAllImages(); // Then optimize all images
     
     // Use requestIdleCallback for non-critical resources
     if (typeof window !== 'undefined') {
       if ('requestIdleCallback' in window) {
         (window as any).requestIdleCallback(() => {
-          loadNonCriticalFonts();
           loadNonCriticalCSS();
-          optimizeImages();
         });
       } else {
         setTimeout(() => {
-          loadNonCriticalFonts();
           loadNonCriticalCSS();
-          optimizeImages();
         }, 200);
       }
     }

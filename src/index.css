@@ -94,27 +94,47 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-medium tracking-tight;
+    margin-top: 0; /* Prevent layout shift from top margin */
+    margin-bottom: 0.5em; /* Add consistent bottom margin */
   }
 
   h1 {
     @apply text-4xl sm:text-5xl;
+    line-height: 1.2; /* Fixed line height to prevent layout shift */
   }
 
   h2 {
     @apply text-3xl sm:text-4xl;
+    line-height: 1.25;
   }
 
   h3 {
     @apply text-2xl sm:text-3xl;
+    line-height: 1.3;
   }
 
   p {
     @apply leading-relaxed;
+    margin-top: 0; /* Prevent layout shift from top margin */
+    margin-bottom: 1em; /* Add consistent bottom margin */
+  }
+  
+  /* Reserve space for all images by default */
+  img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  }
+  
+  /* Prevent layout shift for logos */
+  img[alt="Looptica"], img[src*="logo"] {
+    aspect-ratio: 3.5 / 1;
+    width: auto;
   }
 }
 
@@ -173,7 +193,7 @@ html {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Replace Google Fonts with local font files - with font-display: swap to prevent layout shifts */
+/* Set font-display: swap for ALL fonts to prevent layout shifts */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
