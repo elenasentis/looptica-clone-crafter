@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, ReactNode, useState } from 'react';
 
 interface ScrollRevealProps {
@@ -30,43 +29,46 @@ const ScrollReveal = ({
   const alreadyRevealed = useRef(false);
   const [isVisible, setIsVisible] = useState(false);
   
-  // Determine if the element is in the initial viewport on mount
+  // This effect runs once on mount to check if element is in initial viewport
   useEffect(() => {
-    // Check if this element is in the initial viewport
-    const checkInitialVisibility = () => {
-      const element = elementRef.current;
-      if (!element) return;
+    // Set a default visible style immediately to reduce layout shifts
+    const element = elementRef.current;
+    if (element) {
+      // Pre-allocate space with the same dimensions as the revealed state
+      element.style.opacity = '1';
       
-      const rect = element.getBoundingClientRect();
-      const isInViewport = 
-        rect.top <= window.innerHeight * (1 - viewFactor) &&
-        rect.bottom >= 0;
-        
-      if (isInViewport) {
-        // Element is already in viewport on page load
-        setIsVisible(true);
-        alreadyRevealed.current = true;
-      }
-    };
-    
-    // Run immediately to detect initial viewport elements
-    checkInitialVisibility();
-  }, [viewFactor]);
+      // Use requestAnimationFrame to properly check viewport position after layout
+      requestAnimationFrame(() => {
+        const rect = element.getBoundingClientRect();
+        const isInViewport = 
+          rect.top <= window.innerHeight * (1 - viewFactor) &&
+          rect.bottom >= 0;
+          
+        if (isInViewport) {
+          // Element is already in viewport on page load, keep it visible
+          setIsVisible(true);
+          alreadyRevealed.current = true;
+        } else {
+          // Only apply reveal animation if not in viewport initially
+          element.style.opacity = opacity.toString();
+          element.style.transform = getTransform(origin, distance);
+        }
+      });
+    }
+  }, [opacity, origin, distance, viewFactor]);
   
   useEffect(() => {
     const element = elementRef.current;
     if (!element) return;
 
-    // Skip animation setup if element is already visible
+    // If already visible, ensure element stays visible
     if (isVisible) {
       element.style.opacity = '1';
       element.style.transform = 'translate3d(0, 0, 0)';
       return;
     }
 
-    // Initial style setup for elements not initially visible
-    element.style.opacity = opacity.toString();
-    element.style.transform = getTransform(origin, distance);
+    // Apply transition styles
     element.style.transition = `opacity ${duration}ms ${easing}, transform ${duration}ms ${easing}`;
     element.style.transitionDelay = `${delay}ms`;
 
@@ -120,8 +122,16 @@ const ScrollReveal = ({
     }
   };
 
+  // Reserve space for the element with the same dimensions to prevent CLS
   return (
-    <div ref={elementRef} className={className}>
+    <div 
+      ref={elementRef} 
+      className={className}
+      style={{ 
+        minHeight: elementRef.current?.offsetHeight || 'auto',
+        willChange: 'opacity, transform'
+      }}
+    >
       {children}
     </div>
   );
