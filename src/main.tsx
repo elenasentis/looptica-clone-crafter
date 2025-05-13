@@ -1,8 +1,9 @@
 
-import { createRoot } from 'react-dom/client'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App.tsx'
-import './index.css'
+import App from './App.tsx';
+import './index.css';
 import CriticalStyles from './components/CriticalStyles.tsx';
 
 // Preload fonts before rendering the app
@@ -31,8 +32,10 @@ preloadFonts();
 // Initialize the app with CriticalStyles component
 const root = createRoot(document.getElementById("root")!);
 root.render(
-  <Router>
-    <CriticalStyles />
-    <App />
-  </Router>
+  <React.StrictMode>
+    <Router>
+      <CriticalStyles />
+      <App />
+    </Router>
+  </React.StrictMode>
 );

@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
-import { Toaster } from './components/ui/sonner';
+import { Toaster } from './components/ui/sonner'; // Using Sonner toast consistently
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
 import CriticalStyles from './components/CriticalStyles';
