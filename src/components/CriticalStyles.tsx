@@ -29,39 +29,81 @@ const CriticalStyles: React.FC = () => {
       });
     };
     
-    // Preload ALL font weights to avoid FOIT (Flash of Invisible Text) and layout shifts
-    const preloadAllFonts = () => {
-      const allFonts = [
-        { weight: 300, file: 'Poppins-Light.ttf' },
-        { weight: 400, file: 'Poppins-Regular.ttf' },
-        { weight: 500, file: 'Poppins-Medium.ttf' },
-        { weight: 600, file: 'Poppins-SemiBold.ttf' },
-        { weight: 700, file: 'Poppins-Bold.ttf' },
-        { weight: 800, file: 'Poppins-ExtraBold.ttf' }
-      ];
-      
-      allFonts.forEach(font => {
-        const fontLink = document.createElement('link');
-        fontLink.rel = 'preload';
-        fontLink.as = 'font';
-        fontLink.href = `/fonts/poppins/${font.file}`;
-        fontLink.type = 'font/ttf';
-        fontLink.crossOrigin = 'anonymous';
-        document.head.appendChild(fontLink);
-      });
-      
-      // Create a style element with font-display: swap for ALL fonts
+    // Use font-display: optional for all fonts - prevents layout shifts but may cause FOIT
+    const optimizeFontLoading = () => {
       const fontFaceStyle = document.createElement('style');
-      fontFaceStyle.textContent = allFonts.map(font => `
+      fontFaceStyle.textContent = `
         @font-face {
           font-family: 'Poppins';
           font-style: normal;
-          font-weight: ${font.weight};
-          font-display: swap; /* This prevents layout shift by showing fallback immediately */
-          src: url('/fonts/poppins/${font.file}') format('truetype');
+          font-weight: 300;
+          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          src: url('/fonts/poppins/Poppins-Light.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
-      `).join('');
+        
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          src: url('/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 500;
+          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          src: url('/fonts/poppins/Poppins-Medium.ttf') format('truetype');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 600;
+          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          src: url('/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 700;
+          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          src: url('/fonts/poppins/Poppins-Bold.ttf') format('truetype');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 800;
+          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          src: url('/fonts/poppins/Poppins-ExtraBold.ttf') format('truetype');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Fallback system fonts with similar metrics to prevent layout shifts */
+        body {
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+        
+        /* Reserve space for text elements to prevent layout shifts */
+        h1, h2, h3, h4, h5, h6, p {
+          margin-top: 0;
+          max-width: 100%;
+        }
+        
+        /* Set explicit line heights for headings */
+        h1 { font-size: 2.5rem; line-height: 1.2; }
+        h2 { font-size: 2rem; line-height: 1.25; }
+        h3 { font-size: 1.75rem; line-height: 1.3; }
+        p { line-height: 1.5; }
+      `;
       document.head.appendChild(fontFaceStyle);
     };
     
@@ -119,14 +161,32 @@ const CriticalStyles: React.FC = () => {
         }
         
         // Ensure all images have an aspect ratio to prevent layout shifts
-        if (image.naturalWidth && image.naturalHeight && !image.style.aspectRatio) {
-          image.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+        if (!image.style.aspectRatio) {
+          // Use natural dimensions if available, otherwise use a default ratio
+          if (image.naturalWidth && image.naturalHeight) {
+            image.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+          } else if (image.src.includes('logo')) {
+            image.style.aspectRatio = '3.5 / 1';
+          } else {
+            // Default aspect ratio for general images
+            image.style.aspectRatio = '16 / 9';
+          }
         }
       });
     };
     
+    // Block layout shifts from footer content by pre-reserving space
+    const preventFooterShift = () => {
+      const footer = document.querySelector('footer');
+      if (footer) {
+        // Add minimum height to footer to prevent layout shifts
+        footer.style.minHeight = '500px'; // Adjust based on typical footer height
+      }
+    };
+    
     // Run in optimal order to minimize CLS
-    preloadAllFonts(); // Load ALL fonts first
+    optimizeFontLoading(); // Apply font optimizations first
+    preventFooterShift(); // Prevent footer from shifting
     optimizeHeroImage(); // Then optimize hero image
     optimizeAllImages(); // Then optimize all images
     

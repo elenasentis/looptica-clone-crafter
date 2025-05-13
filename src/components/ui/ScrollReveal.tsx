@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, ReactNode } from 'react';
+import { useEffect, useRef, ReactNode, useState } from 'react';
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -28,12 +28,43 @@ const ScrollReveal = ({
 }: ScrollRevealProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const alreadyRevealed = useRef(false);
-
+  const [isVisible, setIsVisible] = useState(false);
+  
+  // Determine if the element is in the initial viewport on mount
+  useEffect(() => {
+    // Check if this element is in the initial viewport
+    const checkInitialVisibility = () => {
+      const element = elementRef.current;
+      if (!element) return;
+      
+      const rect = element.getBoundingClientRect();
+      const isInViewport = 
+        rect.top <= window.innerHeight * (1 - viewFactor) &&
+        rect.bottom >= 0;
+        
+      if (isInViewport) {
+        // Element is already in viewport on page load
+        setIsVisible(true);
+        alreadyRevealed.current = true;
+      }
+    };
+    
+    // Run immediately to detect initial viewport elements
+    checkInitialVisibility();
+  }, [viewFactor]);
+  
   useEffect(() => {
     const element = elementRef.current;
     if (!element) return;
 
-    // Initial style setup
+    // Skip animation setup if element is already visible
+    if (isVisible) {
+      element.style.opacity = '1';
+      element.style.transform = 'translate3d(0, 0, 0)';
+      return;
+    }
+
+    // Initial style setup for elements not initially visible
     element.style.opacity = opacity.toString();
     element.style.transform = getTransform(origin, distance);
     element.style.transition = `opacity ${duration}ms ${easing}, transform ${duration}ms ${easing}`;
@@ -46,6 +77,7 @@ const ScrollReveal = ({
             // Reveal the element
             element.style.opacity = '1';
             element.style.transform = 'translate3d(0, 0, 0)';
+            setIsVisible(true);
             
             if (!reset) {
               // If reset is false, stop observing after revealing
@@ -55,6 +87,7 @@ const ScrollReveal = ({
               // If reset is true and element is out of view after being revealed
               element.style.opacity = opacity.toString();
               element.style.transform = getTransform(origin, distance);
+              setIsVisible(false);
             }
           }
         });
@@ -70,7 +103,7 @@ const ScrollReveal = ({
     return () => {
       if (element) observer.unobserve(element);
     };
-  }, [delay, distance, duration, easing, opacity, origin, reset, viewFactor]);
+  }, [delay, distance, duration, easing, opacity, origin, reset, viewFactor, isVisible]);
 
   const getTransform = (origin: string, distance: string) => {
     switch (origin) {
