@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
@@ -13,6 +12,7 @@ import StoreLocation from '@/components/home/StoreLocation';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { FadeIn, FadeInUp } from '@/components/ui/index';
 
 // Create a new component for SEO content to avoid it blocking rendering
 const SeoContent = ({ language }: { language: string }) => {
@@ -45,6 +45,9 @@ const SeoContent = ({ language }: { language: string }) => {
 const DeferredContent = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
+  
+  // Use CSS animations instead of ScrollReveal for smoother rendering
+  const staggered = [0, 100, 200, 300, 400, 500];
 
   const content = {
     audiologyLink: {
@@ -63,6 +66,30 @@ const DeferredContent = () => {
         // Add loading="lazy" attribute to all other images
         if (!img.hasAttribute('loading')) {
           img.setAttribute('loading', 'lazy');
+        }
+        
+        // Set explicit dimensions if missing
+        const imgElement = img as HTMLImageElement;
+        if (!imgElement.getAttribute('width') && !imgElement.getAttribute('height')) {
+          // Set default dimensions or use natural dimensions if available
+          if (imgElement.naturalWidth && imgElement.naturalHeight) {
+            imgElement.width = imgElement.naturalWidth;
+            imgElement.height = imgElement.naturalHeight;
+          } else {
+            // Set defaults based on image type
+            if (imgElement.src.includes('logo')) {
+              imgElement.width = 150;
+              imgElement.height = 40;
+            } else {
+              imgElement.width = 300;
+              imgElement.height = 200;
+            }
+          }
+          
+          // Set aspect ratio
+          imgElement.style.aspectRatio = imgElement.width && imgElement.height 
+            ? `${imgElement.width} / ${imgElement.height}` 
+            : '3/2';
         }
       });
     };
@@ -114,28 +141,40 @@ const DeferredContent = () => {
 
   return (
     <>
-      <div id="products">
-        <Products />
+      <div id="products" className="min-h-[400px]">
+        <FadeInUp delay={staggered[0]}>
+          <Products />
+        </FadeInUp>
       </div>
-      <div id="optical">
-        <OpticalServices />
+      <div id="optical" className="min-h-[300px]">
+        <FadeInUp delay={staggered[1]}>
+          <OpticalServices />
+        </FadeInUp>
       </div>
-      <div id="audiology">
-        <Audiology />
+      <div id="audiology" className="min-h-[300px]">
+        <FadeInUp delay={staggered[2]}>
+          <Audiology />
+        </FadeInUp>
         <div className="container mx-auto px-4 mt-4 text-center">
           <Link to="/services/audiologia-centro" className="text-[#55afa9] hover:underline">
             {content.audiologyLink[language as keyof typeof content.audiologyLink]}
           </Link>
         </div>
       </div>
-      <div id="testimonials">
-        <Testimonials />
+      <div id="testimonials" className="min-h-[400px]">
+        <FadeInUp delay={staggered[3]}>
+          <Testimonials />
+        </FadeInUp>
       </div>
-      <div id="brands">
-        <Brands />
+      <div id="brands" className="min-h-[200px]">
+        <FadeInUp delay={staggered[4]}>
+          <Brands />
+        </FadeInUp>
       </div>
-      <div id="contact">
-        <StoreLocation />
+      <div id="contact" className="min-h-[400px]">
+        <FadeInUp delay={staggered[5]}>
+          <StoreLocation />
+        </FadeInUp>
       </div>
     </>
   );
@@ -187,6 +226,9 @@ const Index = () => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
     
+    // Set minimum heights for page sections to prevent layout shifts
+    document.documentElement.style.setProperty('--min-footer-height', '520px');
+    
     // Log to check if component is mounting correctly
     console.log("Index component mounted");
   }, []);
@@ -201,6 +243,11 @@ const Index = () => {
         <meta property="og:title" content={content.meta[language as keyof typeof content.meta].title} />
         <meta property="og:description" content={content.meta[language as keyof typeof content.meta].description} />
         <meta property="og:url" content="https://www.looptica.com/" />
+        
+        {/* Preload critical assets */}
+        <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
       </Helmet>
       <Navbar />
       <div className="min-h-screen flex flex-col">

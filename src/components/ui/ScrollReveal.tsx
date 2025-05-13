@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, ReactNode, useState } from 'react';
 
 interface ScrollRevealProps {
@@ -11,6 +12,8 @@ interface ScrollRevealProps {
   origin?: 'top' | 'right' | 'bottom' | 'left';
   reset?: boolean;
   viewFactor?: number;
+  disabled?: boolean; // New prop to conditionally disable animations
+  placeholder?: ReactNode; // New prop to show content before reveal
 }
 
 const ScrollReveal = ({
@@ -24,40 +27,69 @@ const ScrollReveal = ({
   origin = 'bottom',
   reset = false,
   viewFactor = 0.1,
+  disabled = false, // Default to enabled
+  placeholder = null,
 }: ScrollRevealProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const alreadyRevealed = useRef(false);
+  const elementHeight = useRef<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   
-  // This effect runs once on mount to check if element is in initial viewport
+  // Initialize properly for SSR
+  const isBrowser = typeof window !== 'undefined';
+  const isMobile = isBrowser ? window.innerWidth < 768 : false;
+  
+  // Skip animations for mobile if needed and use simpler CSS animations
+  const shouldAnimate = !disabled && !(isMobile && origin === 'bottom');
+  
+  // Measure the element dimensions once mounted to reserve space
   useEffect(() => {
-    // Set a default visible style immediately to reduce layout shifts
-    const element = elementRef.current;
-    if (element) {
-      // Pre-allocate space with the same dimensions as the revealed state
-      element.style.opacity = '1';
+    if (elementRef.current) {
+      const rect = elementRef.current.getBoundingClientRect();
+      // Store the height for future reference
+      elementHeight.current = rect.height;
+      setDimensions({ width: rect.width, height: rect.height });
       
-      // Use requestAnimationFrame to properly check viewport position after layout
-      requestAnimationFrame(() => {
-        const rect = element.getBoundingClientRect();
-        const isInViewport = 
-          rect.top <= window.innerHeight * (1 - viewFactor) &&
-          rect.bottom >= 0;
-          
-        if (isInViewport) {
-          // Element is already in viewport on page load, keep it visible
-          setIsVisible(true);
-          alreadyRevealed.current = true;
-        } else {
-          // Only apply reveal animation if not in viewport initially
-          element.style.opacity = opacity.toString();
-          element.style.transform = getTransform(origin, distance);
+      // Check if initially in viewport
+      const isInViewport = 
+        rect.top <= window.innerHeight * (1 - viewFactor) &&
+        rect.bottom >= 0;
+        
+      if (isInViewport || disabled) {
+        // If already in viewport or animations disabled, show immediately
+        setIsVisible(true);
+        alreadyRevealed.current = true;
+      } else if (shouldAnimate) {
+        // Apply initial hidden state only if should animate
+        if (elementRef.current) {
+          elementRef.current.style.opacity = opacity.toString();
+          elementRef.current.style.transform = getTransform(origin, distance);
         }
-      });
+      }
     }
-  }, [opacity, origin, distance, viewFactor]);
+    
+    // Fallback to show content after a timeout to prevent permanent invisible content
+    const fallbackTimer = setTimeout(() => {
+      if (!isVisible && elementRef.current) {
+        setIsVisible(true);
+        if (elementRef.current) {
+          elementRef.current.style.opacity = '1';
+          elementRef.current.style.transform = 'translate3d(0, 0, 0)';
+        }
+      }
+    }, 2000); // 2 second fallback
+    
+    return () => clearTimeout(fallbackTimer);
+  }, [opacity, origin, distance, viewFactor, disabled, shouldAnimate]);
   
   useEffect(() => {
+    // If animations are disabled, don't set up observers
+    if (disabled || !shouldAnimate) {
+      setIsVisible(true);
+      return;
+    }
+
     const element = elementRef.current;
     if (!element) return;
 
@@ -71,6 +103,7 @@ const ScrollReveal = ({
     // Apply transition styles
     element.style.transition = `opacity ${duration}ms ${easing}, transform ${duration}ms ${easing}`;
     element.style.transitionDelay = `${delay}ms`;
+    element.style.willChange = 'opacity, transform';
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -105,7 +138,7 @@ const ScrollReveal = ({
     return () => {
       if (element) observer.unobserve(element);
     };
-  }, [delay, distance, duration, easing, opacity, origin, reset, viewFactor, isVisible]);
+  }, [delay, distance, duration, easing, opacity, origin, reset, viewFactor, isVisible, disabled, shouldAnimate]);
 
   const getTransform = (origin: string, distance: string) => {
     switch (origin) {
@@ -122,17 +155,33 @@ const ScrollReveal = ({
     }
   };
 
-  // Reserve space for the element with the same dimensions to prevent CLS
+  // If disabled, just render the children directly
+  if (disabled) {
+    return <div className={className}>{children}</div>;
+  }
+
+  // For mobile or above-the-fold content, use simple CSS animations instead
+  if (isMobile && !shouldAnimate) {
+    return (
+      <div className={`${className} fade-in-up`}>
+        {children}
+      </div>
+    );
+  }
+
+  // Reserve space for the element to prevent layout shifts
+  const style: React.CSSProperties = {
+    minHeight: elementHeight.current ? `${elementHeight.current}px` : 'auto',
+    position: 'relative'
+  };
+
   return (
     <div 
       ref={elementRef} 
       className={className}
-      style={{ 
-        minHeight: elementRef.current?.offsetHeight || 'auto',
-        willChange: 'opacity, transform'
-      }}
+      style={style}
     >
-      {children}
+      {isVisible ? children : placeholder || children}
     </div>
   );
 };

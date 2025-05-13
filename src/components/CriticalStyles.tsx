@@ -31,13 +31,31 @@ const CriticalStyles: React.FC = () => {
     
     // Use font-display: optional for all fonts - prevents layout shifts but may cause FOIT
     const optimizeFontLoading = () => {
+      // Preload critical fonts
+      const preloadFonts = [
+        '/fonts/poppins/Poppins-Regular.ttf',
+        '/fonts/poppins/Poppins-Medium.ttf',
+        '/fonts/poppins/Poppins-SemiBold.ttf',
+        '/fonts/poppins/Poppins-Bold.ttf'
+      ];
+      
+      preloadFonts.forEach(fontPath => {
+        const preloadLink = document.createElement('link');
+        preloadLink.rel = 'preload';
+        preloadLink.href = fontPath;
+        preloadLink.as = 'font';
+        preloadLink.type = 'font/ttf';
+        preloadLink.crossOrigin = 'anonymous';
+        document.head.appendChild(preloadLink);
+      });
+      
       const fontFaceStyle = document.createElement('style');
       fontFaceStyle.textContent = `
         @font-face {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 300;
-          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          font-display: optional; /* Using optional to prevent CLS */
           src: url('/fonts/poppins/Poppins-Light.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -46,7 +64,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 400;
-          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          font-display: optional; /* Using optional to prevent CLS */
           src: url('/fonts/poppins/Poppins-Regular.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -55,7 +73,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 500;
-          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          font-display: optional; /* Using optional to prevent CLS */
           src: url('/fonts/poppins/Poppins-Medium.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -64,7 +82,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 600;
-          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          font-display: optional; /* Using optional to prevent CLS */
           src: url('/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -73,7 +91,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 700;
-          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          font-display: optional; /* Using optional to prevent CLS */
           src: url('/fonts/poppins/Poppins-Bold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -82,7 +100,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 800;
-          font-display: optional; /* Changed from swap to optional to prevent CLS */
+          font-display: optional; /* Using optional to prevent CLS */
           src: url('/fonts/poppins/Poppins-ExtraBold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -122,6 +140,9 @@ const CriticalStyles: React.FC = () => {
         if ('fetchPriority' in img) {
           img.fetchPriority = 'high';
         }
+        
+        // Force aspect ratio to prevent layout shifts
+        img.style.aspectRatio = '16/9';
       }
     };
     
@@ -148,10 +169,12 @@ const CriticalStyles: React.FC = () => {
             const width = Math.round(height * 3.5);
             image.width = width;
             image.height = height;
+            image.style.objectFit = 'contain';
           } else {
             // Default dimensions for logos/icons without specific classes
             image.width = 150;
             image.height = 40;
+            image.style.objectFit = 'contain';
           }
         }
         
@@ -160,7 +183,7 @@ const CriticalStyles: React.FC = () => {
           image.setAttribute('loading', 'lazy');
         }
         
-        // Ensure all images have an aspect ratio to prevent layout shifts
+        // Reserve image space using aspect-ratio for all images
         if (!image.style.aspectRatio) {
           // Use natural dimensions if available, otherwise use a default ratio
           if (image.naturalWidth && image.naturalHeight) {
@@ -180,8 +203,21 @@ const CriticalStyles: React.FC = () => {
       const footer = document.querySelector('footer');
       if (footer) {
         // Add minimum height to footer to prevent layout shifts
-        footer.style.minHeight = '500px'; // Adjust based on typical footer height
+        footer.style.minHeight = '520px'; // Increased to better match actual footer size
       }
+    };
+    
+    // Optimize scroll reveal elements
+    const optimizeScrollReveal = () => {
+      // Target all scroll reveal elements to ensure they don't cause layout shifts
+      const scrollRevealElements = document.querySelectorAll('[class*="scroll-reveal"]');
+      scrollRevealElements.forEach((element) => {
+        const el = element as HTMLElement;
+        // Pre-allocate space for scroll reveal elements
+        if (!el.style.minHeight) {
+          el.style.minHeight = `${el.scrollHeight || 100}px`;
+        }
+      });
     };
     
     // Run in optimal order to minimize CLS
@@ -189,6 +225,7 @@ const CriticalStyles: React.FC = () => {
     preventFooterShift(); // Prevent footer from shifting
     optimizeHeroImage(); // Then optimize hero image
     optimizeAllImages(); // Then optimize all images
+    setTimeout(optimizeScrollReveal, 100); // Give a small delay to let elements render
     
     // Use requestIdleCallback for non-critical resources
     if (typeof window !== 'undefined') {
