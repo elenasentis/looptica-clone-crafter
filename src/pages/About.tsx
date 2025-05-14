@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { ScrollReveal } from '@/components/ui';
+import ScrollReveal from '@/components/ScrollReveal'; // Updated import
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { Helmet } from 'react-helmet-async';
 

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ScrollReveal } from '@/components/ui';
+import ScrollReveal from '@/components/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -181,8 +180,8 @@ const PrivacyPolicy = () => {
         <h3>EXACTITUD I VERACITAT DE LES DADES</h3>
         <p>L'usuari garanteix que les dades personals facilitades són veraces i es fa responsable de comunicar qualsevol modificació en les mateixes. L'usuari respon de la veracitat de les dades personals facilitades i es compromet a mantenir-les degudament actualitzades. L'usuari garanteix que tota la informació facilitada és correcta, verdadera i completa, i es compromet a mantenir-la degudament actualitzada. L'usuari serà l'únic responsable de qualsevol dany o perjudici, directe o indirecte, que pogués ocasionar a LOOPTICA POBLENOU S.L. o a tercers, a causa de l'emplenament de formularis amb dades falses, inexactes, incompletes o no actualitzades.</p>
         
-        <h3>MESURES DE SEGURETAT</h3>
-        <p>LOOPTICA POBLENOU S.L. ha adoptat totes les mesures d'índole tècnica i organitzativa necessàries per garantir la seguretat i integritat de les dades de caràcter personal que tracti, així com per evitar la seva pèrdua, alteració i/o accés per part de tercers no autoritzats. No obstant això, recordi que cap mètode de transmissió de dades per Internet, o mètode d'emmagatzematge electrònic és 100% segur.</p>
+        <h3>MESURES DE SEGURITAT</h3>
+        <p>LOOPTICA POBLENOU S.L. ha adoptat totes les mesures d'índole tècnica i organitzativa necessàries per garantir la seguretat i integritat de les dades de caràcter personal que tracti, així com per evitar la seva pèrdua, alteració i/o accés per part de tercers no autoritzats. No obstante, recordi que cap mètode de transmissió de dades per Internet, o mètode d'emmagatzematge electrònic és 100% segur.</p>
         
         <h3>ACCEPTACIÓ D'AQUESTA POLÍTICA DE PRIVACITAT</h3>
         <p>L'usuari reconeix haver llegit aquest document i manifesta estar conforme amb la totalitat dels seus termes, acceptant-lo lliure, expressa i inequívocament.</p>

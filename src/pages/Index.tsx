@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
@@ -259,11 +258,11 @@ const Index = () => {
         <meta property="og:description" content={content.meta[language as keyof typeof content.meta].description} />
         <meta property="og:url" content="https://www.looptica.com/" />
         
-        {/* Preload critical assets with high fetchpriority */}
-        <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchpriority="high" />
-        <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchpriority="high" />
-        <link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchpriority="high" />
-        <link rel="preload" href="/images/DSC4608_compressed.jpg" as="image" fetchpriority="high" />
+        {/* Preload critical assets with high fetchPriority */}
+        <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchPriority="high" />
+        <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchPriority="high" />
+        <link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchPriority="high" />
+        <link rel="preload" href="/images/DSC4608_compressed.jpg" as="image" fetchPriority="high" />
       </Helmet>
       <Navbar />
       <div className="min-h-screen flex flex-col">
