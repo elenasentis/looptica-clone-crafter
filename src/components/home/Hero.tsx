@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
+import { cn } from '@/lib/utils';
 
 // Optimized Hero component to improve LCP and reduce CLS
 const Hero = () => {
@@ -30,8 +31,8 @@ const Hero = () => {
       </div>
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
-        {/* Hero Text and CTA - CSS animation instead of ScrollReveal */}
-        <div className="order-2 lg:order-1 fade-in-up" style={{ minHeight: '300px' }}>
+        {/* Hero Text and CTA - CSS animation with initial opacity:1 */}
+        <div className="order-2 lg:order-1 opacity-100 transform-none animate-fade-in-up" style={{ minHeight: '300px' }}>
           <div className="glass px-8 py-10 rounded-xl shadow-md w-[80%]">
             <h1 className="text-balance font-bold text-4xl sm:text-5xl lg:text-5xl leading-tight mb-6 text-gray-900 drop-shadow-sm">
               {t('heroTitle')}
