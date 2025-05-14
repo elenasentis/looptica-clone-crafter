@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import ScrollReveal from '@/components/ScrollReveal';
+import ScrollReveal from '@/components/ui/ScrollReveal'; // Fixed import path
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
