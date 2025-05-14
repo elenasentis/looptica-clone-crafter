@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
@@ -13,6 +14,7 @@ import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { FadeIn, FadeInUp } from '@/components/ui/index';
+import { getDelayedAnimation, preloadCriticalResources } from '@/lib/utils';
 
 // Create a new component for SEO content to avoid it blocking rendering
 const SeoContent = ({ language }: { language: string }) => {
@@ -142,7 +144,7 @@ const DeferredContent = () => {
   return (
     <>
       <div id="products" className="min-h-[400px]">
-        <FadeInUp delay={staggered[0]}>
+        <FadeInUp delay={staggered[0]} isCritical={true}>
           <Products />
         </FadeInUp>
       </div>
@@ -229,6 +231,19 @@ const Index = () => {
     // Set minimum heights for page sections to prevent layout shifts
     document.documentElement.style.setProperty('--min-footer-height', '520px');
     
+    // Preload critical fonts to prevent layout shifts
+    preloadCriticalResources([
+      '/fonts/poppins/Poppins-Regular.ttf',
+      '/fonts/poppins/Poppins-Medium.ttf',
+      '/fonts/poppins/Poppins-Bold.ttf',
+      '/fonts/poppins/Poppins-SemiBold.ttf'
+    ], 'font');
+    
+    // Preload hero image
+    preloadCriticalResources([
+      '/images/DSC4608_compressed.jpg'
+    ], 'image');
+    
     // Log to check if component is mounting correctly
     console.log("Index component mounted");
   }, []);
@@ -244,10 +259,11 @@ const Index = () => {
         <meta property="og:description" content={content.meta[language as keyof typeof content.meta].description} />
         <meta property="og:url" content="https://www.looptica.com/" />
         
-        {/* Preload critical assets */}
-        <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        {/* Preload critical assets with high fetchpriority */}
+        <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchpriority="high" />
+        <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchpriority="high" />
+        <link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchpriority="high" />
+        <link rel="preload" href="/images/DSC4608_compressed.jpg" as="image" fetchpriority="high" />
       </Helmet>
       <Navbar />
       <div className="min-h-screen flex flex-col">
@@ -256,7 +272,10 @@ const Index = () => {
           <SeoContent language={language} />
           <DeferredContent />
         </main>
-        <Footer />
+        {/* Add a wrapper div with delay for Footer to prevent it becoming LCP element */}
+        <div className="footer-wrapper" style={{ animationDelay: '300ms' }}>
+          <Footer />
+        </div>
         <FloatingWhatsApp 
           phoneNumber="34699594064"
           accountName="Looptica"

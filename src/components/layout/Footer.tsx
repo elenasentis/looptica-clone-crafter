@@ -68,7 +68,7 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-[#1a2b3c] text-white pt-20 pb-10 px-6 lg:px-12" id="contact">
+    <footer className="bg-[#1a2b3c] text-white pt-20 pb-10 px-6 lg:px-12 footer-delayed" id="contact">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}

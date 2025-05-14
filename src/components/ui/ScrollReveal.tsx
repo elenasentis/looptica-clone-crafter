@@ -8,6 +8,7 @@ interface ScrollRevealProps {
   origin?: 'top' | 'right' | 'bottom' | 'left';
   disabled?: boolean;
   preserveInitialVisibility?: boolean; // New prop to keep content visible initially
+  isCritical?: boolean; // New prop to identify critical content
 }
 
 // Improved ScrollReveal with better LCP characteristics
@@ -17,7 +18,8 @@ const ScrollReveal = ({
   delay = 0,
   origin = 'bottom',
   disabled = false,
-  preserveInitialVisibility = false // Default to false for backward compatibility
+  preserveInitialVisibility = false, // Default to false for backward compatibility
+  isCritical = false // Default to false
 }: ScrollRevealProps) => {
   // If animations are disabled, render children directly
   if (disabled) {
@@ -40,17 +42,18 @@ const ScrollReveal = ({
     }
   };
   
-  // Apply appropriate CSS animation class based on origin
-  // For critical content, we use preserveInitialVisibility to make it visible immediately
+  // For critical content or when preserveInitialVisibility is true,
+  // make sure the content is visible from the start
+  const shouldBeInitiallyVisible = isCritical || preserveInitialVisibility;
+  
   return (
     <div 
       className={`${getAnimationClass()} ${className}`} 
       style={{ 
         animationDelay: `${delay}ms`,
-        // When preserveInitialVisibility is true, we make sure content is visible from the start
-        // This improves LCP by making critical content immediately visible
-        opacity: preserveInitialVisibility ? '1' : undefined,
-        transform: preserveInitialVisibility ? 'none' : undefined,
+        // When content should be initially visible, we make sure it's visible from the start
+        opacity: shouldBeInitiallyVisible ? '1' : undefined,
+        transform: shouldBeInitiallyVisible ? 'none' : undefined,
         // Reserve space with min-height to prevent layout shifts
         minHeight: 'auto'
       }}

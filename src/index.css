@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -182,60 +183,79 @@ html {
   scrollbar-width: none;  /* Firefox */
 }
 
-/* Standardized animation keyframes */
+/* Standardized animation keyframes - WITH IMPROVEMENTS FOR LCP */
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
+/* Modified animations to start with better opacity for critical content */
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
+  0% { opacity: 0.7; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-20px); }
+  0% { opacity: 0.7; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInLeft {
-  0% { opacity: 0; transform: translateX(20px); }
+  0% { opacity: 0.7; transform: translateX(20px); }
   100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInRight {
-  0% { opacity: 0; transform: translateX(-20px); }
+  0% { opacity: 0.7; transform: translateX(-20px); }
   100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Standardized animation classes with pre-defined durations */
+/* Improved animation classes with better initial visibility */
 .fade-in {
-  opacity: 0;
+  opacity: 0.7; /* Start with some visibility */
   animation: fadeIn 0.6s ease-out forwards;
 }
 
 .fade-in-up {
-  opacity: 0;
+  opacity: 0.7; /* Start with some visibility */
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
 .fade-in-down {
-  opacity: 0;
+  opacity: 0.7; /* Start with some visibility */
   transform: translateY(-20px);
   animation: fadeInDown 0.6s ease-out forwards;
 }
 
 .fade-in-left {
-  opacity: 0;
+  opacity: 0.7; /* Start with some visibility */
   transform: translateX(20px);
   animation: fadeInLeft 0.6s ease-out forwards;
 }
 
 .fade-in-right {
-  opacity: 0;
+  opacity: 0.7; /* Start with some visibility */
   transform: translateX(-20px);
   animation: fadeInRight 0.6s ease-out forwards;
+}
+
+/* Critical content animations - fully visible immediately */
+.fade-in-critical {
+  opacity: 1;
+  animation: none;
+}
+
+.fade-in-up-critical {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+/* Footer specific animation with delay to prevent LCP issues */
+.footer-delayed {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out 300ms forwards;
 }
 
 /* Scale animation */
@@ -245,8 +265,8 @@ html {
 
 @keyframes scale-up-center {
   0% {
-    transform: scale(0.9);
-    opacity: 0;
+    transform: scale(0.95);
+    opacity: 0.7; /* Start with some visibility */
   }
   100% {
     transform: scale(1);
