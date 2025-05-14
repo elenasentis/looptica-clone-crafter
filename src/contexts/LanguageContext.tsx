@@ -127,12 +127,7 @@ export const translations: Translations = {
     es: 'Adaptación de lentes de contacto para miopia, hipermetropia, astigmatismo, progresivas, individualizadas, de catarata congénita, control de miopía, queratocono y orto-k.',
     ca: 'Adaptació de lents de contacte per miopia, hipermetropia, astigmatisme, progressives, individualitzades, per cataracta congènita, control de miopia, queratocono i orto-k.',
   },
-  // Add the missing translation key "ortoK"
-  ortoK: {
-    en: 'Ortho-K',
-    es: 'Orto-K',
-    ca: 'Orto-K',
-  },
+  // Fix the duplicate key by keeping only one ortoK translation entry
   ortoK: {
     en: 'Ortho-K',
     es: 'Orto-K',
@@ -435,7 +430,7 @@ export const translations: Translations = {
   pediatricAudiology: {
     en: 'Pediatric Audiology',
     es: 'Audiología Pediátrica',
-    ca: 'Audiologia Pediàtrica',
+    ca: 'Audiología Pediàtrica',
   },
   digitalHearingAids: {
     en: 'Digital Hearing Aids',
