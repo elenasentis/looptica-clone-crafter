@@ -1,6 +1,5 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import ScrollReveal from '@/components/ui/ScrollReveal';
 import {
   Carousel,
   CarouselContent,
@@ -56,18 +55,18 @@ const Brands = () => {
   return (
     <section id="brands" className="py-16 px-6 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-        <ScrollReveal origin="bottom" delay={100}>
-          <div className="text-center mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-3">
-              {t('topBrands')}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('ourBrands')}</h2>
-            <div className="w-16 h-1 bg-[#55afa9] mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">{t('brandsDescription')}</p>
-          </div>
-        </ScrollReveal>
+        {/* Use CSS animations instead of ScrollReveal */}
+        <div className="fade-in-up text-center mb-12">
+          <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-3">
+            {t('topBrands')}
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t('ourBrands')}</h2>
+          <div className="w-16 h-1 bg-[#55afa9] mx-auto mb-6"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto">{t('brandsDescription')}</p>
+        </div>
 
-        <ScrollReveal origin="bottom" delay={200} className="w-full max-w-5xl mx-auto">
+        {/* Use CSS animations instead of ScrollReveal */}
+        <div className="fade-in-up w-full max-w-5xl mx-auto" style={{ animationDelay: '200ms' }}>
           <Carousel 
             className="w-full pb-10"
             opts={{
@@ -85,6 +84,8 @@ const Brands = () => {
                           src={brand.logo}
                           alt={brand.name}
                           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          width={300}
+                          height={225}
                         />
                       </AspectRatio>
                       
@@ -102,7 +103,7 @@ const Brands = () => {
             <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
             <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
           </Carousel>
-        </ScrollReveal>
+        </div>
       </div>
     </section>
   );

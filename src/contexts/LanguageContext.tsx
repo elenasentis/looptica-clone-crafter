@@ -133,12 +133,12 @@ export const translations: Translations = {
     es: 'Orto-K',
     ca: 'Orto-K',
   },
-  orthoK: {
+  ortoK: {
     en: 'Ortho-K',
     es: 'Orto-K',
     ca: 'Orto-K',
   },
-  orthoKDesc: {
+  ortoKDesc: {
     en: 'Correct your vision with overnight contact lenses and forget about glasses during the day.',
     es: 'Corrige tu vision con lentes de contacto nocturnas y olvidate de las gafas durante el día.',
     ca: 'Corregeix la teva visió amb lents de contacte nocturnes i oblida\'t de les ulleres durant el dia.',
@@ -491,6 +491,7 @@ interface LanguageContextType {
   t: (key: string) => string;
   detectLanguage: () => Language;
   getUrlWithLanguage: (path: string, lang?: Language) => string;
+  switchLanguageWithoutRouting: (lang: Language) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -500,7 +501,6 @@ const useSafeNavigate = (): NavigateFunction => {
   try {
     return useNavigate();
   } catch (e) {
-    // Return a no-op function if not in Router context
     return (() => {}) as NavigateFunction;
   }
 };
@@ -509,7 +509,6 @@ const useSafeLocation = () => {
   try {
     return useLocation();
   } catch (e) {
-    // Return a default location object if not in Router context
     return { pathname: '/', search: '', hash: '', state: null, key: 'default' };
   }
 };
@@ -556,7 +555,26 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     }
   }, [extractLanguageFromPath]);
   
-  // Update language state and persist to localStorage
+  // Update language state WITHOUT navigating to reduce layout shifts
+  const switchLanguageWithoutRouting = useCallback((lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('preferredLanguage', lang);
+    
+    // Update URL without triggering a full navigation (using history API)
+    const currentPath = location.pathname;
+    const currentLang = extractLanguageFromPath();
+    
+    if (currentLang) {
+      // Replace current language in URL
+      const newPath = currentPath.replace(/^\/(ca|es|en)/, `/${lang}`);
+      window.history.replaceState(null, '', newPath + location.search + location.hash);
+    } else {
+      // Add language prefix if not present
+      window.history.replaceState(null, '', `/${lang}${currentPath}${location.search}${location.hash}`);
+    }
+  }, [extractLanguageFromPath, location]);
+  
+  // Regular setLanguage function with navigation (for initial load and when needed)
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('preferredLanguage', lang);
@@ -576,22 +594,18 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const getUrlWithLanguage = useCallback((path: string, lang?: Language): string => {
     const targetLang = lang || language;
     
-    // If path already starts with language code, replace it
     if (path.match(/^\/(ca|es|en)\//)) {
       return path.replace(/^\/(ca|es|en)/, `/${targetLang}`);
     }
     
-    // If path doesn't start with slash, add it
     if (!path.startsWith('/')) {
       path = `/${path}`;
     }
     
-    // If path is just the root, return language prefix
     if (path === '/') {
       return `/${targetLang}`;
     }
     
-    // Otherwise, add language prefix to path
     return `/${targetLang}${path}`;
   }, [language]);
   
@@ -603,8 +617,14 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     } else {
       const detectedLang = detectLanguage();
       setLanguageState(detectedLang);
+      
+      // Update URL with detected language on initial load
+      if (typeof navigate === 'function') {
+        const newPath = `/${detectedLang}${location.pathname}${location.search}${location.hash}`;
+        navigate(newPath, { replace: true });
+      }
     }
-  }, [extractLanguageFromPath, detectLanguage]);
+  }, [extractLanguageFromPath, detectLanguage, navigate, location.pathname, location.search, location.hash]);
   
   const t = (key: string): string => {
     if (translations[key]) {
@@ -615,7 +635,14 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, detectLanguage, getUrlWithLanguage }}>
+    <LanguageContext.Provider value={{ 
+      language, 
+      setLanguage, 
+      t, 
+      detectLanguage, 
+      getUrlWithLanguage,
+      switchLanguageWithoutRouting 
+    }}>
       {children}
     </LanguageContext.Provider>
   );

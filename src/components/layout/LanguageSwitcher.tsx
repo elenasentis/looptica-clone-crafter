@@ -5,11 +5,11 @@ import { Globe } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 const LanguageSwitcher = () => {
-  const { language, setLanguage, getUrlWithLanguage } = useLanguage();
+  const { language, switchLanguageWithoutRouting } = useLanguage();
   const location = useLocation();
 
   const handleLanguageChange = (value: string) => {
-    setLanguage(value as 'en' | 'es' | 'ca');
+    switchLanguageWithoutRouting(value as 'en' | 'es' | 'ca');
   };
 
   return (

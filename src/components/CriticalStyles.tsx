@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 
 // This component manages critical CSS loading and optimization
@@ -8,25 +9,13 @@ const CriticalStyles: React.FC = () => {
       // Create link for main stylesheet with non-blocking loading
       const mainStylesheet = document.createElement('link');
       mainStylesheet.rel = 'stylesheet';
-      // Use a relative path instead of hardcoded filename
-      mainStylesheet.href = '/src/index.css'; 
+      // Use relative path that works in both dev and production
+      mainStylesheet.href = '/index.css'; 
       mainStylesheet.media = 'print';
       mainStylesheet.onload = () => {
         mainStylesheet.media = 'all';
       };
       document.head.appendChild(mainStylesheet);
-      
-      // Add other non-critical stylesheets here if needed
-      const nonCriticalStyles = [
-        // Add paths to non-critical stylesheets here if needed
-      ];
-      
-      nonCriticalStyles.forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.head.appendChild(link);
-      });
     };
     
     // Use font-display: swap for all fonts - prevents FOIT but allows text to be visible with fallback
@@ -40,22 +29,26 @@ const CriticalStyles: React.FC = () => {
       ];
       
       preloadFonts.forEach(fontPath => {
-        const preloadLink = document.createElement('link');
-        preloadLink.rel = 'preload';
-        preloadLink.href = fontPath;
-        preloadLink.as = 'font';
-        preloadLink.type = 'font/ttf';
-        preloadLink.crossOrigin = 'anonymous';
-        document.head.appendChild(preloadLink);
+        // Only preload fonts if they haven't been preloaded yet
+        if (!document.querySelector(`link[href="${fontPath}"]`)) {
+          const preloadLink = document.createElement('link');
+          preloadLink.rel = 'preload';
+          preloadLink.href = fontPath;
+          preloadLink.as = 'font';
+          preloadLink.type = 'font/ttf';
+          preloadLink.crossOrigin = 'anonymous';
+          document.head.appendChild(preloadLink);
+        }
       });
       
+      // Consolidate all font-face declarations in one block
       const fontFaceStyle = document.createElement('style');
       fontFaceStyle.textContent = `
         @font-face {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 300;
-          font-display: swap; /* Using swap to make text visible faster */
+          font-display: swap;
           src: url('/fonts/poppins/Poppins-Light.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -64,7 +57,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 400;
-          font-display: swap; /* Using swap to make text visible faster */
+          font-display: swap;
           src: url('/fonts/poppins/Poppins-Regular.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -73,7 +66,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 500;
-          font-display: swap; /* Using swap to make text visible faster */
+          font-display: swap;
           src: url('/fonts/poppins/Poppins-Medium.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -82,7 +75,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 600;
-          font-display: swap; /* Using swap to make text visible faster */
+          font-display: swap;
           src: url('/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -91,7 +84,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 700;
-          font-display: swap; /* Using swap to make text visible faster */
+          font-display: swap;
           src: url('/fonts/poppins/Poppins-Bold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -100,7 +93,7 @@ const CriticalStyles: React.FC = () => {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 800;
-          font-display: swap; /* Using swap to make text visible faster */
+          font-display: swap;
           src: url('/fonts/poppins/Poppins-ExtraBold.ttf') format('truetype');
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
@@ -109,18 +102,6 @@ const CriticalStyles: React.FC = () => {
         body {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
-        
-        /* Reserve space for text elements to prevent layout shifts */
-        h1, h2, h3, h4, h5, h6, p {
-          margin-top: 0;
-          max-width: 100%;
-        }
-        
-        /* Set explicit line heights for headings */
-        h1 { font-size: 2.5rem; line-height: 1.2; }
-        h2 { font-size: 2rem; line-height: 1.25; }
-        h3 { font-size: 1.75rem; line-height: 1.3; }
-        p { line-height: 1.5; }
       `;
       document.head.appendChild(fontFaceStyle);
     };
@@ -198,34 +179,10 @@ const CriticalStyles: React.FC = () => {
       });
     };
     
-    // Block layout shifts from footer content by pre-reserving space
-    const preventFooterShift = () => {
-      const footer = document.querySelector('footer');
-      if (footer) {
-        // Add minimum height to footer to prevent layout shifts
-        footer.style.minHeight = '520px'; // Increased to better match actual footer size
-      }
-    };
-    
-    // Optimize scroll reveal elements
-    const optimizeScrollReveal = () => {
-      // Target all scroll reveal elements to ensure they don't cause layout shifts
-      const scrollRevealElements = document.querySelectorAll('[class*="scroll-reveal"]');
-      scrollRevealElements.forEach((element) => {
-        const el = element as HTMLElement;
-        // Pre-allocate space for scroll reveal elements
-        if (!el.style.minHeight) {
-          el.style.minHeight = `${el.scrollHeight || 100}px`;
-        }
-      });
-    };
-    
     // Run in optimal order to minimize CLS
     optimizeFontLoading(); // Apply font optimizations first
-    preventFooterShift(); // Prevent footer from shifting
     optimizeHeroImage(); // Then optimize hero image
     optimizeAllImages(); // Then optimize all images
-    setTimeout(optimizeScrollReveal, 100); // Give a small delay to let elements render
     
     // Use requestIdleCallback for non-critical resources
     if (typeof window !== 'undefined') {
