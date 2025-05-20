@@ -1,9 +1,11 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import { ScrollReveal, FloatingWhatsApp } from '@/components/ui'; // Standardized imports
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { whatsappTranslations } from '@/config/whatsappConfig'; // Import centralized translations
+// Removed Footer import as it's handled globally by App.tsx
 
 interface ServiceLayoutProps {
   children: React.ReactNode;
@@ -49,7 +51,6 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
     },
   };
 
-  // Add error handling for the image
   const handleImageError = (e: React.SyntheticEvent<HTMLElement, Event>) => {
     const imgElement = e.target as HTMLImageElement;
     imgElement.src = '/placeholder.svg';
@@ -110,6 +111,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
         chatMessage={whatsappTranslations.chatMessage[language as keyof typeof whatsappTranslations.chatMessage]}
         placeholder={whatsappTranslations.placeholder[language as keyof typeof whatsappTranslations.placeholder]}
       />
+      {/* Footer component removed from here, as App.tsx handles it globally */}
     </div>
   );
 };

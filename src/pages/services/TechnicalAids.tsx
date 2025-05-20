@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Helmet } from 'react-helmet-async';
@@ -7,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Zap, Headphones, Radio, Wifi, Smartphone, Award, Monitor, Bluetooth, Ear } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import Footer from '@/components/layout/Footer';
+// Removed Footer import as it's handled globally by App.tsx
 import { Link } from 'react-router-dom';
 
 const TechnicalAids = () => {
@@ -339,7 +340,7 @@ const TechnicalAids = () => {
       }
     }
   };
-  
+
   return (
     <>
       <Helmet>
@@ -719,7 +720,7 @@ const TechnicalAids = () => {
           </ScrollReveal>
         </div>
       </ServiceLayout>
-      <Footer />
+      {/* Footer component removed from here, as App.tsx handles it globally */}
     </>
   );
 };
