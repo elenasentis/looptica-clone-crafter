@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
@@ -12,8 +13,6 @@ import StoreLocation from '@/components/home/StoreLocation';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { FadeIn, FadeInUp } from '@/components/ui/index';
-import { getDelayedAnimation, preloadCriticalResources } from '@/lib/utils';
 
 // Create a new component for SEO content to avoid it blocking rendering
 const SeoContent = ({ language }: { language: string }) => {
@@ -46,9 +45,6 @@ const SeoContent = ({ language }: { language: string }) => {
 const DeferredContent = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
-  
-  // Use CSS animations instead of ScrollReveal for smoother rendering
-  const staggered = [0, 100, 200, 300, 400, 500];
 
   const content = {
     audiologyLink: {
@@ -67,30 +63,6 @@ const DeferredContent = () => {
         // Add loading="lazy" attribute to all other images
         if (!img.hasAttribute('loading')) {
           img.setAttribute('loading', 'lazy');
-        }
-        
-        // Set explicit dimensions if missing
-        const imgElement = img as HTMLImageElement;
-        if (!imgElement.getAttribute('width') && !imgElement.getAttribute('height')) {
-          // Set default dimensions or use natural dimensions if available
-          if (imgElement.naturalWidth && imgElement.naturalHeight) {
-            imgElement.width = imgElement.naturalWidth;
-            imgElement.height = imgElement.naturalHeight;
-          } else {
-            // Set defaults based on image type
-            if (imgElement.src.includes('logo')) {
-              imgElement.width = 150;
-              imgElement.height = 40;
-            } else {
-              imgElement.width = 300;
-              imgElement.height = 200;
-            }
-          }
-          
-          // Set aspect ratio
-          imgElement.style.aspectRatio = imgElement.width && imgElement.height 
-            ? `${imgElement.width} / ${imgElement.height}` 
-            : '3/2';
         }
       });
     };
@@ -142,40 +114,28 @@ const DeferredContent = () => {
 
   return (
     <>
-      <div id="products" className="min-h-[400px]">
-        <FadeInUp delay={staggered[0]} isCritical={true}>
-          <Products />
-        </FadeInUp>
+      <div id="products">
+        <Products />
       </div>
-      <div id="optical" className="min-h-[300px]">
-        <FadeInUp delay={staggered[1]}>
-          <OpticalServices />
-        </FadeInUp>
+      <div id="optical">
+        <OpticalServices />
       </div>
-      <div id="audiology" className="min-h-[300px]">
-        <FadeInUp delay={staggered[2]}>
-          <Audiology />
-        </FadeInUp>
+      <div id="audiology">
+        <Audiology />
         <div className="container mx-auto px-4 mt-4 text-center">
           <Link to="/services/audiologia-centro" className="text-[#55afa9] hover:underline">
             {content.audiologyLink[language as keyof typeof content.audiologyLink]}
           </Link>
         </div>
       </div>
-      <div id="testimonials" className="min-h-[400px]">
-        <FadeInUp delay={staggered[3]}>
-          <Testimonials />
-        </FadeInUp>
+      <div id="testimonials">
+        <Testimonials />
       </div>
-      <div id="brands" className="min-h-[200px]">
-        <FadeInUp delay={staggered[4]}>
-          <Brands />
-        </FadeInUp>
+      <div id="brands">
+        <Brands />
       </div>
-      <div id="contact" className="min-h-[400px]">
-        <FadeInUp delay={staggered[5]}>
-          <StoreLocation />
-        </FadeInUp>
+      <div id="contact">
+        <StoreLocation />
       </div>
     </>
   );
@@ -227,22 +187,6 @@ const Index = () => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
     
-    // Set minimum heights for page sections to prevent layout shifts
-    document.documentElement.style.setProperty('--min-footer-height', '520px');
-    
-    // Preload critical fonts to prevent layout shifts
-    preloadCriticalResources([
-      '/fonts/poppins/Poppins-Regular.ttf',
-      '/fonts/poppins/Poppins-Medium.ttf',
-      '/fonts/poppins/Poppins-Bold.ttf',
-      '/fonts/poppins/Poppins-SemiBold.ttf'
-    ], 'font');
-    
-    // Preload hero image
-    preloadCriticalResources([
-      '/images/DSC4608_compressed.jpg'
-    ], 'image');
-    
     // Log to check if component is mounting correctly
     console.log("Index component mounted");
   }, []);
@@ -257,12 +201,6 @@ const Index = () => {
         <meta property="og:title" content={content.meta[language as keyof typeof content.meta].title} />
         <meta property="og:description" content={content.meta[language as keyof typeof content.meta].description} />
         <meta property="og:url" content="https://www.looptica.com/" />
-        
-        {/* Preload critical assets with high fetchPriority */}
-        <link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchPriority="high" />
-        <link rel="preload" href="/fonts/poppins/Poppins-Medium.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchPriority="high" />
-        <link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" fetchPriority="high" />
-        <link rel="preload" href="/images/DSC4608_compressed.jpg" as="image" fetchPriority="high" />
       </Helmet>
       <Navbar />
       <div className="min-h-screen flex flex-col">
@@ -271,10 +209,7 @@ const Index = () => {
           <SeoContent language={language} />
           <DeferredContent />
         </main>
-        {/* Add a wrapper div with delay for Footer to prevent it becoming LCP element */}
-        <div className="footer-wrapper" style={{ animationDelay: '300ms' }}>
-          <Footer />
-        </div>
+        <Footer />
         <FloatingWhatsApp 
           phoneNumber="34699594064"
           accountName="Looptica"

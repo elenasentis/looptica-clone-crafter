@@ -1,114 +1,125 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://www.looptica.com/ca/</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/"/>
   </url>
   <url>
-    <loc>https://www.looptica.com/es/</loc>
-    <lastmod>2025-05-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/"/>
-  </url>
-  <url>
-    <loc>https://www.looptica.com/en/</loc>
-    <lastmod>2025-05-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/"/>
+    <loc>https://www.looptica.com/about</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   
+  <!-- Optical Services -->
   <url>
-    <loc>https://www.looptica.com/ca/about</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/services/salut-visual</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/about"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/about"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/about"/>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.looptica.com/es/about</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/services/lents-contacte</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/about"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/about"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/about"/>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.looptica.com/en/about</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/services/orto-k</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/about"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/about"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/about"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/services/eyeglasses</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/services/sunglasses</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/services/contact-lenses</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/services/image-consulting</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/services/lens-consulting</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
-  <!-- Optical Services (just showing one example of the pattern) -->
+  <!-- Audiology Services -->
   <url>
-    <loc>https://www.looptica.com/ca/services/salut-visual</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/services/audiologia-centro</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/services/salut-visual"/>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.looptica.com/es/services/salut-visual</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/services/hearing-test</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/services/salut-visual"/>
   </url>
   <url>
-    <loc>https://www.looptica.com/en/services/salut-visual</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/services/hearing-aids</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/services/salut-visual"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/services/salut-visual"/>
   </url>
-
-  <!-- Continue with similar patterns for other URLs -->
-  <!-- For brevity, I'm not including all URLs, but the structure would follow the same pattern -->
-
-  <!-- Legal Pages example -->
   <url>
-    <loc>https://www.looptica.com/ca/legal/privacy-policy</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://www.looptica.com/services/ear-protection</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/services/technical-aids</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/services/subvenciones</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://www.looptica.com/legal/privacy-policy</loc>
+    <lastmod>2025-04-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.looptica.com/ca/legal/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.looptica.com/es/legal/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.looptica.com/en/legal/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.looptica.com/ca/legal/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/legal/terms-conditions</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.looptica.com/legal/cookies-policy</loc>
+    <lastmod>2025-04-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

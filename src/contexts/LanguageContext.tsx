@@ -1,5 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
-import { useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
+import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'es' | 'ca';
 
@@ -105,7 +104,7 @@ export const translations: Translations = {
   opticalDescription: {
     en: 'Our certified opticians provide comprehensive visual assessments and personalized solutions to improve your visual health.',
     es: 'Nuestros ópticos optometristas graduados ofrecen servicios completos y soluciones personalizadas para mejorar tu salud visual.',
-    ca: 'Els nostres òptics optometristas graduats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
+    ca: 'Els nostres òptics optometristes graduats ofereixen serveis complets i solucions personalitzades per millorar la teva salut visual.',
   },
   visualHealth: {
     en: 'Visual Health',
@@ -127,13 +126,12 @@ export const translations: Translations = {
     es: 'Adaptación de lentes de contacto para miopia, hipermetropia, astigmatismo, progresivas, individualizadas, de catarata congénita, control de miopía, queratocono y orto-k.',
     ca: 'Adaptació de lents de contacte per miopia, hipermetropia, astigmatisme, progressives, individualitzades, per cataracta congènita, control de miopia, queratocono i orto-k.',
   },
-  // Fix the duplicate key by keeping only one ortoK translation entry
-  ortoK: {
+  orthoK: {
     en: 'Ortho-K',
     es: 'Orto-K',
     ca: 'Orto-K',
   },
-  ortoKDesc: {
+  orthoKDesc: {
     en: 'Correct your vision with overnight contact lenses and forget about glasses during the day.',
     es: 'Corrige tu vision con lentes de contacto nocturnas y olvidate de las gafas durante el día.',
     ca: 'Corregeix la teva visió amb lents de contacte nocturnes i oblida\'t de les ulleres durant el dia.',
@@ -430,7 +428,7 @@ export const translations: Translations = {
   pediatricAudiology: {
     en: 'Pediatric Audiology',
     es: 'Audiología Pediátrica',
-    ca: 'Audiología Pediàtrica',
+    ca: 'Audiologia Pediàtrica',
   },
   digitalHearingAids: {
     en: 'Digital Hearing Aids',
@@ -484,143 +482,13 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
-  detectLanguage: () => Language;
-  getUrlWithLanguage: (path: string, lang?: Language) => string;
-  switchLanguageWithoutRouting: (lang: Language) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Create a safe version of hooks that won't crash outside of Router context
-const useSafeNavigate = (): NavigateFunction => {
-  try {
-    return useNavigate();
-  } catch (e) {
-    return (() => {}) as NavigateFunction;
-  }
-};
-
-const useSafeLocation = () => {
-  try {
-    return useLocation();
-  } catch (e) {
-    return { pathname: '/', search: '', hash: '', state: null, key: 'default' };
-  }
-};
-
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('ca');
-  const navigate = useSafeNavigate();
-  const location = useSafeLocation();
-  
-  // Extract language from URL path
-  const extractLanguageFromPath = useCallback((): Language | null => {
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    const firstSegment = pathSegments[0];
-    
-    if (firstSegment === 'ca' || firstSegment === 'es' || firstSegment === 'en') {
-      return firstSegment as Language;
-    }
-    
-    return null;
-  }, [location.pathname]);
-  
-  // Detect user's preferred language
-  const detectLanguage = useCallback((): Language => {
-    // First, check if language is already set in URL
-    const urlLanguage = extractLanguageFromPath();
-    if (urlLanguage) {
-      return urlLanguage;
-    }
-    
-    // Second, check if language is stored in localStorage
-    const storedLanguage = localStorage.getItem('preferredLanguage');
-    if (storedLanguage === 'ca' || storedLanguage === 'es' || storedLanguage === 'en') {
-      return storedLanguage as Language;
-    }
-    
-    // Third, check browser language preferences
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('ca') || browserLang.startsWith('cat')) {
-      return 'ca';
-    } else if (browserLang.startsWith('es') || browserLang.startsWith('spa')) {
-      return 'es';
-    } else {
-      return 'en'; // Default to English for all other languages
-    }
-  }, [extractLanguageFromPath]);
-  
-  // Update language state WITHOUT navigating to reduce layout shifts
-  const switchLanguageWithoutRouting = useCallback((lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem('preferredLanguage', lang);
-    
-    // Update URL without triggering a full navigation (using history API)
-    const currentPath = location.pathname;
-    const currentLang = extractLanguageFromPath();
-    
-    if (currentLang) {
-      // Replace current language in URL
-      const newPath = currentPath.replace(/^\/(ca|es|en)/, `/${lang}`);
-      window.history.replaceState(null, '', newPath + location.search + location.hash);
-    } else {
-      // Add language prefix if not present
-      window.history.replaceState(null, '', `/${lang}${currentPath}${location.search}${location.hash}`);
-    }
-  }, [extractLanguageFromPath, location]);
-  
-  // Regular setLanguage function with navigation (for initial load and when needed)
-  const setLanguage = useCallback((lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem('preferredLanguage', lang);
-    
-    // Only navigate if we're in a valid Router context
-    if (typeof navigate === 'function') {
-      const urlLang = extractLanguageFromPath();
-      if (urlLang !== lang) {
-        const pathWithoutLang = location.pathname.replace(/^\/(ca|es|en)/, '');
-        const newPath = `/${lang}${pathWithoutLang || ''}${location.search}${location.hash}`;
-        navigate(newPath, { replace: true });
-      }
-    }
-  }, [extractLanguageFromPath, location, navigate]);
-  
-  // Get URL with the correct language prefix
-  const getUrlWithLanguage = useCallback((path: string, lang?: Language): string => {
-    const targetLang = lang || language;
-    
-    if (path.match(/^\/(ca|es|en)\//)) {
-      return path.replace(/^\/(ca|es|en)/, `/${targetLang}`);
-    }
-    
-    if (!path.startsWith('/')) {
-      path = `/${path}`;
-    }
-    
-    if (path === '/') {
-      return `/${targetLang}`;
-    }
-    
-    return `/${targetLang}${path}`;
-  }, [language]);
-  
-  // Initialize language from URL or detect it
-  useEffect(() => {
-    const urlLang = extractLanguageFromPath();
-    if (urlLang) {
-      setLanguageState(urlLang);
-    } else {
-      const detectedLang = detectLanguage();
-      setLanguageState(detectedLang);
-      
-      // Update URL with detected language on initial load
-      if (typeof navigate === 'function') {
-        const newPath = `/${detectedLang}${location.pathname}${location.search}${location.hash}`;
-        navigate(newPath, { replace: true });
-      }
-    }
-  }, [extractLanguageFromPath, detectLanguage, navigate, location.pathname, location.search, location.hash]);
-  
+  const [language, setLanguage] = useState<Language>('ca');
+
   const t = (key: string): string => {
     if (translations[key]) {
       return translations[key][language];
@@ -630,14 +498,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   return (
-    <LanguageContext.Provider value={{ 
-      language, 
-      setLanguage, 
-      t, 
-      detectLanguage, 
-      getUrlWithLanguage,
-      switchLanguageWithoutRouting 
-    }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

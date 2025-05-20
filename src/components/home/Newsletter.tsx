@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail } from 'lucide-react';
 
@@ -42,51 +43,55 @@ const Newsletter = () => {
     <section className="py-20 px-6 lg:px-12 relative overflow-hidden bg-[#e6faea]" id="about">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="bg-white rounded-xl shadow-md p-8 md:p-16 flex flex-col md:flex-row gap-16 items-center">
-          {/* Left Side (Text) - Using CSS animation */}
-          <div className="md:w-1/2 fade-in-right">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-4">
-              {t('stayUpdated')}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              {t('newsletter')}
-            </h2>
-            <div className="w-16 h-1 bg-[#55afa9] mb-6"></div>
-            <p className="text-gray-600 mb-8">
-              {t('newsletterDesc')}
-            </p>
+          {/* Left Side (Text) */}
+          <div className="md:w-1/2">
+            <ScrollReveal origin="left">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-4">
+                {t('stayUpdated')}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                {t('newsletter')}
+              </h2>
+              <div className="w-16 h-1 bg-[#55afa9] mb-6"></div>
+              <p className="text-gray-600 mb-8">
+                {t('newsletterDesc')}
+              </p>
+            </ScrollReveal>
           </div>
           
-          {/* Right Side (Form) - Using CSS animation with delay */}
-          <div className="md:w-1/2 w-full fade-in-left" style={{ animationDelay: '100ms' }}>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                  {t('emailAddress')}
-                </label>
-                <div className="flex gap-2">
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="el-teu@correu.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="flex-1 border-gray-300 focus:border-[#55afa9] focus:ring-[#55afa9]"
-                  />
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-[#55afa9] hover:bg-[#ca6664] text-white"
-                  >
-                    <Mail className="w-4 h-4 mr-2" />
-                    {isSubmitting ? t('subscribing') : t('subscribe')}
-                  </Button>
+          {/* Right Side (Form) */}
+          <div className="md:w-1/2 w-full">
+            <ScrollReveal origin="right">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                    {t('emailAddress')}
+                  </label>
+                  <div className="flex gap-2">
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="el-teu@correu.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="flex-1 border-gray-300 focus:border-[#55afa9] focus:ring-[#55afa9]"
+                    />
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-[#55afa9] hover:bg-[#ca6664] text-white"
+                    >
+                      <Mail className="w-4 h-4 mr-2" />
+                      {isSubmitting ? t('subscribing') : t('subscribe')}
+                    </Button>
+                  </div>
                 </div>
-              </div>
-              <p className="text-xs text-gray-500">
-                {t('privacyConsent')}
-              </p>
-            </form>
+                <p className="text-xs text-gray-500">
+                  {t('privacyConsent')}
+                </p>
+              </form>
+            </ScrollReveal>
           </div>
         </div>
       </div>

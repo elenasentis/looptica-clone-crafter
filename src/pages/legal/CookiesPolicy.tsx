@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import ScrollReveal from '@/components/ui/ScrollReveal'; // Fixed import path
+import { ScrollReveal } from '@/components/ui';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -123,14 +123,14 @@ const CookiesPolicy = () => {
           <li>Firefox: menú Herramientas > Opciones > Privacidad > Cookies.</li>
           <li>Chrome: Menú > Configuración > Mostrar opciones avanzadas > Privacidad > Configuración de contenido.</li>
           <li>Safari: Edición > Preferencias > Privacidad.</li>
-          <li>Opera: Menú > Preferencias > Avanzado > Privacitat.</li>
+          <li>Opera: Menú > Preferencias > Avanzado > Privacidad.</li>
         </ul>
         
         <p>Si bloquea el uso de cookies en su navegador es posible que algunos servicios o funcionalidades de la página web no estén disponibles.</p>
         
         <h3>5. CAMBIOS EN LA POLÍTICA DE COOKIES</h3>
         
-        <p>Es posible que la Política de Cookies de este sitio web cambie o se actualice, por ello es recomendable que revise esta política cada vez que accede a nuestro sitio web con el objetivo de estar adecuadamente informado sobre cómo y para qué usamos las cookies.</p>
+        <p>Es posible que la Política de Cookies de este sitio web cambie o se actualice, por ello es recomendable que revise esta política cada vez que acceda a nuestro sitio web con el objetivo de estar adecuadamente informado sobre cómo y para qué usamos las cookies.</p>
         
         <p>Cuando se produzcan cambios significativos en esta Política de Cookies, se comunicarán a los usuarios bien mediante la web o a través de correo electrónico a los usuarios registrados.</p>
       `

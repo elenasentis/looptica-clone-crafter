@@ -1,18 +1,18 @@
 
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
-import { Toaster } from './components/ui/sonner'; // Using Sonner toast consistently
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { Toaster } from './components/ui/sonner';
+import { LanguageProvider } from './contexts/LanguageContext';
 import CookieConsent from './components/CookieConsent';
 import CriticalStyles from './components/CriticalStyles';
 import RedirectHandler from './components/RedirectHandler';
 // Lazy load non-critical pages
-import { lazy, Suspense, Fragment } from 'react';
+import { lazy, Suspense } from 'react';
 import './App.css';
 
 // Create a loading component for Suspense
@@ -45,21 +45,6 @@ const CookiesPolicy = lazy(() => import('./pages/legal/CookiesPolicy'));
 const OticonModels = lazy(() => import('./pages/products/OticonModels'));
 const OticonModelPage = lazy(() => import('./pages/products/OticonModelPage'));
 
-// Language route wrapper to handle language detection and page routing
-const LanguageRouteWrapper = ({ component: Component, ...rest }) => {
-  const { language, setLanguage, detectLanguage } = useLanguage();
-  const location = useLocation();
-  
-  useEffect(() => {
-    // If we're at the root without a language prefix, detect and redirect
-    if (location.pathname === '/') {
-      detectLanguage();
-    }
-  }, [location.pathname, detectLanguage]);
-  
-  return <Component {...rest} />;
-};
-
 // Google Analytics page tracker component
 const PageTracker = () => {
   const location = useLocation();
@@ -80,122 +65,93 @@ const PageTracker = () => {
   return null;
 };
 
-// Root redirect component to handle redirection to language-based URLs
-const RootRedirect = () => {
-  const { detectLanguage } = useLanguage();
-  const detectedLanguage = detectLanguage();
-  return <Navigate to={`/${detectedLanguage}`} replace />;
-};
-
-// Define routes for each language prefix
-function getLangRoutes(langPrefix: string) {
-  const prefix = langPrefix ? `${langPrefix}/` : '';
-  
-  return (
-    <Fragment>
-      <Route path={`${prefix}about`} element={
-        <Suspense fallback={<PageLoader />}><About /></Suspense>
-      } />
-      {/* Optical Services */}
-      <Route path={`${prefix}services/salut-visual`} element={
-        <Suspense fallback={<PageLoader />}><SalutVisual /></Suspense>
-      } />
-      <Route path={`${prefix}services/lents-contacte`} element={
-        <Suspense fallback={<PageLoader />}><LentsContacte /></Suspense>
-      } />
-      <Route path={`${prefix}services/orto-k`} element={
-        <Suspense fallback={<PageLoader />}><OrtoK /></Suspense>
-      } />
-      <Route path={`${prefix}services/eyeglasses`} element={
-        <Suspense fallback={<PageLoader />}><Eyeglasses /></Suspense>
-      } />
-      <Route path={`${prefix}services/sunglasses`} element={
-        <Suspense fallback={<PageLoader />}><Sunglasses /></Suspense>
-      } />
-      <Route path={`${prefix}services/contact-lenses`} element={
-        <Suspense fallback={<PageLoader />}><ContactLenses /></Suspense>
-      } />
-      <Route path={`${prefix}services/image-consulting`} element={
-        <Suspense fallback={<PageLoader />}><ImageConsulting /></Suspense>
-      } />
-      <Route path={`${prefix}services/lens-consulting`} element={
-        <Suspense fallback={<PageLoader />}><LensConsulting /></Suspense>
-      } />
-      {/* Audiology Services */}
-      <Route path={`${prefix}services/hearing-test`} element={
-        <Suspense fallback={<PageLoader />}><HearingTest /></Suspense>
-      } />
-      <Route path={`${prefix}services/hearing-aids`} element={
-        <Suspense fallback={<PageLoader />}><HearingAids /></Suspense>
-      } />
-      <Route path={`${prefix}services/tinnitus-treatment`} element={
-        <Suspense fallback={<PageLoader />}><TinnitusTreatment /></Suspense>
-      } />
-      <Route path={`${prefix}services/ear-protection`} element={
-        <Suspense fallback={<PageLoader />}><EarProtection /></Suspense>
-      } />
-      <Route path={`${prefix}services/technical-aids`} element={
-        <Suspense fallback={<PageLoader />}><TechnicalAids /></Suspense>
-      } />
-      <Route path={`${prefix}services/subvenciones`} element={
-        <Suspense fallback={<PageLoader />}><Subvenciones /></Suspense>
-      } />
-      {/* Audiology Landing Page */}
-      <Route path={`${prefix}services/audiologia-centro`} element={
-        <Suspense fallback={<PageLoader />}><AudiologiaCentro /></Suspense>
-      } />
-      {/* Oticon Models Pages (hidden, only accessible via direct link) */}
-      <Route path={`${prefix}products/oticon-models`} element={
-        <Suspense fallback={<PageLoader />}><OticonModels /></Suspense>
-      } />
-      <Route path={`${prefix}products/oticon-models/:id`} element={
-        <Suspense fallback={<PageLoader />}><OticonModelPage /></Suspense>
-      } />
-      {/* Legal Pages */}
-      <Route path={`${prefix}legal/privacy-policy`} element={
-        <Suspense fallback={<PageLoader />}><PrivacyPolicy /></Suspense>
-      } />
-      <Route path={`${prefix}legal/terms-conditions`} element={
-        <Suspense fallback={<PageLoader />}><TermsConditions /></Suspense>
-      } />
-      <Route path={`${prefix}legal/cookies-policy`} element={
-        <Suspense fallback={<PageLoader />}><CookiesPolicy /></Suspense>
-      } />
-    </Fragment>
-  );
-}
-
 function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
         {/* Load critical styles first */}
         <CriticalStyles />
-        <RedirectHandler />
-        <PageTracker />
-        <Navbar />
-        <Routes>
-          {/* Default route with language detection */}
-          <Route path="/" element={<RootRedirect />} />
-          
-          {/* Language-specific home pages */}
-          <Route path="/ca" element={<Index />} />
-          <Route path="/es" element={<Index />} />
-          <Route path="/en" element={<Index />} />
-          
-          {/* Language-specific routes */}
-          {getLangRoutes("ca")}
-          {getLangRoutes("es")}
-          {getLangRoutes("en")}
-          
-          {/* Legacy routes without language prefix (for backward compatibility) */}
-          {getLangRoutes("")}
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-        <Toaster />
-        <CookieConsent />
+        <Router>
+          <RedirectHandler />
+          <PageTracker />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            {/* All other routes wrapped with Suspense for lazy loading */}
+            <Route path="/about" element={
+              <Suspense fallback={<PageLoader />}><About /></Suspense>
+            } />
+            {/* Optical Services */}
+            <Route path="/services/salut-visual" element={
+              <Suspense fallback={<PageLoader />}><SalutVisual /></Suspense>
+            } />
+            <Route path="/services/lents-contacte" element={
+              <Suspense fallback={<PageLoader />}><LentsContacte /></Suspense>
+            } />
+            <Route path="/services/orto-k" element={
+              <Suspense fallback={<PageLoader />}><OrtoK /></Suspense>
+            } />
+            <Route path="/services/eyeglasses" element={
+              <Suspense fallback={<PageLoader />}><Eyeglasses /></Suspense>
+            } />
+            <Route path="/services/sunglasses" element={
+              <Suspense fallback={<PageLoader />}><Sunglasses /></Suspense>
+            } />
+            <Route path="/services/contact-lenses" element={
+              <Suspense fallback={<PageLoader />}><ContactLenses /></Suspense>
+            } />
+            <Route path="/services/image-consulting" element={
+              <Suspense fallback={<PageLoader />}><ImageConsulting /></Suspense>
+            } />
+            <Route path="/services/lens-consulting" element={
+              <Suspense fallback={<PageLoader />}><LensConsulting /></Suspense>
+            } />
+            {/* Audiology Services */}
+            <Route path="/services/hearing-test" element={
+              <Suspense fallback={<PageLoader />}><HearingTest /></Suspense>
+            } />
+            <Route path="/services/hearing-aids" element={
+              <Suspense fallback={<PageLoader />}><HearingAids /></Suspense>
+            } />
+            <Route path="/services/tinnitus-treatment" element={
+              <Suspense fallback={<PageLoader />}><TinnitusTreatment /></Suspense>
+            } />
+            <Route path="/services/ear-protection" element={
+              <Suspense fallback={<PageLoader />}><EarProtection /></Suspense>
+            } />
+            <Route path="/services/technical-aids" element={
+              <Suspense fallback={<PageLoader />}><TechnicalAids /></Suspense>
+            } />
+            <Route path="/services/subvenciones" element={
+              <Suspense fallback={<PageLoader />}><Subvenciones /></Suspense>
+            } />
+            {/* Audiology Landing Page */}
+            <Route path="/services/audiologia-centro" element={
+              <Suspense fallback={<PageLoader />}><AudiologiaCentro /></Suspense>
+            } />
+            {/* Oticon Models Pages (hidden, only accessible via direct link) */}
+            <Route path="/products/oticon-models" element={
+              <Suspense fallback={<PageLoader />}><OticonModels /></Suspense>
+            } />
+            <Route path="/products/oticon-models/:id" element={
+              <Suspense fallback={<PageLoader />}><OticonModelPage /></Suspense>
+            } />
+            {/* Legal Pages */}
+            <Route path="/legal/privacy-policy" element={
+              <Suspense fallback={<PageLoader />}><PrivacyPolicy /></Suspense>
+            } />
+            <Route path="/legal/terms-conditions" element={
+              <Suspense fallback={<PageLoader />}><TermsConditions /></Suspense>
+            } />
+            <Route path="/legal/cookies-policy" element={
+              <Suspense fallback={<PageLoader />}><CookiesPolicy /></Suspense>
+            } />
+            
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+          <Toaster />
+          <CookieConsent />
+        </Router>
       </LanguageProvider>
     </HelmetProvider>
   );

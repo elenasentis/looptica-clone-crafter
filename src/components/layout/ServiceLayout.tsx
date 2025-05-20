@@ -1,12 +1,10 @@
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { cn } from '@/lib/utils';
 
 interface ServiceLayoutProps {
   children: React.ReactNode;
@@ -24,11 +22,17 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   appointmentSubject = 'Looptica Consultation',
 }) => {
   const { t, language } = useLanguage();
+  const [loadedImage, setLoadedImage] = useState('');
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   
-  // Use effect to scroll to top when the component mounts
+  // Use effect to scroll to top when the component mounts and handle image loading
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    
+    // Use the provided image directly
+    setLoadedImage(image);
+    setIsImageLoaded(true);
+  }, [image]);
 
   // Translations for WhatsApp component
   const whatsappText = {
@@ -69,7 +73,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   };
 
   // Add error handling for the image
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLElement, Event>) => {
     const imgElement = e.target as HTMLImageElement;
     imgElement.src = '/placeholder.svg';
     imgElement.style.filter = 'blur(8px)';
@@ -81,31 +85,21 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
       <Navbar />
       
       <main className="flex-grow pt-24">
-        {/* Hero Banner - Using optimized img tag instead of background-image for better LCP */}
-        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-          {/* Hero Image with optimized loading attributes */}
-          <div className="absolute inset-0 w-full h-full">
-            <img
-              src={image}
-              alt={`${title} - Looptica`}
-              className="absolute inset-0 w-full h-full object-cover"
-              width={1920}
-              height={1080}
-              fetchPriority="high"
-              decoding="sync"
-              loading="eager"
-              style={{ aspectRatio: '16/9' }}
-              onError={handleImageError}
-            />
-            <div className="absolute inset-0 bg-black/40"></div>
-          </div>
-          
-          {/* Hero Text - Using preserveInitialVisibility to ensure content is immediately visible */}
+        {/* Hero Banner */}
+        <section 
+          className="relative h-[50vh] flex items-center justify-center"
+          style={{
+            backgroundImage: `url(${loadedImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transition: isImageLoaded ? 'background-image 0.5s ease-in' : 'none'
+          }}
+          onError={handleImageError}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 text-center px-4">
-            <ScrollReveal preserveInitialVisibility={true}>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{title}</h1>
-              <p className="text-xl text-white/90 max-w-2xl mx-auto">{subtitle}</p>
-            </ScrollReveal>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{title}</h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">{subtitle}</p>
           </div>
         </section>
 
@@ -132,7 +126,6 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
         </div>
       </main>
       
-      {/* WhatsApp integration with delay to ensure it doesn't become the LCP element */}
       <FloatingWhatsApp 
         phoneNumber="34699594064"
         accountName="Looptica"

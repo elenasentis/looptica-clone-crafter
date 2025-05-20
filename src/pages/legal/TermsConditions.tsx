@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import ScrollReveal from '@/components/ui/ScrollReveal'; // Fixed import path
+import { ScrollReveal } from '@/components/ui';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -107,7 +107,7 @@ const TermsConditions = () => {
         <p>LOOPTICA POBLENOU S.L. perseguirá el incumplimiento de las presentes condiciones así como cualquier utilización indebida de su portal ejerciendo todas las acciones civiles y penales que le puedan corresponder en derecho.</p>
         
         <h3>11. LEGISLACIÓN APLICABLE Y JURISDICCIÓN</h3>
-        <p>La relación entre LOOPTICA POBLENOU S.L. y el USUARIO se regirá por la normativa española vigente y cualquier controversia se sotmetrá a los Juzgados y tribunales de la ciudad de Barcelona.</p>
+        <p>La relación entre LOOPTICA POBLENOU S.L. y el USUARIO se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de Barcelona.</p>
       `
     },
     ca: {
@@ -145,7 +145,7 @@ const TermsConditions = () => {
         <p>LOOPTICA POBLENOU S.L. no es fa responsable, en cap cas, dels danys i perjudicis de qualsevol naturalesa que poguessin ocasionar, a títol enunciatiu: errors o omissions en els continguts, falta de disponibilitat del portal o la transmissió de virus o programes maliciosos o lesius en els continguts, malgrat haver adoptat totes les mesures tecnològiques necessàries per evitar-ho.</p>
         
         <h3>7. MODIFICACIONS</h3>
-        <p>LOOPTICA POBLENOU S.L. es reserva el dret d'efectuar sense previ avís les modificacions que consideri oportunes en el seu portal, pudiendo canviar, suprimir o afegir tant els continguts i serveis que es prestin a través de la mateixa com la forma en què aquests apareguin presentats o localitzats en el seu portal.</p>
+        <p>LOOPTICA POBLENOU S.L. es reserva el dret d'efectuar sense previ avís les modificacions que consideri oportunes en el seu portal, podent canviar, suprimir o afegir tant els continguts i serveis que es prestin a través de la mateixa com la forma en què aquests apareguin presentats o localitzats en el seu portal.</p>
         
         <h3>8. ENLLAÇOS</h3>
         <p>En el cas que a www.looptica.com es disposessin enllaços o hipervincles cap a altres llocs d'Internet, LOOPTICA POBLENOU S.L. no exercirà cap tipus de control sobre aquests llocs i continguts. En cap cas LOOPTICA POBLENOU S.L. assumirà responsabilitat alguna pels continguts d'algun enllaç pertanyent a un lloc web aliè, ni garantirà la disponibilitat tècnica, qualitat, fiabilitat, exactitud, amplitud, veracitat, validesa i constitucionalitat de qualsevol material o informació continguda en cap dels esmentats hipervincles o altres llocs d'Internet. Igualment la inclusió d'aquestes connexions externes no implicarà cap tipus d'associació, fusió o participació amb les entitats connectades.</p>
@@ -154,7 +154,7 @@ const TermsConditions = () => {
         <p>LOOPTICA POBLENOU S.L. es reserva el dret a denegar o retirar l'accés a portal i/o els serveis oferts sense necessitat de preavís, a instància pròpia o d'un tercer, a aquells usuaris que incompleixin les presents Condicions Generals d'Ús.</p>
         
         <h3>10. GENERALITATS</h3>
-        <p>LOOPTICA POBLENOU S.L. perseguirà l'incompliment de les presents condicions així com qualsevol utilització indeguda del seu portal exercint totes les accions civils i penales que li puguin correspondre en dret.</p>
+        <p>LOOPTICA POBLENOU S.L. perseguirà l'incompliment de les presents condicions així com qualsevol utilització indeguda del seu portal exercint totes les accions civils i penals que li puguin correspondre en dret.</p>
         
         <h3>11. LEGISLACIÓ APLICABLE I JURISDICCIÓ</h3>
         <p>La relació entre LOOPTICA POBLENOU S.L. i l'USUARI es regirà per la normativa espanyola vigent i qualsevol controvèrsia se sotmetrà als Jutjats i tribunals de la ciutat de Barcelona.</p>

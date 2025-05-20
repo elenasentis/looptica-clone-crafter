@@ -52,7 +52,7 @@ const Products = () => {
   return (
     <section className="py-16 px-6 lg:px-12 bg-white" id="products">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header - No animation needed for this static element */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#55afa9]/10 text-[#55afa9] mb-4">
             {t('ourCollection')}
@@ -66,22 +66,14 @@ const Products = () => {
           </p>
         </div>
 
-        {/* Product Grid - Using standard CSS animations with staggered delays */}
+        {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <div 
-              key={product.id} 
-              className="fade-in-up" 
-              style={{
-                animationDelay: `${index * 100}ms`,
-                minHeight: '400px' // Explicitly set height to prevent layout shifts
-              }}
-            >
+            <div key={product.id} className="animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
               <a 
                 href={product.link}
                 onClick={(e) => handleNavigate(e, product.link)}
                 className="block group relative bg-white rounded-lg overflow-hidden border border-gray-200 hover-lift"
-                style={{ height: '100%' }}
               >
                 {/* Product Image */}
                 <div className="aspect-[3/2] overflow-hidden">

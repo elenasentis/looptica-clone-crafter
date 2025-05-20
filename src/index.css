@@ -1,4 +1,7 @@
 
+/* Remove the Google Fonts import and use the one in the HTML head instead */
+/* We'll keep the font-family definition in the Tailwind configuration */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -92,64 +95,30 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
+    /* Add font-display property for better text rendering during font loading */
+    font-display: swap;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-medium tracking-tight;
-    margin-top: 0;
-    margin-bottom: 0.5em;
   }
 
   h1 {
     @apply text-4xl sm:text-5xl;
-    line-height: 1.2;
   }
 
   h2 {
     @apply text-3xl sm:text-4xl;
-    line-height: 1.25;
   }
 
   h3 {
     @apply text-2xl sm:text-3xl;
-    line-height: 1.3;
   }
 
   p {
     @apply leading-relaxed;
-    margin-top: 0;
-    margin-bottom: 1em;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: attr(width) / attr(height);
-  }
-  
-  img[alt="Looptica"], img[src*="logo"] {
-    aspect-ratio: 3.5 / 1;
-    width: auto;
-  }
-  
-  /* Essential parent containers should have fixed heights */
-  main {
-    min-height: 100vh;
-  }
-  
-  footer {
-    min-height: 520px;
-  }
-  
-  /* Add specific sizes for common components */
-  .hero-section {
-    min-height: 80vh;
-  }
-  
-  /* Force fixed dimensions for card components */
-  .card-container {
-    min-height: 400px;
   }
 }
 
@@ -183,90 +152,15 @@ html {
   scrollbar-width: none;  /* Firefox */
 }
 
-/* Standardized animation keyframes - WITH IMPROVEMENTS FOR LCP */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* Modified animations to start with better opacity for critical content */
-@keyframes fadeInUp {
-  0% { opacity: 0.7; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  0% { opacity: 0.7; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInLeft {
-  0% { opacity: 0.7; transform: translateX(20px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInRight {
-  0% { opacity: 0.7; transform: translateX(-20px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-/* Improved animation classes with better initial visibility */
-.fade-in {
-  opacity: 0.7; /* Start with some visibility */
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.fade-in-up {
-  opacity: 0.7; /* Start with some visibility */
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.fade-in-down {
-  opacity: 0.7; /* Start with some visibility */
-  transform: translateY(-20px);
-  animation: fadeInDown 0.6s ease-out forwards;
-}
-
-.fade-in-left {
-  opacity: 0.7; /* Start with some visibility */
-  transform: translateX(20px);
-  animation: fadeInLeft 0.6s ease-out forwards;
-}
-
-.fade-in-right {
-  opacity: 0.7; /* Start with some visibility */
-  transform: translateX(-20px);
-  animation: fadeInRight 0.6s ease-out forwards;
-}
-
-/* Critical content animations - fully visible immediately */
-.fade-in-critical {
-  opacity: 1;
-  animation: none;
-}
-
-.fade-in-up-critical {
-  opacity: 1;
-  transform: none;
-  animation: none;
-}
-
-/* Footer specific animation with delay to prevent LCP issues */
-.footer-delayed {
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out 300ms forwards;
-}
-
-/* Scale animation */
+/* Custom animations */
 .scale-up-center {
   animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 @keyframes scale-up-center {
   0% {
-    transform: scale(0.95);
-    opacity: 0.7; /* Start with some visibility */
+    transform: scale(0.9);
+    opacity: 0;
   }
   100% {
     transform: scale(1);
@@ -281,4 +175,59 @@ html {
 .hover-lift:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Add font-face declarations to improve font performance */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDD4Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
