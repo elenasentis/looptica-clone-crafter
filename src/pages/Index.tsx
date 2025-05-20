@@ -1,8 +1,6 @@
-
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
 import Products from '@/components/home/Products';
 import OpticalServices from '@/components/home/OpticalServices';
@@ -50,7 +48,7 @@ const DeferredContent = () => {
     audiologyLink: {
       en: "Visit our Audiology Page",
       es: "Visitar nuestra página de Audiología",
-      ca: "Visitar la nostra pàgina d'Audiologia"
+      ca: "Visitar la nostra pàgina d'Audiología"
     },
   };
 
@@ -143,7 +141,7 @@ const DeferredContent = () => {
 
 const Index = () => {
   const { language } = useLanguage();
-  const navigate = useNavigate();
+  // const navigate = useNavigate(); // navigate is declared in DeferredContent, can be removed if not used here directly
   
   // Content organized by section first, then by language
   const content = {
@@ -209,7 +207,7 @@ const Index = () => {
           <SeoContent language={language} />
           <DeferredContent />
         </main>
-        <Footer />
+        {/* <Footer /> Removed Footer component instance */}
         <FloatingWhatsApp 
           phoneNumber="34699594064"
           accountName="Looptica"

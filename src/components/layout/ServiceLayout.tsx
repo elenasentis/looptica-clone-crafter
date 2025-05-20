@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from './Footer'; // Added Footer import
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
@@ -21,7 +22,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   image,
   appointmentSubject = 'Looptica Consultation',
 }) => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage(); // t was not used, removed.
   const [loadedImage, setLoadedImage] = useState('');
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   
@@ -111,14 +112,14 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
             {/* Appointment CTA */}
             <ScrollReveal>
               <div className="mt-16 bg-gray-50 rounded-xl p-8 text-center shadow-sm">
-                <h3 className="text-2xl font-semibold mb-4">{ctaContent.readyToSchedule[language]}</h3>
-                <p className="text-gray-600 mb-6">{ctaContent.scheduleDescription[language]}</p>
+                <h3 className="text-2xl font-semibold mb-4">{ctaContent.readyToSchedule[language as keyof typeof ctaContent.readyToSchedule]}</h3>
+                <p className="text-gray-600 mb-6">{ctaContent.scheduleDescription[language as keyof typeof ctaContent.scheduleDescription]}</p>
                 <GoogleCalendarButton
                   subject={appointmentSubject}
                   description={`Appointment for ${title} at Looptica`}
                   className="mx-auto"
                 >
-                  {ctaContent.buttonText[language]}
+                  {ctaContent.buttonText[language as keyof typeof ctaContent.buttonText]}
                 </GoogleCalendarButton>
               </div>
             </ScrollReveal>
@@ -129,10 +130,11 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
       <FloatingWhatsApp 
         phoneNumber="34699594064"
         accountName="Looptica"
-        statusMessage={whatsappText.statusMessage[language]}
-        chatMessage={whatsappText.chatMessage[language]}
-        placeholder={whatsappText.placeholder[language]}
+        statusMessage={whatsappText.statusMessage[language as keyof typeof whatsappText.statusMessage]}
+        chatMessage={whatsappText.chatMessage[language as keyof typeof whatsappText.chatMessage]}
+        placeholder={whatsappText.placeholder[language as keyof typeof whatsappText.placeholder]}
       />
+      <Footer /> {/* Added Footer component instance */}
     </div>
   );
 };
