@@ -1,10 +1,8 @@
-
 import React from 'react';
 import ServiceLayout from '@/components/layout/ServiceLayout';
 import { Eye, Shield, Clock, ThumbsUp } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactLenses = () => {
@@ -35,12 +33,7 @@ const ContactLenses = () => {
     intro1: {
       en: "At Looptica, we offer a comprehensive range of contact lens options to suit your unique vision needs, lifestyle, and preferences. Our expert optometrists use the latest technology to ensure your contact lenses provide optimal vision correction while maintaining eye health and all-day comfort.",
       es: "En Looptica, ofrecemos una amplia gama de opciones de lentes de contacto para adaptarse a sus necesidades visuales únicas, estilo de vida y preferencias. Nuestros optometristas expertos utilizan la última tecnología para asegurar que sus lentes de contacto proporcionen una corrección visual óptima mientras mantienen la salud ocular y la comodidad durante todo el día.",
-      ca: "A Looptica, oferim una àmplia gamma d'opcions de lents de contacte per adaptar-se a les seves necessitats visuals úniques, estil de vida i preferències. Els nostres optometristes experts utilitzen l'última tecnologia per assegurar que les seves lents de contacte proporcionin una correcció visual òptima mentre mantenen la salut ocular i la comoditat durant tot el dia.",
-    },
-    intro2: {
-      en: "Whether you're new to contact lenses or looking to upgrade your current lenses, our personalized approach ensures you'll find the perfect solution. We take pride in staying at the forefront of contact lens innovation, offering the most advanced materials and designs available.",
-      es: "Ya sea que sea nuevo en lentes de contacto o busque actualizar sus lentes actuales, nuestro enfoque personalizado le asegura que encontrará la solución perfecta. Nos enorgullecemos de estar a la vanguardia de la innovación en lentes de contacto, ofreciendo los materiales y diseños más avanzados disponibles.",
-      ca: "Ja sigui que sigui nou en lents de contacte o busqui actualitzar les seves lents actuals, el nostre enfocament personalitzat li assegura que trobarà la solució perfecta. Ens enorgullim d'estar a l'avantguarda de la innovació en lents de contacte, oferint els materials i dissenys més avançats disponibles.",
+      ca: "A Looptica, oferim una àmplia gamma d'opcions de lents de contacte per adaptar-se a les seves necessitats visuals úniques, estil de vida i preferències. Els nostres optometristes experts utilitzen l'última tecnologia per assegurar que les seves lents de contacte proporcionin una correcció visual òptima mentre mantenen la salut ocular i el confort durant tot el dia.",
     },
     viewCatalan: {
       en: "View in Catalan",
@@ -238,11 +231,9 @@ const ContactLenses = () => {
     <ServiceLayout
       title={content.title[language]}
       subtitle={content.subtitle[language]}
-      image="/images/adobestock-226007711_orig.jpeg"
+      image="/images/contact_lens_hero_placeholder.jpg"
       appointmentSubject={content.appointmentSubject[language]}
     >
-    
-
       <ScrollReveal>
         <div className="bg-gray-50 p-8 rounded-lg mb-12">
           <h3 className="text-2xl font-semibold mb-6">{content.fittingTitle[language]}</h3>

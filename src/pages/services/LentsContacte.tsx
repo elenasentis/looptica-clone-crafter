@@ -100,7 +100,7 @@ const LentsContacte = () => {
     },
     orthoKLensesDesc: {
       en: "Special lenses that are worn overnight to temporarily reshape the cornea, allowing clear vision during the day without lenses.",
-      es: "Lentes especiales que se usan durante la noche para remodelar temporalmente la córnea, permitiendo una visión clara durante el día sin lentes.",
+      es: "Lentes especiales que se usan durante la noche para remodelar temporalmente la córnea, permitiendo una visión clara durante el día sin lentillas.",
       ca: "Lents especials que es porten durant la nit per remodelar temporalment la còrnia, permetent una visió clara durant el dia sense lents.",
     },
     fittingTitle: {
@@ -172,7 +172,7 @@ const LentsContacte = () => {
         ],
         es: [
           "Las cataratas congénitas son opacidades del cristalino que están presentes en el nacimiento o se desarrollan en los primeros meses de vida. La detección y el tratamiento temprano son esenciales para evitar la discapacidad visual permanente.",
-          "Tras la extirpación quirúrgica de la catarata, la rehabilitación visual es crucial. Las lentes de contacto suelen ser la opción preferida para la corrección óptica en niños con afaquia (ausencia del cristalino natural) tras la cirugía de cataractes.",
+          "Tras la extirpación quirúrgica de la catarata, la rehabilitación visual es crucial. Las lentes de contacto suelen ser la opción preferida para la corrección óptica en niños con afaquia (ausencia del cristalino natural) tras la cirugía de cataratas.",
           "La estimulación visual de estos niños es esencial y debe llevarse a cabo adecuadamente. El oftalmólogo determinará cuándo comenzar la rehabilitación visual, que debe iniciarse lo antes posible después de la cirugía."
         ],
         ca: [
@@ -332,7 +332,7 @@ const LentsContacte = () => {
           
           <h3 className="text-xl font-medium mt-6 mb-4">
             {language === 'en' ? 'Benefits of contact lenses for congenital cataracts:' : 
-             language === 'es' ? 'Beneficios de las lentes de contacto para cataratas congénitas:' :
+             language === 'es' ? 'Beneficios de las lentes de contacto para cataratas congénitas:' : 
              'Beneficis de les lents de contacte per a cataractes congènites:'}
           </h3>
           
@@ -344,7 +344,7 @@ const LentsContacte = () => {
           
           <p className="mt-4">
             {language === 'en' ? 'At Looptica, our team of specialists has experience in the adaptation of contact lenses for children with congenital cataracts. We work closely with ophthalmologists to provide the best optical solution for each case.' : 
-             language === 'es' ? 'En Looptica, nuestro equipo de especialistas tiene experiencia en la adaptación de lentes de contacto para niños con cataratas congénitas. Trabajamos estrechamente con oftalmólogos para proporcionar la mejor solución óptica para cada caso.' :
+             language === 'es' ? 'En Looptica, nuestro equipo de especialistas tiene experiencia en la adaptación de lentes de contacto para niños con cataratas congénitas. Trabajamos estrechamente con oftalmólogos para proporcionar la mejor solución óptica para cada caso.' : 
              'A Looptica, el nostre equip d\'especialistes té experiència en l\'adaptació de lents de contacte per a nens amb cataractes congènites. Treballem estretament amb oftalmòlegs per proporcionar la millor solució òptica per a cada cas.'}
           </p>
         </div>
