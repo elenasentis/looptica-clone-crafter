@@ -1,11 +1,10 @@
-
 import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { ScrollReveal } from '@/components/ui';
-import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
+import { ScrollReveal, FloatingWhatsApp } from '@/components/ui';
 import { Helmet } from 'react-helmet-async';
+import { whatsappTranslations } from '@/config/whatsappConfig';
 
 const About = () => {
   const { language } = useLanguage();
@@ -118,36 +117,18 @@ const About = () => {
           "Ens enorgullim del nostre enfocament centrat en el pacient, enfocant-nos a construir relacions a llarg termini amb els nostres clients basades en la confiança, l'experiència i el servei excepcional."
         ]
       }
-    },
-    whatsapp: {
-      statusMessage: {
-        en: "Typically replies within 1 hour",
-        es: "Normalmente responde en 1 hora",
-        ca: "Normalment respon en 1 hora"
-      },
-      chatMessage: {
-        en: "Hello! 👋🏼 How can we help you with your vision or hearing?",
-        es: "¡Hola! 👋🏼 ¿En qué podemos ayudarte con tu visión o audición?",
-        ca: "Hola! 👋🏼 En què podem ajudar-te amb la teva visió o audició?"
-      },
-      placeholder: {
-        en: "Type a message...",
-        es: "Escribe un mensaje...",
-        ca: "Escriu un missatge..."
-      }
     }
   };
 
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{content.meta[language].title}</title>
-        <meta name="description" content={content.meta[language].description} />
+        <title>{content.meta[language as keyof typeof content.meta].title}</title>
+        <meta name="description" content={content.meta[language as keyof typeof content.meta].description} />
       </Helmet>
       <Navbar />
       <main className="flex-grow pt-24">
@@ -155,7 +136,7 @@ const About = () => {
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-900">
-                {content.page.title[language]}
+                {content.page.title[language as keyof typeof content.page.title]}
               </h1>
             </ScrollReveal>
             
@@ -171,9 +152,9 @@ const About = () => {
                       />
                     </div>
                     <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">{member.name}</h2>
-                    <p className="text-sm text-center text-[#55afa9] font-medium mb-4 whitespace-pre-line">{member.role[language]}</p>
+                    <p className="text-sm text-center text-[#55afa9] font-medium mb-4 whitespace-pre-line">{member.role[language as keyof typeof member.role]}</p>
                     <div className="flex-grow">
-                      {member.bio[language].map((paragraph, idx) => (
+                      {member.bio[language as keyof typeof member.bio].map((paragraph, idx) => (
                         <p key={idx} className="text-gray-700 mb-4">{paragraph}</p>
                       ))}
                     </div>
@@ -184,8 +165,8 @@ const About = () => {
             
             <ScrollReveal>
               <div className="bg-white p-8 rounded-xl shadow-md">
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">{content.philosophy.title[language]}</h2>
-                {content.philosophy.content[language].map((paragraph, index) => (
+                <h2 className="text-3xl font-bold mb-6 text-gray-900">{content.philosophy.title[language as keyof typeof content.philosophy.title]}</h2>
+                {content.philosophy.content[language as keyof typeof content.philosophy.content].map((paragraph, index) => (
                   <p key={index} className="text-gray-700 mb-4">{paragraph}</p>
                 ))}
               </div>
@@ -197,9 +178,9 @@ const About = () => {
       <FloatingWhatsApp 
         phoneNumber="34699594064"
         accountName="Looptica"
-        statusMessage={content.whatsapp.statusMessage[language]}
-        chatMessage={content.whatsapp.chatMessage[language]}
-        placeholder={content.whatsapp.placeholder[language]}
+        statusMessage={whatsappTranslations.statusMessage[language as keyof typeof whatsappTranslations.statusMessage]}
+        chatMessage={whatsappTranslations.chatMessage[language as keyof typeof whatsappTranslations.chatMessage]}
+        placeholder={whatsappTranslations.placeholder[language as keyof typeof whatsappTranslations.placeholder]}
       />
     </div>
   );

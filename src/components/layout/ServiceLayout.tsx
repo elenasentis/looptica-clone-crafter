@@ -1,11 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
-import Footer from './Footer'; // Added Footer import
-import ScrollReveal from '@/components/ui/ScrollReveal';
+import { ScrollReveal, FloatingWhatsApp } from '@/components/ui'; // Standardized imports
 import GoogleCalendarButton from '@/components/ui/GoogleCalendarButton';
-import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { whatsappTranslations } from '@/config/whatsappConfig'; // Import centralized translations
 
 interface ServiceLayoutProps {
   children: React.ReactNode;
@@ -22,37 +20,15 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   image,
   appointmentSubject = 'Looptica Consultation',
 }) => {
-  const { language } = useLanguage(); // t was not used, removed.
+  const { language } = useLanguage();
   const [loadedImage, setLoadedImage] = useState('');
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   
-  // Use effect to scroll to top when the component mounts and handle image loading
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    // Use the provided image directly
     setLoadedImage(image);
     setIsImageLoaded(true);
   }, [image]);
-
-  // Translations for WhatsApp component
-  const whatsappText = {
-    statusMessage: {
-      en: "Typically replies within 1 hour",
-      es: "Normalmente responde en 1 hora",
-      ca: "Normalment respon en 1 hora",
-    },
-    chatMessage: {
-      en: "Hola! 👋🏼 How can we help you?",
-      es: "Hola! 👋🏼 ¿Cómo podemos ayudarte?",
-      ca: "Hola! 👋🏼 Com podem ajudar-te?",
-    },
-    placeholder: {
-      en: "Type a message...",
-      es: "Escribe un mensaje...",
-      ca: "Escriu un missatge...",
-    },
-  };
 
   // Translations for CTA section
   const ctaContent = {
@@ -130,11 +106,10 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
       <FloatingWhatsApp 
         phoneNumber="34699594064"
         accountName="Looptica"
-        statusMessage={whatsappText.statusMessage[language as keyof typeof whatsappText.statusMessage]}
-        chatMessage={whatsappText.chatMessage[language as keyof typeof whatsappText.chatMessage]}
-        placeholder={whatsappText.placeholder[language as keyof typeof whatsappText.placeholder]}
+        statusMessage={whatsappTranslations.statusMessage[language as keyof typeof whatsappTranslations.statusMessage]}
+        chatMessage={whatsappTranslations.chatMessage[language as keyof typeof whatsappTranslations.chatMessage]}
+        placeholder={whatsappTranslations.placeholder[language as keyof typeof whatsappTranslations.placeholder]}
       />
-      <Footer /> {/* Added Footer component instance */}
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Icon } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FloatingWhatsAppProps {
@@ -31,7 +30,6 @@ const FloatingWhatsApp = ({
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
   
-  // Always keep the button visible
   useEffect(() => {
     setIsVisible(true);
   }, []);

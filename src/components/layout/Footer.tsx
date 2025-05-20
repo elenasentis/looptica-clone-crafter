@@ -1,6 +1,6 @@
-
+import React from 'react'; // Keep React for React.MouseEvent
 import { Link } from 'react-router-dom';
-import { ScrollReveal } from '@/components/ui';
+import { ScrollReveal } from '@/components/ui'; // Standardized import
 import { Instagram, Twitter, Facebook, MapPin, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
