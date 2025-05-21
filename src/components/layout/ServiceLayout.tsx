@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import { ScrollReveal, FloatingWhatsApp } from '@/components/ui';
@@ -37,7 +38,10 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
     window.scrollTo(0, 0);
     setLoadedImage(image);
     setIsImageLoaded(true);
-  }, [image]);
+    
+    // Debug log to help diagnose issues
+    console.log(`ServiceLayout mounted: language=${language}, path=${location.pathname}, params lang=${langFromParams}`);
+  }, [image, language, location.pathname, langFromParams]);
 
   const ctaContent = {
     readyToSchedule: {
@@ -69,8 +73,7 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
   if (langFromParams && basePath.startsWith(`/${langFromParams}`)) {
     basePath = basePath.substring(`/${langFromParams}`.length) || "/";
   }
-   if (basePath === "") basePath = "/";
-
+  if (basePath === "") basePath = "/";
 
   const currentSeoTitle = pageTitle?.[language] || title; // Fallback to hero title
   const currentSeoDescription = pageDescription?.[language] || subtitle; // Fallback to hero subtitle
@@ -89,7 +92,6 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
             href={`https://www.looptica.com/${langCode}${basePath === "/" ? "" : basePath}`}
           />
         ))}
-        {/* x-default typically points to your primary language or a language selector page */}
         <link
             rel="alternate"
             hrefLang="x-default"
@@ -109,7 +111,6 @@ const ServiceLayout: React.FC<ServiceLayoutProps> = ({
               backgroundPosition: 'center',
               transition: isImageLoaded ? 'background-image 0.5s ease-in' : 'none'
             }}
-            // onError={handleImageError} // onError on section might not work as expected for bg images
           >
             {/* Add an img tag for error handling if direct bg image error handling is tricky */}
             <img src={loadedImage} alt="" onError={handleImageError} style={{display: 'none'}} />

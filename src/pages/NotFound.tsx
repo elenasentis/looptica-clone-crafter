@@ -41,7 +41,7 @@ const NotFound = () => {
         <h2 className="text-2xl font-medium mb-4 text-[#1a2b3c]">{content.title[language]}</h2>
         <p className="text-lg text-gray-600 mb-8">{content.message[language]}</p>
         <Link 
-          to="/" 
+          to={`/${language}`} 
           className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#55afa9] hover:bg-[#ca6664] transition-colors"
         >
           {content.button[language]}

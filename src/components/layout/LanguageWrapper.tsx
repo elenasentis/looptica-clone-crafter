@@ -26,12 +26,13 @@ const LanguageWrapper: React.FC = () => {
     }
   }, [lang, setLanguage, navigate, location, currentContextLang]);
 
-  // Only render Outlet if language is valid and matches context, to prevent rendering with stale context during redirect
-  if (lang && SUPPORTED_LANGUAGES.includes(lang as Language) && lang === currentContextLang) {
+  // Render Outlet as soon as language is valid to avoid flickering
+  // This allows the page to render while the context is being updated
+  if (lang && SUPPORTED_LANGUAGES.includes(lang as Language)) {
     return <Outlet />;
   }
   
-  // Render nothing or a loader while redirecting or language context is updating
+  // Render nothing or a loader while redirecting
   return null; 
 };
 

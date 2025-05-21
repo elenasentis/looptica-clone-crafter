@@ -12,7 +12,8 @@ const LanguageSwitcher = () => {
   const { lang: currentUrlLang } = useParams<{ lang: string }>();
 
   const handleLanguageChange = (newLang: Language) => {
-    setLanguage(newLang); // Update context and localStorage
+    // Update context and localStorage
+    setLanguage(newLang);
 
     // Construct new path
     // Remove current language prefix if it exists
@@ -26,11 +27,11 @@ const LanguageSwitcher = () => {
     if (basePath !== "/" && !basePath.startsWith("/")) {
         basePath = `/${basePath}`;
     }
-    // For the root path of the default language 'ca', we might not want a trailing slash like /ca/
-    // However, our App.tsx redirects /ca/ to /ca which loads Index.tsx.
-    // So /newLang/ + (basePath being "" or "/") should result in /newLang
+    
+    // For the root path of the default language 'ca', we want /ca not /ca/
     const finalPath = `/${newLang}${basePath === "/" ? "" : basePath}${location.search}${location.hash}`;
     
+    console.log(`LanguageSwitcher: Navigating from ${location.pathname} to ${finalPath}`);
     navigate(finalPath);
   };
 
