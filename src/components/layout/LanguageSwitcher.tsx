@@ -2,21 +2,51 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Globe } from 'lucide-react';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { Language, SUPPORTED_LANGUAGES } from '@/config/languages';
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { lang: currentUrlLang } = useParams<{ lang: string }>();
+
+  const handleLanguageChange = (newLang: Language) => {
+    setLanguage(newLang); // Update context and localStorage
+
+    // Construct new path
+    // Remove current language prefix if it exists
+    let basePath = location.pathname;
+    if (currentUrlLang && basePath.startsWith(`/${currentUrlLang}`)) {
+      basePath = basePath.substring(`/${currentUrlLang}`.length) || "/"; // ensure it's at least "/"
+    }
+    if (basePath === "") basePath = "/"; // if it became empty string
+
+    // Ensure basePath starts with a slash if it's not just "/"
+    if (basePath !== "/" && !basePath.startsWith("/")) {
+        basePath = `/${basePath}`;
+    }
+    // For the root path of the default language 'ca', we might not want a trailing slash like /ca/
+    // However, our App.tsx redirects /ca/ to /ca which loads Index.tsx.
+    // So /newLang/ + (basePath being "" or "/") should result in /newLang
+    const finalPath = `/${newLang}${basePath === "/" ? "" : basePath}${location.search}${location.hash}`;
+    
+    navigate(finalPath);
+  };
 
   return (
     <div className="flex items-center">
       <Globe className="h-4 w-4 mr-2 text-gray-700" />
-      <Select value={language} onValueChange={(value) => setLanguage(value as 'en' | 'es' | 'ca')}>
+      <Select value={language} onValueChange={(value) => handleLanguageChange(value as Language)}>
         <SelectTrigger className="w-24 border-none bg-transparent h-8 focus:ring-0 text-gray-700">
           <SelectValue placeholder="Idioma" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="ca">Català</SelectItem>
-          <SelectItem value="es">Español</SelectItem>
-          <SelectItem value="en">English</SelectItem>
+          {SUPPORTED_LANGUAGES.map((langCode) => (
+            <SelectItem key={langCode} value={langCode}>
+              {langCode === 'ca' ? 'Català' : langCode === 'es' ? 'Español' : 'English'}
+            </SelectItem>
+          ))}
         </SelectContent>
       </Select>
     </div>

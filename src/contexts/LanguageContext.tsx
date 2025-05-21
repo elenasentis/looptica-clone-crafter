@@ -1,12 +1,10 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-type Language = 'en' | 'es' | 'ca';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import { Language, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from '@/config/languages';
 
 type Translations = {
   [key: string]: {
-    en: string;
-    es: string;
-    ca: string;
+    [key in Language]: string;
   };
 };
 
@@ -478,20 +476,45 @@ export const translations: Translations = {
   },
 };
 
+
 interface LanguageContextType {
   language: Language;
-  setLanguage: (lang: Language) => void;
+  setLanguage: (lang: Language, skipLocalStorage?: boolean) => void;
   t: (key: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('ca');
+  // Initialize with default language, LanguageWrapper will update it from URL
+  const [language, setCurrentLanguage] = useState<Language>(DEFAULT_LANGUAGE);
+
+  // Load language from localStorage on initial mount as a fallback
+  // This is useful if user visits `/` and gets redirected, remembers their last lang choice
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem('language') as Language | null;
+    if (storedLanguage && SUPPORTED_LANGUAGES.includes(storedLanguage)) {
+      setCurrentLanguage(storedLanguage);
+    }
+  }, []);
+  
+  const setLanguage = (lang: Language, skipLocalStorage: boolean = false) => {
+    if (SUPPORTED_LANGUAGES.includes(lang)) {
+      setCurrentLanguage(lang);
+      if(!skipLocalStorage) {
+        localStorage.setItem('language', lang);
+      }
+    } else {
+      setCurrentLanguage(DEFAULT_LANGUAGE);
+      if(!skipLocalStorage) {
+        localStorage.setItem('language', DEFAULT_LANGUAGE);
+      }
+    }
+  };
 
   const t = (key: string): string => {
     if (translations[key]) {
-      return translations[key][language];
+      return translations[key][language] || translations[key][DEFAULT_LANGUAGE];
     }
     console.warn(`Translation key not found: ${key}`);
     return key;

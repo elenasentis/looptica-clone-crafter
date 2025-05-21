@@ -1,62 +1,68 @@
 
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { DEFAULT_LANGUAGE } from '@/config/languages'; // Import default language
 
 const RedirectHandler = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { pathname } = location;
+  const { pathname, search } = location;
 
   useEffect(() => {
-    // Define all redirects mapping (old path -> new path)
+    // Define all redirects mapping (old path -> new language-prefixed path)
+    // For paths without explicit language, we redirect to Spanish 'es' or Catalan 'ca' as appropriate.
+    // New structure is /:lang/path
     const redirects: Record<string, string> = {
-      // Language redirects
-      '/cat': '/',
-      '/cat/': '/',
-      '/en': '/',
-      '/en/': '/',
+      // Language root redirects handled by App.tsx's root path redirect and LanguageWrapper
+      // '/cat': `/${DEFAULT_LANGUAGE}/`, (example, but better handled by server or initial app logic)
+      // '/en': `/en/`,
       
       // Contact lenses redirects
-      '/en/contact-lenses-poblenou-barcelona': '/services/lents-contacte',
-      '/en/contact-lenses-poblenou-barcelona/': '/services/lents-contacte',
-      '/lentillas-poblenou-barcelona': '/services/lents-contacte',
-      '/lentillas-poblenou-barcelona/': '/services/lents-contacte',
+      '/en/contact-lenses-poblenou-barcelona': '/en/services/lents-contacte',
+      '/en/contact-lenses-poblenou-barcelona/': '/en/services/lents-contacte',
+      '/lentillas-poblenou-barcelona': '/es/services/lents-contacte', // Assuming Spanish for this path
+      '/lentillas-poblenou-barcelona/': '/es/services/lents-contacte',
       
       // Orto-K redirects
-      '/orto-k-poblenou-barcelona': '/services/orto-k',
-      '/orto-k-poblenou-barcelona/': '/services/orto-k',
-      '/en/orto-k-in-poblenou-barcelona': '/services/orto-k',
-      '/en/orto-k-in-poblenou-barcelona/': '/services/orto-k',
+      '/orto-k-poblenou-barcelona': '/es/services/orto-k', // Assuming Spanish
+      '/orto-k-poblenou-barcelona/': '/es/services/orto-k',
+      '/en/orto-k-in-poblenou-barcelona': '/en/services/orto-k',
+      '/en/orto-k-in-poblenou-barcelona/': '/en/services/orto-k',
       
       // Salud visual redirect
-      '/salud-visual-poblenou-barcelona': '/services/salut-visual',
-      '/salud-visual-poblenou-barcelona/': '/services/salut-visual',
-    };
+      '/salud-visual-poblenou-barcelona': '/es/services/salut-visual', // Assuming Spanish
+      '/salud-visual-poblenou-barcelona/': '/es/services/salut-visual',
 
-    // Handle legacy query parameters if needed
-    const handleSpecialQueryParams = () => {
-      if (pathname === '/cat/' && location.search === '?noredirect=ca-ES') {
-        return '/';
-      }
-      return null;
+      // Specific query parameter redirects
+      // These are tricky, ensure they don't conflict with new structure.
+      // Example: if '/cat/?noredirect=ca-ES' used to go to old homepage, now it should go to new default lang homepage
+      // This one might be obsolete or needs to be handled carefully:
+      // '/cat/?noredirect=ca-ES': `/${DEFAULT_LANGUAGE}/` - check this rule's intent
     };
-
-    // Check for special query parameter cases first
-    const specialRedirect = handleSpecialQueryParams();
-    if (specialRedirect) {
-      console.log(`Redirecting from ${pathname}${location.search} to ${specialRedirect}`);
-      navigate(specialRedirect, { replace: true });
-      return;
+    
+    // Special case from .htaccess, should be removed if .htaccess handles it
+    // This type of redirect should ideally be a 301 in .htaccess or server config.
+    if (pathname === '/cat/' && search === '?noredirect=ca-ES') {
+        console.log(`RedirectHandler: Special query redirect from ${pathname}${search} to /${DEFAULT_LANGUAGE}/`);
+        navigate(`/${DEFAULT_LANGUAGE}/`, { replace: true });
+        return;
     }
 
-    // Then check for path-based redirects
-    if (redirects[pathname]) {
-      console.log(`Redirecting from ${pathname} to ${redirects[pathname]}`);
-      navigate(redirects[pathname], { replace: true });
+    // Path-based redirects
+    let normalizedPathname = pathname;
+    if (pathname.endsWith('/') && pathname.length > 1) {
+      normalizedPathname = pathname.slice(0, -1); // Remove trailing slash for matching
     }
-  }, [pathname, navigate, location.search]);
 
-  // This component doesn't render anything
+    if (redirects[pathname] || redirects[normalizedPathname]) {
+      const targetPath = redirects[pathname] || redirects[normalizedPathname];
+      console.log(`RedirectHandler: Redirecting from ${pathname} to ${targetPath}`);
+      navigate(targetPath, { replace: true });
+    }
+    // No general redirect for non-prefixed paths here; LanguageWrapper and App.tsx handle missing/invalid lang prefixes.
+    
+  }, [pathname, search, navigate]);
+
   return null;
 };
 

@@ -1,29 +1,30 @@
-
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { Menu, X, ShoppingBag, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Language } from '@/config/languages';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage(); // Get current language
   const location = useLocation();
+  // const { lang: langFromParams } = useParams<{ lang: string }>(); // lang from URL
+  // const currentLang = (langFromParams || language) as Language; // Prioritize URL lang
 
-  // Check if we're on the homepage to determine whether to use anchor links or router links
-  const isHomePage = location.pathname === '/';
+  // Check if we're on the homepage for the current language
+  const isHomePage = location.pathname === `/${language}` || location.pathname === `/${language}/`;
 
-  // Using translation keys for navigation
   const navLinks = [
-    { name: t('home'), path: '/' },
-    { name: t('products'), path: isHomePage ? '#products' : '/#products' },
-    { name: t('opticalServices'), path: isHomePage ? '#optical' : '/#optical' },
-    { name: t('audiologyServices'), path: isHomePage ? '#audiology' : '/#audiology' },
-    { name: t('about'), path: '/about' },
-    { name: t('contact'), path: isHomePage ? '#contact' : '/#contact' },
+    { name: t('home'), path: `/${language}` },
+    { name: t('products'), path: isHomePage ? `/${language}/#products` : `/${language}/#products` },
+    { name: t('opticalServices'), path: isHomePage ? `/${language}/#optical` : `/${language}/#optical` },
+    { name: t('audiologyServices'), path: isHomePage ? `/${language}/#audiology` : `/${language}/#audiology` },
+    { name: t('about'), path: `/${language}/about` },
+    { name: t('contact'), path: isHomePage ? `/${language}/#contact` : `/${language}/#contact` },
   ];
 
   useEffect(() => {
@@ -42,7 +43,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
-      // Prevent body scroll when menu is open
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
@@ -54,26 +54,28 @@ const Navbar = () => {
     document.body.style.overflow = 'auto';
   };
 
-  // Function to handle anchor link clicks for smooth scrolling
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const href = e.currentTarget.getAttribute('href');
-    
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
+    const href = e.currentTarget.getAttribute('href'); // Full path like /ca/#products
+    closeMenu(); // Close menu on any click
+
+    if (href) {
+      const [pathPart, hashPart] = href.split('#');
       
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        if (isOpen) closeMenu();
+      // Check if it's an internal link to the current page's language root with a hash
+      if (hashPart && (pathPart === `/${language}` || pathPart === `/${language}/` || pathPart === '')) {
+         // If current page is already the target language's homepage
+        if (location.pathname === `/${language}` || location.pathname === `/${language}/`) {
+          e.preventDefault();
+          const targetElement = document.getElementById(hashPart);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+          return;
+        }
+        // If navigating to homepage section from another page, Link component will handle navigation, 
+        // and Index.tsx's useEffect will handle scrolling.
       }
-    } else if (href && href.includes('#') && !isHomePage) {
-      // For links like "/#section" when not on homepage, we'll let the router handle it
-      // The useEffect in Index.tsx will handle the scrolling after navigation
-      closeMenu();
-    } else {
-      // For regular page links
-      closeMenu();
+      // For regular page links (e.g., /ca/about), Link component handles it.
     }
   };
 
@@ -83,13 +85,13 @@ const Navbar = () => {
         "fixed w-full top-0 left-0 z-50 transition-all duration-300 px-6 lg:px-12",
         scrolled 
           ? "py-2 bg-white shadow-md" 
-          : "py-4 bg-white shadow-sm text-gray-900" // Changed from glass to bg-white
+          : "py-4 bg-white shadow-sm text-gray-900"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link 
-          to="/" 
+          to={`/${language}`} 
           className="relative z-50 transition-all"
           onClick={closeMenu}
         >
@@ -107,25 +109,14 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            link.path.startsWith('#') ? (
-              <a
-                key={link.name}
-                href={link.path}
-                className="text-sm font-medium transition-all hover:text-[#55afa9] text-gray-900 drop-shadow-sm"
-                onClick={handleAnchorClick}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="text-sm font-medium transition-all hover:text-[#55afa9] text-gray-900 drop-shadow-sm"
-                onClick={closeMenu}
-              >
-                {link.name}
-              </Link>
-            )
+            <Link
+              key={link.name}
+              to={link.path}
+              className="text-sm font-medium transition-all hover:text-[#55afa9] text-gray-900 drop-shadow-sm"
+              onClick={handleAnchorClick} // Use unified handler
+            >
+              {link.name}
+            </Link>
           ))}
         </div>
 
@@ -135,11 +126,12 @@ const Navbar = () => {
             <Phone className="h-4 w-4 mr-2" />
             <span className="text-sm font-medium">933 00 90 64</span>
           </a>
-          <LanguageSwitcher />
+          <LanguageSwitcher /> {/* LanguageSwitcher will need to navigate to /newlang/currentpath_without_oldlang */}
           <Button 
             variant="default" 
             size="sm" 
             className="bg-[#55afa9] hover:bg-[#ca6664] text-white transition-all"
+            // onClick={() => navigate(`/${language}/#contact`)} // Example if button leads to a page/section
           >
             <ShoppingBag className="h-4 w-4 mr-2" />
             {t('shopNow')}
@@ -168,25 +160,14 @@ const Navbar = () => {
         >
           <div className="h-full flex flex-col items-center justify-center space-y-8 p-8">
             {navLinks.map((link) => (
-              link.path.startsWith('#') ? (
-                <a
-                  key={link.name}
-                  href={link.path}
-                  className="text-xl font-medium transition-all hover:text-[#55afa9] text-gray-800"
-                  onClick={handleAnchorClick}
-                >
-                  {link.name}
-                </a>
-              ) : (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className="text-xl font-medium transition-all hover:text-[#55afa9] text-gray-800"
-                  onClick={closeMenu}
-                >
-                  {link.name}
-                </Link>
-              )
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-xl font-medium transition-all hover:text-[#55afa9] text-gray-800"
+                onClick={handleAnchorClick} // Use unified handler
+              >
+                {link.name}
+              </Link>
             ))}
             <a href="tel:+34933009064" className="flex items-center text-gray-700 hover:text-[#55afa9]">
               <Phone className="h-5 w-5 mr-2" />
@@ -196,7 +177,10 @@ const Navbar = () => {
             <Button 
               variant="default" 
               className="mt-4 w-full max-w-[200px] bg-[#55afa9] hover:bg-[#ca6664] text-white"
-              onClick={closeMenu}
+              onClick={() => {
+                // navigate(`/${language}/#contact`); // Example
+                closeMenu();
+              }}
             >
               <ShoppingBag className="h-5 w-5 mr-2" />
               {t('shopNow')}
