@@ -33,6 +33,11 @@ const RedirectHandler = () => {
       '/salud-visual-poblenou-barcelona': '/es/services/salut-visual', // Assuming Spanish
       '/salud-visual-poblenou-barcelona/': '/es/services/salut-visual',
 
+      // Technical Aids redirect (adding these to handle potential legacy URLs)
+      '/technical-aids': `/${DEFAULT_LANGUAGE}/services/technical-aids`,
+      '/ayudas-tecnicas': '/es/services/technical-aids',
+      '/ajudes-tecniques': '/ca/services/technical-aids',
+
       // Specific query parameter redirects
       // These are tricky, ensure they don't conflict with new structure.
       // Example: if '/cat/?noredirect=ca-ES' used to go to old homepage, now it should go to new default lang homepage
@@ -59,7 +64,9 @@ const RedirectHandler = () => {
       console.log(`RedirectHandler: Redirecting from ${pathname} to ${targetPath}`);
       navigate(targetPath, { replace: true });
     }
-    // No general redirect for non-prefixed paths here; LanguageWrapper and App.tsx handle missing/invalid lang prefixes.
+    
+    // Debug
+    console.log(`RedirectHandler: Checking path '${pathname}', no redirect applied`);
     
   }, [pathname, search, navigate]);
 

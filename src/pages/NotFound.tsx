@@ -31,6 +31,11 @@ const NotFound = () => {
       en: "Return to Home",
       es: "Volver al Inicio",
       ca: "Tornar a l'Inici"
+    },
+    debug: {
+      en: "Technical details: Looking for path",
+      es: "Detalles técnicos: Buscando ruta",
+      ca: "Detalls tècnics: Cercant ruta"
     }
   };
 
@@ -46,6 +51,13 @@ const NotFound = () => {
         >
           {content.button[language]}
         </Link>
+        
+        {/* Add a small debug note that shows the path in development */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mt-16 text-xs text-gray-400">
+            <p>{content.debug[language]}: {location.pathname}</p>
+          </div>
+        )}
       </div>
     </div>
   );

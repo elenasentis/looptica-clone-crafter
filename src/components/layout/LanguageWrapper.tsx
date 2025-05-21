@@ -11,10 +11,13 @@ const LanguageWrapper: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
+    console.log(`LanguageWrapper: Processing route with lang=${lang}, path=${location.pathname}`);
+    
     const newLang = lang as Language;
     if (lang && SUPPORTED_LANGUAGES.includes(newLang)) {
       if (newLang !== currentContextLang) {
         // Set language in context, skip localStorage update as URL is the source of truth here
+        console.log(`LanguageWrapper: Setting language to ${newLang} from URL`);
         setLanguage(newLang, true); 
       }
     } else {
