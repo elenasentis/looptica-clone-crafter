@@ -16,18 +16,27 @@ const LanguageWrapper: React.FC = () => {
     const newLang = lang as Language;
     if (lang && SUPPORTED_LANGUAGES.includes(newLang)) {
       if (newLang !== currentContextLang) {
-        // Set language in context, skip localStorage update as URL is the source of truth here
         console.log(`LanguageWrapper: Setting language to ${newLang} from URL`);
         setLanguage(newLang, true); 
       }
     } else {
-      // Invalid or missing lang param, redirect to default language preserving the path
-      const pathWithoutLang = lang ? location.pathname.substring(`/${lang}`.length) : location.pathname;
-      const newPath = `/${DEFAULT_LANGUAGE}${pathWithoutLang === '/' && DEFAULT_LANGUAGE === 'ca' ? '' : pathWithoutLang}${location.search}${location.hash}`;
-      console.warn(`Invalid language: ${lang}. Redirecting to ${newPath}`);
-      navigate(newPath, { replace: true });
+      // Invalid lang param (e.g., '/xyz/foo' where 'xyz' is not 'en', 'es', 'ca')
+      // or lang param is missing and this component is somehow reached.
+      // We want to redirect to /${DEFAULT_LANGUAGE}/${original_full_path}
+      // Example: if URL was /services/lents-contacte, lang would be "services" (invalid).
+      // location.pathname would be "/services/lents-contacte".
+      // We need to redirect to /ca/services/lents-contacte.
+
+      const fullPathToPreserve = location.pathname; 
+
+      // Construct the new path: /<default_lang>/<preserved_path_including_invalid_first_segment_if_any>
+      // Special handling for the root of the default language 'ca' to be /ca instead of /ca/
+      const newRedirectPath = `/${DEFAULT_LANGUAGE}${fullPathToPreserve === '/' && DEFAULT_LANGUAGE === 'ca' ? '' : fullPathToPreserve}${location.search}${location.hash}`;
+      
+      console.warn(`LanguageWrapper: Invalid language segment "${lang}" in URL "${location.pathname}". Redirecting to "${newRedirectPath}".`);
+      navigate(newRedirectPath, { replace: true });
     }
-  }, [lang, setLanguage, navigate, location, currentContextLang]);
+  }, [lang, setLanguage, navigate, location, currentContextLang, DEFAULT_LANGUAGE]); // Added DEFAULT_LANGUAGE to dependencies
 
   // Render Outlet as soon as language is valid to avoid flickering
   // This allows the page to render while the context is being updated
@@ -40,3 +49,4 @@ const LanguageWrapper: React.FC = () => {
 };
 
 export default LanguageWrapper;
+
