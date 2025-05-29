@@ -20,22 +20,26 @@ const NotFound = () => {
     title: {
       en: "Page Not Found",
       es: "Página No Encontrada",
-      ca: "Pàgina No Trobada"
+      ca: "Pàgina No Trobada",
+      de: "Seite Nicht Gefunden"
     },
     message: {
       en: "We're sorry, the page you were looking for doesn't exist or has been moved.",
       es: "Lo sentimos, la página que buscabas no existe o ha sido movida.",
-      ca: "Ho sentim, la pàgina que cercaves no existeix o ha estat moguda."
+      ca: "Ho sentim, la pàgina que cercaves no existeix o ha estat moguda.",
+      de: "Es tut uns leid, die gesuchte Seite existiert nicht oder wurde verschoben."
     },
     button: {
       en: "Return to Home",
       es: "Volver al Inicio",
-      ca: "Tornar a l'Inici"
+      ca: "Tornar a l'Inici",
+      de: "Zurück zur Startseite"
     },
     debug: {
       en: "Technical details: Looking for path",
       es: "Detalles técnicos: Buscando ruta",
-      ca: "Detalls tècnics: Cercant ruta"
+      ca: "Detalls tècnics: Cercant ruta",
+      de: "Technische Details: Suche nach Pfad"
     }
   };
 

@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
@@ -12,6 +13,9 @@ import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useNavigate } from 'react-router-dom';
 
+// Version tracking for development
+const CURRENT_VERSION = "v2.1.0-multilingual-de"; // Updated: Added German language support
+
 // Create a new component for SEO content to avoid it blocking rendering
 const SeoContent = ({ language }: { language: string }) => {
   const content = {
@@ -19,12 +23,14 @@ const SeoContent = ({ language }: { language: string }) => {
       title: {
         en: "Barcelona Poblenou Audiology Center - Hearing Tests and Digital Hearing Aids",
         es: "Centro de Audiología Barcelona Poblenou - Pruebas Auditivas y Audífonos Digitales",
-        ca: "Centre d'Audiologia Barcelona Poblenou - Proves Auditives i Audiòfons Digitals"
+        ca: "Centre d'Audiologia Barcelona Poblenou - Proves Auditives i Audiòfons Digitals",
+        de: "Audiologie-Zentrum Barcelona Poblenou - Hörtests und Digitale Hörgeräte"
       },
       text: {
         en: "At Looptica we offer comprehensive audiology services in Barcelona Poblenou, including professional hearing tests, hearing loss treatment, digital hearing aids fitting, audiometry Barcelona Poblenou and tinnitus solutions. Our hearing center in Barcelona Poblenou features high-quality clinical audiology and specialists in pediatric audiology.",
         es: "En Looptica ofrecemos servicios completos de audiología en Barcelona Poblenou, incluyendo pruebas auditivas profesionales, tratamiento de pérdida auditiva, adaptación de audífonos digitales, audiometría Barcelona Poblenou y soluciones para acúfenos. Nuestro centro auditivo en Barcelona Poblenou cuenta con audiología clínica de alta calidad y especialistas en audiología pediátrica.",
-        ca: "A Looptica oferim serveis complets d'audiologia a Barcelona Poblenou, incloent proves auditives professionals, tractament de pèrdua auditiva, adaptació d'audiòfons digitals, audiometria Barcelona Poblenou i solucions per a acúfens. El nostre centre auditiu a Barcelona Poblenou compta amb audiologia clínica d'alta qualitat i especialistes en audiologia pediàtrica."
+        ca: "A Looptica oferim serveis complets d'audiologia a Barcelona Poblenou, incloent proves auditives professionals, tractament de pèrdua auditiva, adaptació d'audiòfons digitals, audiometria Barcelona Poblenou i solucions per a acúfens. El nostre centre auditiu a Barcelona Poblenou compta amb audiologia clínica d'alta qualitat i especialistes en audiologia pediàtrica.",
+        de: "Bei Looptica bieten wir umfassende Audiologie-Dienstleistungen in Barcelona Poblenou, einschließlich professioneller Hörtests, Behandlung von Hörverlust, Anpassung digitaler Hörgeräte, Audiometrie Barcelona Poblenou und Tinnitus-Lösungen. Unser Hörzentrum in Barcelona Poblenou bietet hochwertige klinische Audiologie und Spezialisten für Pädaudiologie."
       }
     },
   };
@@ -35,6 +41,8 @@ const SeoContent = ({ language }: { language: string }) => {
       <p>
         {content.seo.text[language as keyof typeof content.seo.text]}
       </p>
+      {/* Version tracking for development debugging */}
+      <span data-version={CURRENT_VERSION}>Version: {CURRENT_VERSION}</span>
     </div>
   );
 };
@@ -48,7 +56,8 @@ const DeferredContent = () => {
     audiologyLink: {
       en: "Visit our Audiology Page",
       es: "Visitar nuestra página de Audiología",
-      ca: "Visitar la nostra pàgina d'Audiología"
+      ca: "Visitar la nostra pàgina d'Audiología",
+      de: "Besuchen Sie unsere Audiologie-Seite"
     },
   };
 
@@ -141,7 +150,6 @@ const DeferredContent = () => {
 
 const Index = () => {
   const { language } = useLanguage();
-  // const navigate = useNavigate(); // navigate is declared in DeferredContent, can be removed if not used here directly
   
   // Content organized by section first, then by language
   const content = {
@@ -160,23 +168,31 @@ const Index = () => {
         title: "Looptica - Òptica i Audiologia a Barcelona Poblenou | Ulleres, Lents de Contacte i Audiòfons",
         description: "Centre especialitzat en serveis òptics i audiològics a Barcelona Poblenou. Oferim exàmens visuals, ulleres graduades, lents de contacte, proves auditives, tractament de pèrdua auditiva i audiòfons d'alta qualitat.",
         keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiologia barcelona poblenou, audiòfons barcelona poblenou, pèrdua auditiva, prova auditiva barcelona poblenou, audiologia clínica barcelona poblenou, centre auditiu barcelona poblenou"
+      },
+      de: {
+        title: "Looptica - Optik und Audiologie in Barcelona Poblenou | Brillen, Kontaktlinsen und Hörgeräte",
+        description: "Spezialisiertes Zentrum für optische und audiologische Dienstleistungen in Barcelona Poblenou. Wir bieten Augenuntersuchungen, Brillen mit Sehstärke, Kontaktlinsen, Hörtests, Behandlung von Hörverlust und hochwertige digitale Hörgeräte.",
+        keywords: "optical, audiology, eyeglasses, contactLenses, hearingAids, barcelona, poblenou, audiologie barcelona poblenou, hörgeräte barcelona poblenou, hörverlust, hörtest barcelona poblenou, klinische audiologie barcelona poblenou, hörzentrum barcelona poblenou"
       }
     },
     whatsapp: {
       statusMessage: {
         en: "Typically replies within 1 hour",
         es: "Normalmente responde en 1 hora",
-        ca: "Normalment respon en 1 hora"
+        ca: "Normalment respon en 1 hora",
+        de: "Antwortet normalerweise innerhalb 1 Stunde"
       },
       chatMessage: {
         en: "Hello! 👋🏼 How can we help you with your vision or hearing?",
         es: "¡Hola! 👋🏼 ¿En qué podemos ayudarte con tu visión o audición?",
-        ca: "Hola! 👋🏼 En què podem ajudar-te amb la teva visió o audició?"
+        ca: "Hola! 👋🏼 En què podem ajudar-te amb la teva visió o audició?",
+        de: "Hallo! 👋🏼 Wie können wir Ihnen mit Ihrem Sehen oder Hören helfen?"
       },
       placeholder: {
         en: "Type a message...",
         es: "Escribe un mensaje...",
-        ca: "Escriu un missatge..."
+        ca: "Escriu un missatge...",
+        de: "Nachricht eingeben..."
       }
     }
   };
@@ -185,8 +201,8 @@ const Index = () => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
     
-    // Log to check if component is mounting correctly
-    console.log("Index component mounted");
+    // Log version and component mounting
+    console.log(`Index component mounted - ${CURRENT_VERSION}`);
   }, []);
 
   return (

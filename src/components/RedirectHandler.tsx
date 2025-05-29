@@ -22,21 +22,28 @@ const RedirectHandler = () => {
       '/en/contact-lenses-poblenou-barcelona/': '/en/services/lents-contacte',
       '/lentillas-poblenou-barcelona': '/es/services/lents-contacte', // Assuming Spanish for this path
       '/lentillas-poblenou-barcelona/': '/es/services/lents-contacte',
+      '/kontaktlinsen-poblenou-barcelona': '/de/services/lents-contacte', // German
+      '/kontaktlinsen-poblenou-barcelona/': '/de/services/lents-contacte',
       
       // Orto-K redirects
       '/orto-k-poblenou-barcelona': '/es/services/orto-k', // Assuming Spanish
       '/orto-k-poblenou-barcelona/': '/es/services/orto-k',
       '/en/orto-k-in-poblenou-barcelona': '/en/services/orto-k',
       '/en/orto-k-in-poblenou-barcelona/': '/en/services/orto-k',
+      '/de/orto-k-in-poblenou-barcelona': '/de/services/orto-k', // German
+      '/de/orto-k-in-poblenou-barcelona/': '/de/services/orto-k',
       
       // Salud visual redirect
       '/salud-visual-poblenou-barcelona': '/es/services/salut-visual', // Assuming Spanish
       '/salud-visual-poblenou-barcelona/': '/es/services/salut-visual',
+      '/sehgesundheit-poblenou-barcelona': '/de/services/salut-visual', // German
+      '/sehgesundheit-poblenou-barcelona/': '/de/services/salut-visual',
 
       // Technical Aids redirect (adding these to handle potential legacy URLs)
       '/technical-aids': `/${DEFAULT_LANGUAGE}/services/technical-aids`,
       '/ayudas-tecnicas': '/es/services/technical-aids',
       '/ajudes-tecniques': '/ca/services/technical-aids',
+      '/technische-hilfsmittel': '/de/services/technical-aids', // German
 
       // Specific query parameter redirects
       // These are tricky, ensure they don't conflict with new structure.

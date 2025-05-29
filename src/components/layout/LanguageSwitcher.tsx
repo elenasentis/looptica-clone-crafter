@@ -45,7 +45,10 @@ const LanguageSwitcher = () => {
         <SelectContent>
           {SUPPORTED_LANGUAGES.map((langCode) => (
             <SelectItem key={langCode} value={langCode}>
-              {langCode === 'ca' ? 'Català' : langCode === 'es' ? 'Español' : 'English'}
+              {langCode === 'ca' ? 'Català' : 
+               langCode === 'es' ? 'Español' : 
+               langCode === 'en' ? 'English' : 
+               'Deutsch'}
             </SelectItem>
           ))}
         </SelectContent>

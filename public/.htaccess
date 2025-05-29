@@ -1,3 +1,4 @@
+
 # Enable Expires headers
 # ... keep existing code (Expires module)
 <IfModule mod_expires.c>
@@ -86,22 +87,31 @@ FileETag None
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
   RewriteRule ^en/?(.*)$ /en/$1 [R=301,L,NE]
 
+  RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
+  RewriteRule ^de/?(.*)$ /de/$1 [R=301,L,NE]
+
   # Legacy URL Redirects to new language-prefixed structure
   # Contact lenses
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
   RewriteRule ^en/contact-lenses-poblenou-barcelona/?$ /en/services/lents-contacte [R=301,L,NE]
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
   RewriteRule ^lentillas-poblenou-barcelona/?$ /es/services/lents-contacte [R=301,L,NE]
+  RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
+  RewriteRule ^kontaktlinsen-poblenou-barcelona/?$ /de/services/lents-contacte [R=301,L,NE]
   
   # Orto-K
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
   RewriteRule ^orto-k-poblenou-barcelona/?$ /es/services/orto-k [R=301,L,NE]
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
   RewriteRule ^en/orto-k-in-poblenou-barcelona/?$ /en/services/orto-k [R=301,L,NE]
+  RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
+  RewriteRule ^de/orto-k-in-poblenou-barcelona/?$ /de/services/orto-k [R=301,L,NE]
   
   # Salud visual
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
   RewriteRule ^salud-visual-poblenou-barcelona/?$ /es/services/salut-visual [R=301,L,NE]
+  RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
+  RewriteRule ^sehgesundheit-poblenou-barcelona/?$ /de/services/salut-visual [R=301,L,NE]
 
   # Technical Aids (new redirects)
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
@@ -110,6 +120,8 @@ FileETag None
   RewriteRule ^ayudas-tecnicas/?$ /es/services/technical-aids [R=301,L,NE]
   RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
   RewriteRule ^ajudes-tecniques/?$ /ca/services/technical-aids [R=301,L,NE]
+  RewriteCond %{HTTP_HOST} ^(www\.)?looptica\.com$ [NC]
+  RewriteRule ^technische-hilfsmittel/?$ /de/services/technical-aids [R=301,L,NE]
 
   # Handle SPA routing:
   # If the request is not for an existing file or directory
@@ -118,7 +130,7 @@ FileETag None
   
   # Rule to redirect non-language-prefixed paths to default language (e.g. /about -> /ca/about)
   # Exclude known asset paths and API paths
-  RewriteCond %{REQUEST_URI} !^/(en|es|ca)/ [NC]
+  RewriteCond %{REQUEST_URI} !^/(en|es|ca|de)/ [NC]
   RewriteCond %{REQUEST_URI} !^/(images|assets|lovable-uploads|favicon\.ico|robots\.txt|sitemap\.xml) [NC]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
