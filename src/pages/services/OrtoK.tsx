@@ -23,6 +23,10 @@ const OrtoK = () => {
       ca: {
         title: "Serveis d'Ortoqueratologia (Orto-K) | Looptica Barcelona",
         description: "Serveis especialitzats d'ortoqueratologia a Barcelona. Experimenta una visió clara sense ulleres ni lents de contacte durant el dia amb les nostres lents nocturnes personalitzades."
+      },
+      de: {
+        title: "Orthokeratologie (Ortho-K) Dienstleistungen | Looptica Barcelona",
+        description: "Spezialisierte Orthokeratologie-Dienstleistungen in Barcelona. Erleben Sie klares Sehen ohne Brille oder Kontaktlinsen tagsüber mit unseren maßgeschneiderten Nachtlinsen."
       }
     },
     hero: {
@@ -40,13 +44,19 @@ const OrtoK = () => {
         title: "Ortoqueratologia (Orto-K)",
         subtitle: "Visió clara sense ulleres ni lents durant el dia",
         appointmentSubject: "Consulta d'Ortoqueratologia a Looptica"
+      },
+      de: {
+        title: "Orthokeratologie (Ortho-K)",
+        subtitle: "Klares Sehen ohne Brille oder Linsen tagsüber",
+        appointmentSubject: "Orthokeratologie-Beratung bei Looptica"
       }
     },
     intro: {
       title: {
         en: "What is Orthokeratology?",
         es: "¿Qué es la Ortoqueratología?",
-        ca: "Què és l'Ortoqueratologia?"
+        ca: "Què és l'Ortoqueratologia?",
+        de: "Was ist Orthokeratologie?"
       },
       paragraphs: {
         en: [
@@ -60,6 +70,10 @@ const OrtoK = () => {
         ca: [
           "L'Ortoqueratologia, comunament coneguda com Orto-K, és una tècnica avançada que utilitza lents de contacte especialment dissenyades que es porten durant la nit mentre es dorm. Aquestes lents remodelten temporalment la còrnia (la superfície frontal de l'ull), corregint així errors de refracció com la miopia, l'hipermetropia i l'astigmatisme.",
           "El resultat? Una visió clara durant el dia sense necessitat d'ulleres o lents de contacte convencionals. És com una \"ortodòncia\" per als seus ulls, però amb resultats temporals que s'aconsegueixen mentre dorm."
+        ],
+        de: [
+          "Orthokeratologie, allgemein bekannt als Ortho-K, ist eine fortschrittliche Technik, die speziell entwickelte Kontaktlinsen verwendet, die während des Schlafs getragen werden. Diese Linsen formen vorübergehend die Hornhaut (die vordere Oberfläche des Auges) um und korrigieren so Brechungsfehler wie Kurzsichtigkeit, Weitsichtigkeit und Astigmatismus.",
+          "Das Ergebnis? Klares Sehen tagsüber ohne die Notwendigkeit einer Brille oder herkömmlicher Kontaktlinsen. Es ist wie eine \"Kieferorthopädie\" für Ihre Augen, aber mit vorübergehenden Ergebnissen, die während des Schlafs erreicht werden."
         ]
       }
     },
@@ -333,7 +347,7 @@ const OrtoK = () => {
       <ServiceLayout
         title={content.hero[language].title}
         subtitle={content.hero[language].subtitle}
-        image="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
+        image="/lovable-uploads/45087a9c-489a-4d48-82fb-d857e7bf306a.jpg"
         appointmentSubject={content.hero[language].appointmentSubject}
       >
         <ScrollReveal>

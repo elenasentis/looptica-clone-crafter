@@ -23,6 +23,10 @@ const SalutVisual = () => {
       ca: {
         title: "Serveis de Salut Visual | Looptica Barcelona",
         description: "Exàmens complets de salut visual i cura ocular a Looptica Barcelona. Optometristes experts, tecnologia avançada i solucions de visió personalitzades."
+      },
+      de: {
+        title: "Sehgesundheitsdienste | Looptica Barcelona",
+        description: "Umfassende Sehgesundheitsuntersuchungen und Augenpflege bei Looptica Barcelona. Experten-Optometristen, fortschrittliche Technologie und personalisierte Sehlösungen."
       }
     },
     hero: {
@@ -40,13 +44,19 @@ const SalutVisual = () => {
         title: "Salut Visual",
         subtitle: "Cuidem dels teus ulls amb la millor tecnologia i professionals",
         appointmentSubject: "Examen de Salut Visual a Looptica"
+      },
+      de: {
+        title: "Sehgesundheit",
+        subtitle: "Wir kümmern uns um Ihre Augen mit der besten Technologie und Fachkräften",
+        appointmentSubject: "Sehgesundheitsuntersuchung bei Looptica"
       }
     },
     whatIs: {
       title: {
         en: "What is a visual health exam?",
         es: "¿Qué es un examen de salud visual?",
-        ca: "Què és un examen de salut visual?"
+        ca: "Què és un examen de salut visual?",
+        de: "Was ist eine Sehgesundheitsuntersuchung?"
       },
       paragraphs: {
         en: [
@@ -60,6 +70,10 @@ const SalutVisual = () => {
         ca: [
           "Un examen de salut visual és una avaluació integral de l'estat dels seus ulls i de la seva visió realitzada per professionals de la salut ocular. Va més enllà d'una simple prova de visió; és una revisió completa que examina la salut ocular general, la funció visual i detecta possibles problemes oculars o malalties sistèmiques que poden afectar els ulls.",
           "A Looptica, creiem que l'atenció preventiva és fonamental per mantenir una bona visió durant tota la vida. Els nostres exàmens visuals complets utilitzen tecnologia d'avantguarda per proporcionar una avaluació detallada de tots els aspectes de la seva salut ocular."
+        ],
+        de: [
+          "Eine Sehgesundheitsuntersuchung ist eine umfassende Bewertung des Zustands Ihrer Augen und Ihres Sehvermögens, die von Augengesundheitsfachkräften durchgeführt wird. Sie geht über einen einfachen Sehtest hinaus; es ist eine vollständige Überprüfung, die die allgemeine Augengesundheit, die Sehfunktion untersucht und mögliche Augenprobleme oder systemische Krankheiten erkennt, die die Augen beeinträchtigen können.",
+          "Bei Looptica glauben wir, dass Vorsorge wesentlich ist, um ein Leben lang gutes Sehen zu erhalten. Unsere umfassenden Sehuntersuchungen verwenden modernste Technologie, um eine detaillierte Bewertung aller Aspekte Ihrer Augengesundheit zu bieten."
         ]
       }
     },
