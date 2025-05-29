@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ServiceLayout from '@/components/layout/ServiceLayout';
@@ -12,73 +11,87 @@ const AudiologiaCentro = () => {
     title: {
       en: "Audiology Center",
       es: "Centro de Audiología",
-      ca: "Centre d'Audiologia"
+      ca: "Centre d'Audiologia",
+      de: "Audiologie-Zentrum"
     },
     subtitle: {
       en: "Comprehensive hearing care solutions",
       es: "Soluciones integrales para el cuidado auditivo",
-      ca: "Solucions integrals per a la cura auditiva"
+      ca: "Solucions integrals per a la cura auditiva",
+      de: "Umfassende Hörlösungen"
     },
     appointmentSubject: {
       en: "Audiology Consultation at Looptica",
       es: "Consulta de Audiología en Looptica",
-      ca: "Consulta d'Audiologia a Looptica"
+      ca: "Consulta d'Audiologia a Looptica",
+      de: "Audiologie-Beratung bei Looptica"
     },
     servicesTitle: {
       en: "Our Audiology Services",
       es: "Nuestros Servicios de Audiología",
-      ca: "Els nostres Serveis d'Audiologia"
+      ca: "Els nostres Serveis d'Audiologia",
+      de: "Unsere Audiologie-Dienstleistungen"
     },
     servicesDescription: {
       en: "At Looptica, we offer a wide range of audiology services to help you maintain and improve your hearing health. Our team of experienced audiologists is dedicated to providing personalized care and the latest technology to meet your individual needs.",
       es: "En Looptica, ofrecemos una amplia gama de servicios de audiología para ayudarle a mantener y mejorar su salud auditiva. Nuestro equipo de audiólogos experimentados se dedica a proporcionar atención personalizada y la última tecnología para satisfacer sus necesidades individuales.",
-      ca: "A Looptica, oferim una àmplia gamma de serveis d'audiologia per ajudar-vos a mantenir i millorar la vostra salut auditiva. El nostre equip d'audiòlegs experimentats es dedica a proporcionar atenció personalitzada i l'última tecnologia per satisfer les vostres necessitats individuals."
+      ca: "A Looptica, oferim una àmplia gamma de serveis d'audiologia per ajudar-vos a mantenir i millorar la vostra salut auditiva. El nostre equip d'audiòlegs experimentats es dedica a proporcionar atenció personalitzada i l'última tecnologia per satisfer les vostres necessitats individuals.",
+      de: "Bei Looptica bieten wir eine breite Palette von Audiologie-Dienstleistungen, um Ihnen zu helfen, Ihre Hörgesundheit zu erhalten und zu verbessern. Unser Team erfahrener Audiologen ist darauf spezialisiert, personalisierte Betreuung und neueste Technologie zu bieten, um Ihre individuellen Bedürfnisse zu erfüllen."
     },
     hearingTests: {
       en: "Hearing Tests",
       es: "Pruebas de Audición",
-      ca: "Proves d'Audició"
+      ca: "Proves d'Audició",
+      de: "Hörtests"
     },
     hearingTestsDesc: {
       en: "Comprehensive hearing evaluations to assess your hearing ability and identify any potential issues.",
       es: "Evaluaciones auditivas completas para evaluar su capacidad auditiva e identificar cualquier problema potencial.",
-      ca: "Avaluacions auditives completes per avaluar la vostra capacitat auditiva i identificar qualsevol problema potencial."
+      ca: "Avaluacions auditives completes per avaluar la vostra capacitat auditiva i identificar qualsevol problema potencial.",
+      de: "Umfassende Hörbewertungen zur Beurteilung Ihrer Hörfähigkeit und Identifizierung möglicher Probleme."
     },
     hearingAids: {
       en: "Hearing Aids",
       es: "Audífonos",
-      ca: "Audiòfons"
+      ca: "Audiòfons",
+      de: "Hörgeräte"
     },
     hearingAidsDesc: {
       en: "Advanced digital hearing aids from leading brands, tailored to your specific hearing loss and lifestyle.",
       es: "Audífonos digitales avanzados de marcas líderes, adaptados a su pérdida auditiva y estilo de vida específicos.",
-      ca: "Audiòfons digitals avançats de marques líders, adaptats a la vostra pèrdua auditiva i estil de vida específics."
+      ca: "Audiòfons digitals avançats de marques líders, adaptats a la vostra pèrdua auditiva i estil de vida específics.",
+      de: "Fortschrittliche digitale Hörgeräte führender Marken, angepasst an Ihren spezifischen Hörverlust und Lebensstil."
     },
     tinnitusTreatment: {
       en: "Tinnitus Treatment",
       es: "Tratamiento de Tinnitus",
-      ca: "Tractament de Tinnitus"
+      ca: "Tractament de Tinnitus",
+      de: "Tinnitus-Behandlung"
     },
     tinnitusTreatmentDesc: {
       en: "Effective strategies and therapies to manage and reduce the impact of tinnitus on your daily life.",
       es: "Estrategias y terapias eficaces para controlar y reducir el impacto del tinnitus en su vida diaria.",
-      ca: "Estratègies i teràpies eficaces per controlar i reduir l'impacte del tinnitus en la vostra vida diària."
+      ca: "Estratègies i teràpies eficaces per controlar i reduir l'impacte del tinnitus en la vostra vida diària.",
+      de: "Wirksame Strategien und Therapien zur Bewältigung und Reduzierung der Auswirkungen von Tinnitus auf Ihr tägliches Leben."
     },
     earProtection: {
       en: "Custom Ear Protection",
       es: "Protección Auditiva Personalizada",
-      ca: "Protecció Auditiva Personalitzada"
+      ca: "Protecció Auditiva Personalitzada",
+      de: "Maßgeschneiderter Gehörschutz"
     },
     earProtectionDesc: {
       en: "Custom-fitted earplugs and earmolds for musicians, industrial workers, and anyone exposed to loud noise.",
       es: "Tapones para los oídos y moldes para los oídos hechos a medida para músicos, trabajadores industriales y cualquier persona expuesta a ruidos fuertes.",
-      ca: "Taps per a les orelles i motlles per a les orelles fets a mida per a músics, treballadors industrials i qualsevol persona exposada a sorolls forts."
+      ca: "Taps per a les orelles i motlles per a les orelles fets a mida per a músics, treballadors industrials i qualsevol persona exposada a sorolls forts.",
+      de: "Maßgefertigte Ohrstöpsel und Ohrpassstücke für Musiker, Industriearbeiter und alle, die lauten Geräuschen ausgesetzt sind."
     },
     subsidies: {
       title: {
         en: "Aid and Subsidies for Hearing Aids in Catalonia",
         es: "Ayudas y Subvenciones para la compra de Audífonos en Cataluña",
-        ca: "Ajudes i Subvencions per a la compra d'Audiòfons a Catalunya"
+        ca: "Ajudes i Subvencions per a la compra d'Audiòfons a Catalunya",
+        de: "Hilfen und Zuschüsse für Hörgeräte in Katalonien"
       },
       content: {
         en: [
@@ -101,12 +114,20 @@ const AudiologiaCentro = () => {
           "Per a les persones majors de 26 anys amb discapacitat reconeguda i formes específiques de pèrdua auditiva, també està disponible el suport audiològic de la Seguretat Social.",
           "A més, existeixen diverses administracions locals (ajuntaments, diputacions) que ofereixen subvencions específiques per a audiòfons, especialment per a persones grans o amb recursos limitats.",
           "A Looptica, oferim assessorament integral sobre les subvencions disponibles per a audiòfons i t'ajudem amb tots els tràmits necessaris per sol·licitar aquestes ajudes."
+        ],
+        de: [
+          "Der Kauf von Hörgeräten ist eine wichtige Investition für Menschen mit Hörverlust. In Katalonien gibt es mehrere Hilfs- und Subventionsprogramme, die dabei helfen können, diese Kosten zu reduzieren.",
+          "Das Gesundheitssystem in Spanien und Katalonien bietet derzeit unter bestimmten Bedingungen finanzielle Hilfe für Hörgeräte. Personen unter 26 Jahren können erhebliche Zuschüsse erhalten, wobei jedes Hörgerät bis zu 1.000€ Unterstützung erhält.",
+          "Für Personen über 26 Jahre mit anerkannter Behinderung und spezifischen Formen des Hörverlusts ist auch audiologische Unterstützung von der Sozialversicherung verfügbar.",
+          "Zusätzlich gibt es verschiedene lokale Verwaltungen (Rathäuser, Provinzräte), die spezifische Zuschüsse für Hörgeräte anbieten, insbesondere für ältere Menschen oder solche mit begrenzten Ressourcen.",
+          "Bei Looptica bieten wir umfassende Beratung zu den verfügbaren Subventionen für Hörgeräte und helfen Ihnen bei allen notwendigen Verfahren zur Beantragung dieser Zuschüsse."
         ]
       },
       eligibility: {
         en: "Who can access these subsidies?",
         es: "¿Quién puede acceder a estas subvenciones?",
-        ca: "Qui pot accedir a aquestes subvencions?"
+        ca: "Qui pot accedir a aquestes subvencions?",
+        de: "Wer kann auf diese Subventionen zugreifen?"
       },
       eligibilityContent: {
         en: [
@@ -126,6 +147,12 @@ const AudiologiaCentro = () => {
           "Persones amb discapacitat reconeguda i perfils específics de pèrdua auditiva",
           "Adults grans (requisits varien segons el municipi)",
           "Persones amb recursos econòmics limitats (subjecte a avaluació d'ingressos)"
+        ],
+        de: [
+          "Personen unter 26 Jahren mit Hörverlust",
+          "Personen mit anerkannter Behinderung und spezifischen Hörverlustprofilen",
+          "Ältere Erwachsene (Anforderungen variieren je nach Gemeinde)",
+          "Personen mit begrenzten finanziellen Ressourcen (vorbehaltlich Einkommensprüfung)"
         ]
       }
     }
